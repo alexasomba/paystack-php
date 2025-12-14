@@ -1,0 +1,7 @@
+# OpenAPI Generator config (php)
+# Generated output goes to: sdks/php
+invokerPackage: Alexasomba\\Paystack
+composerPackageName: alexasomba/paystack
+packageName: Paystack
+artifactVersion: 0.1.0
+hideGenerationTimestamp: true
