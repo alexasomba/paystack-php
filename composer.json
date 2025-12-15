@@ -1,7 +1,7 @@
 {
-    "name": "alexasomba/paystack-openapi",
-    "version": "0.1.0",
-    "description": "The OpenAPI specification of the Paystack API that merchants and developers can harness to build financial solutions in Africa.",
+    "name": "alexasomba/paystack",
+    "version": "1.1.0",
+    "description": "Paystack API client for PHP",
     "keywords": [
         "openapitools",
         "openapi-generator",
@@ -11,12 +11,11 @@
         "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://github.com/alexasomba/paystack-php",
+    "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI",
-            "homepage": "https://openapi-generator.tech"
+            "name": "alexasomba"
         }
     ],
     "require": {
@@ -32,9 +31,17 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "Alexasomba\\\\Paystack\\" : "lib/" }
+        "psr-4": {
+            "Alexasomba\\\\Paystack\\": "lib/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "Alexasomba\\\\Paystack\\Test\\" : "test/" }
+        "psr-4": {
+            "Alexasomba\\\\Paystack\\Test\\": "test/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/alexasomba/paystack-php/issues",
+        "source": "https://github.com/alexasomba/paystack-php"
     }
 }
