@@ -20,6 +20,7 @@ $client = HttpClientFactory::create(['timeoutSeconds' => 30, 'idempotency' => ['
 ## Modules
 
 - Transactions
+- Verify Payments (Transaction verification)
 - Charges
 - Bulk Charges
 - Subaccounts
@@ -34,14 +35,17 @@ $client = HttpClientFactory::create(['timeoutSeconds' => 30, 'idempotency' => ['
 - Subscriptions
 - Transfer Recipients
 - Transfers
+- Transfers Control (OTP settings; under Transfers)
 - Balance
-- Payment Requests
+- Payment Requests (Invoices)
+- Verification (Resolve Account / Validate Account / Resolve Card BIN)
 - Products
 - Storefronts
 - Orders
 - Payment Pages
 - Settlements
 - Integration
+- Control Panel (Payment session timeout; under Integration)
 - Refunds
 - Disputes
 - Banks
