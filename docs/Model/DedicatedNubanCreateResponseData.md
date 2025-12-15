@@ -1,0 +1,20 @@
+# # DedicatedNubanCreateResponseData
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**bank** | [**\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank**](DedicatedNubanCreateResponseDataBank.md) |  |
+**account_name** | **string** |  |
+**account_number** | **string** |  |
+**assigned** | **bool** |  |
+**currency** | **string** |  |
+**metadata** | **object** |  |
+**active** | **bool** |  |
+**id** | **int** |  |
+**created_at** | **string** |  |
+**updated_at** | **string** |  |
+**assignment** | [**\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataAssignment**](DedicatedNubanCreateResponseDataAssignment.md) |  |
+**customer** | [**\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataCustomer**](DedicatedNubanCreateResponseDataCustomer.md) |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

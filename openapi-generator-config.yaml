@@ -3,7 +3,7 @@
 invokerPackage: Alexasomba\\Paystack
 composerPackageName: alexasomba/paystack
 packageName: Paystack
-artifactVersion: 1.1.0
+artifactVersion: 1.1.1
 gitHost: github.com
 gitUserId: alexasomba
 gitRepoId: paystack-openapi
