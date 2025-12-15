@@ -65,6 +65,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         'amount' => 'int',
         'message' => 'mixed',
         'gateway_response' => 'string',
+        'paid_at' => 'string',
+        'created_at' => 'string',
         'channel' => 'string',
         'currency' => 'string',
         'ip_address' => 'string',
@@ -99,6 +101,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         'amount' => null,
         'message' => null,
         'gateway_response' => null,
+        'paid_at' => null,
+        'created_at' => null,
         'channel' => null,
         'currency' => null,
         'ip_address' => null,
@@ -131,6 +135,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         'amount' => false,
         'message' => true,
         'gateway_response' => false,
+        'paid_at' => true,
+        'created_at' => false,
         'channel' => false,
         'currency' => false,
         'ip_address' => false,
@@ -243,6 +249,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'message' => 'message',
         'gateway_response' => 'gateway_response',
+        'paid_at' => 'paid_at',
+        'created_at' => 'created_at',
         'channel' => 'channel',
         'currency' => 'currency',
         'ip_address' => 'ip_address',
@@ -275,6 +283,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'message' => 'setMessage',
         'gateway_response' => 'setGatewayResponse',
+        'paid_at' => 'setPaidAt',
+        'created_at' => 'setCreatedAt',
         'channel' => 'setChannel',
         'currency' => 'setCurrency',
         'ip_address' => 'setIpAddress',
@@ -307,6 +317,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'message' => 'getMessage',
         'gateway_response' => 'getGatewayResponse',
+        'paid_at' => 'getPaidAt',
+        'created_at' => 'getCreatedAt',
         'channel' => 'getChannel',
         'currency' => 'getCurrency',
         'ip_address' => 'getIpAddress',
@@ -390,6 +402,8 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
         $this->setIfExists('gateway_response', $data ?? [], null);
+        $this->setIfExists('paid_at', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('channel', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('ip_address', $data ?? [], null);
@@ -715,6 +729,67 @@ class DisputeListResponseArrayTransaction implements ModelInterface, ArrayAccess
             throw new \InvalidArgumentException('non-nullable gateway_response cannot be null');
         }
         $this->container['gateway_response'] = $gateway_response;
+
+        return $this;
+    }
+
+    /**
+     * Gets paid_at
+     *
+     * @return string|null
+     */
+    public function getPaidAt()
+    {
+        return $this->container['paid_at'];
+    }
+
+    /**
+     * Sets paid_at
+     *
+     * @param string|null $paid_at paid_at
+     *
+     * @return self
+     */
+    public function setPaidAt($paid_at)
+    {
+        if (is_null($paid_at)) {
+            array_push($this->openAPINullablesSetToNull, 'paid_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('paid_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['paid_at'] = $paid_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return string|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param string|null $created_at created_at
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        }
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }

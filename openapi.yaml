@@ -17147,6 +17147,11 @@ components:
               nullable: true
             gateway_response:
               type: string
+            paid_at:
+              type: string
+              nullable: true
+            created_at:
+              type: string
             channel:
               type: string
             currency:
@@ -18014,6 +18019,11 @@ components:
                 message:
                   nullable: true
                 gateway_response:
+                  type: string
+                paid_at:
+                  type: string
+                  nullable: true
+                created_at:
                   type: string
                 channel:
                   type: string
