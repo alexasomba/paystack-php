@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**discounts** | **object[]** |  |
+**discounts** | **mixed[]** |  |
 **currency** | **string** |  |
-**shipping_address** | **object** |  |
+**shipping_address** | **mixed** |  |
 **integration** | **int** |  |
 **domain** | **string** |  |
 **email** | **string** |  |
@@ -21,11 +21,11 @@ Name | Type | Description | Notes
 **status** | **string** |  |
 **refunded** | **bool** |  |
 **is_viewed** | **bool** |  |
-**expiration_date** | **object** |  |
+**expiration_date** | **mixed** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |
-**items** | **object[]** |  |
+**items** | **mixed[]** |  |
 **pay_for_me_code** | **string** |  |
 **discount_amount** | **int** |  |
 

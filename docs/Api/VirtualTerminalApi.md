@@ -18,7 +18,7 @@ All URIs are relative to https://api.paystack.co, except if the operation define
 ## `virtualTerminalAddSplitCode()`
 
 ```php
-virtualTerminalAddSplitCode($code, $body): \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCodeResponse
+virtualTerminalAddSplitCode($code, $virtual_terminal_add_split_code): \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCodeResponse
 ```
 
 Add Split Code to Virtual Terminal
@@ -43,10 +43,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\VirtualTerminalApi(
     $config
 );
 $code = VT_MCK5292Z; // string | Code of the Virtual Terminal
-$body = new \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode(); // \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode
+$virtual_terminal_add_split_code = new \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode(); // \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode
 
 try {
-    $result = $apiInstance->virtualTerminalAddSplitCode($code, $body);
+    $result = $apiInstance->virtualTerminalAddSplitCode($code, $virtual_terminal_add_split_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VirtualTerminalApi->virtualTerminalAddSplitCode: ', $e->getMessage(), PHP_EOL;
@@ -58,7 +58,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Code of the Virtual Terminal | |
-| **body** | **\Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode**|  | [optional] |
+| **virtual_terminal_add_split_code** | [**\Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode**](../Model/VirtualTerminalAddSplitCode.md)|  | [optional] |
 
 ### Return type
 
@@ -200,7 +200,7 @@ try {
 ## `virtualTerminalDeleteSplitCode()`
 
 ```php
-virtualTerminalDeleteSplitCode($code, $body): \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCodeResponse
+virtualTerminalDeleteSplitCode($code, $virtual_terminal_delete_split_code): \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCodeResponse
 ```
 
 Remove Split Code from Virtual Terminal
@@ -225,10 +225,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\VirtualTerminalApi(
     $config
 );
 $code = VT_MCK5292Z; // string | Code of the Virtual Terminal
-$body = new \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode(); // \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode
+$virtual_terminal_delete_split_code = new \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode(); // \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode
 
 try {
-    $result = $apiInstance->virtualTerminalDeleteSplitCode($code, $body);
+    $result = $apiInstance->virtualTerminalDeleteSplitCode($code, $virtual_terminal_delete_split_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VirtualTerminalApi->virtualTerminalDeleteSplitCode: ', $e->getMessage(), PHP_EOL;
@@ -240,7 +240,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Code of the Virtual Terminal | |
-| **body** | **\Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode**|  | [optional] |
+| **virtual_terminal_delete_split_code** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode**](../Model/VirtualTerminalDeleteSplitCode.md)|  | [optional] |
 
 ### Return type
 
@@ -262,7 +262,7 @@ try {
 ## `virtualTerminalDestinationAssign()`
 
 ```php
-virtualTerminalDestinationAssign($code, $body): \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssignResponse
+virtualTerminalDestinationAssign($code, $virtual_terminal_destination_assign): \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssignResponse
 ```
 
 Assign Destination to Virtual Terminal
@@ -287,10 +287,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\VirtualTerminalApi(
     $config
 );
 $code = VT_MCK5292Z; // string | Code of the Virtual Terminal
-$body = new \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign(); // \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign
+$virtual_terminal_destination_assign = new \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign(); // \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign
 
 try {
-    $result = $apiInstance->virtualTerminalDestinationAssign($code, $body);
+    $result = $apiInstance->virtualTerminalDestinationAssign($code, $virtual_terminal_destination_assign);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VirtualTerminalApi->virtualTerminalDestinationAssign: ', $e->getMessage(), PHP_EOL;
@@ -302,7 +302,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Code of the Virtual Terminal | |
-| **body** | **\Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign**|  | [optional] |
+| **virtual_terminal_destination_assign** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign**](../Model/VirtualTerminalDestinationAssign.md)|  | [optional] |
 
 ### Return type
 
@@ -324,7 +324,7 @@ try {
 ## `virtualTerminalDestinationUnassign()`
 
 ```php
-virtualTerminalDestinationUnassign($code, $body): \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassignResponse
+virtualTerminalDestinationUnassign($code, $virtual_terminal_destination_unassign): \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassignResponse
 ```
 
 Unassign Destination from Virtual Terminal
@@ -349,10 +349,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\VirtualTerminalApi(
     $config
 );
 $code = VT_MCK5292Z; // string | Code of the Virtual Terminal
-$body = new \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign(); // \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign
+$virtual_terminal_destination_unassign = new \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign(); // \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign
 
 try {
-    $result = $apiInstance->virtualTerminalDestinationUnassign($code, $body);
+    $result = $apiInstance->virtualTerminalDestinationUnassign($code, $virtual_terminal_destination_unassign);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VirtualTerminalApi->virtualTerminalDestinationUnassign: ', $e->getMessage(), PHP_EOL;
@@ -364,7 +364,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Code of the Virtual Terminal | |
-| **body** | **\Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign**|  | [optional] |
+| **virtual_terminal_destination_unassign** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign**](../Model/VirtualTerminalDestinationUnassign.md)|  | [optional] |
 
 ### Return type
 
@@ -508,7 +508,7 @@ try {
 ## `virtualTerminalUpdate()`
 
 ```php
-virtualTerminalUpdate($code, $body): \Alexasomba\\Paystack\Model\VirtualTerminalUpdateResponse
+virtualTerminalUpdate($code, $virtual_terminal_update): \Alexasomba\\Paystack\Model\VirtualTerminalUpdateResponse
 ```
 
 Update Virtual Terminal
@@ -533,10 +533,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\VirtualTerminalApi(
     $config
 );
 $code = VT_MCK5292Z; // string | Code of the Virtual Terminal
-$body = new \Alexasomba\\Paystack\Model\VirtualTerminalCode(); // \Alexasomba\\Paystack\Model\VirtualTerminalCode
+$virtual_terminal_update = new \Alexasomba\\Paystack\Model\VirtualTerminalUpdate(); // \Alexasomba\\Paystack\Model\VirtualTerminalUpdate
 
 try {
-    $result = $apiInstance->virtualTerminalUpdate($code, $body);
+    $result = $apiInstance->virtualTerminalUpdate($code, $virtual_terminal_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VirtualTerminalApi->virtualTerminalUpdate: ', $e->getMessage(), PHP_EOL;
@@ -548,7 +548,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Code of the Virtual Terminal | |
-| **body** | **\Alexasomba\\Paystack\Model\VirtualTerminalCode**|  | [optional] |
+| **virtual_terminal_update** | [**\Alexasomba\\Paystack\Model\VirtualTerminalUpdate**](../Model/VirtualTerminalUpdate.md)|  | [optional] |
 
 ### Return type
 

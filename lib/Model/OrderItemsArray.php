@@ -71,14 +71,14 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'product_level_type' => 'string',
         'product_id' => 'int',
-        'product_success_message' => 'object',
-        'product_redirect_url' => 'object',
-        'ifnull_p1_expires_in_p2_expires_in' => 'object',
+        'product_success_message' => 'mixed',
+        'product_redirect_url' => 'mixed',
+        'ifnull_p1_expires_in_p2_expires_in' => 'mixed',
         'product_quantity_sold' => 'int',
-        'product_notification_emails' => 'object',
+        'product_notification_emails' => 'mixed',
         'ifnull_p1_metadata_p2_metadata' => 'string',
-        'storefront_redirect_url' => 'object',
-        'storefront_success_message' => 'object'
+        'storefront_redirect_url' => 'mixed',
+        'storefront_success_message' => 'mixed'
     ];
 
     /**
@@ -847,7 +847,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product_success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getProductSuccessMessage()
     {
@@ -857,7 +857,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_success_message
      *
-     * @param object $product_success_message product_success_message
+     * @param mixed $product_success_message product_success_message
      *
      * @return self
      */
@@ -881,7 +881,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product_redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getProductRedirectUrl()
     {
@@ -891,7 +891,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_redirect_url
      *
-     * @param object $product_redirect_url product_redirect_url
+     * @param mixed $product_redirect_url product_redirect_url
      *
      * @return self
      */
@@ -915,7 +915,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ifnull_p1_expires_in_p2_expires_in
      *
-     * @return object
+     * @return mixed
      */
     public function getIfnullP1ExpiresInP2ExpiresIn()
     {
@@ -925,7 +925,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ifnull_p1_expires_in_p2_expires_in
      *
-     * @param object $ifnull_p1_expires_in_p2_expires_in ifnull_p1_expires_in_p2_expires_in
+     * @param mixed $ifnull_p1_expires_in_p2_expires_in ifnull_p1_expires_in_p2_expires_in
      *
      * @return self
      */
@@ -976,7 +976,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product_notification_emails
      *
-     * @return object
+     * @return mixed
      */
     public function getProductNotificationEmails()
     {
@@ -986,7 +986,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_notification_emails
      *
-     * @param object $product_notification_emails product_notification_emails
+     * @param mixed $product_notification_emails product_notification_emails
      *
      * @return self
      */
@@ -1037,7 +1037,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storefront_redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getStorefrontRedirectUrl()
     {
@@ -1047,7 +1047,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storefront_redirect_url
      *
-     * @param object $storefront_redirect_url storefront_redirect_url
+     * @param mixed $storefront_redirect_url storefront_redirect_url
      *
      * @return self
      */
@@ -1071,7 +1071,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storefront_success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getStorefrontSuccessMessage()
     {
@@ -1081,7 +1081,7 @@ class OrderItemsArray implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storefront_success_message
      *
-     * @param object $storefront_success_message storefront_success_message
+     * @param mixed $storefront_success_message storefront_success_message
      *
      * @return self
      */

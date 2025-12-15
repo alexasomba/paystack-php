@@ -70,7 +70,7 @@ class ChargeAuthorizationResponseDataAuthorization implements ModelInterface, Ar
         'brand' => 'string',
         'reusable' => 'bool',
         'signature' => 'string',
-        'account_name' => 'object'
+        'account_name' => 'mixed'
     ];
 
     /**
@@ -747,7 +747,7 @@ class ChargeAuthorizationResponseDataAuthorization implements ModelInterface, Ar
     /**
      * Gets account_name
      *
-     * @return object
+     * @return mixed
      */
     public function getAccountName()
     {
@@ -757,7 +757,7 @@ class ChargeAuthorizationResponseDataAuthorization implements ModelInterface, Ar
     /**
      * Sets account_name
      *
-     * @param object $account_name account_name
+     * @param mixed $account_name account_name
      *
      * @return self
      */

@@ -58,9 +58,9 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'discounts' => 'object[]',
+        'discounts' => 'mixed[]',
         'currency' => 'string',
-        'shipping_address' => 'object',
+        'shipping_address' => 'mixed',
         'integration' => 'int',
         'domain' => 'string',
         'email' => 'string',
@@ -75,11 +75,11 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
         'status' => 'string',
         'refunded' => 'bool',
         'is_viewed' => 'bool',
-        'expiration_date' => 'object',
+        'expiration_date' => 'mixed',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'items' => 'object[]',
+        'items' => 'mixed[]',
         'pay_for_me_code' => 'string',
         'discount_amount' => 'int'
     ];
@@ -523,7 +523,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets discounts
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getDiscounts()
     {
@@ -533,7 +533,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets discounts
      *
-     * @param object[] $discounts discounts
+     * @param mixed[] $discounts discounts
      *
      * @return self
      */
@@ -577,7 +577,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets shipping_address
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingAddress()
     {
@@ -587,7 +587,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets shipping_address
      *
-     * @param object $shipping_address shipping_address
+     * @param mixed $shipping_address shipping_address
      *
      * @return self
      */
@@ -996,7 +996,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets expiration_date
      *
-     * @return object
+     * @return mixed
      */
     public function getExpirationDate()
     {
@@ -1006,7 +1006,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets expiration_date
      *
-     * @param object $expiration_date expiration_date
+     * @param mixed $expiration_date expiration_date
      *
      * @return self
      */
@@ -1111,7 +1111,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets items
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getItems()
     {
@@ -1121,7 +1121,7 @@ class OrderCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets items
      *
-     * @param object[] $items items
+     * @param mixed[] $items items
      *
      * @return self
      */

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **string** |  |
 **integration** | **int** |  |
 **domain** | **string** |  |
-**payment_methods** | **object[]** |  |
+**payment_methods** | **mixed[]** |  |
 **active** | **bool** |  |
 **created_at** | **string** |  |
 **currency** | **string** |  |

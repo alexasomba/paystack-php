@@ -66,9 +66,9 @@ class TransactionPartialDebitResponseData implements ModelInterface, ArrayAccess
         'domain' => 'string',
         'metadata' => 'string',
         'gateway_response' => 'string',
-        'message' => 'object',
+        'message' => 'mixed',
         'channel' => 'string',
-        'ip_address' => 'object',
+        'ip_address' => 'mixed',
         'log' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog',
         'fees' => 'int',
         'authorization' => '\Alexasomba\\Paystack\Model\TransactionPartialDebitResponseDataAuthorization',
@@ -682,7 +682,7 @@ class TransactionPartialDebitResponseData implements ModelInterface, ArrayAccess
     /**
      * Gets message
      *
-     * @return object
+     * @return mixed
      */
     public function getMessage()
     {
@@ -692,7 +692,7 @@ class TransactionPartialDebitResponseData implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param object $message message
+     * @param mixed $message message
      *
      * @return self
      */
@@ -743,7 +743,7 @@ class TransactionPartialDebitResponseData implements ModelInterface, ArrayAccess
     /**
      * Gets ip_address
      *
-     * @return object
+     * @return mixed
      */
     public function getIpAddress()
     {
@@ -753,7 +753,7 @@ class TransactionPartialDebitResponseData implements ModelInterface, ArrayAccess
     /**
      * Sets ip_address
      *
-     * @param object $ip_address ip_address
+     * @param mixed $ip_address ip_address
      *
      * @return self
      */

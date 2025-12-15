@@ -277,7 +277,7 @@ try {
 ## `transactionFetch()`
 
 ```php
-transactionFetch($id): \Alexasomba\\Paystack\Model\TransactionId
+transactionFetch($id): \Alexasomba\\Paystack\Model\TransactionFetchResponse
 ```
 
 Fetch Transaction
@@ -319,7 +319,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransactionId**](../Model/TransactionId.md)
+[**\Alexasomba\\Paystack\Model\TransactionFetchResponse**](../Model/TransactionFetchResponse.md)
 
 ### Authorization
 
@@ -609,7 +609,7 @@ try {
 ## `transactionTimeline()`
 
 ```php
-transactionTimeline($id): \Alexasomba\\Paystack\Model\TransactionTimelineId
+transactionTimeline($id): \Alexasomba\\Paystack\Model\TransactionTimelineResponse
 ```
 
 Fetch Transaction Timeline
@@ -651,7 +651,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransactionTimelineId**](../Model/TransactionTimelineId.md)
+[**\Alexasomba\\Paystack\Model\TransactionTimelineResponse**](../Model/TransactionTimelineResponse.md)
 
 ### Authorization
 
@@ -731,7 +731,7 @@ try {
 ## `transactionVerify()`
 
 ```php
-transactionVerify($reference): \Alexasomba\\Paystack\Model\TransactionVerifyReference
+transactionVerify($reference): \Alexasomba\\Paystack\Model\VerifyResponse
 ```
 
 Verify Transaction
@@ -773,7 +773,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransactionVerifyReference**](../Model/TransactionVerifyReference.md)
+[**\Alexasomba\\Paystack\Model\VerifyResponse**](../Model/VerifyResponse.md)
 
 ### Authorization
 

@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **currency** | **string** |  |
 **last4** | **string** |  |
 **bin** | **string** |  |
-**transaction_reference** | **object** |  |
+**transaction_reference** | **mixed** |  |
 **merchant_transaction_reference** | **string** |  |
 **refund_amount** | **int** |  |
 **status** | **string** |  |
 **domain** | **string** |  |
 **resolution** | **string** |  |
 **category** | **string** |  |
-**note** | **object** |  |
+**note** | **mixed** |  |
 **attachments** | **string** |  |
 **id** | **int** |  |
 **integration** | **int** |  |
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **resolved_at** | **string** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |
-**due_at** | **object** |  |
+**due_at** | **mixed** |  |
 **message** | [**\Alexasomba\\Paystack\Model\DisputeResolveResponseDataMessage**](DisputeResolveResponseDataMessage.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

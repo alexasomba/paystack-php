@@ -13,17 +13,17 @@ Name | Type | Description | Notes
 **has_invoice** | **bool** |  |
 **invoice_number** | **int** |  |
 **description** | **string** |  |
-**line_items** | **object[]** |  |
-**tax** | **object[]** |  |
+**line_items** | **mixed[]** |  |
+**tax** | **mixed[]** |  |
 **request_code** | **string** |  |
 **status** | **string** |  |
 **paid** | **bool** |  |
 **metadata** | **object** |  |
-**notifications** | **object[]** |  |
+**notifications** | **mixed[]** |  |
 **offline_reference** | **string** |  |
 **customer** | **int** |  |
 **created_at** | **string** |  |
-**discount** | **object** |  |
+**discount** | **mixed** |  |
 **split_code** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -14,16 +14,16 @@ Name | Type | Description | Notes
 **amount** | **int** |  |
 **cron_expression** | **string** |  |
 **next_payment_date** | **string** |  |
-**open_invoice** | **object** |  |
+**open_invoice** | **mixed** |  |
 **created_at** | **string** |  |
 **integration** | **int** |  |
 **plan** | [**\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayPlan**](SubscriptionListResponseArrayPlan.md) |  |
 **authorization** | [**\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayAuthorization**](SubscriptionListResponseArrayAuthorization.md) |  |
 **customer** | [**\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayCustomer**](SubscriptionListResponseArrayCustomer.md) |  |
 **invoice_limit** | **int** |  |
-**split_code** | **object** |  |
+**split_code** | **mixed** |  |
 **payments_count** | **int** |  |
-**most_recent_invoice** | **object** |  |
+**most_recent_invoice** | **mixed** |  |
 **metadata** | **object** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

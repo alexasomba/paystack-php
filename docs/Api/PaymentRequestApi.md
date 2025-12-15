@@ -447,7 +447,7 @@ This endpoint does not need any parameter.
 ## `paymentRequestUpdate()`
 
 ```php
-paymentRequestUpdate($id, $body): \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponse
+paymentRequestUpdate($id, $payment_request_update): \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponse
 ```
 
 Update Payment Request
@@ -472,10 +472,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\PaymentRequestApi(
     $config
 );
 $id = 18823736; // int | The unique identifier of a previously created payment request
-$body = new \Alexasomba\\Paystack\Model\PaymentrequestId(); // \Alexasomba\\Paystack\Model\PaymentrequestId
+$payment_request_update = new \Alexasomba\\Paystack\Model\PaymentRequestUpdate(); // \Alexasomba\\Paystack\Model\PaymentRequestUpdate
 
 try {
-    $result = $apiInstance->paymentRequestUpdate($id, $body);
+    $result = $apiInstance->paymentRequestUpdate($id, $payment_request_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PaymentRequestApi->paymentRequestUpdate: ', $e->getMessage(), PHP_EOL;
@@ -487,7 +487,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of a previously created payment request | |
-| **body** | **\Alexasomba\\Paystack\Model\PaymentrequestId**|  | [optional] |
+| **payment_request_update** | [**\Alexasomba\\Paystack\Model\PaymentRequestUpdate**](../Model/PaymentRequestUpdate.md)|  | [optional] |
 
 ### Return type
 

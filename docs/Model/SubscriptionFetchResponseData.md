@@ -12,18 +12,18 @@ Name | Type | Description | Notes
 **amount** | **int** |  |
 **cron_expression** | **string** |  |
 **next_payment_date** | **string** |  |
-**open_invoice** | **object** |  |
+**open_invoice** | **mixed** |  |
 **created_at** | **string** |  |
-**cancelled_at** | **object** |  |
+**cancelled_at** | **mixed** |  |
 **integration** | **int** |  |
 **plan** | [**\Alexasomba\\Paystack\Model\SubscriptionFetchResponseDataPlan**](SubscriptionFetchResponseDataPlan.md) |  |
 **authorization** | [**\Alexasomba\\Paystack\Model\TransactionPartialDebitResponseDataAuthorization**](TransactionPartialDebitResponseDataAuthorization.md) |  |
-**customer** | [**\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer**](ChargeCreateResponseDataCustomer.md) |  |
-**invoices** | **object[]** |  |
-**invoices_history** | **object[]** |  |
+**customer** | [**\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer**](TransactionFetchResponseDataCustomer.md) |  |
+**invoices** | **mixed[]** |  |
+**invoices_history** | **mixed[]** |  |
 **invoice_limit** | **int** |  |
-**split_code** | **object** |  |
-**most_recent_invoice** | **object** |  |
+**split_code** | **mixed** |  |
+**most_recent_invoice** | **mixed** |  |
 **payments_count** | **int** |  |
 **metadata** | **object** |  |
 

@@ -58,7 +58,7 @@ class DisputeFetchResponseDataTransactionCustomer implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'international_format_phone' => 'object'
+        'international_format_phone' => 'mixed'
     ];
 
     /**
@@ -296,7 +296,7 @@ class DisputeFetchResponseDataTransactionCustomer implements ModelInterface, Arr
     /**
      * Gets international_format_phone
      *
-     * @return object
+     * @return mixed
      */
     public function getInternationalFormatPhone()
     {
@@ -306,7 +306,7 @@ class DisputeFetchResponseDataTransactionCustomer implements ModelInterface, Arr
     /**
      * Sets international_format_phone
      *
-     * @param object $international_format_phone international_format_phone
+     * @param mixed $international_format_phone international_format_phone
      *
      * @return self
      */

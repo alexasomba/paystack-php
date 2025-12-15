@@ -199,7 +199,7 @@ try {
 ## `refundRetry()`
 
 ```php
-refundRetry($id, $body): \Alexasomba\\Paystack\Model\RefundRetryResponse
+refundRetry($id, $refund_retry): \Alexasomba\\Paystack\Model\RefundRetryResponse
 ```
 
 Retry Refund
@@ -224,10 +224,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\RefundApi(
     $config
 );
 $id = 15581137; // int | The identifier of the refund
-$body = new \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId(); // \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId
+$refund_retry = new \Alexasomba\\Paystack\Model\RefundRetry(); // \Alexasomba\\Paystack\Model\RefundRetry
 
 try {
-    $result = $apiInstance->refundRetry($id, $body);
+    $result = $apiInstance->refundRetry($id, $refund_retry);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundRetry: ', $e->getMessage(), PHP_EOL;
@@ -239,7 +239,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The identifier of the refund | |
-| **body** | **\Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId**|  | [optional] |
+| **refund_retry** | [**\Alexasomba\\Paystack\Model\RefundRetry**](../Model/RefundRetry.md)|  | [optional] |
 
 ### Return type
 

@@ -59,7 +59,7 @@ class DedicatedNubanListResponseArray implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'customer' => '\Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayCustomer',
-        'bank' => '\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank',
+        'bank' => '\Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank',
         'id' => 'int',
         'account_name' => 'string',
         'account_number' => 'string',
@@ -423,7 +423,7 @@ class DedicatedNubanListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Gets bank
      *
-     * @return \Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank
+     * @return \Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank
      */
     public function getBank()
     {
@@ -433,7 +433,7 @@ class DedicatedNubanListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Sets bank
      *
-     * @param \Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank $bank bank
+     * @param \Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank $bank bank
      *
      * @return self
      */

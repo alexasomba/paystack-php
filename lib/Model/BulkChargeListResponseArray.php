@@ -62,7 +62,7 @@ class BulkChargeListResponseArray implements ModelInterface, ArrayAccess, \JsonS
         'domain' => 'string',
         'batch_code' => 'string',
         'status' => 'string',
-        'easy_cron_id' => 'object',
+        'easy_cron_id' => 'mixed',
         'reference' => 'string',
         'id' => 'int',
         'created_at' => 'string',
@@ -484,7 +484,7 @@ class BulkChargeListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets easy_cron_id
      *
-     * @return object
+     * @return mixed
      */
     public function getEasyCronId()
     {
@@ -494,7 +494,7 @@ class BulkChargeListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets easy_cron_id
      *
-     * @param object $easy_cron_id easy_cron_id
+     * @param mixed $easy_cron_id easy_cron_id
      *
      * @return self
      */

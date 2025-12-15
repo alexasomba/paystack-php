@@ -447,7 +447,7 @@ class SubaccountApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\SubaccountCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\SubaccountFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function subaccountFetch($code, string $contentType = self::contentTypes['subaccountFetch'][0])
     {
@@ -465,7 +465,7 @@ class SubaccountApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\SubaccountCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\SubaccountFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function subaccountFetchWithHttpInfo($code, string $contentType = self::contentTypes['subaccountFetch'][0])
     {
@@ -508,17 +508,17 @@ class SubaccountApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\SubaccountCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\SubaccountFetchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\SubaccountCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\SubaccountFetchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\SubaccountCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\SubaccountFetchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -554,7 +554,7 @@ class SubaccountApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\SubaccountCode';
+            $returnType = '\Alexasomba\\Paystack\Model\SubaccountFetchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -575,7 +575,7 @@ class SubaccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\SubaccountCode',
+                        '\Alexasomba\\Paystack\Model\SubaccountFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -635,7 +635,7 @@ class SubaccountApi
      */
     public function subaccountFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['subaccountFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\SubaccountCode';
+        $returnType = '\Alexasomba\\Paystack\Model\SubaccountFetchResponse';
         $request = $this->subaccountFetchRequest($code, $contentType);
 
         return $this->client
@@ -1045,8 +1045,8 @@ class SubaccountApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1054,8 +1054,8 @@ class SubaccountApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1063,8 +1063,8 @@ class SubaccountApi
             $active,
             'active', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1134,16 +1134,16 @@ class SubaccountApi
      * Update Subaccount
      *
      * @param  string $code The subaccount code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\SubaccountCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\SubaccountUpdate $subaccount_update subaccount_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subaccountUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\SubaccountCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\SubaccountUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function subaccountUpdate($code, $body = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
+    public function subaccountUpdate($code, $subaccount_update = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
     {
-        list($response) = $this->subaccountUpdateWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->subaccountUpdateWithHttpInfo($code, $subaccount_update, $contentType);
         return $response;
     }
 
@@ -1153,16 +1153,16 @@ class SubaccountApi
      * Update Subaccount
      *
      * @param  string $code The subaccount code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\SubaccountCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\SubaccountUpdate $subaccount_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subaccountUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\SubaccountCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\SubaccountUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subaccountUpdateWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
+    public function subaccountUpdateWithHttpInfo($code, $subaccount_update = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
     {
-        $request = $this->subaccountUpdateRequest($code, $body, $contentType);
+        $request = $this->subaccountUpdateRequest($code, $subaccount_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1201,17 +1201,17 @@ class SubaccountApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\SubaccountCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\SubaccountUpdateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\SubaccountCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\SubaccountUpdateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\SubaccountCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\SubaccountUpdateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1247,7 +1247,7 @@ class SubaccountApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\SubaccountCode';
+            $returnType = '\Alexasomba\\Paystack\Model\SubaccountUpdateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1268,7 +1268,7 @@ class SubaccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\SubaccountCode',
+                        '\Alexasomba\\Paystack\Model\SubaccountUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1300,15 +1300,15 @@ class SubaccountApi
      * Update Subaccount
      *
      * @param  string $code The subaccount code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\SubaccountCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\SubaccountUpdate $subaccount_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subaccountUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subaccountUpdateAsync($code, $body = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
+    public function subaccountUpdateAsync($code, $subaccount_update = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
     {
-        return $this->subaccountUpdateAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->subaccountUpdateAsyncWithHttpInfo($code, $subaccount_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1322,16 +1322,16 @@ class SubaccountApi
      * Update Subaccount
      *
      * @param  string $code The subaccount code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\SubaccountCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\SubaccountUpdate $subaccount_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subaccountUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subaccountUpdateAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
+    public function subaccountUpdateAsyncWithHttpInfo($code, $subaccount_update = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\SubaccountCode';
-        $request = $this->subaccountUpdateRequest($code, $body, $contentType);
+        $returnType = '\Alexasomba\\Paystack\Model\SubaccountUpdateResponse';
+        $request = $this->subaccountUpdateRequest($code, $subaccount_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1373,13 +1373,13 @@ class SubaccountApi
      * Create request for operation 'subaccountUpdate'
      *
      * @param  string $code The subaccount code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\SubaccountCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\SubaccountUpdate $subaccount_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subaccountUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function subaccountUpdateRequest($code, $body = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
+    public function subaccountUpdateRequest($code, $subaccount_update = null, string $contentType = self::contentTypes['subaccountUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1417,12 +1417,12 @@ class SubaccountApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($subaccount_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($subaccount_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $subaccount_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

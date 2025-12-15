@@ -63,7 +63,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
         'status' => 'string',
         'reference' => 'string',
         'amount' => 'int',
-        'message' => 'object',
+        'message' => 'mixed',
         'gateway_response' => 'string',
         'paid_at' => 'string',
         'created_at' => 'string',
@@ -79,11 +79,11 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
         'plan' => 'object',
         'split' => 'object',
         'subaccount' => 'object',
-        'order_id' => 'object',
+        'order_id' => 'mixed',
         'requested_amount' => 'int',
         'source' => '\Alexasomba\\Paystack\Model\TransactionListResponseArraySource',
         'connect' => 'object',
-        'pos_transaction_data' => 'object'
+        'pos_transaction_data' => 'mixed'
     ];
 
     /**
@@ -681,7 +681,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets message
      *
-     * @return object
+     * @return mixed
      */
     public function getMessage()
     {
@@ -691,7 +691,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets message
      *
-     * @param object $message message
+     * @param mixed $message message
      *
      * @return self
      */
@@ -1162,7 +1162,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets order_id
      *
-     * @return object
+     * @return mixed
      */
     public function getOrderId()
     {
@@ -1172,7 +1172,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets order_id
      *
-     * @param object $order_id order_id
+     * @param mixed $order_id order_id
      *
      * @return self
      */
@@ -1291,7 +1291,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets pos_transaction_data
      *
-     * @return object
+     * @return mixed
      */
     public function getPosTransactionData()
     {
@@ -1301,7 +1301,7 @@ class TransactionListResponseArray implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets pos_transaction_data
      *
-     * @param object $pos_transaction_data pos_transaction_data
+     * @param mixed $pos_transaction_data pos_transaction_data
      *
      * @return self
      */

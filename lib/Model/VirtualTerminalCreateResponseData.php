@@ -63,9 +63,9 @@ class VirtualTerminalCreateResponseData implements ModelInterface, ArrayAccess, 
         'integration' => 'int',
         'domain' => 'string',
         'code' => 'string',
-        'payment_methods' => 'object[]',
+        'payment_methods' => 'mixed[]',
         'active' => 'bool',
-        'metadata' => 'object',
+        'metadata' => 'mixed',
         'destinations' => '\Alexasomba\\Paystack\Model\VirtualTerminalCreateResponseDataDestinationsInner[]',
         'currency' => 'string'
     ];
@@ -521,7 +521,7 @@ class VirtualTerminalCreateResponseData implements ModelInterface, ArrayAccess, 
     /**
      * Gets payment_methods
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getPaymentMethods()
     {
@@ -531,7 +531,7 @@ class VirtualTerminalCreateResponseData implements ModelInterface, ArrayAccess, 
     /**
      * Sets payment_methods
      *
-     * @param object[] $payment_methods payment_methods
+     * @param mixed[] $payment_methods payment_methods
      *
      * @return self
      */
@@ -575,7 +575,7 @@ class VirtualTerminalCreateResponseData implements ModelInterface, ArrayAccess, 
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -585,7 +585,7 @@ class VirtualTerminalCreateResponseData implements ModelInterface, ArrayAccess, 
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */

@@ -68,12 +68,12 @@ class ChargeAuthorizationResponseData implements ModelInterface, ArrayAccess, \J
         'gateway_response' => 'string',
         'message' => 'string',
         'channel' => 'string',
-        'ip_address' => 'object',
+        'ip_address' => 'mixed',
         'log' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog',
         'fees' => 'int',
         'authorization' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataAuthorization',
         'customer' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataCustomer',
-        'plan' => 'object',
+        'plan' => 'mixed',
         'id' => 'int'
     ];
 
@@ -733,7 +733,7 @@ class ChargeAuthorizationResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets ip_address
      *
-     * @return object
+     * @return mixed
      */
     public function getIpAddress()
     {
@@ -743,7 +743,7 @@ class ChargeAuthorizationResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets ip_address
      *
-     * @param object $ip_address ip_address
+     * @param mixed $ip_address ip_address
      *
      * @return self
      */
@@ -889,7 +889,7 @@ class ChargeAuthorizationResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Gets plan
      *
-     * @return object
+     * @return mixed
      */
     public function getPlan()
     {
@@ -899,7 +899,7 @@ class ChargeAuthorizationResponseData implements ModelInterface, ArrayAccess, \J
     /**
      * Sets plan
      *
-     * @param object $plan plan
+     * @param mixed $plan plan
      *
      * @return self
      */

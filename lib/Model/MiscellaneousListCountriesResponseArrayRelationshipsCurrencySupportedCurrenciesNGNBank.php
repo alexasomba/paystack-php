@@ -65,7 +65,7 @@ class MiscellaneousListCountriesResponseArrayRelationshipsCurrencySupportedCurre
         'account_verification_required' => 'bool',
         'account_number_label' => 'string',
         'account_number_pattern' => '\Alexasomba\\Paystack\Model\MiscellaneousListCountriesResponseArrayRelationshipsCurrencySupportedCurrenciesNGNBankAccountNumberPattern',
-        'documents' => 'object[]',
+        'documents' => 'mixed[]',
         'show_account_number_tooltip' => 'bool'
     ];
 
@@ -565,7 +565,7 @@ class MiscellaneousListCountriesResponseArrayRelationshipsCurrencySupportedCurre
     /**
      * Gets documents
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getDocuments()
     {
@@ -575,7 +575,7 @@ class MiscellaneousListCountriesResponseArrayRelationshipsCurrencySupportedCurre
     /**
      * Sets documents
      *
-     * @param object[] $documents documents
+     * @param mixed[] $documents documents
      *
      * @return self
      */

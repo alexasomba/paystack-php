@@ -73,13 +73,13 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
         'request_code' => 'string',
         'status' => 'string',
         'paid' => 'bool',
-        'paid_at' => 'object',
-        'metadata' => 'object',
-        'notifications' => 'object[]',
+        'paid_at' => 'mixed',
+        'metadata' => 'mixed',
+        'notifications' => 'mixed[]',
         'offline_reference' => 'string',
-        'customer' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer',
+        'customer' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer',
         'created_at' => 'string',
-        'discount' => 'object',
+        'discount' => 'mixed',
         'split_code' => 'string'
     ];
 
@@ -949,7 +949,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Gets paid_at
      *
-     * @return object
+     * @return mixed
      */
     public function getPaidAt()
     {
@@ -959,7 +959,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Sets paid_at
      *
-     * @param object $paid_at paid_at
+     * @param mixed $paid_at paid_at
      *
      * @return self
      */
@@ -983,7 +983,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -993,7 +993,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -1017,7 +1017,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Gets notifications
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getNotifications()
     {
@@ -1027,7 +1027,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Sets notifications
      *
-     * @param object[] $notifications notifications
+     * @param mixed[] $notifications notifications
      *
      * @return self
      */
@@ -1071,7 +1071,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer
      */
     public function getCustomer()
     {
@@ -1081,7 +1081,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer $customer customer
      *
      * @return self
      */
@@ -1125,7 +1125,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Gets discount
      *
-     * @return object
+     * @return mixed
      */
     public function getDiscount()
     {
@@ -1135,7 +1135,7 @@ class PaymentRequestListResponseArray implements ModelInterface, ArrayAccess, \J
     /**
      * Sets discount
      *
-     * @param object $discount discount
+     * @param mixed $discount discount
      *
      * @return self
      */

@@ -58,20 +58,20 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subscriptions' => 'object[]',
-        'pages' => 'object[]',
+        'subscriptions' => 'mixed[]',
+        'pages' => 'mixed[]',
         'domain' => 'string',
         'name' => 'string',
         'plan_code' => 'string',
-        'description' => 'object',
+        'description' => 'mixed',
         'amount' => 'int',
         'interval' => 'string',
         'invoice_limit' => 'int',
         'send_invoices' => 'bool',
         'send_sms' => 'bool',
         'hosted_page' => 'bool',
-        'hosted_page_url' => 'object',
-        'hosted_page_summary' => 'object',
+        'hosted_page_url' => 'mixed',
+        'hosted_page_summary' => 'mixed',
         'currency' => 'string',
         'migrate' => 'bool',
         'is_deleted' => 'bool',
@@ -536,7 +536,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets subscriptions
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getSubscriptions()
     {
@@ -546,7 +546,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets subscriptions
      *
-     * @param object[] $subscriptions subscriptions
+     * @param mixed[] $subscriptions subscriptions
      *
      * @return self
      */
@@ -563,7 +563,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets pages
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getPages()
     {
@@ -573,7 +573,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets pages
      *
-     * @param object[] $pages pages
+     * @param mixed[] $pages pages
      *
      * @return self
      */
@@ -671,7 +671,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -681,7 +681,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */
@@ -867,7 +867,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets hosted_page_url
      *
-     * @return object
+     * @return mixed
      */
     public function getHostedPageUrl()
     {
@@ -877,7 +877,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets hosted_page_url
      *
-     * @param object $hosted_page_url hosted_page_url
+     * @param mixed $hosted_page_url hosted_page_url
      *
      * @return self
      */
@@ -901,7 +901,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets hosted_page_summary
      *
-     * @return object
+     * @return mixed
      */
     public function getHostedPageSummary()
     {
@@ -911,7 +911,7 @@ class PlanListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets hosted_page_summary
      *
-     * @param object $hosted_page_summary hosted_page_summary
+     * @param mixed $hosted_page_summary hosted_page_summary
      *
      * @return self
      */

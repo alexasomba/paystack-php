@@ -141,7 +141,7 @@ try {
 ## `customerDirectDebitActivationCharge()`
 
 ```php
-customerDirectDebitActivationCharge($id, $body): \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeResponse
+customerDirectDebitActivationCharge($id, $customer_direct_debit_activation_charge_request): \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeResponse
 ```
 
 Direct Debit Activation Charge
@@ -166,10 +166,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\CustomerApi(
     $config
 );
 $id = 297346561; // int | The customer ID attached to the authorization
-$body = new \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge(); // \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge
+$customer_direct_debit_activation_charge_request = new \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest(); // \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest
 
 try {
-    $result = $apiInstance->customerDirectDebitActivationCharge($id, $body);
+    $result = $apiInstance->customerDirectDebitActivationCharge($id, $customer_direct_debit_activation_charge_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerDirectDebitActivationCharge: ', $e->getMessage(), PHP_EOL;
@@ -181,7 +181,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The customer ID attached to the authorization | |
-| **body** | **\Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge**|  | [optional] |
+| **customer_direct_debit_activation_charge_request** | [**\Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest**](../Model/CustomerDirectDebitActivationChargeRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -203,7 +203,7 @@ try {
 ## `customerFetch()`
 
 ```php
-customerFetch($code): \Alexasomba\\Paystack\Model\CustomerCode
+customerFetch($code): \Alexasomba\\Paystack\Model\CustomerFetchResponse
 ```
 
 Fetch Customer
@@ -245,7 +245,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\CustomerCode**](../Model/CustomerCode.md)
+[**\Alexasomba\\Paystack\Model\CustomerFetchResponse**](../Model/CustomerFetchResponse.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ try {
 ## `customerInitializeDirectDebit()`
 
 ```php
-customerInitializeDirectDebit($id, $body): \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitResponse
+customerInitializeDirectDebit($id, $customer_initialize_direct_debit_request): \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitResponse
 ```
 
 Initialize Direct Debit
@@ -408,10 +408,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\CustomerApi(
     $config
 );
 $id = 297346561; // int | The ID of the customer to initialize the direct debit for
-$body = new \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit(); // \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit
+$customer_initialize_direct_debit_request = new \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest(); // \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest
 
 try {
-    $result = $apiInstance->customerInitializeDirectDebit($id, $body);
+    $result = $apiInstance->customerInitializeDirectDebit($id, $customer_initialize_direct_debit_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerInitializeDirectDebit: ', $e->getMessage(), PHP_EOL;
@@ -423,7 +423,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The ID of the customer to initialize the direct debit for | |
-| **body** | **\Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit**|  | [optional] |
+| **customer_initialize_direct_debit_request** | [**\Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest**](../Model/CustomerInitializeDirectDebitRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -577,7 +577,7 @@ try {
 ## `customerUpdate()`
 
 ```php
-customerUpdate($code, $body): \Alexasomba\\Paystack\Model\CustomerCode
+customerUpdate($code, $customer_update): \Alexasomba\\Paystack\Model\CustomerUpdateResponse
 ```
 
 Update Customer
@@ -602,10 +602,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\CustomerApi(
     $config
 );
 $code = CUS_c6wqvwmvwopw4ms; // string | The code for the customer gotten from the response of the customer creation
-$body = new \Alexasomba\\Paystack\Model\CustomerCode(); // \Alexasomba\\Paystack\Model\CustomerCode
+$customer_update = new \Alexasomba\\Paystack\Model\CustomerUpdate(); // \Alexasomba\\Paystack\Model\CustomerUpdate
 
 try {
-    $result = $apiInstance->customerUpdate($code, $body);
+    $result = $apiInstance->customerUpdate($code, $customer_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerUpdate: ', $e->getMessage(), PHP_EOL;
@@ -617,11 +617,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| The code for the customer gotten from the response of the customer creation | |
-| **body** | **\Alexasomba\\Paystack\Model\CustomerCode**|  | [optional] |
+| **customer_update** | [**\Alexasomba\\Paystack\Model\CustomerUpdate**](../Model/CustomerUpdate.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\CustomerCode**](../Model/CustomerCode.md)
+[**\Alexasomba\\Paystack\Model\CustomerUpdateResponse**](../Model/CustomerUpdateResponse.md)
 
 ### Authorization
 
@@ -639,7 +639,7 @@ try {
 ## `customerValidate()`
 
 ```php
-customerValidate($code, $body): \Alexasomba\\Paystack\Model\CustomerCodeIdentification
+customerValidate($code, $customer_validate): \Alexasomba\\Paystack\Model\CustomerValidateResponse
 ```
 
 Validate Customer
@@ -664,10 +664,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\CustomerApi(
     $config
 );
 $code = CUS_c6wqvwmvwopw4ms; // string | The code for the customer gotten from the response of the customer creation
-$body = new \Alexasomba\\Paystack\Model\CustomerCodeIdentification(); // \Alexasomba\\Paystack\Model\CustomerCodeIdentification
+$customer_validate = new \Alexasomba\\Paystack\Model\CustomerValidate(); // \Alexasomba\\Paystack\Model\CustomerValidate
 
 try {
-    $result = $apiInstance->customerValidate($code, $body);
+    $result = $apiInstance->customerValidate($code, $customer_validate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerValidate: ', $e->getMessage(), PHP_EOL;
@@ -679,11 +679,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| The code for the customer gotten from the response of the customer creation | |
-| **body** | **\Alexasomba\\Paystack\Model\CustomerCodeIdentification**|  | [optional] |
+| **customer_validate** | [**\Alexasomba\\Paystack\Model\CustomerValidate**](../Model/CustomerValidate.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\CustomerCodeIdentification**](../Model/CustomerCodeIdentification.md)
+[**\Alexasomba\\Paystack\Model\CustomerValidateResponse**](../Model/CustomerValidateResponse.md)
 
 ### Authorization
 

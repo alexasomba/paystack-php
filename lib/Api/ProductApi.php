@@ -1393,8 +1393,8 @@ class ProductApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1402,8 +1402,8 @@ class ProductApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1411,8 +1411,8 @@ class ProductApi
             $active,
             'active', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1420,8 +1420,8 @@ class ProductApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1429,8 +1429,8 @@ class ProductApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1500,16 +1500,16 @@ class ProductApi
      * Update product
      *
      * @param  int $id The unique identifier of the product (required)
-     * @param  \Alexasomba\\Paystack\Model\ProductId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\ProductUpdate $product_update product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\ProductUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function productUpdate($id, $body = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdate($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        list($response) = $this->productUpdateWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->productUpdateWithHttpInfo($id, $product_update, $contentType);
         return $response;
     }
 
@@ -1519,16 +1519,16 @@ class ProductApi
      * Update product
      *
      * @param  int $id The unique identifier of the product (required)
-     * @param  \Alexasomba\\Paystack\Model\ProductId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\ProductUpdate $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\ProductUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productUpdateWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateWithHttpInfo($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        $request = $this->productUpdateRequest($id, $body, $contentType);
+        $request = $this->productUpdateRequest($id, $product_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1666,15 +1666,15 @@ class ProductApi
      * Update product
      *
      * @param  int $id The unique identifier of the product (required)
-     * @param  \Alexasomba\\Paystack\Model\ProductId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\ProductUpdate $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productUpdateAsync($id, $body = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateAsync($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        return $this->productUpdateAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->productUpdateAsyncWithHttpInfo($id, $product_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1688,16 +1688,16 @@ class ProductApi
      * Update product
      *
      * @param  int $id The unique identifier of the product (required)
-     * @param  \Alexasomba\\Paystack\Model\ProductId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\ProductUpdate $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productUpdateAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateAsyncWithHttpInfo($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\ProductUpdateResponse';
-        $request = $this->productUpdateRequest($id, $body, $contentType);
+        $request = $this->productUpdateRequest($id, $product_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1739,13 +1739,13 @@ class ProductApi
      * Create request for operation 'productUpdate'
      *
      * @param  int $id The unique identifier of the product (required)
-     * @param  \Alexasomba\\Paystack\Model\ProductId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\ProductUpdate $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productUpdateRequest($id, $body = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateRequest($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1783,12 +1783,12 @@ class ProductApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($product_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($product_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $product_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

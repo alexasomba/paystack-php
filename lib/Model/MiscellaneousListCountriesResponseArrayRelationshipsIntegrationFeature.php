@@ -59,7 +59,7 @@ class MiscellaneousListCountriesResponseArrayRelationshipsIntegrationFeature imp
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'data' => 'object[]'
+        'data' => 'mixed[]'
     ];
 
     /**
@@ -333,7 +333,7 @@ class MiscellaneousListCountriesResponseArrayRelationshipsIntegrationFeature imp
     /**
      * Gets data
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getData()
     {
@@ -343,7 +343,7 @@ class MiscellaneousListCountriesResponseArrayRelationshipsIntegrationFeature imp
     /**
      * Sets data
      *
-     * @param object[] $data data
+     * @param mixed[] $data data
      *
      * @return self
      */

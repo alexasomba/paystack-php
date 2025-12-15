@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **name** | **string** |  |
 **product_level_type** | **string** |  |
 **product_id** | **int** |  |
-**product_success_message** | **object** |  |
-**product_redirect_url** | **object** |  |
-**ifnull_p1_expires_in_p2_expires_in** | **object** |  |
+**product_success_message** | **mixed** |  |
+**product_redirect_url** | **mixed** |  |
+**ifnull_p1_expires_in_p2_expires_in** | **mixed** |  |
 **product_quantity_sold** | **int** |  |
-**product_notification_emails** | **object** |  |
+**product_notification_emails** | **mixed** |  |
 **ifnull_p1_metadata_p2_metadata** | **string** |  |
-**storefront_redirect_url** | **object** |  |
-**storefront_success_message** | **object** |  |
+**storefront_redirect_url** | **mixed** |  |
+**storefront_success_message** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

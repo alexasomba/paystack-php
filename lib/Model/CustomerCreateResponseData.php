@@ -58,23 +58,23 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transactions' => 'object[]',
-        'subscriptions' => 'object[]',
-        'authorizations' => 'object[]',
+        'transactions' => 'mixed[]',
+        'subscriptions' => 'mixed[]',
+        'authorizations' => 'mixed[]',
         'email' => 'string',
         'first_name' => 'string',
         'last_name' => 'string',
         'phone' => 'string',
         'integration' => 'int',
         'domain' => 'string',
-        'metadata' => '\Alexasomba\\Paystack\Model\CustomerCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomerMetadata',
         'customer_code' => 'string',
         'risk_action' => 'string',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string',
         'identified' => 'bool',
-        'identifications' => 'object'
+        'identifications' => 'mixed'
     ];
 
     /**
@@ -456,7 +456,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets transactions
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getTransactions()
     {
@@ -466,7 +466,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets transactions
      *
-     * @param object[] $transactions transactions
+     * @param mixed[] $transactions transactions
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets subscriptions
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getSubscriptions()
     {
@@ -493,7 +493,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets subscriptions
      *
-     * @param object[] $subscriptions subscriptions
+     * @param mixed[] $subscriptions subscriptions
      *
      * @return self
      */
@@ -510,7 +510,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets authorizations
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getAuthorizations()
     {
@@ -520,7 +520,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets authorizations
      *
-     * @param object[] $authorizations authorizations
+     * @param mixed[] $authorizations authorizations
      *
      * @return self
      */
@@ -699,7 +699,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\CustomerCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomerMetadata
      */
     public function getMetadata()
     {
@@ -709,7 +709,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\CustomerCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomerMetadata $metadata metadata
      *
      * @return self
      */
@@ -888,7 +888,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets identifications
      *
-     * @return object
+     * @return mixed
      */
     public function getIdentifications()
     {
@@ -898,7 +898,7 @@ class CustomerCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets identifications
      *
-     * @param object $identifications identifications
+     * @param mixed $identifications identifications
      *
      * @return self
      */

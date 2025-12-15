@@ -15,7 +15,7 @@ All URIs are relative to https://api.paystack.co, except if the operation define
 ## `splitAddSubaccount()`
 
 ```php
-splitAddSubaccount($id, $body): \Alexasomba\\Paystack\Model\SplitIdSubaccountAdd
+splitAddSubaccount($id, $split_subaccounts): \Alexasomba\\Paystack\Model\SplitAddUpdateSubaccountResponse
 ```
 
 Add Subaccount to Split
@@ -40,10 +40,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\SplitApi(
     $config
 );
 $id = 4896895; // int | The ID of the split configuration to fetch
-$body = new \Alexasomba\\Paystack\Model\SplitIdSubaccountAdd(); // \Alexasomba\\Paystack\Model\SplitIdSubaccountAdd
+$split_subaccounts = new \Alexasomba\\Paystack\Model\SplitSubaccounts(); // \Alexasomba\\Paystack\Model\SplitSubaccounts
 
 try {
-    $result = $apiInstance->splitAddSubaccount($id, $body);
+    $result = $apiInstance->splitAddSubaccount($id, $split_subaccounts);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SplitApi->splitAddSubaccount: ', $e->getMessage(), PHP_EOL;
@@ -55,11 +55,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The ID of the split configuration to fetch | |
-| **body** | **\Alexasomba\\Paystack\Model\SplitIdSubaccountAdd**|  | [optional] |
+| **split_subaccounts** | [**\Alexasomba\\Paystack\Model\SplitSubaccounts**](../Model/SplitSubaccounts.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\SplitIdSubaccountAdd**](../Model/SplitIdSubaccountAdd.md)
+[**\Alexasomba\\Paystack\Model\SplitAddUpdateSubaccountResponse**](../Model/SplitAddUpdateSubaccountResponse.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ try {
 ## `splitFetch()`
 
 ```php
-splitFetch($id): \Alexasomba\\Paystack\Model\SplitId
+splitFetch($id): \Alexasomba\\Paystack\Model\SplitFetchResponse
 ```
 
 Fetch Split
@@ -179,7 +179,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\SplitId**](../Model/SplitId.md)
+[**\Alexasomba\\Paystack\Model\SplitFetchResponse**](../Model/SplitFetchResponse.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ try {
 ## `splitRemoveSubaccount()`
 
 ```php
-splitRemoveSubaccount($id, $body): \Alexasomba\\Paystack\Model\SplitIdSubaccountRemove
+splitRemoveSubaccount($id, $split_subaccounts): \Alexasomba\\Paystack\Model\SplitRemoveSubaccountResponse
 ```
 
 Remove Subaccount from split
@@ -294,10 +294,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\SplitApi(
     $config
 );
 $id = 4896895; // int | The ID of the split configuration to fetch
-$body = new \Alexasomba\\Paystack\Model\SplitIdSubaccountRemove(); // \Alexasomba\\Paystack\Model\SplitIdSubaccountRemove
+$split_subaccounts = new \Alexasomba\\Paystack\Model\SplitSubaccounts(); // \Alexasomba\\Paystack\Model\SplitSubaccounts
 
 try {
-    $result = $apiInstance->splitRemoveSubaccount($id, $body);
+    $result = $apiInstance->splitRemoveSubaccount($id, $split_subaccounts);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SplitApi->splitRemoveSubaccount: ', $e->getMessage(), PHP_EOL;
@@ -309,11 +309,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The ID of the split configuration to fetch | |
-| **body** | **\Alexasomba\\Paystack\Model\SplitIdSubaccountRemove**|  | [optional] |
+| **split_subaccounts** | [**\Alexasomba\\Paystack\Model\SplitSubaccounts**](../Model/SplitSubaccounts.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\SplitIdSubaccountRemove**](../Model/SplitIdSubaccountRemove.md)
+[**\Alexasomba\\Paystack\Model\SplitRemoveSubaccountResponse**](../Model/SplitRemoveSubaccountResponse.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ try {
 ## `splitUpdate()`
 
 ```php
-splitUpdate($id, $body): \Alexasomba\\Paystack\Model\SplitId
+splitUpdate($id, $split_update): \Alexasomba\\Paystack\Model\SplitUpdateResponse
 ```
 
 Update Split
@@ -356,10 +356,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\SplitApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \Alexasomba\\Paystack\Model\SplitId(); // \Alexasomba\\Paystack\Model\SplitId
+$split_update = new \Alexasomba\\Paystack\Model\SplitUpdate(); // \Alexasomba\\Paystack\Model\SplitUpdate
 
 try {
-    $result = $apiInstance->splitUpdate($id, $body);
+    $result = $apiInstance->splitUpdate($id, $split_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SplitApi->splitUpdate: ', $e->getMessage(), PHP_EOL;
@@ -371,11 +371,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\Alexasomba\\Paystack\Model\SplitId**|  | [optional] |
+| **split_update** | [**\Alexasomba\\Paystack\Model\SplitUpdate**](../Model/SplitUpdate.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\SplitId**](../Model/SplitId.md)
+[**\Alexasomba\\Paystack\Model\SplitUpdateResponse**](../Model/SplitUpdateResponse.md)
 
 ### Authorization
 

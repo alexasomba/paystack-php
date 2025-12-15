@@ -68,16 +68,16 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
         'amount' => 'int',
         'cron_expression' => 'string',
         'next_payment_date' => 'string',
-        'open_invoice' => 'object',
+        'open_invoice' => 'mixed',
         'created_at' => 'string',
         'integration' => 'int',
         'plan' => '\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayPlan',
         'authorization' => '\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayAuthorization',
         'customer' => '\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayCustomer',
         'invoice_limit' => 'int',
-        'split_code' => 'object',
+        'split_code' => 'mixed',
         'payments_count' => 'int',
-        'most_recent_invoice' => 'object',
+        'most_recent_invoice' => 'mixed',
         'metadata' => 'object'
     ];
 
@@ -780,7 +780,7 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets open_invoice
      *
-     * @return object
+     * @return mixed
      */
     public function getOpenInvoice()
     {
@@ -790,7 +790,7 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets open_invoice
      *
-     * @param object $open_invoice open_invoice
+     * @param mixed $open_invoice open_invoice
      *
      * @return self
      */
@@ -976,7 +976,7 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -986,7 +986,7 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */
@@ -1037,7 +1037,7 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets most_recent_invoice
      *
-     * @return object
+     * @return mixed
      */
     public function getMostRecentInvoice()
     {
@@ -1047,7 +1047,7 @@ class SubscriptionListResponseArray implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets most_recent_invoice
      *
-     * @param object $most_recent_invoice most_recent_invoice
+     * @param mixed $most_recent_invoice most_recent_invoice
      *
      * @return self
      */

@@ -58,20 +58,20 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transfersessionid' => 'object[]',
-        'transfertrials' => 'object[]',
+        'transfersessionid' => 'mixed[]',
+        'transfertrials' => 'mixed[]',
         'domain' => 'string',
         'amount' => 'int',
         'currency' => 'string',
         'reference' => 'string',
         'source' => 'string',
-        'source_details' => 'object',
+        'source_details' => 'mixed',
         'reason' => 'string',
         'status' => 'string',
-        'failures' => 'object',
+        'failures' => 'mixed',
         'transfer_code' => 'string',
-        'titan_code' => 'object',
-        'transferred_at' => 'object',
+        'titan_code' => 'mixed',
+        'transferred_at' => 'mixed',
         'id' => 'int',
         'integration' => 'int',
         'request' => 'int',
@@ -486,7 +486,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets transfersessionid
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getTransfersessionid()
     {
@@ -496,7 +496,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets transfersessionid
      *
-     * @param object[] $transfersessionid transfersessionid
+     * @param mixed[] $transfersessionid transfersessionid
      *
      * @return self
      */
@@ -513,7 +513,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets transfertrials
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getTransfertrials()
     {
@@ -523,7 +523,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets transfertrials
      *
-     * @param object[] $transfertrials transfertrials
+     * @param mixed[] $transfertrials transfertrials
      *
      * @return self
      */
@@ -675,7 +675,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets source_details
      *
-     * @return object
+     * @return mixed
      */
     public function getSourceDetails()
     {
@@ -685,7 +685,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets source_details
      *
-     * @param object $source_details source_details
+     * @param mixed $source_details source_details
      *
      * @return self
      */
@@ -763,7 +763,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets failures
      *
-     * @return object
+     * @return mixed
      */
     public function getFailures()
     {
@@ -773,7 +773,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets failures
      *
-     * @param object $failures failures
+     * @param mixed $failures failures
      *
      * @return self
      */
@@ -824,7 +824,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets titan_code
      *
-     * @return object
+     * @return mixed
      */
     public function getTitanCode()
     {
@@ -834,7 +834,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets titan_code
      *
-     * @param object $titan_code titan_code
+     * @param mixed $titan_code titan_code
      *
      * @return self
      */
@@ -858,7 +858,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets transferred_at
      *
-     * @return object
+     * @return mixed
      */
     public function getTransferredAt()
     {
@@ -868,7 +868,7 @@ class TransferCreateResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets transferred_at
      *
-     * @param object $transferred_at transferred_at
+     * @param mixed $transferred_at transferred_at
      *
      * @return self
      */

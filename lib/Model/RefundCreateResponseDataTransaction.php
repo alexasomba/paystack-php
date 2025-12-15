@@ -70,10 +70,10 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
         'plan' => 'object',
         'subaccount' => '\Alexasomba\\Paystack\Model\RefundCreateResponseDataTransactionSubaccount',
         'split' => 'object',
-        'order_id' => 'object',
-        'pos_transaction_data' => 'object',
-        'source' => 'object',
-        'fees_breakdown' => 'object'
+        'order_id' => 'mixed',
+        'pos_transaction_data' => 'mixed',
+        'source' => 'mixed',
+        'fees_breakdown' => 'mixed'
     ];
 
     /**
@@ -770,7 +770,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets order_id
      *
-     * @return object
+     * @return mixed
      */
     public function getOrderId()
     {
@@ -780,7 +780,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets order_id
      *
-     * @param object $order_id order_id
+     * @param mixed $order_id order_id
      *
      * @return self
      */
@@ -804,7 +804,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets pos_transaction_data
      *
-     * @return object
+     * @return mixed
      */
     public function getPosTransactionData()
     {
@@ -814,7 +814,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets pos_transaction_data
      *
-     * @param object $pos_transaction_data pos_transaction_data
+     * @param mixed $pos_transaction_data pos_transaction_data
      *
      * @return self
      */
@@ -838,7 +838,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return object
+     * @return mixed
      */
     public function getSource()
     {
@@ -848,7 +848,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param object $source source
+     * @param mixed $source source
      *
      * @return self
      */
@@ -872,7 +872,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets fees_breakdown
      *
-     * @return object
+     * @return mixed
      */
     public function getFeesBreakdown()
     {
@@ -882,7 +882,7 @@ class RefundCreateResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets fees_breakdown
      *
-     * @param object $fees_breakdown fees_breakdown
+     * @param mixed $fees_breakdown fees_breakdown
      *
      * @return self
      */

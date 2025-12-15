@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **domain** | **string** |  |
 **metadata** | **string** |  |
 **gateway_response** | **string** |  |
-**message** | **object** |  |
+**message** | **mixed** |  |
 **channel** | **string** |  |
-**ip_address** | **object** |  |
+**ip_address** | **mixed** |  |
 **log** | [**\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog**](ChargeAuthorizationResponseDataLog.md) |  |
 **fees** | **int** |  |
 **authorization** | [**\Alexasomba\\Paystack\Model\TransactionPartialDebitResponseDataAuthorization**](TransactionPartialDebitResponseDataAuthorization.md) |  |

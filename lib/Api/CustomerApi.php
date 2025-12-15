@@ -776,16 +776,16 @@ class CustomerApi
      * Direct Debit Activation Charge
      *
      * @param  int $id The customer ID attached to the authorization (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest $customer_direct_debit_activation_charge_request customer_direct_debit_activation_charge_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDirectDebitActivationCharge'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function customerDirectDebitActivationCharge($id, $body = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
+    public function customerDirectDebitActivationCharge($id, $customer_direct_debit_activation_charge_request = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
     {
-        list($response) = $this->customerDirectDebitActivationChargeWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->customerDirectDebitActivationChargeWithHttpInfo($id, $customer_direct_debit_activation_charge_request, $contentType);
         return $response;
     }
 
@@ -795,16 +795,16 @@ class CustomerApi
      * Direct Debit Activation Charge
      *
      * @param  int $id The customer ID attached to the authorization (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest $customer_direct_debit_activation_charge_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDirectDebitActivationCharge'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerDirectDebitActivationChargeWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
+    public function customerDirectDebitActivationChargeWithHttpInfo($id, $customer_direct_debit_activation_charge_request = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
     {
-        $request = $this->customerDirectDebitActivationChargeRequest($id, $body, $contentType);
+        $request = $this->customerDirectDebitActivationChargeRequest($id, $customer_direct_debit_activation_charge_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -919,15 +919,15 @@ class CustomerApi
      * Direct Debit Activation Charge
      *
      * @param  int $id The customer ID attached to the authorization (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest $customer_direct_debit_activation_charge_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDirectDebitActivationCharge'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerDirectDebitActivationChargeAsync($id, $body = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
+    public function customerDirectDebitActivationChargeAsync($id, $customer_direct_debit_activation_charge_request = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
     {
-        return $this->customerDirectDebitActivationChargeAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->customerDirectDebitActivationChargeAsyncWithHttpInfo($id, $customer_direct_debit_activation_charge_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -941,16 +941,16 @@ class CustomerApi
      * Direct Debit Activation Charge
      *
      * @param  int $id The customer ID attached to the authorization (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest $customer_direct_debit_activation_charge_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDirectDebitActivationCharge'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerDirectDebitActivationChargeAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
+    public function customerDirectDebitActivationChargeAsyncWithHttpInfo($id, $customer_direct_debit_activation_charge_request = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeResponse';
-        $request = $this->customerDirectDebitActivationChargeRequest($id, $body, $contentType);
+        $request = $this->customerDirectDebitActivationChargeRequest($id, $customer_direct_debit_activation_charge_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -992,13 +992,13 @@ class CustomerApi
      * Create request for operation 'customerDirectDebitActivationCharge'
      *
      * @param  int $id The customer ID attached to the authorization (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdDirectdebitActivationCharge $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest $customer_direct_debit_activation_charge_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDirectDebitActivationCharge'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerDirectDebitActivationChargeRequest($id, $body = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
+    public function customerDirectDebitActivationChargeRequest($id, $customer_direct_debit_activation_charge_request = null, string $contentType = self::contentTypes['customerDirectDebitActivationCharge'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1036,12 +1036,12 @@ class CustomerApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($customer_direct_debit_activation_charge_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customer_direct_debit_activation_charge_request));
             } else {
-                $httpBody = $body;
+                $httpBody = $customer_direct_debit_activation_charge_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1103,7 +1103,7 @@ class CustomerApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\CustomerCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\CustomerFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function customerFetch($code, string $contentType = self::contentTypes['customerFetch'][0])
     {
@@ -1121,7 +1121,7 @@ class CustomerApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\CustomerCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\CustomerFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerFetchWithHttpInfo($code, string $contentType = self::contentTypes['customerFetch'][0])
     {
@@ -1164,17 +1164,17 @@ class CustomerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\CustomerCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\CustomerFetchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\CustomerCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\CustomerFetchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\CustomerCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\CustomerFetchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1210,7 +1210,7 @@ class CustomerApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\CustomerCode';
+            $returnType = '\Alexasomba\\Paystack\Model\CustomerFetchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1231,7 +1231,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\CustomerCode',
+                        '\Alexasomba\\Paystack\Model\CustomerFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1291,7 +1291,7 @@ class CustomerApi
      */
     public function customerFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['customerFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\CustomerCode';
+        $returnType = '\Alexasomba\\Paystack\Model\CustomerFetchResponse';
         $request = $this->customerFetchRequest($code, $contentType);
 
         return $this->client
@@ -2051,16 +2051,16 @@ class CustomerApi
      * Initialize Direct Debit
      *
      * @param  int $id The ID of the customer to initialize the direct debit for (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest $customer_initialize_direct_debit_request customer_initialize_direct_debit_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInitializeDirectDebit'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function customerInitializeDirectDebit($id, $body = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
+    public function customerInitializeDirectDebit($id, $customer_initialize_direct_debit_request = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
     {
-        list($response) = $this->customerInitializeDirectDebitWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->customerInitializeDirectDebitWithHttpInfo($id, $customer_initialize_direct_debit_request, $contentType);
         return $response;
     }
 
@@ -2070,16 +2070,16 @@ class CustomerApi
      * Initialize Direct Debit
      *
      * @param  int $id The ID of the customer to initialize the direct debit for (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest $customer_initialize_direct_debit_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInitializeDirectDebit'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerInitializeDirectDebitWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
+    public function customerInitializeDirectDebitWithHttpInfo($id, $customer_initialize_direct_debit_request = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
     {
-        $request = $this->customerInitializeDirectDebitRequest($id, $body, $contentType);
+        $request = $this->customerInitializeDirectDebitRequest($id, $customer_initialize_direct_debit_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2194,15 +2194,15 @@ class CustomerApi
      * Initialize Direct Debit
      *
      * @param  int $id The ID of the customer to initialize the direct debit for (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest $customer_initialize_direct_debit_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInitializeDirectDebit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerInitializeDirectDebitAsync($id, $body = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
+    public function customerInitializeDirectDebitAsync($id, $customer_initialize_direct_debit_request = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
     {
-        return $this->customerInitializeDirectDebitAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->customerInitializeDirectDebitAsyncWithHttpInfo($id, $customer_initialize_direct_debit_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2216,16 +2216,16 @@ class CustomerApi
      * Initialize Direct Debit
      *
      * @param  int $id The ID of the customer to initialize the direct debit for (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest $customer_initialize_direct_debit_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInitializeDirectDebit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerInitializeDirectDebitAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
+    public function customerInitializeDirectDebitAsyncWithHttpInfo($id, $customer_initialize_direct_debit_request = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitResponse';
-        $request = $this->customerInitializeDirectDebitRequest($id, $body, $contentType);
+        $request = $this->customerInitializeDirectDebitRequest($id, $customer_initialize_direct_debit_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2267,13 +2267,13 @@ class CustomerApi
      * Create request for operation 'customerInitializeDirectDebit'
      *
      * @param  int $id The ID of the customer to initialize the direct debit for (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerIdInitializeDirectDebit $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest $customer_initialize_direct_debit_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInitializeDirectDebit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerInitializeDirectDebitRequest($id, $body = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
+    public function customerInitializeDirectDebitRequest($id, $customer_initialize_direct_debit_request = null, string $contentType = self::contentTypes['customerInitializeDirectDebit'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2311,12 +2311,12 @@ class CustomerApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($customer_initialize_direct_debit_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customer_initialize_direct_debit_request));
             } else {
-                $httpBody = $body;
+                $httpBody = $customer_initialize_direct_debit_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2667,8 +2667,8 @@ class CustomerApi
             $use_cursor,
             'use_cursor', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2676,8 +2676,8 @@ class CustomerApi
             $next,
             'next', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2685,8 +2685,8 @@ class CustomerApi
             $previous,
             'previous', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2694,8 +2694,8 @@ class CustomerApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2703,8 +2703,8 @@ class CustomerApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2712,8 +2712,8 @@ class CustomerApi
             $per_page,
             'perPage', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2721,8 +2721,8 @@ class CustomerApi
             $page,
             'page', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -3095,16 +3095,16 @@ class CustomerApi
      * Update Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerUpdate $customer_update customer_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\CustomerCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\CustomerUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function customerUpdate($code, $body = null, string $contentType = self::contentTypes['customerUpdate'][0])
+    public function customerUpdate($code, $customer_update = null, string $contentType = self::contentTypes['customerUpdate'][0])
     {
-        list($response) = $this->customerUpdateWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->customerUpdateWithHttpInfo($code, $customer_update, $contentType);
         return $response;
     }
 
@@ -3114,16 +3114,16 @@ class CustomerApi
      * Update Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerUpdate $customer_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\CustomerCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\CustomerUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerUpdateWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['customerUpdate'][0])
+    public function customerUpdateWithHttpInfo($code, $customer_update = null, string $contentType = self::contentTypes['customerUpdate'][0])
     {
-        $request = $this->customerUpdateRequest($code, $body, $contentType);
+        $request = $this->customerUpdateRequest($code, $customer_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3162,17 +3162,17 @@ class CustomerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\CustomerCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\CustomerUpdateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\CustomerCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\CustomerUpdateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\CustomerCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\CustomerUpdateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3208,7 +3208,7 @@ class CustomerApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\CustomerCode';
+            $returnType = '\Alexasomba\\Paystack\Model\CustomerUpdateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3229,7 +3229,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\CustomerCode',
+                        '\Alexasomba\\Paystack\Model\CustomerUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3261,15 +3261,15 @@ class CustomerApi
      * Update Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerUpdate $customer_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerUpdateAsync($code, $body = null, string $contentType = self::contentTypes['customerUpdate'][0])
+    public function customerUpdateAsync($code, $customer_update = null, string $contentType = self::contentTypes['customerUpdate'][0])
     {
-        return $this->customerUpdateAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->customerUpdateAsyncWithHttpInfo($code, $customer_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3283,16 +3283,16 @@ class CustomerApi
      * Update Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerUpdate $customer_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerUpdateAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['customerUpdate'][0])
+    public function customerUpdateAsyncWithHttpInfo($code, $customer_update = null, string $contentType = self::contentTypes['customerUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\CustomerCode';
-        $request = $this->customerUpdateRequest($code, $body, $contentType);
+        $returnType = '\Alexasomba\\Paystack\Model\CustomerUpdateResponse';
+        $request = $this->customerUpdateRequest($code, $customer_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3334,13 +3334,13 @@ class CustomerApi
      * Create request for operation 'customerUpdate'
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerUpdate $customer_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerUpdateRequest($code, $body = null, string $contentType = self::contentTypes['customerUpdate'][0])
+    public function customerUpdateRequest($code, $customer_update = null, string $contentType = self::contentTypes['customerUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -3378,12 +3378,12 @@ class CustomerApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($customer_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customer_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $customer_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3441,16 +3441,16 @@ class CustomerApi
      * Validate Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCodeIdentification $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerValidate $customer_validate customer_validate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerValidate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\CustomerCodeIdentification|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\CustomerValidateResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function customerValidate($code, $body = null, string $contentType = self::contentTypes['customerValidate'][0])
+    public function customerValidate($code, $customer_validate = null, string $contentType = self::contentTypes['customerValidate'][0])
     {
-        list($response) = $this->customerValidateWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->customerValidateWithHttpInfo($code, $customer_validate, $contentType);
         return $response;
     }
 
@@ -3460,16 +3460,16 @@ class CustomerApi
      * Validate Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCodeIdentification $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerValidate $customer_validate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerValidate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\CustomerCodeIdentification|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\CustomerValidateResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerValidateWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['customerValidate'][0])
+    public function customerValidateWithHttpInfo($code, $customer_validate = null, string $contentType = self::contentTypes['customerValidate'][0])
     {
-        $request = $this->customerValidateRequest($code, $body, $contentType);
+        $request = $this->customerValidateRequest($code, $customer_validate, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3508,17 +3508,17 @@ class CustomerApi
 
             switch($statusCode) {
                 case 202:
-                    if ('\Alexasomba\\Paystack\Model\CustomerCodeIdentification' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\CustomerValidateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\CustomerCodeIdentification' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\CustomerValidateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\CustomerCodeIdentification', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\CustomerValidateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3539,7 +3539,7 @@ class CustomerApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\CustomerCodeIdentification';
+            $returnType = '\Alexasomba\\Paystack\Model\CustomerValidateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3560,7 +3560,7 @@ class CustomerApi
                 case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\CustomerCodeIdentification',
+                        '\Alexasomba\\Paystack\Model\CustomerValidateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3584,15 +3584,15 @@ class CustomerApi
      * Validate Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCodeIdentification $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerValidate $customer_validate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerValidate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerValidateAsync($code, $body = null, string $contentType = self::contentTypes['customerValidate'][0])
+    public function customerValidateAsync($code, $customer_validate = null, string $contentType = self::contentTypes['customerValidate'][0])
     {
-        return $this->customerValidateAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->customerValidateAsyncWithHttpInfo($code, $customer_validate, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3606,16 +3606,16 @@ class CustomerApi
      * Validate Customer
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCodeIdentification $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerValidate $customer_validate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerValidate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerValidateAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['customerValidate'][0])
+    public function customerValidateAsyncWithHttpInfo($code, $customer_validate = null, string $contentType = self::contentTypes['customerValidate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\CustomerCodeIdentification';
-        $request = $this->customerValidateRequest($code, $body, $contentType);
+        $returnType = '\Alexasomba\\Paystack\Model\CustomerValidateResponse';
+        $request = $this->customerValidateRequest($code, $customer_validate, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3657,13 +3657,13 @@ class CustomerApi
      * Create request for operation 'customerValidate'
      *
      * @param  string $code The code for the customer gotten from the response of the customer creation (required)
-     * @param  \Alexasomba\\Paystack\Model\CustomerCodeIdentification $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\CustomerValidate $customer_validate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerValidate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerValidateRequest($code, $body = null, string $contentType = self::contentTypes['customerValidate'][0])
+    public function customerValidateRequest($code, $customer_validate = null, string $contentType = self::contentTypes['customerValidate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -3701,12 +3701,12 @@ class CustomerApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($customer_validate)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($customer_validate));
             } else {
-                $httpBody = $body;
+                $httpBody = $customer_validate;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

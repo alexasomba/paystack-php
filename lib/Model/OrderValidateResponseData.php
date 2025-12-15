@@ -65,23 +65,23 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
         'email' => 'string',
         'status' => 'string',
         'refunded' => 'bool',
-        'paid_at' => 'object',
-        'shipping_address' => 'object',
-        'metadata' => 'object',
+        'paid_at' => 'mixed',
+        'shipping_address' => 'mixed',
+        'metadata' => 'mixed',
         'shipping_fees' => 'int',
-        'shipping_method' => 'object',
+        'shipping_method' => 'mixed',
         'is_viewed' => 'bool',
         'expiration_date' => 'string',
         'pay_for_me' => 'bool',
         'id' => 'int',
         'integration' => '\Alexasomba\\Paystack\Model\OrderValidateResponseDataIntegration',
-        'transaction' => 'object',
-        'page' => 'object',
-        'customer' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer',
-        'shipping' => 'object',
+        'transaction' => 'mixed',
+        'page' => 'mixed',
+        'customer' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer',
+        'shipping' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'payer' => 'object'
+        'payer' => 'mixed'
     ];
 
     /**
@@ -715,7 +715,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets paid_at
      *
-     * @return object
+     * @return mixed
      */
     public function getPaidAt()
     {
@@ -725,7 +725,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets paid_at
      *
-     * @param object $paid_at paid_at
+     * @param mixed $paid_at paid_at
      *
      * @return self
      */
@@ -749,7 +749,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets shipping_address
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingAddress()
     {
@@ -759,7 +759,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shipping_address
      *
-     * @param object $shipping_address shipping_address
+     * @param mixed $shipping_address shipping_address
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -793,7 +793,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -844,7 +844,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets shipping_method
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingMethod()
     {
@@ -854,7 +854,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shipping_method
      *
-     * @param object $shipping_method shipping_method
+     * @param mixed $shipping_method shipping_method
      *
      * @return self
      */
@@ -1013,7 +1013,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets transaction
      *
-     * @return object
+     * @return mixed
      */
     public function getTransaction()
     {
@@ -1023,7 +1023,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets transaction
      *
-     * @param object $transaction transaction
+     * @param mixed $transaction transaction
      *
      * @return self
      */
@@ -1047,7 +1047,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets page
      *
-     * @return object
+     * @return mixed
      */
     public function getPage()
     {
@@ -1057,7 +1057,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets page
      *
-     * @param object $page page
+     * @param mixed $page page
      *
      * @return self
      */
@@ -1081,7 +1081,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer
      */
     public function getCustomer()
     {
@@ -1091,7 +1091,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer $customer customer
      *
      * @return self
      */
@@ -1108,7 +1108,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets shipping
      *
-     * @return object
+     * @return mixed
      */
     public function getShipping()
     {
@@ -1118,7 +1118,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shipping
      *
-     * @param object $shipping shipping
+     * @param mixed $shipping shipping
      *
      * @return self
      */
@@ -1196,7 +1196,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets payer
      *
-     * @return object
+     * @return mixed
      */
     public function getPayer()
     {
@@ -1206,7 +1206,7 @@ class OrderValidateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets payer
      *
-     * @param object $payer payer
+     * @param mixed $payer payer
      *
      * @return self
      */

@@ -62,7 +62,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
         'domain' => 'string',
         'status' => 'string',
         'reference' => 'string',
-        'receipt_number' => 'object',
+        'receipt_number' => 'mixed',
         'amount' => 'int',
         'message' => 'string',
         'gateway_response' => 'string',
@@ -71,20 +71,20 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
         'channel' => 'string',
         'currency' => 'string',
         'ip_address' => 'string',
-        'metadata' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata',
         'log' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog',
         'fees' => 'int',
         'fees_split' => 'int',
-        'authorization' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataAuthorization',
-        'customer' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer',
-        'plan' => 'object',
+        'authorization' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataAuthorization',
+        'customer' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer',
+        'plan' => 'mixed',
         'split' => 'object',
-        'order_id' => 'object',
+        'order_id' => 'mixed',
         'requested_amount' => 'int',
-        'pos_transaction_data' => 'object',
-        'source' => 'object',
-        'fees_breakdown' => 'object',
-        'connect' => 'object',
+        'pos_transaction_data' => 'mixed',
+        'source' => 'mixed',
+        'fees_breakdown' => 'mixed',
+        'connect' => 'mixed',
         'transaction_date' => 'string',
         'plan_object' => 'object',
         'subaccount' => 'object'
@@ -694,7 +694,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets receipt_number
      *
-     * @return object
+     * @return mixed
      */
     public function getReceiptNumber()
     {
@@ -704,7 +704,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets receipt_number
      *
-     * @param object $receipt_number receipt_number
+     * @param mixed $receipt_number receipt_number
      *
      * @return self
      */
@@ -951,7 +951,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata
      */
     public function getMetadata()
     {
@@ -961,7 +961,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata $metadata metadata
      *
      * @return self
      */
@@ -1073,7 +1073,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets authorization
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataAuthorization
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataAuthorization
      */
     public function getAuthorization()
     {
@@ -1083,7 +1083,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets authorization
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataAuthorization $authorization authorization
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataAuthorization $authorization authorization
      *
      * @return self
      */
@@ -1100,7 +1100,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer
      */
     public function getCustomer()
     {
@@ -1110,7 +1110,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer $customer customer
      *
      * @return self
      */
@@ -1127,7 +1127,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets plan
      *
-     * @return object
+     * @return mixed
      */
     public function getPlan()
     {
@@ -1137,7 +1137,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets plan
      *
-     * @param object $plan plan
+     * @param mixed $plan plan
      *
      * @return self
      */
@@ -1188,7 +1188,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets order_id
      *
-     * @return object
+     * @return mixed
      */
     public function getOrderId()
     {
@@ -1198,7 +1198,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets order_id
      *
-     * @param object $order_id order_id
+     * @param mixed $order_id order_id
      *
      * @return self
      */
@@ -1249,7 +1249,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets pos_transaction_data
      *
-     * @return object
+     * @return mixed
      */
     public function getPosTransactionData()
     {
@@ -1259,7 +1259,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets pos_transaction_data
      *
-     * @param object $pos_transaction_data pos_transaction_data
+     * @param mixed $pos_transaction_data pos_transaction_data
      *
      * @return self
      */
@@ -1283,7 +1283,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets source
      *
-     * @return object
+     * @return mixed
      */
     public function getSource()
     {
@@ -1293,7 +1293,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets source
      *
-     * @param object $source source
+     * @param mixed $source source
      *
      * @return self
      */
@@ -1317,7 +1317,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets fees_breakdown
      *
-     * @return object
+     * @return mixed
      */
     public function getFeesBreakdown()
     {
@@ -1327,7 +1327,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets fees_breakdown
      *
-     * @param object $fees_breakdown fees_breakdown
+     * @param mixed $fees_breakdown fees_breakdown
      *
      * @return self
      */
@@ -1351,7 +1351,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets connect
      *
-     * @return object
+     * @return mixed
      */
     public function getConnect()
     {
@@ -1361,7 +1361,7 @@ class ChargeCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets connect
      *
-     * @param object $connect connect
+     * @param mixed $connect connect
      *
      * @return self
      */

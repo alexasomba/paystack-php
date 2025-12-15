@@ -62,19 +62,19 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
         'refund_amount' => 'int',
         'currency' => 'string',
         'status' => 'string',
-        'resolution' => 'object',
+        'resolution' => 'mixed',
         'domain' => 'string',
         'transaction' => '\Alexasomba\\Paystack\Model\DisputeListResponseArrayTransaction',
-        'transaction_reference' => 'object',
+        'transaction_reference' => 'mixed',
         'category' => 'string',
         'customer' => '\Alexasomba\\Paystack\Model\SubscriptionListResponseArrayCustomer',
         'bin' => 'string',
         'last4' => 'string',
-        'due_at' => 'object',
-        'resolved_at' => 'object',
-        'evidence' => 'object',
-        'attachments' => 'object',
-        'note' => 'object',
+        'due_at' => 'mixed',
+        'resolved_at' => 'mixed',
+        'evidence' => 'mixed',
+        'attachments' => 'mixed',
+        'note' => 'mixed',
         'history' => '\Alexasomba\\Paystack\Model\DisputeHistoryArray[]',
         'messages' => '\Alexasomba\\Paystack\Model\DisputeMessagesArray[]',
         'created_at' => 'string',
@@ -604,7 +604,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets resolution
      *
-     * @return object
+     * @return mixed
      */
     public function getResolution()
     {
@@ -614,7 +614,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets resolution
      *
-     * @param object $resolution resolution
+     * @param mixed $resolution resolution
      *
      * @return self
      */
@@ -692,7 +692,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets transaction_reference
      *
-     * @return object
+     * @return mixed
      */
     public function getTransactionReference()
     {
@@ -702,7 +702,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets transaction_reference
      *
-     * @param object $transaction_reference transaction_reference
+     * @param mixed $transaction_reference transaction_reference
      *
      * @return self
      */
@@ -834,7 +834,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets due_at
      *
-     * @return object
+     * @return mixed
      */
     public function getDueAt()
     {
@@ -844,7 +844,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets due_at
      *
-     * @param object $due_at due_at
+     * @param mixed $due_at due_at
      *
      * @return self
      */
@@ -868,7 +868,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets resolved_at
      *
-     * @return object
+     * @return mixed
      */
     public function getResolvedAt()
     {
@@ -878,7 +878,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets resolved_at
      *
-     * @param object $resolved_at resolved_at
+     * @param mixed $resolved_at resolved_at
      *
      * @return self
      */
@@ -902,7 +902,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets evidence
      *
-     * @return object
+     * @return mixed
      */
     public function getEvidence()
     {
@@ -912,7 +912,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets evidence
      *
-     * @param object $evidence evidence
+     * @param mixed $evidence evidence
      *
      * @return self
      */
@@ -936,7 +936,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets attachments
      *
-     * @return object
+     * @return mixed
      */
     public function getAttachments()
     {
@@ -946,7 +946,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets attachments
      *
-     * @param object $attachments attachments
+     * @param mixed $attachments attachments
      *
      * @return self
      */
@@ -970,7 +970,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets note
      *
-     * @return object
+     * @return mixed
      */
     public function getNote()
     {
@@ -980,7 +980,7 @@ class DisputeListResponseArray implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets note
      *
-     * @param object $note note
+     * @param mixed $note note
      *
      * @return self
      */

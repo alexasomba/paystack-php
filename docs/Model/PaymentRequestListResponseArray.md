@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **request_code** | **string** |  |
 **status** | **string** |  |
 **paid** | **bool** |  |
-**paid_at** | **object** |  |
-**metadata** | **object** |  |
-**notifications** | **object[]** |  |
+**paid_at** | **mixed** |  |
+**metadata** | **mixed** |  |
+**notifications** | **mixed[]** |  |
 **offline_reference** | **string** |  |
-**customer** | [**\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer**](ChargeCreateResponseDataCustomer.md) |  |
+**customer** | [**\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer**](TransactionFetchResponseDataCustomer.md) |  |
 **created_at** | **string** |  |
-**discount** | **object** |  |
+**discount** | **mixed** |  |
 **split_code** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

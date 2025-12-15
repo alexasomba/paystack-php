@@ -58,7 +58,7 @@ class TransferRecipientBulkCreateResponseData implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'success' => 'object[]',
+        'success' => 'mixed[]',
         'errors' => '\Alexasomba\\Paystack\Model\TransferRecipientErrorsArray[]'
     ];
 
@@ -306,7 +306,7 @@ class TransferRecipientBulkCreateResponseData implements ModelInterface, ArrayAc
     /**
      * Gets success
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getSuccess()
     {
@@ -316,7 +316,7 @@ class TransferRecipientBulkCreateResponseData implements ModelInterface, ArrayAc
     /**
      * Sets success
      *
-     * @param object[] $success success
+     * @param mixed[] $success success
      *
      * @return self
      */

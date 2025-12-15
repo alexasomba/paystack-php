@@ -63,24 +63,24 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
         'currency' => 'string',
         'last4' => 'string',
         'bin' => 'string',
-        'transaction_reference' => 'object',
+        'transaction_reference' => 'mixed',
         'merchant_transaction_reference' => 'string',
         'refund_amount' => 'int',
         'status' => 'string',
         'domain' => 'string',
-        'resolution' => 'object',
+        'resolution' => 'mixed',
         'category' => 'string',
-        'note' => 'object',
-        'attachments' => 'object',
+        'note' => 'mixed',
+        'attachments' => 'mixed',
         'id' => 'int',
         'integration' => 'int',
         'transaction' => '\Alexasomba\\Paystack\Model\DisputeListTransactionResponseDataTransaction',
         'created_by' => 'int',
-        'evidence' => 'object',
-        'resolved_at' => 'object',
+        'evidence' => 'mixed',
+        'resolved_at' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'due_at' => 'object'
+        'due_at' => 'mixed'
     ];
 
     /**
@@ -651,7 +651,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets transaction_reference
      *
-     * @return object
+     * @return mixed
      */
     public function getTransactionReference()
     {
@@ -661,7 +661,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets transaction_reference
      *
-     * @param object $transaction_reference transaction_reference
+     * @param mixed $transaction_reference transaction_reference
      *
      * @return self
      */
@@ -793,7 +793,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets resolution
      *
-     * @return object
+     * @return mixed
      */
     public function getResolution()
     {
@@ -803,7 +803,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets resolution
      *
-     * @param object $resolution resolution
+     * @param mixed $resolution resolution
      *
      * @return self
      */
@@ -854,7 +854,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets note
      *
-     * @return object
+     * @return mixed
      */
     public function getNote()
     {
@@ -864,7 +864,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets note
      *
-     * @param object $note note
+     * @param mixed $note note
      *
      * @return self
      */
@@ -888,7 +888,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets attachments
      *
-     * @return object
+     * @return mixed
      */
     public function getAttachments()
     {
@@ -898,7 +898,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets attachments
      *
-     * @param object $attachments attachments
+     * @param mixed $attachments attachments
      *
      * @return self
      */
@@ -1030,7 +1030,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets evidence
      *
-     * @return object
+     * @return mixed
      */
     public function getEvidence()
     {
@@ -1040,7 +1040,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets evidence
      *
-     * @param object $evidence evidence
+     * @param mixed $evidence evidence
      *
      * @return self
      */
@@ -1064,7 +1064,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets resolved_at
      *
-     * @return object
+     * @return mixed
      */
     public function getResolvedAt()
     {
@@ -1074,7 +1074,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets resolved_at
      *
-     * @param object $resolved_at resolved_at
+     * @param mixed $resolved_at resolved_at
      *
      * @return self
      */
@@ -1152,7 +1152,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets due_at
      *
-     * @return object
+     * @return mixed
      */
     public function getDueAt()
     {
@@ -1162,7 +1162,7 @@ class DisputeListTransactionResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets due_at
      *
-     * @param object $due_at due_at
+     * @param mixed $due_at due_at
      *
      * @return self
      */

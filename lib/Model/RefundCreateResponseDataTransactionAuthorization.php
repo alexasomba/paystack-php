@@ -58,9 +58,9 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'exp_month' => 'object',
-        'exp_year' => 'object',
-        'account_name' => 'object'
+        'exp_month' => 'mixed',
+        'exp_year' => 'mixed',
+        'account_name' => 'mixed'
     ];
 
     /**
@@ -316,7 +316,7 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Gets exp_month
      *
-     * @return object
+     * @return mixed
      */
     public function getExpMonth()
     {
@@ -326,7 +326,7 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Sets exp_month
      *
-     * @param object $exp_month exp_month
+     * @param mixed $exp_month exp_month
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Gets exp_year
      *
-     * @return object
+     * @return mixed
      */
     public function getExpYear()
     {
@@ -360,7 +360,7 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Sets exp_year
      *
-     * @param object $exp_year exp_year
+     * @param mixed $exp_year exp_year
      *
      * @return self
      */
@@ -384,7 +384,7 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Gets account_name
      *
-     * @return object
+     * @return mixed
      */
     public function getAccountName()
     {
@@ -394,7 +394,7 @@ class RefundCreateResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Sets account_name
      *
-     * @param object $account_name account_name
+     * @param mixed $account_name account_name
      *
      * @return self
      */

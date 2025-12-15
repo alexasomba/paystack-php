@@ -61,21 +61,21 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
         'integration' => 'int',
         'domain' => 'string',
         'name' => 'string',
-        'description' => 'object',
+        'description' => 'mixed',
         'amount' => 'int',
         'currency' => 'string',
         'slug' => 'string',
-        'custom_fields' => 'object',
+        'custom_fields' => 'mixed',
         'type' => 'string',
-        'redirect_url' => 'object',
-        'success_message' => 'object',
+        'redirect_url' => 'mixed',
+        'success_message' => 'mixed',
         'collect_phone' => 'bool',
         'active' => 'bool',
         'published' => 'bool',
         'migrate' => 'bool',
-        'notification_email' => 'object',
-        'metadata' => 'object',
-        'split_code' => 'object',
+        'notification_email' => 'mixed',
+        'metadata' => 'mixed',
+        'split_code' => 'mixed',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string'
@@ -577,7 +577,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -587,7 +587,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */
@@ -699,7 +699,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets custom_fields
      *
-     * @return object
+     * @return mixed
      */
     public function getCustomFields()
     {
@@ -709,7 +709,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets custom_fields
      *
-     * @param object $custom_fields custom_fields
+     * @param mixed $custom_fields custom_fields
      *
      * @return self
      */
@@ -760,7 +760,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getRedirectUrl()
     {
@@ -770,7 +770,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets redirect_url
      *
-     * @param object $redirect_url redirect_url
+     * @param mixed $redirect_url redirect_url
      *
      * @return self
      */
@@ -794,7 +794,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getSuccessMessage()
     {
@@ -804,7 +804,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets success_message
      *
-     * @param object $success_message success_message
+     * @param mixed $success_message success_message
      *
      * @return self
      */
@@ -936,7 +936,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets notification_email
      *
-     * @return object
+     * @return mixed
      */
     public function getNotificationEmail()
     {
@@ -946,7 +946,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets notification_email
      *
-     * @param object $notification_email notification_email
+     * @param mixed $notification_email notification_email
      *
      * @return self
      */
@@ -970,7 +970,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -980,7 +980,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -1004,7 +1004,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1014,7 +1014,7 @@ class PageFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */

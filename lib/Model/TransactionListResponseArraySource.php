@@ -60,7 +60,7 @@ class TransactionListResponseArraySource implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'source' => 'string',
         'type' => 'string',
-        'identifier' => 'object',
+        'identifier' => 'mixed',
         'entry_point' => 'string'
     ];
 
@@ -380,7 +380,7 @@ class TransactionListResponseArraySource implements ModelInterface, ArrayAccess,
     /**
      * Gets identifier
      *
-     * @return object
+     * @return mixed
      */
     public function getIdentifier()
     {
@@ -390,7 +390,7 @@ class TransactionListResponseArraySource implements ModelInterface, ArrayAccess,
     /**
      * Sets identifier
      *
-     * @param object $identifier identifier
+     * @param mixed $identifier identifier
      *
      * @return self
      */

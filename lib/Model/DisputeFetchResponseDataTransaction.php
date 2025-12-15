@@ -64,14 +64,14 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
         'reference' => 'string',
         'receipt_number' => 'int',
         'amount' => 'int',
-        'message' => 'object',
+        'message' => 'mixed',
         'gateway_response' => 'string',
         'paid_at' => 'string',
         'created_at' => 'string',
         'channel' => 'string',
         'currency' => 'string',
         'ip_address' => 'string',
-        'metadata' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata',
         'log' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog',
         'fees' => 'int',
         'fees_split' => 'int',
@@ -80,12 +80,12 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
         'plan' => 'object',
         'subaccount' => 'object',
         'split' => 'object',
-        'order_id' => 'object',
+        'order_id' => 'mixed',
         'requested_amount' => 'int',
-        'pos_transaction_data' => 'object',
-        'source' => 'object',
-        'fees_breakdown' => 'object',
-        'connect' => 'object'
+        'pos_transaction_data' => 'mixed',
+        'source' => 'mixed',
+        'fees_breakdown' => 'mixed',
+        'connect' => 'mixed'
     ];
 
     /**
@@ -732,7 +732,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets message
      *
-     * @return object
+     * @return mixed
      */
     public function getMessage()
     {
@@ -742,7 +742,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param object $message message
+     * @param mixed $message message
      *
      * @return self
      */
@@ -928,7 +928,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata
      */
     public function getMetadata()
     {
@@ -938,7 +938,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata $metadata metadata
      *
      * @return self
      */
@@ -1185,7 +1185,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets order_id
      *
-     * @return object
+     * @return mixed
      */
     public function getOrderId()
     {
@@ -1195,7 +1195,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets order_id
      *
-     * @param object $order_id order_id
+     * @param mixed $order_id order_id
      *
      * @return self
      */
@@ -1246,7 +1246,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets pos_transaction_data
      *
-     * @return object
+     * @return mixed
      */
     public function getPosTransactionData()
     {
@@ -1256,7 +1256,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets pos_transaction_data
      *
-     * @param object $pos_transaction_data pos_transaction_data
+     * @param mixed $pos_transaction_data pos_transaction_data
      *
      * @return self
      */
@@ -1280,7 +1280,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets source
      *
-     * @return object
+     * @return mixed
      */
     public function getSource()
     {
@@ -1290,7 +1290,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param object $source source
+     * @param mixed $source source
      *
      * @return self
      */
@@ -1314,7 +1314,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets fees_breakdown
      *
-     * @return object
+     * @return mixed
      */
     public function getFeesBreakdown()
     {
@@ -1324,7 +1324,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets fees_breakdown
      *
-     * @param object $fees_breakdown fees_breakdown
+     * @param mixed $fees_breakdown fees_breakdown
      *
      * @return self
      */
@@ -1348,7 +1348,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets connect
      *
-     * @return object
+     * @return mixed
      */
     public function getConnect()
     {
@@ -1358,7 +1358,7 @@ class DisputeFetchResponseDataTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets connect
      *
-     * @param object $connect connect
+     * @param mixed $connect connect
      *
      * @return self
      */

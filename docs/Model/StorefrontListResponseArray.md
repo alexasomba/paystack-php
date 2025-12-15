@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **slug** | **string** |  |
 **orders_count** | **int** |  |
 **status** | **string** |  |
-**revenue** | **object** |  |
+**revenue** | **mixed** |  |
 **currency** | **string** |  |
-**products** | **object[]** |  |
-**contacts** | **object[]** |  |
-**social_media** | **object[]** |  |
-**shipping_fees** | **object[]** |  |
+**products** | **mixed[]** |  |
+**contacts** | **mixed[]** |  |
+**social_media** | **mixed[]** |  |
+**shipping_fees** | **mixed[]** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

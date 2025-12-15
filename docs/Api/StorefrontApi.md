@@ -20,7 +20,7 @@ All URIs are relative to https://api.paystack.co, except if the operation define
 ## `storefrontAddProducts()`
 
 ```php
-storefrontAddProducts($id, $body): \Alexasomba\\Paystack\Model\Response
+storefrontAddProducts($id, $storefront_add_products): \Alexasomba\\Paystack\Model\Response
 ```
 
 Add Products to Storefront
@@ -45,10 +45,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\StorefrontApi(
     $config
 );
 $id = 1559046; // int | The unique identifier of the Storefront
-$body = new \Alexasomba\\Paystack\Model\StorefrontIdProduct(); // \Alexasomba\\Paystack\Model\StorefrontIdProduct
+$storefront_add_products = new \Alexasomba\\Paystack\Model\StorefrontAddProducts(); // \Alexasomba\\Paystack\Model\StorefrontAddProducts
 
 try {
-    $result = $apiInstance->storefrontAddProducts($id, $body);
+    $result = $apiInstance->storefrontAddProducts($id, $storefront_add_products);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorefrontApi->storefrontAddProducts: ', $e->getMessage(), PHP_EOL;
@@ -60,7 +60,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of the Storefront | |
-| **body** | **\Alexasomba\\Paystack\Model\StorefrontIdProduct**|  | [optional] |
+| **storefront_add_products** | [**\Alexasomba\\Paystack\Model\StorefrontAddProducts**](../Model/StorefrontAddProducts.md)|  | [optional] |
 
 ### Return type
 
@@ -566,7 +566,7 @@ try {
 ## `storefrontUpdate()`
 
 ```php
-storefrontUpdate($id, $body): \Alexasomba\\Paystack\Model\StorefrontUpdateResponse
+storefrontUpdate($id, $storefront_update): \Alexasomba\\Paystack\Model\StorefrontUpdateResponse
 ```
 
 Update Storefront
@@ -591,10 +591,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\StorefrontApi(
     $config
 );
 $id = 1559046; // int | The unique identifier of the Storefront
-$body = new \Alexasomba\\Paystack\Model\StorefrontId(); // \Alexasomba\\Paystack\Model\StorefrontId
+$storefront_update = new \Alexasomba\\Paystack\Model\StorefrontUpdate(); // \Alexasomba\\Paystack\Model\StorefrontUpdate
 
 try {
-    $result = $apiInstance->storefrontUpdate($id, $body);
+    $result = $apiInstance->storefrontUpdate($id, $storefront_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StorefrontApi->storefrontUpdate: ', $e->getMessage(), PHP_EOL;
@@ -606,7 +606,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of the Storefront | |
-| **body** | **\Alexasomba\\Paystack\Model\StorefrontId**|  | [optional] |
+| **storefront_update** | [**\Alexasomba\\Paystack\Model\StorefrontUpdate**](../Model/StorefrontUpdate.md)|  | [optional] |
 
 ### Return type
 

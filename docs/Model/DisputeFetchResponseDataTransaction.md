@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **reference** | **string** |  |
 **receipt_number** | **int** |  | [optional]
 **amount** | **int** |  |
-**message** | **object** |  |
+**message** | **mixed** |  |
 **gateway_response** | **string** |  |
 **paid_at** | **string** |  |
 **created_at** | **string** |  |
 **channel** | **string** |  |
 **currency** | **string** |  |
 **ip_address** | **string** |  |
-**metadata** | [**\Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata**](ChargeCreateResponseDataMetadata.md) |  |
+**metadata** | [**\Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata**](TransactionFetchResponseDataMetadata.md) |  |
 **log** | [**\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog**](ChargeAuthorizationResponseDataLog.md) |  |
 **fees** | **int** |  |
 **fees_split** | **int** |  |
@@ -26,11 +26,11 @@ Name | Type | Description | Notes
 **plan** | **object** |  |
 **subaccount** | **object** |  |
 **split** | **object** |  |
-**order_id** | **object** |  |
+**order_id** | **mixed** |  |
 **requested_amount** | **int** |  |
-**pos_transaction_data** | **object** |  |
-**source** | **object** |  |
-**fees_breakdown** | **object** |  |
-**connect** | **object** |  |
+**pos_transaction_data** | **mixed** |  |
+**source** | **mixed** |  |
+**fees_breakdown** | **mixed** |  |
+**connect** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

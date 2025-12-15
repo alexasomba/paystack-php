@@ -58,8 +58,8 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'variants_options' => 'object[]',
-        'variants' => 'object[]',
+        'variants_options' => 'mixed[]',
+        'variants' => 'mixed[]',
         'name' => 'string',
         'description' => 'string',
         'currency' => 'string',
@@ -68,16 +68,16 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
         'type' => 'string',
         'is_shippable' => 'bool',
         'unlimited' => 'bool',
-        'files' => 'object[]',
-        'shipping_fields' => '\Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields',
+        'files' => 'mixed[]',
+        'shipping_fields' => '\Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields',
         'integration' => 'int',
         'domain' => 'string',
-        'metadata' => '\Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata',
         'slug' => 'string',
         'product_code' => 'string',
         'quantity_sold' => 'int',
         'active' => 'bool',
-        'deleted_at' => 'object',
+        'deleted_at' => 'mixed',
         'in_stock' => 'bool',
         'minimum_orderable' => 'int',
         'maximum_orderable' => 'int',
@@ -563,7 +563,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets variants_options
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getVariantsOptions()
     {
@@ -573,7 +573,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets variants_options
      *
-     * @param object[] $variants_options variants_options
+     * @param mixed[] $variants_options variants_options
      *
      * @return self
      */
@@ -590,7 +590,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets variants
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getVariants()
     {
@@ -600,7 +600,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets variants
      *
-     * @param object[] $variants variants
+     * @param mixed[] $variants variants
      *
      * @return self
      */
@@ -833,7 +833,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets files
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getFiles()
     {
@@ -843,7 +843,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets files
      *
-     * @param object[] $files files
+     * @param mixed[] $files files
      *
      * @return self
      */
@@ -860,7 +860,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets shipping_fields
      *
-     * @return \Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields
+     * @return \Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields
      */
     public function getShippingFields()
     {
@@ -870,7 +870,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shipping_fields
      *
-     * @param \Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields $shipping_fields shipping_fields
+     * @param \Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields $shipping_fields shipping_fields
      *
      * @return self
      */
@@ -941,7 +941,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata
      */
     public function getMetadata()
     {
@@ -951,7 +951,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata $metadata metadata
      *
      * @return self
      */
@@ -1076,7 +1076,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets deleted_at
      *
-     * @return object
+     * @return mixed
      */
     public function getDeletedAt()
     {
@@ -1086,7 +1086,7 @@ class ProductCreateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets deleted_at
      *
-     * @param object $deleted_at deleted_at
+     * @param mixed $deleted_at deleted_at
      *
      * @return self
      */

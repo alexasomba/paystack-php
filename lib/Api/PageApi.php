@@ -147,16 +147,16 @@ class PageApi
      * Add Products
      *
      * @param  string $id id (required)
-     * @param  \Alexasomba\\Paystack\Model\PageIdProduct $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageProduct $page_product page_product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageAddProducts'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\PageAddProductsResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function pageAddProducts($id, $body = null, string $contentType = self::contentTypes['pageAddProducts'][0])
+    public function pageAddProducts($id, $page_product = null, string $contentType = self::contentTypes['pageAddProducts'][0])
     {
-        list($response) = $this->pageAddProductsWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->pageAddProductsWithHttpInfo($id, $page_product, $contentType);
         return $response;
     }
 
@@ -166,16 +166,16 @@ class PageApi
      * Add Products
      *
      * @param  string $id (required)
-     * @param  \Alexasomba\\Paystack\Model\PageIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageProduct $page_product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageAddProducts'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\PageAddProductsResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pageAddProductsWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['pageAddProducts'][0])
+    public function pageAddProductsWithHttpInfo($id, $page_product = null, string $contentType = self::contentTypes['pageAddProducts'][0])
     {
-        $request = $this->pageAddProductsRequest($id, $body, $contentType);
+        $request = $this->pageAddProductsRequest($id, $page_product, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -290,15 +290,15 @@ class PageApi
      * Add Products
      *
      * @param  string $id (required)
-     * @param  \Alexasomba\\Paystack\Model\PageIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageProduct $page_product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageAddProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pageAddProductsAsync($id, $body = null, string $contentType = self::contentTypes['pageAddProducts'][0])
+    public function pageAddProductsAsync($id, $page_product = null, string $contentType = self::contentTypes['pageAddProducts'][0])
     {
-        return $this->pageAddProductsAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->pageAddProductsAsyncWithHttpInfo($id, $page_product, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -312,16 +312,16 @@ class PageApi
      * Add Products
      *
      * @param  string $id (required)
-     * @param  \Alexasomba\\Paystack\Model\PageIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageProduct $page_product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageAddProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pageAddProductsAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['pageAddProducts'][0])
+    public function pageAddProductsAsyncWithHttpInfo($id, $page_product = null, string $contentType = self::contentTypes['pageAddProducts'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\PageAddProductsResponse';
-        $request = $this->pageAddProductsRequest($id, $body, $contentType);
+        $request = $this->pageAddProductsRequest($id, $page_product, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -363,13 +363,13 @@ class PageApi
      * Create request for operation 'pageAddProducts'
      *
      * @param  string $id (required)
-     * @param  \Alexasomba\\Paystack\Model\PageIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageProduct $page_product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageAddProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pageAddProductsRequest($id, $body = null, string $contentType = self::contentTypes['pageAddProducts'][0])
+    public function pageAddProductsRequest($id, $page_product = null, string $contentType = self::contentTypes['pageAddProducts'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -407,12 +407,12 @@ class PageApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($page_product)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($page_product));
             } else {
-                $httpBody = $body;
+                $httpBody = $page_product;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1714,8 +1714,8 @@ class PageApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1723,8 +1723,8 @@ class PageApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1732,8 +1732,8 @@ class PageApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1741,8 +1741,8 @@ class PageApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1812,16 +1812,16 @@ class PageApi
      * Update Page
      *
      * @param  int $id The unique identifier of a payment page (required)
-     * @param  \Alexasomba\\Paystack\Model\PageId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageUpdate $page_update page_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\PageUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function pageUpdate($id, $body = null, string $contentType = self::contentTypes['pageUpdate'][0])
+    public function pageUpdate($id, $page_update = null, string $contentType = self::contentTypes['pageUpdate'][0])
     {
-        list($response) = $this->pageUpdateWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->pageUpdateWithHttpInfo($id, $page_update, $contentType);
         return $response;
     }
 
@@ -1831,16 +1831,16 @@ class PageApi
      * Update Page
      *
      * @param  int $id The unique identifier of a payment page (required)
-     * @param  \Alexasomba\\Paystack\Model\PageId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageUpdate $page_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\PageUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pageUpdateWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['pageUpdate'][0])
+    public function pageUpdateWithHttpInfo($id, $page_update = null, string $contentType = self::contentTypes['pageUpdate'][0])
     {
-        $request = $this->pageUpdateRequest($id, $body, $contentType);
+        $request = $this->pageUpdateRequest($id, $page_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1978,15 +1978,15 @@ class PageApi
      * Update Page
      *
      * @param  int $id The unique identifier of a payment page (required)
-     * @param  \Alexasomba\\Paystack\Model\PageId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageUpdate $page_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pageUpdateAsync($id, $body = null, string $contentType = self::contentTypes['pageUpdate'][0])
+    public function pageUpdateAsync($id, $page_update = null, string $contentType = self::contentTypes['pageUpdate'][0])
     {
-        return $this->pageUpdateAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->pageUpdateAsyncWithHttpInfo($id, $page_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2000,16 +2000,16 @@ class PageApi
      * Update Page
      *
      * @param  int $id The unique identifier of a payment page (required)
-     * @param  \Alexasomba\\Paystack\Model\PageId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageUpdate $page_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pageUpdateAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['pageUpdate'][0])
+    public function pageUpdateAsyncWithHttpInfo($id, $page_update = null, string $contentType = self::contentTypes['pageUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\PageUpdateResponse';
-        $request = $this->pageUpdateRequest($id, $body, $contentType);
+        $request = $this->pageUpdateRequest($id, $page_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2051,13 +2051,13 @@ class PageApi
      * Create request for operation 'pageUpdate'
      *
      * @param  int $id The unique identifier of a payment page (required)
-     * @param  \Alexasomba\\Paystack\Model\PageId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PageUpdate $page_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pageUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pageUpdateRequest($id, $body = null, string $contentType = self::contentTypes['pageUpdate'][0])
+    public function pageUpdateRequest($id, $page_update = null, string $contentType = self::contentTypes['pageUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2095,12 +2095,12 @@ class PageApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($page_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($page_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $page_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

@@ -58,12 +58,12 @@ class DedicatedNubanCreateResponseData implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'bank' => '\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank',
+        'bank' => '\Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank',
         'account_name' => 'string',
         'account_number' => 'string',
         'assigned' => 'bool',
         'currency' => 'string',
-        'metadata' => 'object',
+        'metadata' => 'mixed',
         'active' => 'bool',
         'id' => 'int',
         'created_at' => 'string',
@@ -406,7 +406,7 @@ class DedicatedNubanCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets bank
      *
-     * @return \Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank
+     * @return \Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank
      */
     public function getBank()
     {
@@ -416,7 +416,7 @@ class DedicatedNubanCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets bank
      *
-     * @param \Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank $bank bank
+     * @param \Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank $bank bank
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class DedicatedNubanCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -551,7 +551,7 @@ class DedicatedNubanCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */

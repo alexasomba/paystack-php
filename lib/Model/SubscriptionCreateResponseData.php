@@ -68,11 +68,11 @@ class SubscriptionCreateResponseData implements ModelInterface, ArrayAccess, \Js
         'amount' => 'int',
         'authorization' => 'int',
         'invoice_limit' => 'int',
-        'split_code' => 'object',
+        'split_code' => 'mixed',
         'subscription_code' => 'string',
         'email_token' => 'string',
         'id' => 'int',
-        'cancelled_at' => 'object',
+        'cancelled_at' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string',
         'cron_expression' => 'string',
@@ -776,7 +776,7 @@ class SubscriptionCreateResponseData implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -786,7 +786,7 @@ class SubscriptionCreateResponseData implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */
@@ -891,7 +891,7 @@ class SubscriptionCreateResponseData implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets cancelled_at
      *
-     * @return object
+     * @return mixed
      */
     public function getCancelledAt()
     {
@@ -901,7 +901,7 @@ class SubscriptionCreateResponseData implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets cancelled_at
      *
-     * @param object $cancelled_at cancelled_at
+     * @param mixed $cancelled_at cancelled_at
      *
      * @return self
      */

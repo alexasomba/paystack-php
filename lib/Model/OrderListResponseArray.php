@@ -65,23 +65,23 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
         'currency' => 'string',
         'amount' => 'int',
         'transaction' => 'int',
-        'page' => 'object',
+        'page' => 'mixed',
         'customer' => 'int',
         'customer_name' => 'string',
         'status' => 'string',
-        'shipping_address' => 'object',
+        'shipping_address' => 'mixed',
         'metadata' => 'string',
         'created_at' => 'string',
         'updated_at' => 'string',
         'email' => 'string',
         'paid_at' => 'string',
-        'shipping' => 'object',
+        'shipping' => 'mixed',
         'shipping_fees' => 'int',
         'refunded' => 'bool',
         'is_viewed' => 'bool',
-        'refunded_amount' => 'object',
-        'discount_amount' => 'object',
-        'discounts' => 'object',
+        'refunded_amount' => 'mixed',
+        'discount_amount' => 'mixed',
+        'discounts' => 'mixed',
         'items' => '\Alexasomba\\Paystack\Model\OrderItemsArray[]',
         'fully_refunded' => 'bool'
     ];
@@ -735,7 +735,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets page
      *
-     * @return object
+     * @return mixed
      */
     public function getPage()
     {
@@ -745,7 +745,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets page
      *
-     * @param object $page page
+     * @param mixed $page page
      *
      * @return self
      */
@@ -850,7 +850,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping_address
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingAddress()
     {
@@ -860,7 +860,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping_address
      *
-     * @param object $shipping_address shipping_address
+     * @param mixed $shipping_address shipping_address
      *
      * @return self
      */
@@ -1019,7 +1019,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping
      *
-     * @return object
+     * @return mixed
      */
     public function getShipping()
     {
@@ -1029,7 +1029,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping
      *
-     * @param object $shipping shipping
+     * @param mixed $shipping shipping
      *
      * @return self
      */
@@ -1134,7 +1134,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets refunded_amount
      *
-     * @return object
+     * @return mixed
      */
     public function getRefundedAmount()
     {
@@ -1144,7 +1144,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets refunded_amount
      *
-     * @param object $refunded_amount refunded_amount
+     * @param mixed $refunded_amount refunded_amount
      *
      * @return self
      */
@@ -1168,7 +1168,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets discount_amount
      *
-     * @return object
+     * @return mixed
      */
     public function getDiscountAmount()
     {
@@ -1178,7 +1178,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets discount_amount
      *
-     * @param object $discount_amount discount_amount
+     * @param mixed $discount_amount discount_amount
      *
      * @return self
      */
@@ -1202,7 +1202,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets discounts
      *
-     * @return object
+     * @return mixed
      */
     public function getDiscounts()
     {
@@ -1212,7 +1212,7 @@ class OrderListResponseArray implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets discounts
      *
-     * @param object $discounts discounts
+     * @param mixed $discounts discounts
      *
      * @return self
      */

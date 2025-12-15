@@ -64,7 +64,7 @@ class ChargeAuthorizationResponseDataLog implements ModelInterface, ArrayAccess,
         'errors' => 'int',
         'success' => 'bool',
         'mobile' => 'bool',
-        'input' => 'object[]',
+        'input' => 'mixed[]',
         'history' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLogHistoryInner[]'
     ];
 
@@ -528,7 +528,7 @@ class ChargeAuthorizationResponseDataLog implements ModelInterface, ArrayAccess,
     /**
      * Gets input
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getInput()
     {
@@ -538,7 +538,7 @@ class ChargeAuthorizationResponseDataLog implements ModelInterface, ArrayAccess,
     /**
      * Sets input
      *
-     * @param object[] $input input
+     * @param mixed[] $input input
      *
      * @return self
      */

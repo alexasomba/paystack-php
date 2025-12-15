@@ -58,28 +58,28 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'social_media' => 'object[]',
+        'social_media' => 'mixed[]',
         'contacts' => '\Alexasomba\\Paystack\Model\StorefrontContactsArray[]',
         'name' => 'string',
         'slug' => 'string',
         'currency' => 'string',
-        'welcome_message' => 'object',
-        'success_message' => 'object',
-        'redirect_url' => 'object',
-        'description' => 'object',
+        'welcome_message' => 'mixed',
+        'success_message' => 'mixed',
+        'redirect_url' => 'mixed',
+        'description' => 'mixed',
         'delivery_note' => 'string',
         'background_color' => 'string',
         'status' => 'string',
         'shippable' => 'bool',
         'integration' => 'int',
         'domain' => 'string',
-        'digital_product_expiry' => 'object',
+        'digital_product_expiry' => 'mixed',
         'metadata' => 'object',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'products' => 'object[]',
-        'shipping_fees' => 'object[]'
+        'products' => 'mixed[]',
+        'shipping_fees' => 'mixed[]'
     ];
 
     /**
@@ -503,7 +503,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets social_media
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getSocialMedia()
     {
@@ -513,7 +513,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets social_media
      *
-     * @param object[] $social_media social_media
+     * @param mixed[] $social_media social_media
      *
      * @return self
      */
@@ -638,7 +638,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets welcome_message
      *
-     * @return object
+     * @return mixed
      */
     public function getWelcomeMessage()
     {
@@ -648,7 +648,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets welcome_message
      *
-     * @param object $welcome_message welcome_message
+     * @param mixed $welcome_message welcome_message
      *
      * @return self
      */
@@ -672,7 +672,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getSuccessMessage()
     {
@@ -682,7 +682,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets success_message
      *
-     * @param object $success_message success_message
+     * @param mixed $success_message success_message
      *
      * @return self
      */
@@ -706,7 +706,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getRedirectUrl()
     {
@@ -716,7 +716,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets redirect_url
      *
-     * @param object $redirect_url redirect_url
+     * @param mixed $redirect_url redirect_url
      *
      * @return self
      */
@@ -740,7 +740,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -750,7 +750,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */
@@ -936,7 +936,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets digital_product_expiry
      *
-     * @return object
+     * @return mixed
      */
     public function getDigitalProductExpiry()
     {
@@ -946,7 +946,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets digital_product_expiry
      *
-     * @param object $digital_product_expiry digital_product_expiry
+     * @param mixed $digital_product_expiry digital_product_expiry
      *
      * @return self
      */
@@ -1085,7 +1085,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets products
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getProducts()
     {
@@ -1095,7 +1095,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets products
      *
-     * @param object[] $products products
+     * @param mixed[] $products products
      *
      * @return self
      */
@@ -1112,7 +1112,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets shipping_fees
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getShippingFees()
     {
@@ -1122,7 +1122,7 @@ class StorefrontCreateResponseData implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets shipping_fees
      *
-     * @param object[] $shipping_fees shipping_fees
+     * @param mixed[] $shipping_fees shipping_fees
      *
      * @return self
      */

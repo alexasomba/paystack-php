@@ -67,7 +67,7 @@ class PageProductsArray implements ModelInterface, ArrayAccess, \JsonSerializabl
         'currency' => 'string',
         'quantity' => 'int',
         'type' => 'string',
-        'features' => 'object',
+        'features' => 'mixed',
         'is_shippable' => 'int',
         'domain' => 'string',
         'integration' => 'int',
@@ -679,7 +679,7 @@ class PageProductsArray implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets features
      *
-     * @return object
+     * @return mixed
      */
     public function getFeatures()
     {
@@ -689,7 +689,7 @@ class PageProductsArray implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets features
      *
-     * @param object $features features
+     * @param mixed $features features
      *
      * @return self
      */

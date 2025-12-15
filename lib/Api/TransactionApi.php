@@ -1431,8 +1431,8 @@ class TransactionApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1440,8 +1440,8 @@ class TransactionApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1449,8 +1449,8 @@ class TransactionApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1458,8 +1458,8 @@ class TransactionApi
             $customer,
             'customer', // param base name
             'number', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1467,8 +1467,8 @@ class TransactionApi
             $subaccount_code,
             'subaccount_code', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1476,8 +1476,8 @@ class TransactionApi
             $settlement,
             'settlement', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1551,7 +1551,7 @@ class TransactionApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransactionId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transactionFetch($id, string $contentType = self::contentTypes['transactionFetch'][0])
     {
@@ -1569,7 +1569,7 @@ class TransactionApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransactionId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransactionFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transactionFetchWithHttpInfo($id, string $contentType = self::contentTypes['transactionFetch'][0])
     {
@@ -1612,17 +1612,17 @@ class TransactionApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransactionId' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransactionFetchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransactionId' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransactionFetchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransactionId', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransactionFetchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1658,7 +1658,7 @@ class TransactionApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransactionId';
+            $returnType = '\Alexasomba\\Paystack\Model\TransactionFetchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1679,7 +1679,7 @@ class TransactionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransactionId',
+                        '\Alexasomba\\Paystack\Model\TransactionFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1739,7 +1739,7 @@ class TransactionApi
      */
     public function transactionFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['transactionFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransactionId';
+        $returnType = '\Alexasomba\\Paystack\Model\TransactionFetchResponse';
         $request = $this->transactionFetchRequest($id, $contentType);
 
         return $this->client
@@ -2559,8 +2559,8 @@ class TransactionApi
             $use_cursor,
             'use_cursor', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2568,8 +2568,8 @@ class TransactionApi
             $next,
             'next', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2577,8 +2577,8 @@ class TransactionApi
             $previous,
             'previous', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2586,8 +2586,8 @@ class TransactionApi
             $per_page,
             'per_page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2595,8 +2595,8 @@ class TransactionApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2604,8 +2604,8 @@ class TransactionApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2613,8 +2613,8 @@ class TransactionApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2622,8 +2622,8 @@ class TransactionApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2631,8 +2631,8 @@ class TransactionApi
             $source,
             'source', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2640,8 +2640,8 @@ class TransactionApi
             $terminal_id,
             'terminal_id', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2649,8 +2649,8 @@ class TransactionApi
             $virtual_account_number,
             'virtual_account_number', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2658,8 +2658,8 @@ class TransactionApi
             $customer_code,
             'customer_code', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2667,8 +2667,8 @@ class TransactionApi
             $amount,
             'amount', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2676,8 +2676,8 @@ class TransactionApi
             $settlement,
             'settlement', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2685,8 +2685,8 @@ class TransactionApi
             $channel,
             'channel', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2694,8 +2694,8 @@ class TransactionApi
             $subaccount_code,
             'subaccount_code', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2703,8 +2703,8 @@ class TransactionApi
             $split_code,
             'split_code', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -3414,7 +3414,7 @@ class TransactionApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransactionTimelineId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransactionTimelineResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transactionTimeline($id, string $contentType = self::contentTypes['transactionTimeline'][0])
     {
@@ -3432,7 +3432,7 @@ class TransactionApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransactionTimelineId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransactionTimelineResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transactionTimelineWithHttpInfo($id, string $contentType = self::contentTypes['transactionTimeline'][0])
     {
@@ -3475,17 +3475,17 @@ class TransactionApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransactionTimelineId' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransactionTimelineResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransactionTimelineId' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransactionTimelineResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransactionTimelineId', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransactionTimelineResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3521,7 +3521,7 @@ class TransactionApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransactionTimelineId';
+            $returnType = '\Alexasomba\\Paystack\Model\TransactionTimelineResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3542,7 +3542,7 @@ class TransactionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransactionTimelineId',
+                        '\Alexasomba\\Paystack\Model\TransactionTimelineResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3602,7 +3602,7 @@ class TransactionApi
      */
     public function transactionTimelineAsyncWithHttpInfo($id, string $contentType = self::contentTypes['transactionTimeline'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransactionTimelineId';
+        $returnType = '\Alexasomba\\Paystack\Model\TransactionTimelineResponse';
         $request = $this->transactionTimelineRequest($id, $contentType);
 
         return $this->client
@@ -4006,8 +4006,8 @@ class TransactionApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -4015,8 +4015,8 @@ class TransactionApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -4090,7 +4090,7 @@ class TransactionApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransactionVerifyReference|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\VerifyResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transactionVerify($reference, string $contentType = self::contentTypes['transactionVerify'][0])
     {
@@ -4108,7 +4108,7 @@ class TransactionApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransactionVerifyReference|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\VerifyResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transactionVerifyWithHttpInfo($reference, string $contentType = self::contentTypes['transactionVerify'][0])
     {
@@ -4151,17 +4151,17 @@ class TransactionApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransactionVerifyReference' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\VerifyResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransactionVerifyReference' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\VerifyResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransactionVerifyReference', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\VerifyResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4197,7 +4197,7 @@ class TransactionApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransactionVerifyReference';
+            $returnType = '\Alexasomba\\Paystack\Model\VerifyResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4218,7 +4218,7 @@ class TransactionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransactionVerifyReference',
+                        '\Alexasomba\\Paystack\Model\VerifyResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4278,7 +4278,7 @@ class TransactionApi
      */
     public function transactionVerifyAsyncWithHttpInfo($reference, string $contentType = self::contentTypes['transactionVerify'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransactionVerifyReference';
+        $returnType = '\Alexasomba\\Paystack\Model\VerifyResponse';
         $request = $this->transactionVerifyRequest($reference, $contentType);
 
         return $this->client

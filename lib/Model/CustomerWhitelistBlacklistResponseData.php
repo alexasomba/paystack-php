@@ -58,9 +58,9 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transactions' => 'object[]',
-        'subscriptions' => 'object[]',
-        'authorizations' => 'object[]',
+        'transactions' => 'mixed[]',
+        'subscriptions' => 'mixed[]',
+        'authorizations' => 'mixed[]',
         'first_name' => 'string',
         'last_name' => 'string',
         'email' => 'string',
@@ -74,7 +74,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
         'created_at' => 'string',
         'updated_at' => 'string',
         'identified' => 'bool',
-        'identifications' => 'object'
+        'identifications' => 'mixed'
     ];
 
     /**
@@ -456,7 +456,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Gets transactions
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getTransactions()
     {
@@ -466,7 +466,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Sets transactions
      *
-     * @param object[] $transactions transactions
+     * @param mixed[] $transactions transactions
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Gets subscriptions
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getSubscriptions()
     {
@@ -493,7 +493,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Sets subscriptions
      *
-     * @param object[] $subscriptions subscriptions
+     * @param mixed[] $subscriptions subscriptions
      *
      * @return self
      */
@@ -510,7 +510,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Gets authorizations
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getAuthorizations()
     {
@@ -520,7 +520,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Sets authorizations
      *
-     * @param object[] $authorizations authorizations
+     * @param mixed[] $authorizations authorizations
      *
      * @return self
      */
@@ -888,7 +888,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Gets identifications
      *
-     * @return object
+     * @return mixed
      */
     public function getIdentifications()
     {
@@ -898,7 +898,7 @@ class CustomerWhitelistBlacklistResponseData implements ModelInterface, ArrayAcc
     /**
      * Sets identifications
      *
-     * @param object $identifications identifications
+     * @param mixed $identifications identifications
      *
      * @return self
      */

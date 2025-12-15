@@ -135,7 +135,7 @@ try {
 ## `transferrecipientDelete()`
 
 ```php
-transferrecipientDelete($code): \Alexasomba\\Paystack\Model\TransferrecipientCode
+transferrecipientDelete($code): \Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse
 ```
 
 Delete Transfer Recipient
@@ -177,7 +177,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransferrecipientCode**](../Model/TransferrecipientCode.md)
+[**\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse**](../Model/TransferRecipientDeleteResponse.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ try {
 ## `transferrecipientFetch()`
 
 ```php
-transferrecipientFetch($code): \Alexasomba\\Paystack\Model\TransferrecipientCode
+transferrecipientFetch($code): \Alexasomba\\Paystack\Model\TransferRecipientFetchResponse
 ```
 
 Fetch Transfer recipient
@@ -237,7 +237,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransferrecipientCode**](../Model/TransferrecipientCode.md)
+[**\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse**](../Model/TransferRecipientFetchResponse.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ try {
 ## `transferrecipientUpdate()`
 
 ```php
-transferrecipientUpdate($code, $body): \Alexasomba\\Paystack\Model\TransferrecipientCode
+transferrecipientUpdate($code, $transfer_recipient_update): \Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse
 ```
 
 Update Transfer Recipient
@@ -348,10 +348,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\TransferRecipientApi(
     $config
 );
 $code = RCP_5ap8rcimmcj8lbi; // string | Transfer recipient code
-$body = new \Alexasomba\\Paystack\Model\TransferrecipientCode(); // \Alexasomba\\Paystack\Model\TransferrecipientCode
+$transfer_recipient_update = new \Alexasomba\\Paystack\Model\TransferRecipientUpdate(); // \Alexasomba\\Paystack\Model\TransferRecipientUpdate
 
 try {
-    $result = $apiInstance->transferrecipientUpdate($code, $body);
+    $result = $apiInstance->transferrecipientUpdate($code, $transfer_recipient_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransferRecipientApi->transferrecipientUpdate: ', $e->getMessage(), PHP_EOL;
@@ -363,11 +363,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| Transfer recipient code | |
-| **body** | **\Alexasomba\\Paystack\Model\TransferrecipientCode**|  | [optional] |
+| **transfer_recipient_update** | [**\Alexasomba\\Paystack\Model\TransferRecipientUpdate**](../Model/TransferRecipientUpdate.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransferrecipientCode**](../Model/TransferrecipientCode.md)
+[**\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse**](../Model/TransferRecipientUpdateResponse.md)
 
 ### Authorization
 

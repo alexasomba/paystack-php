@@ -1383,7 +1383,7 @@ class DedicatedVirtualAccountApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\DedicatedAccountId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function dedicatedAccountDeactivate($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
@@ -1401,7 +1401,7 @@ class DedicatedVirtualAccountApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\DedicatedAccountId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function dedicatedAccountDeactivateWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
@@ -1444,17 +1444,17 @@ class DedicatedVirtualAccountApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\DedicatedAccountId' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\DedicatedAccountId' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\DedicatedAccountId', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1490,7 +1490,7 @@ class DedicatedVirtualAccountApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\DedicatedAccountId';
+            $returnType = '\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1511,7 +1511,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\DedicatedAccountId',
+                        '\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1571,7 +1571,7 @@ class DedicatedVirtualAccountApi
      */
     public function dedicatedAccountDeactivateAsyncWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\DedicatedAccountId';
+        $returnType = '\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse';
         $request = $this->dedicatedAccountDeactivateRequest($id, $contentType);
 
         return $this->client
@@ -1716,7 +1716,7 @@ class DedicatedVirtualAccountApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\DedicatedAccountId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function dedicatedAccountFetch($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
@@ -1734,7 +1734,7 @@ class DedicatedVirtualAccountApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\DedicatedAccountId|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function dedicatedAccountFetchWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
@@ -1777,17 +1777,17 @@ class DedicatedVirtualAccountApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\DedicatedAccountId' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\DedicatedAccountId' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\DedicatedAccountId', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1823,7 +1823,7 @@ class DedicatedVirtualAccountApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\DedicatedAccountId';
+            $returnType = '\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1844,7 +1844,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\DedicatedAccountId',
+                        '\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1904,7 +1904,7 @@ class DedicatedVirtualAccountApi
      */
     public function dedicatedAccountFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\DedicatedAccountId';
+        $returnType = '\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse';
         $request = $this->dedicatedAccountFetchRequest($id, $contentType);
 
         return $this->client
@@ -2338,8 +2338,8 @@ class DedicatedVirtualAccountApi
             $active,
             'active', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2347,8 +2347,8 @@ class DedicatedVirtualAccountApi
             $customer,
             'customer', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2356,8 +2356,8 @@ class DedicatedVirtualAccountApi
             $currency,
             'currency', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2365,8 +2365,8 @@ class DedicatedVirtualAccountApi
             $provider_slug,
             'provider_slug', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2374,8 +2374,8 @@ class DedicatedVirtualAccountApi
             $bank_id,
             'bank_id', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2383,8 +2383,8 @@ class DedicatedVirtualAccountApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2392,8 +2392,8 @@ class DedicatedVirtualAccountApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -3058,8 +3058,8 @@ class DedicatedVirtualAccountApi
             $account_number,
             'account_number', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3067,8 +3067,8 @@ class DedicatedVirtualAccountApi
             $provider_slug,
             'provider_slug', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3076,8 +3076,8 @@ class DedicatedVirtualAccountApi
             $date,
             'date', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 

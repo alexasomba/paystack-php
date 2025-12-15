@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** |  |
 **name** | **string** |  |
 **plan_code** | **string** |  |
-**description** | **object** |  |
+**description** | **mixed** |  |
 **amount** | **int** |  |
 **interval** | **string** |  |
 **send_invoices** | **bool** |  |

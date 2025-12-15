@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**variants_options** | **object[]** |  |
-**variants** | **object[]** |  |
+**variants_options** | **mixed[]** |  |
+**variants** | **mixed[]** |  |
 **name** | **string** |  |
 **description** | **string** |  |
 **currency** | **string** |  |
@@ -14,16 +14,16 @@ Name | Type | Description | Notes
 **type** | **string** |  |
 **is_shippable** | **bool** |  |
 **unlimited** | **bool** |  |
-**files** | **object[]** |  |
-**shipping_fields** | [**\Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields**](ProductCreateResponseDataShippingFields.md) |  |
+**files** | **mixed[]** |  |
+**shipping_fields** | [**\Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields**](ProductListsResponseArrayShippingFields.md) |  |
 **integration** | **int** |  |
 **domain** | **string** |  |
-**metadata** | [**\Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata**](ProductCreateResponseDataMetadata.md) |  |
+**metadata** | [**\Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata**](ProductListsResponseArrayMetadata.md) |  |
 **slug** | **string** |  |
 **product_code** | **string** |  |
 **quantity_sold** | **int** |  |
 **active** | **bool** |  |
-**deleted_at** | **object** |  |
+**deleted_at** | **mixed** |  |
 **in_stock** | **bool** |  |
 **minimum_orderable** | **int** |  |
 **maximum_orderable** | **int** |  |

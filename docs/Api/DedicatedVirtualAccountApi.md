@@ -255,7 +255,7 @@ try {
 ## `dedicatedAccountDeactivate()`
 
 ```php
-dedicatedAccountDeactivate($id): \Alexasomba\\Paystack\Model\DedicatedAccountId
+dedicatedAccountDeactivate($id): \Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse
 ```
 
 Deactivate Dedicated Account
@@ -297,7 +297,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\DedicatedAccountId**](../Model/DedicatedAccountId.md)
+[**\Alexasomba\\Paystack\Model\DedicatedNubanDeactivateResponse**](../Model/DedicatedNubanDeactivateResponse.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ try {
 ## `dedicatedAccountFetch()`
 
 ```php
-dedicatedAccountFetch($id): \Alexasomba\\Paystack\Model\DedicatedAccountId
+dedicatedAccountFetch($id): \Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse
 ```
 
 Fetch Dedicated Account
@@ -357,7 +357,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\DedicatedAccountId**](../Model/DedicatedAccountId.md)
+[**\Alexasomba\\Paystack\Model\DedicatedNubanFetchResponse**](../Model/DedicatedNubanFetchResponse.md)
 
 ### Authorization
 

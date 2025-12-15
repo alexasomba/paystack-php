@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **account_verification_required** | **bool** |  |
 **account_number_label** | **string** |  |
 **account_number_pattern** | [**\Alexasomba\\Paystack\Model\MiscellaneousListCountriesResponseArrayRelationshipsCurrencySupportedCurrenciesNGNBankAccountNumberPattern**](MiscellaneousListCountriesResponseArrayRelationshipsCurrencySupportedCurrenciesNGNBankAccountNumberPattern.md) |  |
-**documents** | **object[]** |  |
+**documents** | **mixed[]** |  |
 **notices** | **string[]** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -59,24 +59,24 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'integration' => 'int',
-        'plan' => 'object',
+        'plan' => 'mixed',
         'domain' => 'string',
         'name' => 'string',
-        'description' => 'object',
-        'amount' => 'object',
+        'description' => 'mixed',
+        'amount' => 'mixed',
         'currency' => 'string',
         'slug' => 'string',
-        'custom_fields' => 'object',
+        'custom_fields' => 'mixed',
         'type' => 'string',
-        'redirect_url' => 'object',
-        'success_message' => 'object',
+        'redirect_url' => 'mixed',
+        'success_message' => 'mixed',
         'collect_phone' => 'bool',
         'active' => 'bool',
         'published' => 'bool',
         'migrate' => 'bool',
-        'notification_email' => 'object',
-        'metadata' => 'object',
-        'split_code' => 'object',
+        'notification_email' => 'mixed',
+        'metadata' => 'mixed',
+        'split_code' => 'mixed',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string',
@@ -543,7 +543,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets plan
      *
-     * @return object
+     * @return mixed
      */
     public function getPlan()
     {
@@ -553,7 +553,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets plan
      *
-     * @param object $plan plan
+     * @param mixed $plan plan
      *
      * @return self
      */
@@ -631,7 +631,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -641,7 +641,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */
@@ -665,7 +665,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets amount
      *
-     * @return object
+     * @return mixed
      */
     public function getAmount()
     {
@@ -675,7 +675,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets amount
      *
-     * @param object $amount amount
+     * @param mixed $amount amount
      *
      * @return self
      */
@@ -753,7 +753,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets custom_fields
      *
-     * @return object
+     * @return mixed
      */
     public function getCustomFields()
     {
@@ -763,7 +763,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets custom_fields
      *
-     * @param object $custom_fields custom_fields
+     * @param mixed $custom_fields custom_fields
      *
      * @return self
      */
@@ -814,7 +814,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getRedirectUrl()
     {
@@ -824,7 +824,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets redirect_url
      *
-     * @param object $redirect_url redirect_url
+     * @param mixed $redirect_url redirect_url
      *
      * @return self
      */
@@ -848,7 +848,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getSuccessMessage()
     {
@@ -858,7 +858,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets success_message
      *
-     * @param object $success_message success_message
+     * @param mixed $success_message success_message
      *
      * @return self
      */
@@ -990,7 +990,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets notification_email
      *
-     * @return object
+     * @return mixed
      */
     public function getNotificationEmail()
     {
@@ -1000,7 +1000,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets notification_email
      *
-     * @param object $notification_email notification_email
+     * @param mixed $notification_email notification_email
      *
      * @return self
      */
@@ -1024,7 +1024,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -1034,7 +1034,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -1058,7 +1058,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1068,7 +1068,7 @@ class PageAddProductsResponseData implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */

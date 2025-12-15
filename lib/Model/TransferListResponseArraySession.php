@@ -58,8 +58,8 @@ class TransferListResponseArraySession implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'provider' => 'object',
-        'id' => 'object'
+        'provider' => 'mixed',
+        'id' => 'mixed'
     ];
 
     /**
@@ -306,7 +306,7 @@ class TransferListResponseArraySession implements ModelInterface, ArrayAccess, \
     /**
      * Gets provider
      *
-     * @return object
+     * @return mixed
      */
     public function getProvider()
     {
@@ -316,7 +316,7 @@ class TransferListResponseArraySession implements ModelInterface, ArrayAccess, \
     /**
      * Sets provider
      *
-     * @param object $provider provider
+     * @param mixed $provider provider
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class TransferListResponseArraySession implements ModelInterface, ArrayAccess, \
     /**
      * Gets id
      *
-     * @return object
+     * @return mixed
      */
     public function getId()
     {
@@ -350,7 +350,7 @@ class TransferListResponseArraySession implements ModelInterface, ArrayAccess, \
     /**
      * Sets id
      *
-     * @param object $id id
+     * @param mixed $id id
      *
      * @return self
      */

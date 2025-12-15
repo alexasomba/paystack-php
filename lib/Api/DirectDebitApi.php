@@ -378,8 +378,8 @@ class DirectDebitApi
             $cursor,
             'cursor', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -387,8 +387,8 @@ class DirectDebitApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -396,8 +396,8 @@ class DirectDebitApi
             $per_page,
             'per_page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 

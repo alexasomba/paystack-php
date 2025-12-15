@@ -67,17 +67,17 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
         'has_invoice' => 'bool',
         'invoice_number' => 'int',
         'description' => 'string',
-        'line_items' => 'object[]',
-        'tax' => 'object[]',
+        'line_items' => 'mixed[]',
+        'tax' => 'mixed[]',
         'request_code' => 'string',
         'status' => 'string',
         'paid' => 'bool',
         'metadata' => 'object',
-        'notifications' => 'object[]',
+        'notifications' => 'mixed[]',
         'offline_reference' => 'string',
         'customer' => 'int',
         'created_at' => 'string',
-        'discount' => 'object',
+        'discount' => 'mixed',
         'split_code' => 'string'
     ];
 
@@ -760,7 +760,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets line_items
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getLineItems()
     {
@@ -770,7 +770,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets line_items
      *
-     * @param object[] $line_items line_items
+     * @param mixed[] $line_items line_items
      *
      * @return self
      */
@@ -787,7 +787,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets tax
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getTax()
     {
@@ -797,7 +797,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets tax
      *
-     * @param object[] $tax tax
+     * @param mixed[] $tax tax
      *
      * @return self
      */
@@ -929,7 +929,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets notifications
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getNotifications()
     {
@@ -939,7 +939,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets notifications
      *
-     * @param object[] $notifications notifications
+     * @param mixed[] $notifications notifications
      *
      * @return self
      */
@@ -1037,7 +1037,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets discount
      *
-     * @return object
+     * @return mixed
      */
     public function getDiscount()
     {
@@ -1047,7 +1047,7 @@ class PaymentRequestCreateResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets discount
      *
-     * @param object $discount discount
+     * @param mixed $discount discount
      *
      * @return self
      */

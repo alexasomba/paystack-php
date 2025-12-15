@@ -1051,8 +1051,8 @@ class RefundApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1060,8 +1060,8 @@ class RefundApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1069,8 +1069,8 @@ class RefundApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1078,8 +1078,8 @@ class RefundApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1149,16 +1149,16 @@ class RefundApi
      * Retry Refund
      *
      * @param  int $id The identifier of the refund (required)
-     * @param  \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\RefundRetry $refund_retry refund_retry (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\RefundRetryResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function refundRetry($id, $body = null, string $contentType = self::contentTypes['refundRetry'][0])
+    public function refundRetry($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
     {
-        list($response) = $this->refundRetryWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->refundRetryWithHttpInfo($id, $refund_retry, $contentType);
         return $response;
     }
 
@@ -1168,16 +1168,16 @@ class RefundApi
      * Retry Refund
      *
      * @param  int $id The identifier of the refund (required)
-     * @param  \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\RefundRetry $refund_retry (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\RefundRetryResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function refundRetryWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['refundRetry'][0])
+    public function refundRetryWithHttpInfo($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
     {
-        $request = $this->refundRetryRequest($id, $body, $contentType);
+        $request = $this->refundRetryRequest($id, $refund_retry, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1292,15 +1292,15 @@ class RefundApi
      * Retry Refund
      *
      * @param  int $id The identifier of the refund (required)
-     * @param  \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\RefundRetry $refund_retry (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundRetryAsync($id, $body = null, string $contentType = self::contentTypes['refundRetry'][0])
+    public function refundRetryAsync($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
     {
-        return $this->refundRetryAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->refundRetryAsyncWithHttpInfo($id, $refund_retry, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1314,16 +1314,16 @@ class RefundApi
      * Retry Refund
      *
      * @param  int $id The identifier of the refund (required)
-     * @param  \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\RefundRetry $refund_retry (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundRetryAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['refundRetry'][0])
+    public function refundRetryAsyncWithHttpInfo($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\RefundRetryResponse';
-        $request = $this->refundRetryRequest($id, $body, $contentType);
+        $request = $this->refundRetryRequest($id, $refund_retry, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1365,13 +1365,13 @@ class RefundApi
      * Create request for operation 'refundRetry'
      *
      * @param  int $id The identifier of the refund (required)
-     * @param  \Alexasomba\\Paystack\Model\RefundRetryWithCustomerDetailsId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\RefundRetry $refund_retry (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function refundRetryRequest($id, $body = null, string $contentType = self::contentTypes['refundRetry'][0])
+    public function refundRetryRequest($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1409,12 +1409,12 @@ class RefundApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($refund_retry)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($refund_retry));
             } else {
-                $httpBody = $body;
+                $httpBody = $refund_retry;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

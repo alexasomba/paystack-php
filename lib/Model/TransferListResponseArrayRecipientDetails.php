@@ -58,7 +58,7 @@ class TransferListResponseArrayRecipientDetails implements ModelInterface, Array
       * @var string[]
       */
     protected static $openAPITypes = [
-        'authorization_code' => 'object',
+        'authorization_code' => 'mixed',
         'account_number' => 'string',
         'account_name' => 'string',
         'bank_code' => 'string',
@@ -336,7 +336,7 @@ class TransferListResponseArrayRecipientDetails implements ModelInterface, Array
     /**
      * Gets authorization_code
      *
-     * @return object
+     * @return mixed
      */
     public function getAuthorizationCode()
     {
@@ -346,7 +346,7 @@ class TransferListResponseArrayRecipientDetails implements ModelInterface, Array
     /**
      * Sets authorization_code
      *
-     * @param object $authorization_code authorization_code
+     * @param mixed $authorization_code authorization_code
      *
      * @return self
      */

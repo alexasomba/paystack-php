@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **transaction** | [**\Alexasomba\\Paystack\Model\RefundCreateResponseDataTransaction**](RefundCreateResponseDataTransaction.md) |  |
 **integration** | **int** |  |
 **deducted_amount** | **int** |  |
-**channel** | **object** |  |
+**channel** | **mixed** |  |
 **merchant_note** | **string** |  |
 **customer_note** | **string** |  |
 **status** | **string** |  |

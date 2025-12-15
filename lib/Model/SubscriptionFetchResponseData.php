@@ -66,18 +66,18 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
         'amount' => 'int',
         'cron_expression' => 'string',
         'next_payment_date' => 'string',
-        'open_invoice' => 'object',
+        'open_invoice' => 'mixed',
         'created_at' => 'string',
-        'cancelled_at' => 'object',
+        'cancelled_at' => 'mixed',
         'integration' => 'int',
         'plan' => '\Alexasomba\\Paystack\Model\SubscriptionFetchResponseDataPlan',
         'authorization' => '\Alexasomba\\Paystack\Model\TransactionPartialDebitResponseDataAuthorization',
-        'customer' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer',
-        'invoices' => 'object[]',
-        'invoices_history' => 'object[]',
+        'customer' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer',
+        'invoices' => 'mixed[]',
+        'invoices_history' => 'mixed[]',
         'invoice_limit' => 'int',
-        'split_code' => 'object',
-        'most_recent_invoice' => 'object',
+        'split_code' => 'mixed',
+        'most_recent_invoice' => 'mixed',
         'payments_count' => 'int',
         'metadata' => 'object'
     ];
@@ -722,7 +722,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets open_invoice
      *
-     * @return object
+     * @return mixed
      */
     public function getOpenInvoice()
     {
@@ -732,7 +732,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets open_invoice
      *
-     * @param object $open_invoice open_invoice
+     * @param mixed $open_invoice open_invoice
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets cancelled_at
      *
-     * @return object
+     * @return mixed
      */
     public function getCancelledAt()
     {
@@ -793,7 +793,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets cancelled_at
      *
-     * @param object $cancelled_at cancelled_at
+     * @param mixed $cancelled_at cancelled_at
      *
      * @return self
      */
@@ -898,7 +898,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer
      */
     public function getCustomer()
     {
@@ -908,7 +908,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer $customer customer
      *
      * @return self
      */
@@ -925,7 +925,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets invoices
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getInvoices()
     {
@@ -935,7 +935,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets invoices
      *
-     * @param object[] $invoices invoices
+     * @param mixed[] $invoices invoices
      *
      * @return self
      */
@@ -952,7 +952,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets invoices_history
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getInvoicesHistory()
     {
@@ -962,7 +962,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets invoices_history
      *
-     * @param object[] $invoices_history invoices_history
+     * @param mixed[] $invoices_history invoices_history
      *
      * @return self
      */
@@ -1006,7 +1006,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1016,7 +1016,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */
@@ -1040,7 +1040,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets most_recent_invoice
      *
-     * @return object
+     * @return mixed
      */
     public function getMostRecentInvoice()
     {
@@ -1050,7 +1050,7 @@ class SubscriptionFetchResponseData implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets most_recent_invoice
      *
-     * @param object $most_recent_invoice most_recent_invoice
+     * @param mixed $most_recent_invoice most_recent_invoice
      *
      * @return self
      */

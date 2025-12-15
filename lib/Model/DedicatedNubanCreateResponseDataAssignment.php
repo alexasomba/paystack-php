@@ -64,7 +64,7 @@ class DedicatedNubanCreateResponseDataAssignment implements ModelInterface, Arra
         'expired' => 'bool',
         'account_type' => 'string',
         'assigned_at' => 'string',
-        'expired_at' => 'object'
+        'expired_at' => 'mixed'
     ];
 
     /**
@@ -518,7 +518,7 @@ class DedicatedNubanCreateResponseDataAssignment implements ModelInterface, Arra
     /**
      * Gets expired_at
      *
-     * @return object
+     * @return mixed
      */
     public function getExpiredAt()
     {
@@ -528,7 +528,7 @@ class DedicatedNubanCreateResponseDataAssignment implements ModelInterface, Arra
     /**
      * Sets expired_at
      *
-     * @param object $expired_at expired_at
+     * @param mixed $expired_at expired_at
      *
      * @return self
      */

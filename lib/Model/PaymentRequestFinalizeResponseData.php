@@ -67,20 +67,20 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
         'has_invoice' => 'bool',
         'invoice_number' => 'int',
         'description' => 'string',
-        'pdf_url' => 'object',
+        'pdf_url' => 'mixed',
         'line_items' => '\Alexasomba\\Paystack\Model\PaymentRequestLineItemsArray[]',
         'tax' => '\Alexasomba\\Paystack\Model\PaymentRequestTaxArray[]',
         'request_code' => 'string',
         'status' => 'string',
         'paid' => 'bool',
-        'paid_at' => 'object',
-        'metadata' => 'object',
-        'notifications' => 'object[]',
+        'paid_at' => 'mixed',
+        'metadata' => 'mixed',
+        'notifications' => 'mixed[]',
         'offline_reference' => 'string',
-        'customer' => '\Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer',
+        'customer' => '\Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer',
         'created_at' => 'string',
         'discount' => '\Alexasomba\\Paystack\Model\PaymentRequestFinalizeResponseDataDiscount',
-        'split_code' => 'object',
+        'split_code' => 'mixed',
         'pending_amount' => 'int'
     ];
 
@@ -790,7 +790,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets pdf_url
      *
-     * @return object
+     * @return mixed
      */
     public function getPdfUrl()
     {
@@ -800,7 +800,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets pdf_url
      *
-     * @param object $pdf_url pdf_url
+     * @param mixed $pdf_url pdf_url
      *
      * @return self
      */
@@ -959,7 +959,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets paid_at
      *
-     * @return object
+     * @return mixed
      */
     public function getPaidAt()
     {
@@ -969,7 +969,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets paid_at
      *
-     * @param object $paid_at paid_at
+     * @param mixed $paid_at paid_at
      *
      * @return self
      */
@@ -993,7 +993,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -1003,7 +1003,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -1027,7 +1027,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets notifications
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getNotifications()
     {
@@ -1037,7 +1037,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets notifications
      *
-     * @param object[] $notifications notifications
+     * @param mixed[] $notifications notifications
      *
      * @return self
      */
@@ -1081,7 +1081,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer
      */
     public function getCustomer()
     {
@@ -1091,7 +1091,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer $customer customer
      *
      * @return self
      */
@@ -1169,7 +1169,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1179,7 +1179,7 @@ class PaymentRequestFinalizeResponseData implements ModelInterface, ArrayAccess,
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */

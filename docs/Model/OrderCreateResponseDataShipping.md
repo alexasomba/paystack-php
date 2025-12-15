@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **integration** | **int** |  |
 **domain** | **string** |  |
 **fees** | **int** |  |
-**delivery_note** | **object** |  |
+**delivery_note** | **mixed** |  |
 **street_line** | **string** |  |
 **city** | **string** |  |
 **state** | **string** |  |
 **country** | **string** |  |
 **is_shipped** | **bool** |  |
-**delivery_tracking_link** | **object** |  |
+**delivery_tracking_link** | **mixed** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |

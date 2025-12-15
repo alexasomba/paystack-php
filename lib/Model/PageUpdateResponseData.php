@@ -60,24 +60,24 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'domain' => 'string',
         'name' => 'string',
-        'description' => 'object',
-        'amount' => 'object',
+        'description' => 'mixed',
+        'amount' => 'mixed',
         'currency' => 'string',
         'slug' => 'string',
-        'custom_fields' => 'object',
+        'custom_fields' => 'mixed',
         'type' => 'string',
-        'redirect_url' => 'object',
-        'success_message' => 'object',
+        'redirect_url' => 'mixed',
+        'success_message' => 'mixed',
         'collect_phone' => 'bool',
         'active' => 'bool',
         'published' => 'bool',
         'migrate' => 'bool',
-        'notification_email' => 'object',
-        'metadata' => 'object',
-        'split_code' => 'object',
+        'notification_email' => 'mixed',
+        'metadata' => 'mixed',
+        'split_code' => 'mixed',
         'id' => 'int',
         'integration' => 'int',
-        'plan' => 'object',
+        'plan' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string'
     ];
@@ -560,7 +560,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -570,7 +570,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */
@@ -594,7 +594,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets amount
      *
-     * @return object
+     * @return mixed
      */
     public function getAmount()
     {
@@ -604,7 +604,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets amount
      *
-     * @param object $amount amount
+     * @param mixed $amount amount
      *
      * @return self
      */
@@ -682,7 +682,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets custom_fields
      *
-     * @return object
+     * @return mixed
      */
     public function getCustomFields()
     {
@@ -692,7 +692,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets custom_fields
      *
-     * @param object $custom_fields custom_fields
+     * @param mixed $custom_fields custom_fields
      *
      * @return self
      */
@@ -743,7 +743,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getRedirectUrl()
     {
@@ -753,7 +753,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets redirect_url
      *
-     * @param object $redirect_url redirect_url
+     * @param mixed $redirect_url redirect_url
      *
      * @return self
      */
@@ -777,7 +777,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getSuccessMessage()
     {
@@ -787,7 +787,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets success_message
      *
-     * @param object $success_message success_message
+     * @param mixed $success_message success_message
      *
      * @return self
      */
@@ -919,7 +919,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets notification_email
      *
-     * @return object
+     * @return mixed
      */
     public function getNotificationEmail()
     {
@@ -929,7 +929,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets notification_email
      *
-     * @param object $notification_email notification_email
+     * @param mixed $notification_email notification_email
      *
      * @return self
      */
@@ -953,7 +953,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -963,7 +963,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -987,7 +987,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -997,7 +997,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */
@@ -1075,7 +1075,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets plan
      *
-     * @return object
+     * @return mixed
      */
     public function getPlan()
     {
@@ -1085,7 +1085,7 @@ class PageUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets plan
      *
-     * @param object $plan plan
+     * @param mixed $plan plan
      *
      * @return self
      */

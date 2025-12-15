@@ -392,8 +392,8 @@ class MiscellaneousApi
             $country,
             'country', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 

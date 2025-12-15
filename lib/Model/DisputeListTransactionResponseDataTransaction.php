@@ -64,14 +64,14 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
         'reference' => 'string',
         'receipt_number' => 'int',
         'amount' => 'int',
-        'message' => 'object',
+        'message' => 'mixed',
         'gateway_response' => 'string',
         'paid_at' => 'string',
         'created_at' => 'string',
         'channel' => 'string',
         'currency' => 'string',
         'ip_address' => 'string',
-        'metadata' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata',
         'log' => '\Alexasomba\\Paystack\Model\ChargeAuthorizationResponseDataLog',
         'fees' => 'int',
         'fees_split' => 'int',
@@ -80,11 +80,11 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
         'plan' => 'object',
         'subaccount' => 'object',
         'split' => 'object',
-        'order_id' => 'object',
+        'order_id' => 'mixed',
         'requested_amount' => 'int',
-        'pos_transaction_data' => 'object',
-        'source' => 'object',
-        'fees_breakdown' => 'object',
+        'pos_transaction_data' => 'mixed',
+        'source' => 'mixed',
+        'fees_breakdown' => 'mixed',
         'connect' => 'object'
     ];
 
@@ -726,7 +726,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Gets message
      *
-     * @return object
+     * @return mixed
      */
     public function getMessage()
     {
@@ -736,7 +736,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Sets message
      *
-     * @param object $message message
+     * @param mixed $message message
      *
      * @return self
      */
@@ -929,7 +929,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata
      */
     public function getMetadata()
     {
@@ -939,7 +939,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataMetadata $metadata metadata
      *
      * @return self
      */
@@ -1186,7 +1186,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Gets order_id
      *
-     * @return object
+     * @return mixed
      */
     public function getOrderId()
     {
@@ -1196,7 +1196,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Sets order_id
      *
-     * @param object $order_id order_id
+     * @param mixed $order_id order_id
      *
      * @return self
      */
@@ -1247,7 +1247,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Gets pos_transaction_data
      *
-     * @return object
+     * @return mixed
      */
     public function getPosTransactionData()
     {
@@ -1257,7 +1257,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Sets pos_transaction_data
      *
-     * @param object $pos_transaction_data pos_transaction_data
+     * @param mixed $pos_transaction_data pos_transaction_data
      *
      * @return self
      */
@@ -1281,7 +1281,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Gets source
      *
-     * @return object
+     * @return mixed
      */
     public function getSource()
     {
@@ -1291,7 +1291,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Sets source
      *
-     * @param object $source source
+     * @param mixed $source source
      *
      * @return self
      */
@@ -1315,7 +1315,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Gets fees_breakdown
      *
-     * @return object
+     * @return mixed
      */
     public function getFeesBreakdown()
     {
@@ -1325,7 +1325,7 @@ class DisputeListTransactionResponseDataTransaction implements ModelInterface, A
     /**
      * Sets fees_breakdown
      *
-     * @param object $fees_breakdown fees_breakdown
+     * @param mixed $fees_breakdown fees_breakdown
      *
      * @return self
      */

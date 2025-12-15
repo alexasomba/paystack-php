@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bank** | [**\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank**](DedicatedNubanCreateResponseDataBank.md) |  |
+**bank** | [**\Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank**](DedicatedNubanListResponseArrayBank.md) |  |
 **account_name** | **string** |  |
 **account_number** | **string** |  |
 **assigned** | **bool** |  |
 **currency** | **string** |  |
-**metadata** | **object** |  |
+**metadata** | **mixed** |  |
 **active** | **bool** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |

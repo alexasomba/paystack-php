@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscriptions** | **object[]** |  |
-**pages** | **object[]** |  |
+**subscriptions** | **mixed[]** |  |
+**pages** | **mixed[]** |  |
 **domain** | **string** |  |
 **name** | **string** |  |
 **plan_code** | **string** |  |
-**description** | **object** |  |
+**description** | **mixed** |  |
 **amount** | **int** |  |
 **interval** | **string** |  |
 **invoice_limit** | **int** |  |
 **send_invoices** | **bool** |  |
 **send_sms** | **bool** |  |
 **hosted_page** | **bool** |  |
-**hosted_page_url** | **object** |  |
-**hosted_page_summary** | **object** |  |
+**hosted_page_url** | **mixed** |  |
+**hosted_page_summary** | **mixed** |  |
 **currency** | **string** |  |
 **migrate** | **bool** |  |
 **is_deleted** | **bool** |  |

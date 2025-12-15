@@ -262,7 +262,7 @@ try {
 ## `productUpdate()`
 
 ```php
-productUpdate($id, $body): \Alexasomba\\Paystack\Model\ProductUpdateResponse
+productUpdate($id, $product_update): \Alexasomba\\Paystack\Model\ProductUpdateResponse
 ```
 
 Update product
@@ -287,10 +287,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\ProductApi(
     $config
 );
 $id = 2196244; // int | The unique identifier of the product
-$body = new \Alexasomba\\Paystack\Model\ProductId(); // \Alexasomba\\Paystack\Model\ProductId
+$product_update = new \Alexasomba\\Paystack\Model\ProductUpdate(); // \Alexasomba\\Paystack\Model\ProductUpdate
 
 try {
-    $result = $apiInstance->productUpdate($id, $body);
+    $result = $apiInstance->productUpdate($id, $product_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productUpdate: ', $e->getMessage(), PHP_EOL;
@@ -302,7 +302,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of the product | |
-| **body** | **\Alexasomba\\Paystack\Model\ProductId**|  | [optional] |
+| **product_update** | [**\Alexasomba\\Paystack\Model\ProductUpdate**](../Model/ProductUpdate.md)|  | [optional] |
 
 ### Return type
 

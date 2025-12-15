@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integration** | **int** |  |
-**plan** | **object** |  |
+**plan** | **mixed** |  |
 **domain** | **string** |  |
 **name** | **string** |  |
 **description** | **string** |  |
 **amount** | **int** |  |
 **currency** | **string** |  |
 **slug** | **string** |  |
-**custom_fields** | **object[]** |  |
+**custom_fields** | **mixed[]** |  |
 **type** | **string** |  |
 **redirect_url** | **string** |  |
 **success_message** | **string** |  |
@@ -20,9 +20,9 @@ Name | Type | Description | Notes
 **active** | **bool** |  |
 **published** | **bool** |  |
 **migrate** | **bool** |  |
-**notification_email** | **object** |  |
+**notification_email** | **mixed** |  |
 **metadata** | **object** |  |
-**split_code** | **object** |  |
+**split_code** | **mixed** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |

@@ -73,7 +73,7 @@ try {
 ## `subaccountFetch()`
 
 ```php
-subaccountFetch($code): \Alexasomba\\Paystack\Model\SubaccountCode
+subaccountFetch($code): \Alexasomba\\Paystack\Model\SubaccountFetchResponse
 ```
 
 Fetch Subaccount
@@ -115,7 +115,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\SubaccountCode**](../Model/SubaccountCode.md)
+[**\Alexasomba\\Paystack\Model\SubaccountFetchResponse**](../Model/SubaccountFetchResponse.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ try {
 ## `subaccountUpdate()`
 
 ```php
-subaccountUpdate($code, $body): \Alexasomba\\Paystack\Model\SubaccountCode
+subaccountUpdate($code, $subaccount_update): \Alexasomba\\Paystack\Model\SubaccountUpdateResponse
 ```
 
 Update Subaccount
@@ -222,10 +222,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\SubaccountApi(
     $config
 );
 $code = ACCT_6uujpqtzmnufzkw; // string | The subaccount code you want to fetch
-$body = new \Alexasomba\\Paystack\Model\SubaccountCode(); // \Alexasomba\\Paystack\Model\SubaccountCode
+$subaccount_update = new \Alexasomba\\Paystack\Model\SubaccountUpdate(); // \Alexasomba\\Paystack\Model\SubaccountUpdate
 
 try {
-    $result = $apiInstance->subaccountUpdate($code, $body);
+    $result = $apiInstance->subaccountUpdate($code, $subaccount_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubaccountApi->subaccountUpdate: ', $e->getMessage(), PHP_EOL;
@@ -237,11 +237,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| The subaccount code you want to fetch | |
-| **body** | **\Alexasomba\\Paystack\Model\SubaccountCode**|  | [optional] |
+| **subaccount_update** | [**\Alexasomba\\Paystack\Model\SubaccountUpdate**](../Model/SubaccountUpdate.md)|  | [optional] |
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\SubaccountCode**](../Model/SubaccountCode.md)
+[**\Alexasomba\\Paystack\Model\SubaccountUpdateResponse**](../Model/SubaccountUpdateResponse.md)
 
 ### Authorization
 

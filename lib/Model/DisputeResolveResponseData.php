@@ -61,14 +61,14 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
         'currency' => 'string',
         'last4' => 'string',
         'bin' => 'string',
-        'transaction_reference' => 'object',
+        'transaction_reference' => 'mixed',
         'merchant_transaction_reference' => 'string',
         'refund_amount' => 'int',
         'status' => 'string',
         'domain' => 'string',
         'resolution' => 'string',
         'category' => 'string',
-        'note' => 'object',
+        'note' => 'mixed',
         'attachments' => 'string',
         'id' => 'int',
         'integration' => 'int',
@@ -78,7 +78,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
         'resolved_at' => 'string',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'due_at' => 'object',
+        'due_at' => 'mixed',
         'message' => '\Alexasomba\\Paystack\Model\DisputeResolveResponseDataMessage'
     ];
 
@@ -587,7 +587,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets transaction_reference
      *
-     * @return object
+     * @return mixed
      */
     public function getTransactionReference()
     {
@@ -597,7 +597,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets transaction_reference
      *
-     * @param object $transaction_reference transaction_reference
+     * @param mixed $transaction_reference transaction_reference
      *
      * @return self
      */
@@ -783,7 +783,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets note
      *
-     * @return object
+     * @return mixed
      */
     public function getNote()
     {
@@ -793,7 +793,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets note
      *
-     * @param object $note note
+     * @param mixed $note note
      *
      * @return self
      */
@@ -1060,7 +1060,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets due_at
      *
-     * @return object
+     * @return mixed
      */
     public function getDueAt()
     {
@@ -1070,7 +1070,7 @@ class DisputeResolveResponseData implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets due_at
      *
-     * @param object $due_at due_at
+     * @param mixed $due_at due_at
      *
      * @return self
      */

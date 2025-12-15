@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**digital_assets** | **object[]** |  |
+**digital_assets** | **mixed[]** |  |
 **integration** | **int** |  |
 **name** | **string** |  |
 **description** | **string** |  |
@@ -12,28 +12,28 @@ Name | Type | Description | Notes
 **price** | **int** |  |
 **currency** | **string** |  |
 **quantity** | **int** |  |
-**quantity_sold** | **object** |  |
+**quantity_sold** | **mixed** |  |
 **type** | **string** |  |
-**files** | **object[]** |  |
-**file_path** | **object** |  |
+**files** | **mixed[]** |  |
+**file_path** | **mixed** |  |
 **is_shippable** | **bool** |  |
-**shipping_fields** | [**\Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields**](ProductCreateResponseDataShippingFields.md) |  |
+**shipping_fields** | [**\Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields**](ProductListsResponseArrayShippingFields.md) |  |
 **unlimited** | **bool** |  |
 **domain** | **string** |  |
 **active** | **bool** |  |
-**features** | **object** |  |
+**features** | **mixed** |  |
 **in_stock** | **bool** |  |
-**metadata** | [**\Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata**](ProductCreateResponseDataMetadata.md) |  |
+**metadata** | [**\Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata**](ProductListsResponseArrayMetadata.md) |  |
 **slug** | **string** |  |
-**success_message** | **object** |  |
-**redirect_url** | **object** |  |
-**split_code** | **object** |  |
-**notification_emails** | **object** |  |
+**success_message** | **mixed** |  |
+**redirect_url** | **mixed** |  |
+**split_code** | **mixed** |  |
+**notification_emails** | **mixed** |  |
 **minimum_orderable** | **int** |  |
-**maximum_orderable** | **object** |  |
+**maximum_orderable** | **mixed** |  |
 **low_stock_alert** | **bool** |  |
-**stock_threshold** | **object** |  |
-**expires_in** | **object** |  |
+**stock_threshold** | **mixed** |  |
+**expires_in** | **mixed** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |

@@ -66,21 +66,21 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
         'due_date' => 'string',
         'has_invoice' => 'bool',
         'invoice_number' => 'int',
-        'description' => 'object',
+        'description' => 'mixed',
         'pdf_url' => 'string',
-        'line_items' => 'object[]',
-        'tax' => 'object[]',
+        'line_items' => 'mixed[]',
+        'tax' => 'mixed[]',
         'request_code' => 'string',
         'status' => 'string',
         'paid' => 'bool',
-        'paid_at' => 'object',
-        'metadata' => 'object',
+        'paid_at' => 'mixed',
+        'metadata' => 'mixed',
         'notifications' => '\Alexasomba\\Paystack\Model\PaymentRequestNotificationsArray[]',
         'offline_reference' => 'string',
-        'customer' => '\Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer',
+        'customer' => '\Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer',
         'created_at' => 'string',
-        'discount' => 'object',
-        'split_code' => 'object',
+        'discount' => 'mixed',
+        'split_code' => 'mixed',
         'pending_amount' => 'int'
     ];
 
@@ -756,7 +756,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -766,7 +766,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */
@@ -824,7 +824,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets line_items
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getLineItems()
     {
@@ -834,7 +834,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets line_items
      *
-     * @param object[] $line_items line_items
+     * @param mixed[] $line_items line_items
      *
      * @return self
      */
@@ -851,7 +851,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets tax
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getTax()
     {
@@ -861,7 +861,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets tax
      *
-     * @param object[] $tax tax
+     * @param mixed[] $tax tax
      *
      * @return self
      */
@@ -959,7 +959,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets paid_at
      *
-     * @return object
+     * @return mixed
      */
     public function getPaidAt()
     {
@@ -969,7 +969,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets paid_at
      *
-     * @param object $paid_at paid_at
+     * @param mixed $paid_at paid_at
      *
      * @return self
      */
@@ -993,7 +993,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets metadata
      *
-     * @return object
+     * @return mixed
      */
     public function getMetadata()
     {
@@ -1003,7 +1003,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets metadata
      *
-     * @param object $metadata metadata
+     * @param mixed $metadata metadata
      *
      * @return self
      */
@@ -1081,7 +1081,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer
      */
     public function getCustomer()
     {
@@ -1091,7 +1091,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer $customer customer
      *
      * @return self
      */
@@ -1135,7 +1135,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets discount
      *
-     * @return object
+     * @return mixed
      */
     public function getDiscount()
     {
@@ -1145,7 +1145,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets discount
      *
-     * @param object $discount discount
+     * @param mixed $discount discount
      *
      * @return self
      */
@@ -1169,7 +1169,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1179,7 +1179,7 @@ class PaymentRequestVerifyResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */

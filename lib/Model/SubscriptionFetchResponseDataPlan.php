@@ -61,7 +61,7 @@ class SubscriptionFetchResponseDataPlan implements ModelInterface, ArrayAccess, 
         'id' => 'int',
         'name' => 'string',
         'plan_code' => 'string',
-        'description' => 'object',
+        'description' => 'mixed',
         'amount' => 'int',
         'interval' => 'string',
         'send_invoices' => 'bool',
@@ -457,7 +457,7 @@ class SubscriptionFetchResponseDataPlan implements ModelInterface, ArrayAccess, 
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -467,7 +467,7 @@ class SubscriptionFetchResponseDataPlan implements ModelInterface, ArrayAccess, 
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */

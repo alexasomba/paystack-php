@@ -434,8 +434,8 @@ class DisputeApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -443,8 +443,8 @@ class DisputeApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -452,8 +452,8 @@ class DisputeApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -461,8 +461,8 @@ class DisputeApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -470,8 +470,8 @@ class DisputeApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -541,16 +541,16 @@ class DisputeApi
      * Add Evidence
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdEvidence $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeEvidence $dispute_evidence dispute_evidence (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeEvidence'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\DisputeAddEvidenceResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function disputeEvidence($id, $body = null, string $contentType = self::contentTypes['disputeEvidence'][0])
+    public function disputeEvidence($id, $dispute_evidence = null, string $contentType = self::contentTypes['disputeEvidence'][0])
     {
-        list($response) = $this->disputeEvidenceWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->disputeEvidenceWithHttpInfo($id, $dispute_evidence, $contentType);
         return $response;
     }
 
@@ -560,16 +560,16 @@ class DisputeApi
      * Add Evidence
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdEvidence $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeEvidence $dispute_evidence (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeEvidence'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\DisputeAddEvidenceResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disputeEvidenceWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['disputeEvidence'][0])
+    public function disputeEvidenceWithHttpInfo($id, $dispute_evidence = null, string $contentType = self::contentTypes['disputeEvidence'][0])
     {
-        $request = $this->disputeEvidenceRequest($id, $body, $contentType);
+        $request = $this->disputeEvidenceRequest($id, $dispute_evidence, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -684,15 +684,15 @@ class DisputeApi
      * Add Evidence
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdEvidence $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeEvidence $dispute_evidence (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeEvidence'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disputeEvidenceAsync($id, $body = null, string $contentType = self::contentTypes['disputeEvidence'][0])
+    public function disputeEvidenceAsync($id, $dispute_evidence = null, string $contentType = self::contentTypes['disputeEvidence'][0])
     {
-        return $this->disputeEvidenceAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->disputeEvidenceAsyncWithHttpInfo($id, $dispute_evidence, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -706,16 +706,16 @@ class DisputeApi
      * Add Evidence
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdEvidence $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeEvidence $dispute_evidence (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeEvidence'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disputeEvidenceAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['disputeEvidence'][0])
+    public function disputeEvidenceAsyncWithHttpInfo($id, $dispute_evidence = null, string $contentType = self::contentTypes['disputeEvidence'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\DisputeAddEvidenceResponse';
-        $request = $this->disputeEvidenceRequest($id, $body, $contentType);
+        $request = $this->disputeEvidenceRequest($id, $dispute_evidence, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -757,13 +757,13 @@ class DisputeApi
      * Create request for operation 'disputeEvidence'
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdEvidence $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeEvidence $dispute_evidence (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeEvidence'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disputeEvidenceRequest($id, $body = null, string $contentType = self::contentTypes['disputeEvidence'][0])
+    public function disputeEvidenceRequest($id, $dispute_evidence = null, string $contentType = self::contentTypes['disputeEvidence'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -801,12 +801,12 @@ class DisputeApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($dispute_evidence)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dispute_evidence));
             } else {
-                $httpBody = $body;
+                $httpBody = $dispute_evidence;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1484,8 +1484,8 @@ class DisputeApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1493,8 +1493,8 @@ class DisputeApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1502,8 +1502,8 @@ class DisputeApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1511,8 +1511,8 @@ class DisputeApi
             $transaction,
             'transaction', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1520,8 +1520,8 @@ class DisputeApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1529,8 +1529,8 @@ class DisputeApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1600,16 +1600,16 @@ class DisputeApi
      * Resolve Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdResolve $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeResolve $dispute_resolve dispute_resolve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeResolve'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\DisputeResolveResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function disputeResolve($id, $body = null, string $contentType = self::contentTypes['disputeResolve'][0])
+    public function disputeResolve($id, $dispute_resolve = null, string $contentType = self::contentTypes['disputeResolve'][0])
     {
-        list($response) = $this->disputeResolveWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->disputeResolveWithHttpInfo($id, $dispute_resolve, $contentType);
         return $response;
     }
 
@@ -1619,16 +1619,16 @@ class DisputeApi
      * Resolve Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdResolve $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeResolve $dispute_resolve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeResolve'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\DisputeResolveResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disputeResolveWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['disputeResolve'][0])
+    public function disputeResolveWithHttpInfo($id, $dispute_resolve = null, string $contentType = self::contentTypes['disputeResolve'][0])
     {
-        $request = $this->disputeResolveRequest($id, $body, $contentType);
+        $request = $this->disputeResolveRequest($id, $dispute_resolve, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1766,15 +1766,15 @@ class DisputeApi
      * Resolve Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdResolve $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeResolve $dispute_resolve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeResolve'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disputeResolveAsync($id, $body = null, string $contentType = self::contentTypes['disputeResolve'][0])
+    public function disputeResolveAsync($id, $dispute_resolve = null, string $contentType = self::contentTypes['disputeResolve'][0])
     {
-        return $this->disputeResolveAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->disputeResolveAsyncWithHttpInfo($id, $dispute_resolve, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1788,16 +1788,16 @@ class DisputeApi
      * Resolve Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdResolve $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeResolve $dispute_resolve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeResolve'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disputeResolveAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['disputeResolve'][0])
+    public function disputeResolveAsyncWithHttpInfo($id, $dispute_resolve = null, string $contentType = self::contentTypes['disputeResolve'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\DisputeResolveResponse';
-        $request = $this->disputeResolveRequest($id, $body, $contentType);
+        $request = $this->disputeResolveRequest($id, $dispute_resolve, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1839,13 +1839,13 @@ class DisputeApi
      * Create request for operation 'disputeResolve'
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeIdResolve $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeResolve $dispute_resolve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeResolve'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disputeResolveRequest($id, $body = null, string $contentType = self::contentTypes['disputeResolve'][0])
+    public function disputeResolveRequest($id, $dispute_resolve = null, string $contentType = self::contentTypes['disputeResolve'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1883,12 +1883,12 @@ class DisputeApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($dispute_resolve)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dispute_resolve));
             } else {
-                $httpBody = $body;
+                $httpBody = $dispute_resolve;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2279,16 +2279,16 @@ class DisputeApi
      * Update Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeUpdate $dispute_update dispute_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\DisputeUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function disputeUpdate($id, $body = null, string $contentType = self::contentTypes['disputeUpdate'][0])
+    public function disputeUpdate($id, $dispute_update = null, string $contentType = self::contentTypes['disputeUpdate'][0])
     {
-        list($response) = $this->disputeUpdateWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->disputeUpdateWithHttpInfo($id, $dispute_update, $contentType);
         return $response;
     }
 
@@ -2298,16 +2298,16 @@ class DisputeApi
      * Update Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeUpdate $dispute_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\DisputeUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disputeUpdateWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['disputeUpdate'][0])
+    public function disputeUpdateWithHttpInfo($id, $dispute_update = null, string $contentType = self::contentTypes['disputeUpdate'][0])
     {
-        $request = $this->disputeUpdateRequest($id, $body, $contentType);
+        $request = $this->disputeUpdateRequest($id, $dispute_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2445,15 +2445,15 @@ class DisputeApi
      * Update Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeUpdate $dispute_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disputeUpdateAsync($id, $body = null, string $contentType = self::contentTypes['disputeUpdate'][0])
+    public function disputeUpdateAsync($id, $dispute_update = null, string $contentType = self::contentTypes['disputeUpdate'][0])
     {
-        return $this->disputeUpdateAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->disputeUpdateAsyncWithHttpInfo($id, $dispute_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2467,16 +2467,16 @@ class DisputeApi
      * Update Dispute
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeUpdate $dispute_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function disputeUpdateAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['disputeUpdate'][0])
+    public function disputeUpdateAsyncWithHttpInfo($id, $dispute_update = null, string $contentType = self::contentTypes['disputeUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\DisputeUpdateResponse';
-        $request = $this->disputeUpdateRequest($id, $body, $contentType);
+        $request = $this->disputeUpdateRequest($id, $dispute_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2518,13 +2518,13 @@ class DisputeApi
      * Create request for operation 'disputeUpdate'
      *
      * @param  int $id The unique identifier of the dispute (required)
-     * @param  \Alexasomba\\Paystack\Model\DisputeId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\DisputeUpdate $dispute_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['disputeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function disputeUpdateRequest($id, $body = null, string $contentType = self::contentTypes['disputeUpdate'][0])
+    public function disputeUpdateRequest($id, $dispute_update = null, string $contentType = self::contentTypes['disputeUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2562,12 +2562,12 @@ class DisputeApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($dispute_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dispute_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $dispute_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

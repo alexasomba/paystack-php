@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **currency** | **string** |  |
 **quantity** | **int** |  |
 **type** | **string** |  |
-**features** | **object** |  |
+**features** | **mixed** |  |
 **is_shippable** | **int** |  |
 **domain** | **string** |  |
 **integration** | **int** |  |

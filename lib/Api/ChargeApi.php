@@ -157,7 +157,7 @@ class ChargeApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\ChargeReference|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\ChargeCheckPendingResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function chargeCheck($reference, string $contentType = self::contentTypes['chargeCheck'][0])
     {
@@ -175,7 +175,7 @@ class ChargeApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\ChargeReference|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\ChargeCheckPendingResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function chargeCheckWithHttpInfo($reference, string $contentType = self::contentTypes['chargeCheck'][0])
     {
@@ -218,17 +218,17 @@ class ChargeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\ChargeReference' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\ChargeReference' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\ChargeReference', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -264,7 +264,7 @@ class ChargeApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\ChargeReference';
+            $returnType = '\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -285,7 +285,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\ChargeReference',
+                        '\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -345,7 +345,7 @@ class ChargeApi
      */
     public function chargeCheckAsyncWithHttpInfo($reference, string $contentType = self::contentTypes['chargeCheck'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\ChargeReference';
+        $returnType = '\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse';
         $request = $this->chargeCheckRequest($reference, $contentType);
 
         return $this->client

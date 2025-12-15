@@ -59,14 +59,14 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'integration' => 'int',
-        'plan' => 'object',
+        'plan' => 'mixed',
         'domain' => 'string',
         'name' => 'string',
         'description' => 'string',
         'amount' => 'int',
         'currency' => 'string',
         'slug' => 'string',
-        'custom_fields' => 'object[]',
+        'custom_fields' => 'mixed[]',
         'type' => 'string',
         'redirect_url' => 'string',
         'success_message' => 'string',
@@ -74,9 +74,9 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
         'active' => 'bool',
         'published' => 'bool',
         'migrate' => 'bool',
-        'notification_email' => 'object',
+        'notification_email' => 'mixed',
         'metadata' => 'object',
-        'split_code' => 'object',
+        'split_code' => 'mixed',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string'
@@ -533,7 +533,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets plan
      *
-     * @return object
+     * @return mixed
      */
     public function getPlan()
     {
@@ -543,7 +543,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets plan
      *
-     * @param object $plan plan
+     * @param mixed $plan plan
      *
      * @return self
      */
@@ -743,7 +743,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets custom_fields
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getCustomFields()
     {
@@ -753,7 +753,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets custom_fields
      *
-     * @param object[] $custom_fields custom_fields
+     * @param mixed[] $custom_fields custom_fields
      *
      * @return self
      */
@@ -980,7 +980,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets notification_email
      *
-     * @return object
+     * @return mixed
      */
     public function getNotificationEmail()
     {
@@ -990,7 +990,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets notification_email
      *
-     * @param object $notification_email notification_email
+     * @param mixed $notification_email notification_email
      *
      * @return self
      */
@@ -1048,7 +1048,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1058,7 +1058,7 @@ class PageListResponseArray implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */

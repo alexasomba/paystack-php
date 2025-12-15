@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **plan** | **object** |  |
 **subaccount** | [**\Alexasomba\\Paystack\Model\RefundCreateResponseDataTransactionSubaccount**](RefundCreateResponseDataTransactionSubaccount.md) |  |
 **split** | **object** |  |
-**order_id** | **object** |  |
-**pos_transaction_data** | **object** |  |
-**source** | **object** |  |
-**fees_breakdown** | **object** |  |
+**order_id** | **mixed** |  |
+**pos_transaction_data** | **mixed** |  |
+**source** | **mixed** |  |
+**fees_breakdown** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

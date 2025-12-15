@@ -5,24 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integration** | **int** |  |
-**plan** | **object** |  |
+**plan** | **mixed** |  |
 **domain** | **string** |  |
 **name** | **string** |  |
-**description** | **object** |  |
-**amount** | **object** |  |
+**description** | **mixed** |  |
+**amount** | **mixed** |  |
 **currency** | **string** |  |
 **slug** | **string** |  |
-**custom_fields** | **object** |  |
+**custom_fields** | **mixed** |  |
 **type** | **string** |  |
-**redirect_url** | **object** |  |
-**success_message** | **object** |  |
+**redirect_url** | **mixed** |  |
+**success_message** | **mixed** |  |
 **collect_phone** | **bool** |  |
 **active** | **bool** |  |
 **published** | **bool** |  |
 **migrate** | **bool** |  |
-**notification_email** | **object** |  |
-**metadata** | **object** |  |
-**split_code** | **object** |  |
+**notification_email** | **mixed** |  |
+**metadata** | **mixed** |  |
+**split_code** | **mixed** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |

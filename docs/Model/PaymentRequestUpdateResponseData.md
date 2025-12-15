@@ -12,20 +12,20 @@ Name | Type | Description | Notes
 **due_date** | **string** |  |
 **has_invoice** | **bool** |  |
 **invoice_number** | **int** |  |
-**description** | **object** |  |
+**description** | **mixed** |  |
 **pdf_url** | **string** |  |
-**line_items** | **object[]** |  |
-**tax** | **object[]** |  |
+**line_items** | **mixed[]** |  |
+**tax** | **mixed[]** |  |
 **request_code** | **string** |  |
 **status** | **string** |  |
 **paid** | **bool** |  |
-**paid_at** | **object** |  |
-**metadata** | **object** |  |
+**paid_at** | **mixed** |  |
+**metadata** | **mixed** |  |
 **notifications** | [**\Alexasomba\\Paystack\Model\PaymentRequestNotificationsArray[]**](PaymentRequestNotificationsArray.md) |  |
 **offline_reference** | **string** |  |
-**customer** | [**\Alexasomba\\Paystack\Model\PaymentRequestUpdateResponseDataCustomer**](PaymentRequestUpdateResponseDataCustomer.md) |  |
+**customer** | [**\Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponseArrayCustomer**](BulkChargeFetchBulkBatchChargesResponseArrayCustomer.md) |  |
 **created_at** | **string** |  |
-**discount** | **object** |  |
-**split_code** | **object** |  |
+**discount** | **mixed** |  |
+**split_code** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

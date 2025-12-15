@@ -383,7 +383,7 @@ try {
 ## `terminalSendEvent()`
 
 ```php
-terminalSendEvent($id, $body): \Alexasomba\\Paystack\Model\Response
+terminalSendEvent($id, $terminal_send_event): \Alexasomba\\Paystack\Model\Response
 ```
 
 Send Event
@@ -408,10 +408,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\TerminalApi(
     $config
 );
 $id = Z0R4orOU; // string | The ID of the Terminal the event should be sent to.
-$body = new \Alexasomba\\Paystack\Model\TerminalIdEvent(); // \Alexasomba\\Paystack\Model\TerminalIdEvent
+$terminal_send_event = new \Alexasomba\\Paystack\Model\TerminalSendEvent(); // \Alexasomba\\Paystack\Model\TerminalSendEvent
 
 try {
-    $result = $apiInstance->terminalSendEvent($id, $body);
+    $result = $apiInstance->terminalSendEvent($id, $terminal_send_event);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TerminalApi->terminalSendEvent: ', $e->getMessage(), PHP_EOL;
@@ -423,7 +423,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| The ID of the Terminal the event should be sent to. | |
-| **body** | **\Alexasomba\\Paystack\Model\TerminalIdEvent**|  | [optional] |
+| **terminal_send_event** | [**\Alexasomba\\Paystack\Model\TerminalSendEvent**](../Model/TerminalSendEvent.md)|  | [optional] |
 
 ### Return type
 
@@ -445,7 +445,7 @@ try {
 ## `terminalUpdate()`
 
 ```php
-terminalUpdate($terminal_id, $body): \Alexasomba\\Paystack\Model\TerminalUpdateResponse
+terminalUpdate($terminal_id, $terminal_upate): \Alexasomba\\Paystack\Model\TerminalUpdateResponse
 ```
 
 Update Terminal
@@ -470,10 +470,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\TerminalApi(
     $config
 );
 $terminal_id = Z0R4orOU; // string | The ID of the Terminal the event should be sent to.
-$body = new \Alexasomba\\Paystack\Model\TerminalTerminalId(); // \Alexasomba\\Paystack\Model\TerminalTerminalId
+$terminal_upate = new \Alexasomba\\Paystack\Model\TerminalUpate(); // \Alexasomba\\Paystack\Model\TerminalUpate
 
 try {
-    $result = $apiInstance->terminalUpdate($terminal_id, $body);
+    $result = $apiInstance->terminalUpdate($terminal_id, $terminal_upate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TerminalApi->terminalUpdate: ', $e->getMessage(), PHP_EOL;
@@ -485,7 +485,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **terminal_id** | **string**| The ID of the Terminal the event should be sent to. | |
-| **body** | **\Alexasomba\\Paystack\Model\TerminalTerminalId**|  | [optional] |
+| **terminal_upate** | [**\Alexasomba\\Paystack\Model\TerminalUpate**](../Model/TerminalUpate.md)|  | [optional] |
 
 ### Return type
 

@@ -16,7 +16,7 @@ All URIs are relative to https://api.paystack.co, except if the operation define
 ## `chargeCheck()`
 
 ```php
-chargeCheck($reference): \Alexasomba\\Paystack\Model\ChargeReference
+chargeCheck($reference): \Alexasomba\\Paystack\Model\ChargeCheckPendingResponse
 ```
 
 Check pending charge
@@ -58,7 +58,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\ChargeReference**](../Model/ChargeReference.md)
+[**\Alexasomba\\Paystack\Model\ChargeCheckPendingResponse**](../Model/ChargeCheckPendingResponse.md)
 
 ### Authorization
 

@@ -58,7 +58,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'discounts' => 'object[]',
+        'discounts' => 'mixed[]',
         'order_code' => 'string',
         'domain' => 'string',
         'currency' => 'string',
@@ -67,27 +67,27 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
         'status' => 'string',
         'refunded' => 'bool',
         'paid_at' => 'string',
-        'shipping_address' => 'object',
+        'shipping_address' => 'mixed',
         'metadata' => 'object',
         'shipping_fees' => 'int',
-        'shipping_method' => 'object',
+        'shipping_method' => 'mixed',
         'is_viewed' => 'bool',
         'expiration_date' => 'string',
         'pay_for_me' => 'bool',
         'id' => 'int',
         'integration' => 'int',
-        'page' => 'object',
-        'customer' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer',
-        'shipping' => 'object',
+        'page' => 'mixed',
+        'customer' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer',
+        'shipping' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string',
         'transaction' => 'int',
         'is_gift' => 'bool',
-        'payer' => '\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer',
+        'payer' => '\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer',
         'fully_refunded' => 'bool',
         'refunded_amount' => 'int',
         'items' => '\Alexasomba\\Paystack\Model\OrderItemsArray[]',
-        'discount_amount' => 'object'
+        'discount_amount' => 'mixed'
     ];
 
     /**
@@ -586,7 +586,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets discounts
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getDiscounts()
     {
@@ -596,7 +596,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets discounts
      *
-     * @param object[] $discounts discounts
+     * @param mixed[] $discounts discounts
      *
      * @return self
      */
@@ -829,7 +829,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping_address
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingAddress()
     {
@@ -839,7 +839,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping_address
      *
-     * @param object $shipping_address shipping_address
+     * @param mixed $shipping_address shipping_address
      *
      * @return self
      */
@@ -917,7 +917,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping_method
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingMethod()
     {
@@ -927,7 +927,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping_method
      *
-     * @param object $shipping_method shipping_method
+     * @param mixed $shipping_method shipping_method
      *
      * @return self
      */
@@ -1086,7 +1086,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets page
      *
-     * @return object
+     * @return mixed
      */
     public function getPage()
     {
@@ -1096,7 +1096,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets page
      *
-     * @param object $page page
+     * @param mixed $page page
      *
      * @return self
      */
@@ -1120,7 +1120,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets customer
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer
      */
     public function getCustomer()
     {
@@ -1130,7 +1130,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets customer
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer $customer customer
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer $customer customer
      *
      * @return self
      */
@@ -1147,7 +1147,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping
      *
-     * @return object
+     * @return mixed
      */
     public function getShipping()
     {
@@ -1157,7 +1157,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping
      *
-     * @param object $shipping shipping
+     * @param mixed $shipping shipping
      *
      * @return self
      */
@@ -1289,7 +1289,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets payer
      *
-     * @return \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer
+     * @return \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer
      */
     public function getPayer()
     {
@@ -1299,7 +1299,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets payer
      *
-     * @param \Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer $payer payer
+     * @param \Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer $payer payer
      *
      * @return self
      */
@@ -1397,7 +1397,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets discount_amount
      *
-     * @return object
+     * @return mixed
      */
     public function getDiscountAmount()
     {
@@ -1407,7 +1407,7 @@ class OrderFetchResponseData implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets discount_amount
      *
-     * @param object $discount_amount discount_amount
+     * @param mixed $discount_amount discount_amount
      *
      * @return self
      */

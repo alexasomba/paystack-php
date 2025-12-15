@@ -61,7 +61,7 @@ class RefundCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
         'transaction' => '\Alexasomba\\Paystack\Model\RefundCreateResponseDataTransaction',
         'integration' => 'int',
         'deducted_amount' => 'int',
-        'channel' => 'object',
+        'channel' => 'mixed',
         'merchant_note' => 'string',
         'customer_note' => 'string',
         'status' => 'string',
@@ -527,7 +527,7 @@ class RefundCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets channel
      *
-     * @return object
+     * @return mixed
      */
     public function getChannel()
     {
@@ -537,7 +537,7 @@ class RefundCreateResponseData implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets channel
      *
-     * @param object $channel channel
+     * @param mixed $channel channel
      *
      * @return self
      */

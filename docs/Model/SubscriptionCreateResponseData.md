@@ -14,11 +14,11 @@ Name | Type | Description | Notes
 **amount** | **int** |  |
 **authorization** | **int** |  |
 **invoice_limit** | **int** |  |
-**split_code** | **object** |  |
+**split_code** | **mixed** |  |
 **subscription_code** | **string** |  |
 **email_token** | **string** |  |
 **id** | **int** |  |
-**cancelled_at** | **object** |  |
+**cancelled_at** | **mixed** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |
 **cron_expression** | **string** |  |

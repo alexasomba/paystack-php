@@ -15,7 +15,7 @@ All URIs are relative to https://api.paystack.co, except if the operation define
 ## `bulkChargeCharges()`
 
 ```php
-bulkChargeCharges($code, $per_page, $page, $status): \Alexasomba\\Paystack\Model\BulkchargeCodeCharges
+bulkChargeCharges($code, $per_page, $page, $status): \Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse
 ```
 
 List Charges in a Batch
@@ -63,7 +63,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\BulkchargeCodeCharges**](../Model/BulkchargeCodeCharges.md)
+[**\Alexasomba\\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse**](../Model/BulkChargeFetchBulkBatchChargesResponse.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ try {
 ## `bulkChargeFetch()`
 
 ```php
-bulkChargeFetch($code): \Alexasomba\\Paystack\Model\BulkchargeCode
+bulkChargeFetch($code): \Alexasomba\\Paystack\Model\BulkChargeFetchResponse
 ```
 
 Fetch Bulk Charge Batch
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\BulkchargeCode**](../Model/BulkchargeCode.md)
+[**\Alexasomba\\Paystack\Model\BulkChargeFetchResponse**](../Model/BulkChargeFetchResponse.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ try {
 ## `bulkChargePause()`
 
 ```php
-bulkChargePause($code): \Alexasomba\\Paystack\Model\BulkchargePauseCode
+bulkChargePause($code): \Alexasomba\\Paystack\Model\BulkChargePauseResponse
 ```
 
 Pause Bulk Charge Batch
@@ -307,7 +307,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\BulkchargePauseCode**](../Model/BulkchargePauseCode.md)
+[**\Alexasomba\\Paystack\Model\BulkChargePauseResponse**](../Model/BulkChargePauseResponse.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ try {
 ## `bulkChargeResume()`
 
 ```php
-bulkChargeResume($code): \Alexasomba\\Paystack\Model\BulkchargeResumeCode
+bulkChargeResume($code): \Alexasomba\\Paystack\Model\BulkChargeResumeResponse
 ```
 
 Resume Bulk Charge Batch
@@ -367,7 +367,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\BulkchargeResumeCode**](../Model/BulkchargeResumeCode.md)
+[**\Alexasomba\\Paystack\Model\BulkChargeResumeResponse**](../Model/BulkChargeResumeResponse.md)
 
 ### Authorization
 

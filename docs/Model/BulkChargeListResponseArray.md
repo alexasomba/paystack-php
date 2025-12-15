@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **domain** | **string** |  |
 **batch_code** | **string** |  |
 **status** | **string** |  |
-**easy_cron_id** | **object** |  |
+**easy_cron_id** | **mixed** |  |
 **reference** | **string** |  |
 **id** | **int** |  |
 **created_at** | **string** |  |

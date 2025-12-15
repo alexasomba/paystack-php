@@ -15,7 +15,7 @@ All URIs are relative to https://api.paystack.co, except if the operation define
 ## `pageAddProducts()`
 
 ```php
-pageAddProducts($id, $body): \Alexasomba\\Paystack\Model\PageAddProductsResponse
+pageAddProducts($id, $page_product): \Alexasomba\\Paystack\Model\PageAddProductsResponse
 ```
 
 Add Products
@@ -40,10 +40,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\PageApi(
     $config
 );
 $id = 'id_example'; // string
-$body = new \Alexasomba\\Paystack\Model\PageIdProduct(); // \Alexasomba\\Paystack\Model\PageIdProduct
+$page_product = new \Alexasomba\\Paystack\Model\PageProduct(); // \Alexasomba\\Paystack\Model\PageProduct
 
 try {
-    $result = $apiInstance->pageAddProducts($id, $body);
+    $result = $apiInstance->pageAddProducts($id, $page_product);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PageApi->pageAddProducts: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +55,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**|  | |
-| **body** | **\Alexasomba\\Paystack\Model\PageIdProduct**|  | [optional] |
+| **page_product** | [**\Alexasomba\\Paystack\Model\PageProduct**](../Model/PageProduct.md)|  | [optional] |
 
 ### Return type
 
@@ -323,7 +323,7 @@ try {
 ## `pageUpdate()`
 
 ```php
-pageUpdate($id, $body): \Alexasomba\\Paystack\Model\PageUpdateResponse
+pageUpdate($id, $page_update): \Alexasomba\\Paystack\Model\PageUpdateResponse
 ```
 
 Update Page
@@ -348,10 +348,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\PageApi(
     $config
 );
 $id = 1891222; // int | The unique identifier of a payment page
-$body = new \Alexasomba\\Paystack\Model\PageId(); // \Alexasomba\\Paystack\Model\PageId
+$page_update = new \Alexasomba\\Paystack\Model\PageUpdate(); // \Alexasomba\\Paystack\Model\PageUpdate
 
 try {
-    $result = $apiInstance->pageUpdate($id, $body);
+    $result = $apiInstance->pageUpdate($id, $page_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PageApi->pageUpdate: ', $e->getMessage(), PHP_EOL;
@@ -363,7 +363,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of a payment page | |
-| **body** | **\Alexasomba\\Paystack\Model\PageId**|  | [optional] |
+| **page_update** | [**\Alexasomba\\Paystack\Model\PageUpdate**](../Model/PageUpdate.md)|  | [optional] |
 
 ### Return type
 

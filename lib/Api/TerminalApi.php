@@ -2048,8 +2048,8 @@ class TerminalApi
             $next,
             'next', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2057,8 +2057,8 @@ class TerminalApi
             $previous,
             'previous', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2066,8 +2066,8 @@ class TerminalApi
             $per_page,
             'per_page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -2137,16 +2137,16 @@ class TerminalApi
      * Send Event
      *
      * @param  string $id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalIdEvent $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalSendEvent $terminal_send_event terminal_send_event (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalSendEvent'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
      */
-    public function terminalSendEvent($id, $body = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
+    public function terminalSendEvent($id, $terminal_send_event = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
     {
-        list($response) = $this->terminalSendEventWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->terminalSendEventWithHttpInfo($id, $terminal_send_event, $contentType);
         return $response;
     }
 
@@ -2156,16 +2156,16 @@ class TerminalApi
      * Send Event
      *
      * @param  string $id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalIdEvent $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalSendEvent $terminal_send_event (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalSendEvent'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function terminalSendEventWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
+    public function terminalSendEventWithHttpInfo($id, $terminal_send_event = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
     {
-        $request = $this->terminalSendEventRequest($id, $body, $contentType);
+        $request = $this->terminalSendEventRequest($id, $terminal_send_event, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2280,15 +2280,15 @@ class TerminalApi
      * Send Event
      *
      * @param  string $id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalIdEvent $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalSendEvent $terminal_send_event (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalSendEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function terminalSendEventAsync($id, $body = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
+    public function terminalSendEventAsync($id, $terminal_send_event = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
     {
-        return $this->terminalSendEventAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->terminalSendEventAsyncWithHttpInfo($id, $terminal_send_event, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2302,16 +2302,16 @@ class TerminalApi
      * Send Event
      *
      * @param  string $id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalIdEvent $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalSendEvent $terminal_send_event (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalSendEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function terminalSendEventAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
+    public function terminalSendEventAsyncWithHttpInfo($id, $terminal_send_event = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->terminalSendEventRequest($id, $body, $contentType);
+        $request = $this->terminalSendEventRequest($id, $terminal_send_event, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2353,13 +2353,13 @@ class TerminalApi
      * Create request for operation 'terminalSendEvent'
      *
      * @param  string $id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalIdEvent $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalSendEvent $terminal_send_event (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalSendEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function terminalSendEventRequest($id, $body = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
+    public function terminalSendEventRequest($id, $terminal_send_event = null, string $contentType = self::contentTypes['terminalSendEvent'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2397,12 +2397,12 @@ class TerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($terminal_send_event)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($terminal_send_event));
             } else {
-                $httpBody = $body;
+                $httpBody = $terminal_send_event;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2460,16 +2460,16 @@ class TerminalApi
      * Update Terminal
      *
      * @param  string $terminal_id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalTerminalId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalUpate $terminal_upate terminal_upate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\TerminalUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function terminalUpdate($terminal_id, $body = null, string $contentType = self::contentTypes['terminalUpdate'][0])
+    public function terminalUpdate($terminal_id, $terminal_upate = null, string $contentType = self::contentTypes['terminalUpdate'][0])
     {
-        list($response) = $this->terminalUpdateWithHttpInfo($terminal_id, $body, $contentType);
+        list($response) = $this->terminalUpdateWithHttpInfo($terminal_id, $terminal_upate, $contentType);
         return $response;
     }
 
@@ -2479,16 +2479,16 @@ class TerminalApi
      * Update Terminal
      *
      * @param  string $terminal_id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalTerminalId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalUpate $terminal_upate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\TerminalUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function terminalUpdateWithHttpInfo($terminal_id, $body = null, string $contentType = self::contentTypes['terminalUpdate'][0])
+    public function terminalUpdateWithHttpInfo($terminal_id, $terminal_upate = null, string $contentType = self::contentTypes['terminalUpdate'][0])
     {
-        $request = $this->terminalUpdateRequest($terminal_id, $body, $contentType);
+        $request = $this->terminalUpdateRequest($terminal_id, $terminal_upate, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2626,15 +2626,15 @@ class TerminalApi
      * Update Terminal
      *
      * @param  string $terminal_id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalTerminalId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalUpate $terminal_upate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function terminalUpdateAsync($terminal_id, $body = null, string $contentType = self::contentTypes['terminalUpdate'][0])
+    public function terminalUpdateAsync($terminal_id, $terminal_upate = null, string $contentType = self::contentTypes['terminalUpdate'][0])
     {
-        return $this->terminalUpdateAsyncWithHttpInfo($terminal_id, $body, $contentType)
+        return $this->terminalUpdateAsyncWithHttpInfo($terminal_id, $terminal_upate, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2648,16 +2648,16 @@ class TerminalApi
      * Update Terminal
      *
      * @param  string $terminal_id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalTerminalId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalUpate $terminal_upate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function terminalUpdateAsyncWithHttpInfo($terminal_id, $body = null, string $contentType = self::contentTypes['terminalUpdate'][0])
+    public function terminalUpdateAsyncWithHttpInfo($terminal_id, $terminal_upate = null, string $contentType = self::contentTypes['terminalUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\TerminalUpdateResponse';
-        $request = $this->terminalUpdateRequest($terminal_id, $body, $contentType);
+        $request = $this->terminalUpdateRequest($terminal_id, $terminal_upate, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2699,13 +2699,13 @@ class TerminalApi
      * Create request for operation 'terminalUpdate'
      *
      * @param  string $terminal_id The ID of the Terminal the event should be sent to. (required)
-     * @param  \Alexasomba\\Paystack\Model\TerminalTerminalId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TerminalUpate $terminal_upate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['terminalUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function terminalUpdateRequest($terminal_id, $body = null, string $contentType = self::contentTypes['terminalUpdate'][0])
+    public function terminalUpdateRequest($terminal_id, $terminal_upate = null, string $contentType = self::contentTypes['terminalUpdate'][0])
     {
 
         // verify the required parameter 'terminal_id' is set
@@ -2743,12 +2743,12 @@ class TerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($terminal_upate)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($terminal_upate));
             } else {
-                $httpBody = $body;
+                $httpBody = $terminal_upate;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

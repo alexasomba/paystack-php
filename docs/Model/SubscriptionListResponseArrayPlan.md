@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **domain** | **string** |  |
 **name** | **string** |  |
 **plan_code** | **string** |  |
-**description** | **object** |  |
+**description** | **mixed** |  |
 **amount** | **int** |  |
 **interval** | **string** |  |
 **send_invoices** | **bool** |  |

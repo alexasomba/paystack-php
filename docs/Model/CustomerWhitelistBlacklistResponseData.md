@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transactions** | **object[]** |  |
-**subscriptions** | **object[]** |  |
-**authorizations** | **object[]** |  |
+**transactions** | **mixed[]** |  |
+**subscriptions** | **mixed[]** |  |
+**authorizations** | **mixed[]** |  |
 **first_name** | **string** |  |
 **last_name** | **string** |  |
 **email** | **string** |  |
@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **created_at** | **string** |  |
 **updated_at** | **string** |  |
 **identified** | **bool** |  |
-**identifications** | **object** |  |
+**identifications** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

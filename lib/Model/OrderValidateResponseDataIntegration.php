@@ -61,7 +61,7 @@ class OrderValidateResponseDataIntegration implements ModelInterface, ArrayAcces
         'key' => 'string',
         'name' => 'string',
         'logo' => 'string',
-        'allowed_currencies' => 'object[]'
+        'allowed_currencies' => 'mixed[]'
     ];
 
     /**
@@ -407,7 +407,7 @@ class OrderValidateResponseDataIntegration implements ModelInterface, ArrayAcces
     /**
      * Gets allowed_currencies
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getAllowedCurrencies()
     {
@@ -417,7 +417,7 @@ class OrderValidateResponseDataIntegration implements ModelInterface, ArrayAcces
     /**
      * Sets allowed_currencies
      *
-     * @param object[] $allowed_currencies allowed_currencies
+     * @param mixed[] $allowed_currencies allowed_currencies
      *
      * @return self
      */

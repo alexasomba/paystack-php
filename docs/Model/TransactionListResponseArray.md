@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **status** | **string** |  |
 **reference** | **string** |  |
 **amount** | **int** |  |
-**message** | **object** |  |
+**message** | **mixed** |  |
 **gateway_response** | **string** |  |
 **paid_at** | **string** |  |
 **created_at** | **string** |  |
@@ -25,10 +25,10 @@ Name | Type | Description | Notes
 **plan** | **object** |  |
 **split** | **object** |  |
 **subaccount** | **object** |  |
-**order_id** | **object** |  |
+**order_id** | **mixed** |  |
 **requested_amount** | **int** |  |
 **source** | [**\Alexasomba\\Paystack\Model\TransactionListResponseArraySource**](TransactionListResponseArraySource.md) |  |
 **connect** | **object** |  |
-**pos_transaction_data** | **object** |  |
+**pos_transaction_data** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -757,7 +757,7 @@ class TransferRecipientApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransferrecipientCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transferrecipientDelete($code, string $contentType = self::contentTypes['transferrecipientDelete'][0])
     {
@@ -775,7 +775,7 @@ class TransferRecipientApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransferrecipientCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferrecipientDeleteWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientDelete'][0])
     {
@@ -818,17 +818,17 @@ class TransferRecipientApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransferrecipientCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransferrecipientCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferrecipientCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -864,7 +864,7 @@ class TransferRecipientApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransferrecipientCode';
+            $returnType = '\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -885,7 +885,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransferrecipientCode',
+                        '\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -945,7 +945,7 @@ class TransferRecipientApi
      */
     public function transferrecipientDeleteAsyncWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientDelete'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransferrecipientCode';
+        $returnType = '\Alexasomba\\Paystack\Model\TransferRecipientDeleteResponse';
         $request = $this->transferrecipientDeleteRequest($code, $contentType);
 
         return $this->client
@@ -1090,7 +1090,7 @@ class TransferRecipientApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransferrecipientCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransferRecipientFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transferrecipientFetch($code, string $contentType = self::contentTypes['transferrecipientFetch'][0])
     {
@@ -1108,7 +1108,7 @@ class TransferRecipientApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransferrecipientCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransferRecipientFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferrecipientFetchWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientFetch'][0])
     {
@@ -1151,17 +1151,17 @@ class TransferRecipientApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransferrecipientCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransferrecipientCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferrecipientCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1197,7 +1197,7 @@ class TransferRecipientApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransferrecipientCode';
+            $returnType = '\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1218,7 +1218,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransferrecipientCode',
+                        '\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1278,7 +1278,7 @@ class TransferRecipientApi
      */
     public function transferrecipientFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransferrecipientCode';
+        $returnType = '\Alexasomba\\Paystack\Model\TransferRecipientFetchResponse';
         $request = $this->transferrecipientFetchRequest($code, $contentType);
 
         return $this->client
@@ -1700,8 +1700,8 @@ class TransferRecipientApi
             $use_cursor,
             'use_cursor', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1709,8 +1709,8 @@ class TransferRecipientApi
             $next,
             'next', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1718,8 +1718,8 @@ class TransferRecipientApi
             $previous,
             'previous', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1727,8 +1727,8 @@ class TransferRecipientApi
             $per_page,
             'per_page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1736,8 +1736,8 @@ class TransferRecipientApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1807,16 +1807,16 @@ class TransferRecipientApi
      * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  \Alexasomba\\Paystack\Model\TransferrecipientCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TransferRecipientUpdate $transfer_recipient_update transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransferrecipientCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function transferrecipientUpdate($code, $body = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdate($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        list($response) = $this->transferrecipientUpdateWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->transferrecipientUpdateWithHttpInfo($code, $transfer_recipient_update, $contentType);
         return $response;
     }
 
@@ -1826,16 +1826,16 @@ class TransferRecipientApi
      * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  \Alexasomba\\Paystack\Model\TransferrecipientCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TransferRecipientUpdate $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransferrecipientCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferrecipientUpdateWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateWithHttpInfo($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        $request = $this->transferrecipientUpdateRequest($code, $body, $contentType);
+        $request = $this->transferrecipientUpdateRequest($code, $transfer_recipient_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1874,17 +1874,17 @@ class TransferRecipientApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransferrecipientCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransferrecipientCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferrecipientCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1920,7 +1920,7 @@ class TransferRecipientApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransferrecipientCode';
+            $returnType = '\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1941,7 +1941,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransferrecipientCode',
+                        '\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1973,15 +1973,15 @@ class TransferRecipientApi
      * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  \Alexasomba\\Paystack\Model\TransferrecipientCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TransferRecipientUpdate $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientUpdateAsync($code, $body = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateAsync($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        return $this->transferrecipientUpdateAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->transferrecipientUpdateAsyncWithHttpInfo($code, $transfer_recipient_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1995,16 +1995,16 @@ class TransferRecipientApi
      * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  \Alexasomba\\Paystack\Model\TransferrecipientCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TransferRecipientUpdate $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientUpdateAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateAsyncWithHttpInfo($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransferrecipientCode';
-        $request = $this->transferrecipientUpdateRequest($code, $body, $contentType);
+        $returnType = '\Alexasomba\\Paystack\Model\TransferRecipientUpdateResponse';
+        $request = $this->transferrecipientUpdateRequest($code, $transfer_recipient_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2046,13 +2046,13 @@ class TransferRecipientApi
      * Create request for operation 'transferrecipientUpdate'
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  \Alexasomba\\Paystack\Model\TransferrecipientCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\TransferRecipientUpdate $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferrecipientUpdateRequest($code, $body = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateRequest($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -2090,12 +2090,12 @@ class TransferRecipientApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($transfer_recipient_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($transfer_recipient_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $transfer_recipient_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

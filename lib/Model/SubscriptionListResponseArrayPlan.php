@@ -62,7 +62,7 @@ class SubscriptionListResponseArrayPlan implements ModelInterface, ArrayAccess, 
         'domain' => 'string',
         'name' => 'string',
         'plan_code' => 'string',
-        'description' => 'object',
+        'description' => 'mixed',
         'amount' => 'int',
         'interval' => 'string',
         'send_invoices' => 'bool',
@@ -524,7 +524,7 @@ class SubscriptionListResponseArrayPlan implements ModelInterface, ArrayAccess, 
     /**
      * Gets description
      *
-     * @return object
+     * @return mixed
      */
     public function getDescription()
     {
@@ -534,7 +534,7 @@ class SubscriptionListResponseArrayPlan implements ModelInterface, ArrayAccess, 
     /**
      * Sets description
      *
-     * @param object $description description
+     * @param mixed $description description
      *
      * @return self
      */

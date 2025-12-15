@@ -62,18 +62,18 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
         'created_at' => 'string',
         'currency' => 'string',
         'domain' => 'string',
-        'failures' => 'object',
+        'failures' => 'mixed',
         'id' => 'int',
         'integration' => 'int',
         'reason' => 'string',
         'reference' => 'string',
         'source' => 'string',
-        'source_details' => 'object',
+        'source_details' => 'mixed',
         'status' => 'string',
-        'titan_code' => 'object',
+        'titan_code' => 'mixed',
         'transfer_code' => 'string',
         'request' => 'int',
-        'transferred_at' => 'object',
+        'transferred_at' => 'mixed',
         'updated_at' => 'string',
         'recipient' => '\Alexasomba\\Paystack\Model\TransferListResponseArrayRecipient',
         'session' => '\Alexasomba\\Paystack\Model\TransferListResponseArraySession',
@@ -604,7 +604,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets failures
      *
-     * @return object
+     * @return mixed
      */
     public function getFailures()
     {
@@ -614,7 +614,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets failures
      *
-     * @param object $failures failures
+     * @param mixed $failures failures
      *
      * @return self
      */
@@ -773,7 +773,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets source_details
      *
-     * @return object
+     * @return mixed
      */
     public function getSourceDetails()
     {
@@ -783,7 +783,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets source_details
      *
-     * @param object $source_details source_details
+     * @param mixed $source_details source_details
      *
      * @return self
      */
@@ -834,7 +834,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets titan_code
      *
-     * @return object
+     * @return mixed
      */
     public function getTitanCode()
     {
@@ -844,7 +844,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets titan_code
      *
-     * @param object $titan_code titan_code
+     * @param mixed $titan_code titan_code
      *
      * @return self
      */
@@ -922,7 +922,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets transferred_at
      *
-     * @return object
+     * @return mixed
      */
     public function getTransferredAt()
     {
@@ -932,7 +932,7 @@ class TransferListResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets transferred_at
      *
-     * @param object $transferred_at transferred_at
+     * @param mixed $transferred_at transferred_at
      *
      * @return self
      */

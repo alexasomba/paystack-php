@@ -11,22 +11,22 @@ Name | Type | Description | Notes
 **email** | **string** |  |
 **status** | **string** |  |
 **refunded** | **bool** |  |
-**paid_at** | **object** |  |
-**shipping_address** | **object** |  |
-**metadata** | **object** |  |
+**paid_at** | **mixed** |  |
+**shipping_address** | **mixed** |  |
+**metadata** | **mixed** |  |
 **shipping_fees** | **int** |  |
-**shipping_method** | **object** |  |
+**shipping_method** | **mixed** |  |
 **is_viewed** | **bool** |  |
 **expiration_date** | **string** |  |
 **pay_for_me** | **bool** |  |
 **id** | **int** |  |
 **integration** | [**\Alexasomba\\Paystack\Model\OrderValidateResponseDataIntegration**](OrderValidateResponseDataIntegration.md) |  |
-**transaction** | **object** |  |
-**page** | **object** |  |
-**customer** | [**\Alexasomba\\Paystack\Model\ChargeCreateResponseDataCustomer**](ChargeCreateResponseDataCustomer.md) |  |
-**shipping** | **object** |  |
+**transaction** | **mixed** |  |
+**page** | **mixed** |  |
+**customer** | [**\Alexasomba\\Paystack\Model\TransactionFetchResponseDataCustomer**](TransactionFetchResponseDataCustomer.md) |  |
+**shipping** | **mixed** |  |
 **created_at** | **string** |  |
 **updated_at** | **string** |  |
-**payer** | **object** |  |
+**payer** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

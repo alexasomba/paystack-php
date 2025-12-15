@@ -60,7 +60,7 @@ class StorefrontContactsArray implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'value' => 'string',
         'id' => 'int',
-        'type_name' => 'object',
+        'type_name' => 'mixed',
         'type' => 'int'
     ];
 
@@ -380,7 +380,7 @@ class StorefrontContactsArray implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets type_name
      *
-     * @return object
+     * @return mixed
      */
     public function getTypeName()
     {
@@ -390,7 +390,7 @@ class StorefrontContactsArray implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets type_name
      *
-     * @param object $type_name type_name
+     * @param mixed $type_name type_name
      *
      * @return self
      */

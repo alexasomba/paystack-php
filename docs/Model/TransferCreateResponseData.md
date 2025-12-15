@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transfersessionid** | **object[]** |  |
-**transfertrials** | **object[]** |  |
+**transfersessionid** | **mixed[]** |  |
+**transfertrials** | **mixed[]** |  |
 **domain** | **string** |  |
 **amount** | **int** |  |
 **currency** | **string** |  |
 **reference** | **string** |  |
 **source** | **string** |  |
-**source_details** | **object** |  |
+**source_details** | **mixed** |  |
 **reason** | **string** |  |
 **status** | **string** |  |
-**failures** | **object** |  |
+**failures** | **mixed** |  |
 **transfer_code** | **string** |  |
-**titan_code** | **object** |  |
-**transferred_at** | **object** |  |
+**titan_code** | **mixed** |  |
+**transferred_at** | **mixed** |  |
 **id** | **int** |  |
 **integration** | **int** |  |
 **request** | **int** |  |

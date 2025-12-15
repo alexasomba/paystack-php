@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **type** | **string** |  |
 **updated_at** | **string** |  |
 **is_deleted** | **bool** |  |
-**details** | [**\Alexasomba\\Paystack\Model\TransferRecipientCreateResponseDataDetails**](TransferRecipientCreateResponseDataDetails.md) |  |
+**details** | [**\Alexasomba\\Paystack\Model\TransferRecipientListResponseArrayDetails**](TransferRecipientListResponseArrayDetails.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**authorization_code** | **object** |  |
+**authorization_code** | **mixed** |  |
 **account_number** | **string** |  |
 **account_name** | **string** |  |
 **bank_code** | **string** |  |

@@ -67,7 +67,7 @@ class VirtualTerminalAddSplitCodeResponseData implements ModelInterface, ArrayAc
         'split_code' => 'string',
         'active' => 'bool',
         'bearer_type' => 'string',
-        'bearer_subaccount' => 'object',
+        'bearer_subaccount' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string',
         'is_dynamic' => 'bool',
@@ -679,7 +679,7 @@ class VirtualTerminalAddSplitCodeResponseData implements ModelInterface, ArrayAc
     /**
      * Gets bearer_subaccount
      *
-     * @return object
+     * @return mixed
      */
     public function getBearerSubaccount()
     {
@@ -689,7 +689,7 @@ class VirtualTerminalAddSplitCodeResponseData implements ModelInterface, ArrayAc
     /**
      * Sets bearer_subaccount
      *
-     * @param object $bearer_subaccount bearer_subaccount
+     * @param mixed $bearer_subaccount bearer_subaccount
      *
      * @return self
      */

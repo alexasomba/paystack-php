@@ -60,21 +60,21 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'integration' => 'int',
         'transaction' => 'int',
-        'dispute' => 'object',
-        'settlement' => 'object',
+        'dispute' => 'mixed',
+        'settlement' => 'mixed',
         'id' => 'int',
         'domain' => 'string',
         'currency' => 'string',
         'amount' => 'int',
         'status' => 'string',
-        'refunded_at' => 'object',
+        'refunded_at' => 'mixed',
         'refunded_by' => 'string',
         'customer_note' => 'string',
         'merchant_note' => 'string',
         'deducted_amount' => 'int',
         'fully_deducted' => 'int',
         'created_at' => 'string',
-        'bank_reference' => 'object',
+        'bank_reference' => 'mixed',
         'transaction_reference' => 'string',
         'reason' => 'string',
         'customer' => '\Alexasomba\\Paystack\Model\RefundFetchResponseDataCustomer',
@@ -82,7 +82,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
         'transaction_amount' => 'int',
         'initiated_by' => 'string',
         'refund_channel' => 'string',
-        'session_id' => 'object',
+        'session_id' => 'mixed',
         'collect_account_number' => 'bool'
     ];
 
@@ -600,7 +600,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets dispute
      *
-     * @return object
+     * @return mixed
      */
     public function getDispute()
     {
@@ -610,7 +610,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets dispute
      *
-     * @param object $dispute dispute
+     * @param mixed $dispute dispute
      *
      * @return self
      */
@@ -634,7 +634,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets settlement
      *
-     * @return object
+     * @return mixed
      */
     public function getSettlement()
     {
@@ -644,7 +644,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets settlement
      *
-     * @param object $settlement settlement
+     * @param mixed $settlement settlement
      *
      * @return self
      */
@@ -803,7 +803,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets refunded_at
      *
-     * @return object
+     * @return mixed
      */
     public function getRefundedAt()
     {
@@ -813,7 +813,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets refunded_at
      *
-     * @param object $refunded_at refunded_at
+     * @param mixed $refunded_at refunded_at
      *
      * @return self
      */
@@ -999,7 +999,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets bank_reference
      *
-     * @return object
+     * @return mixed
      */
     public function getBankReference()
     {
@@ -1009,7 +1009,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets bank_reference
      *
-     * @param object $bank_reference bank_reference
+     * @param mixed $bank_reference bank_reference
      *
      * @return self
      */
@@ -1222,7 +1222,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets session_id
      *
-     * @return object
+     * @return mixed
      */
     public function getSessionId()
     {
@@ -1232,7 +1232,7 @@ class RefundFetchResponseData implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets session_id
      *
-     * @param object $session_id session_id
+     * @param mixed $session_id session_id
      *
      * @return self
      */

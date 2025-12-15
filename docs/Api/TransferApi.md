@@ -320,7 +320,7 @@ try {
 ## `transferFetch()`
 
 ```php
-transferFetch($code): \Alexasomba\\Paystack\Model\TransferCode
+transferFetch($code): \Alexasomba\\Paystack\Model\TransferFetchResponse
 ```
 
 Fetch Transfer
@@ -362,7 +362,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransferCode**](../Model/TransferCode.md)
+[**\Alexasomba\\Paystack\Model\TransferFetchResponse**](../Model/TransferFetchResponse.md)
 
 ### Authorization
 
@@ -636,7 +636,7 @@ try {
 ## `transferVerify()`
 
 ```php
-transferVerify($reference): \Alexasomba\\Paystack\Model\TransferVerifyReference
+transferVerify($reference): \Alexasomba\\Paystack\Model\TransferVerifyResponse
 ```
 
 Verify Transfer
@@ -678,7 +678,7 @@ try {
 
 ### Return type
 
-[**\Alexasomba\\Paystack\Model\TransferVerifyReference**](../Model/TransferVerifyReference.md)
+[**\Alexasomba\\Paystack\Model\TransferVerifyResponse**](../Model/TransferVerifyResponse.md)
 
 ### Authorization
 

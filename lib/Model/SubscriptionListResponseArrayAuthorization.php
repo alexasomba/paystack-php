@@ -70,7 +70,7 @@ class SubscriptionListResponseArrayAuthorization implements ModelInterface, Arra
         'brand' => 'string',
         'reusable' => 'int',
         'signature' => 'string',
-        'account_name' => 'object'
+        'account_name' => 'mixed'
     ];
 
     /**
@@ -761,7 +761,7 @@ class SubscriptionListResponseArrayAuthorization implements ModelInterface, Arra
     /**
      * Gets account_name
      *
-     * @return object
+     * @return mixed
      */
     public function getAccountName()
     {
@@ -771,7 +771,7 @@ class SubscriptionListResponseArrayAuthorization implements ModelInterface, Arra
     /**
      * Sets account_name
      *
-     * @param object $account_name account_name
+     * @param mixed $account_name account_name
      *
      * @return self
      */

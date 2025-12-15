@@ -1063,8 +1063,8 @@ class PlanApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1072,8 +1072,8 @@ class PlanApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1081,8 +1081,8 @@ class PlanApi
             $interval,
             'interval', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1090,8 +1090,8 @@ class PlanApi
             $amount,
             'amount', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1099,8 +1099,8 @@ class PlanApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1108,8 +1108,8 @@ class PlanApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1179,16 +1179,16 @@ class PlanApi
      * Update Plan
      *
      * @param  string $code The plan code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\PlanCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PlanUpdate $plan_update plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\PlanUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function planUpdate($code, $body = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdate($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        list($response) = $this->planUpdateWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->planUpdateWithHttpInfo($code, $plan_update, $contentType);
         return $response;
     }
 
@@ -1198,16 +1198,16 @@ class PlanApi
      * Update Plan
      *
      * @param  string $code The plan code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\PlanCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PlanUpdate $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\PlanUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function planUpdateWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateWithHttpInfo($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        $request = $this->planUpdateRequest($code, $body, $contentType);
+        $request = $this->planUpdateRequest($code, $plan_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1345,15 +1345,15 @@ class PlanApi
      * Update Plan
      *
      * @param  string $code The plan code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\PlanCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PlanUpdate $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function planUpdateAsync($code, $body = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateAsync($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        return $this->planUpdateAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->planUpdateAsyncWithHttpInfo($code, $plan_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1367,16 +1367,16 @@ class PlanApi
      * Update Plan
      *
      * @param  string $code The plan code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\PlanCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PlanUpdate $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function planUpdateAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateAsyncWithHttpInfo($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\PlanUpdateResponse';
-        $request = $this->planUpdateRequest($code, $body, $contentType);
+        $request = $this->planUpdateRequest($code, $plan_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1418,13 +1418,13 @@ class PlanApi
      * Create request for operation 'planUpdate'
      *
      * @param  string $code The plan code you want to fetch (required)
-     * @param  \Alexasomba\\Paystack\Model\PlanCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PlanUpdate $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function planUpdateRequest($code, $body = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateRequest($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1462,12 +1462,12 @@ class PlanApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($plan_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($plan_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $plan_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

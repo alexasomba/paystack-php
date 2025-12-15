@@ -63,7 +63,7 @@ class VirtualTerminalListResponseArray implements ModelInterface, ArrayAccess, \
         'name' => 'string',
         'integration' => 'int',
         'domain' => 'string',
-        'payment_methods' => 'object[]',
+        'payment_methods' => 'mixed[]',
         'active' => 'bool',
         'created_at' => 'string',
         'currency' => 'string'
@@ -511,7 +511,7 @@ class VirtualTerminalListResponseArray implements ModelInterface, ArrayAccess, \
     /**
      * Gets payment_methods
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getPaymentMethods()
     {
@@ -521,7 +521,7 @@ class VirtualTerminalListResponseArray implements ModelInterface, ArrayAccess, \
     /**
      * Sets payment_methods
      *
-     * @param object[] $payment_methods payment_methods
+     * @param mixed[] $payment_methods payment_methods
      *
      * @return self
      */

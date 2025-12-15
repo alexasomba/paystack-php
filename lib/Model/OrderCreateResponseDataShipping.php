@@ -62,13 +62,13 @@ class OrderCreateResponseDataShipping implements ModelInterface, ArrayAccess, \J
         'integration' => 'int',
         'domain' => 'string',
         'fees' => 'int',
-        'delivery_note' => 'object',
+        'delivery_note' => 'mixed',
         'street_line' => 'string',
         'city' => 'string',
         'state' => 'string',
         'country' => 'string',
         'is_shipped' => 'bool',
-        'delivery_tracking_link' => 'object',
+        'delivery_tracking_link' => 'mixed',
         'id' => 'int',
         'created_at' => 'string',
         'updated_at' => 'string'
@@ -534,7 +534,7 @@ class OrderCreateResponseDataShipping implements ModelInterface, ArrayAccess, \J
     /**
      * Gets delivery_note
      *
-     * @return object
+     * @return mixed
      */
     public function getDeliveryNote()
     {
@@ -544,7 +544,7 @@ class OrderCreateResponseDataShipping implements ModelInterface, ArrayAccess, \J
     /**
      * Sets delivery_note
      *
-     * @param object $delivery_note delivery_note
+     * @param mixed $delivery_note delivery_note
      *
      * @return self
      */
@@ -703,7 +703,7 @@ class OrderCreateResponseDataShipping implements ModelInterface, ArrayAccess, \J
     /**
      * Gets delivery_tracking_link
      *
-     * @return object
+     * @return mixed
      */
     public function getDeliveryTrackingLink()
     {
@@ -713,7 +713,7 @@ class OrderCreateResponseDataShipping implements ModelInterface, ArrayAccess, \J
     /**
      * Sets delivery_tracking_link
      *
-     * @param object $delivery_tracking_link delivery_tracking_link
+     * @param mixed $delivery_tracking_link delivery_tracking_link
      *
      * @return self
      */

@@ -58,7 +58,7 @@ class RefundCreateResponseDataTransactionSubaccount implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currency' => 'object'
+        'currency' => 'mixed'
     ];
 
     /**
@@ -296,7 +296,7 @@ class RefundCreateResponseDataTransactionSubaccount implements ModelInterface, A
     /**
      * Gets currency
      *
-     * @return object
+     * @return mixed
      */
     public function getCurrency()
     {
@@ -306,7 +306,7 @@ class RefundCreateResponseDataTransactionSubaccount implements ModelInterface, A
     /**
      * Sets currency
      *
-     * @param object $currency currency
+     * @param mixed $currency currency
      *
      * @return self
      */

@@ -85,7 +85,7 @@ try {
 ## `disputeEvidence()`
 
 ```php
-disputeEvidence($id, $body): \Alexasomba\\Paystack\Model\DisputeAddEvidenceResponse
+disputeEvidence($id, $dispute_evidence): \Alexasomba\\Paystack\Model\DisputeAddEvidenceResponse
 ```
 
 Add Evidence
@@ -110,10 +110,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\DisputeApi(
     $config
 );
 $id = 4734583785; // int | The unique identifier of the dispute
-$body = new \Alexasomba\\Paystack\Model\DisputeIdEvidence(); // \Alexasomba\\Paystack\Model\DisputeIdEvidence
+$dispute_evidence = new \Alexasomba\\Paystack\Model\DisputeEvidence(); // \Alexasomba\\Paystack\Model\DisputeEvidence
 
 try {
-    $result = $apiInstance->disputeEvidence($id, $body);
+    $result = $apiInstance->disputeEvidence($id, $dispute_evidence);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DisputeApi->disputeEvidence: ', $e->getMessage(), PHP_EOL;
@@ -125,7 +125,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of the dispute | |
-| **body** | **\Alexasomba\\Paystack\Model\DisputeIdEvidence**|  | [optional] |
+| **dispute_evidence** | [**\Alexasomba\\Paystack\Model\DisputeEvidence**](../Model/DisputeEvidence.md)|  | [optional] |
 
 ### Return type
 
@@ -277,7 +277,7 @@ try {
 ## `disputeResolve()`
 
 ```php
-disputeResolve($id, $body): \Alexasomba\\Paystack\Model\DisputeResolveResponse
+disputeResolve($id, $dispute_resolve): \Alexasomba\\Paystack\Model\DisputeResolveResponse
 ```
 
 Resolve Dispute
@@ -302,10 +302,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\DisputeApi(
     $config
 );
 $id = 4734583785; // int | The unique identifier of the dispute
-$body = new \Alexasomba\\Paystack\Model\DisputeIdResolve(); // \Alexasomba\\Paystack\Model\DisputeIdResolve
+$dispute_resolve = new \Alexasomba\\Paystack\Model\DisputeResolve(); // \Alexasomba\\Paystack\Model\DisputeResolve
 
 try {
-    $result = $apiInstance->disputeResolve($id, $body);
+    $result = $apiInstance->disputeResolve($id, $dispute_resolve);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DisputeApi->disputeResolve: ', $e->getMessage(), PHP_EOL;
@@ -317,7 +317,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of the dispute | |
-| **body** | **\Alexasomba\\Paystack\Model\DisputeIdResolve**|  | [optional] |
+| **dispute_resolve** | [**\Alexasomba\\Paystack\Model\DisputeResolve**](../Model/DisputeResolve.md)|  | [optional] |
 
 ### Return type
 
@@ -399,7 +399,7 @@ try {
 ## `disputeUpdate()`
 
 ```php
-disputeUpdate($id, $body): \Alexasomba\\Paystack\Model\DisputeUpdateResponse
+disputeUpdate($id, $dispute_update): \Alexasomba\\Paystack\Model\DisputeUpdateResponse
 ```
 
 Update Dispute
@@ -424,10 +424,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\DisputeApi(
     $config
 );
 $id = 1801929; // int | The unique identifier of the dispute
-$body = new \Alexasomba\\Paystack\Model\DisputeId(); // \Alexasomba\\Paystack\Model\DisputeId
+$dispute_update = new \Alexasomba\\Paystack\Model\DisputeUpdate(); // \Alexasomba\\Paystack\Model\DisputeUpdate
 
 try {
-    $result = $apiInstance->disputeUpdate($id, $body);
+    $result = $apiInstance->disputeUpdate($id, $dispute_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DisputeApi->disputeUpdate: ', $e->getMessage(), PHP_EOL;
@@ -439,7 +439,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| The unique identifier of the dispute | |
-| **body** | **\Alexasomba\\Paystack\Model\DisputeId**|  | [optional] |
+| **dispute_update** | [**\Alexasomba\\Paystack\Model\DisputeUpdate**](../Model/DisputeUpdate.md)|  | [optional] |
 
 ### Return type
 

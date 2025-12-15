@@ -72,7 +72,7 @@ class TransferRecipientCreateResponseData implements ModelInterface, ArrayAccess
         'type' => 'string',
         'updated_at' => 'string',
         'is_deleted' => 'bool',
-        'details' => '\Alexasomba\\Paystack\Model\TransferRecipientCreateResponseDataDetails'
+        'details' => '\Alexasomba\\Paystack\Model\TransferRecipientListResponseArrayDetails'
     ];
 
     /**
@@ -818,7 +818,7 @@ class TransferRecipientCreateResponseData implements ModelInterface, ArrayAccess
     /**
      * Gets details
      *
-     * @return \Alexasomba\\Paystack\Model\TransferRecipientCreateResponseDataDetails
+     * @return \Alexasomba\\Paystack\Model\TransferRecipientListResponseArrayDetails
      */
     public function getDetails()
     {
@@ -828,7 +828,7 @@ class TransferRecipientCreateResponseData implements ModelInterface, ArrayAccess
     /**
      * Sets details
      *
-     * @param \Alexasomba\\Paystack\Model\TransferRecipientCreateResponseDataDetails $details details
+     * @param \Alexasomba\\Paystack\Model\TransferRecipientListResponseArrayDetails $details details
      *
      * @return self
      */

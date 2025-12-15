@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer** | [**\Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayCustomer**](DedicatedNubanListResponseArrayCustomer.md) |  |
-**bank** | [**\Alexasomba\\Paystack\Model\DedicatedNubanCreateResponseDataBank**](DedicatedNubanCreateResponseDataBank.md) |  |
+**bank** | [**\Alexasomba\\Paystack\Model\DedicatedNubanListResponseArrayBank**](DedicatedNubanListResponseArrayBank.md) |  |
 **id** | **int** |  |
 **account_name** | **string** |  |
 **account_number** | **string** |  |

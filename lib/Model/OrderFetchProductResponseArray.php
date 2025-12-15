@@ -74,21 +74,21 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
         'quantity_sold' => 'int',
         'currency' => 'string',
         'quantity' => 'int',
-        'variant_id' => 'object',
-        'variant_price' => 'object',
-        'variant_code' => 'object',
+        'variant_id' => 'mixed',
+        'variant_price' => 'mixed',
+        'variant_code' => 'mixed',
         'amount' => 'int',
-        'shipping_method' => 'object',
+        'shipping_method' => 'mixed',
         'status' => 'string',
-        'shipping_address' => 'object',
+        'shipping_address' => 'mixed',
         'refunded' => 'bool',
-        'shipping' => 'object',
+        'shipping' => 'mixed',
         'paid_at' => 'string',
         'created_at' => 'string',
         'is_shipped' => 'bool',
         'is_viewed' => 'int',
-        'delivery_note' => 'object',
-        'shipping_fee' => 'object',
+        'delivery_note' => 'mixed',
+        'shipping_fee' => 'mixed',
         'amount_paid' => 'int',
         'storefront_slug' => 'string'
     ];
@@ -1048,7 +1048,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets variant_id
      *
-     * @return object
+     * @return mixed
      */
     public function getVariantId()
     {
@@ -1058,7 +1058,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets variant_id
      *
-     * @param object $variant_id variant_id
+     * @param mixed $variant_id variant_id
      *
      * @return self
      */
@@ -1082,7 +1082,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets variant_price
      *
-     * @return object
+     * @return mixed
      */
     public function getVariantPrice()
     {
@@ -1092,7 +1092,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets variant_price
      *
-     * @param object $variant_price variant_price
+     * @param mixed $variant_price variant_price
      *
      * @return self
      */
@@ -1116,7 +1116,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets variant_code
      *
-     * @return object
+     * @return mixed
      */
     public function getVariantCode()
     {
@@ -1126,7 +1126,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets variant_code
      *
-     * @param object $variant_code variant_code
+     * @param mixed $variant_code variant_code
      *
      * @return self
      */
@@ -1177,7 +1177,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets shipping_method
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingMethod()
     {
@@ -1187,7 +1187,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets shipping_method
      *
-     * @param object $shipping_method shipping_method
+     * @param mixed $shipping_method shipping_method
      *
      * @return self
      */
@@ -1238,7 +1238,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets shipping_address
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingAddress()
     {
@@ -1248,7 +1248,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets shipping_address
      *
-     * @param object $shipping_address shipping_address
+     * @param mixed $shipping_address shipping_address
      *
      * @return self
      */
@@ -1299,7 +1299,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets shipping
      *
-     * @return object
+     * @return mixed
      */
     public function getShipping()
     {
@@ -1309,7 +1309,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets shipping
      *
-     * @param object $shipping shipping
+     * @param mixed $shipping shipping
      *
      * @return self
      */
@@ -1441,7 +1441,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets delivery_note
      *
-     * @return object
+     * @return mixed
      */
     public function getDeliveryNote()
     {
@@ -1451,7 +1451,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets delivery_note
      *
-     * @param object $delivery_note delivery_note
+     * @param mixed $delivery_note delivery_note
      *
      * @return self
      */
@@ -1475,7 +1475,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets shipping_fee
      *
-     * @return object
+     * @return mixed
      */
     public function getShippingFee()
     {
@@ -1485,7 +1485,7 @@ class OrderFetchProductResponseArray implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets shipping_fee
      *
-     * @param object $shipping_fee shipping_fee
+     * @param mixed $shipping_fee shipping_fee
      *
      * @return self
      */

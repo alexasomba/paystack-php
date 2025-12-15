@@ -203,7 +203,7 @@ try {
 ## `planUpdate()`
 
 ```php
-planUpdate($code, $body): \Alexasomba\\Paystack\Model\PlanUpdateResponse
+planUpdate($code, $plan_update): \Alexasomba\\Paystack\Model\PlanUpdateResponse
 ```
 
 Update Plan
@@ -228,10 +228,10 @@ $apiInstance = new Alexasomba\\Paystack\Api\PlanApi(
     $config
 );
 $code = PLN_gx2wn530m0i3w3m; // string | The plan code you want to fetch
-$body = new \Alexasomba\\Paystack\Model\PlanCode(); // \Alexasomba\\Paystack\Model\PlanCode
+$plan_update = new \Alexasomba\\Paystack\Model\PlanUpdate(); // \Alexasomba\\Paystack\Model\PlanUpdate
 
 try {
-    $result = $apiInstance->planUpdate($code, $body);
+    $result = $apiInstance->planUpdate($code, $plan_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->planUpdate: ', $e->getMessage(), PHP_EOL;
@@ -243,7 +243,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **code** | **string**| The plan code you want to fetch | |
-| **body** | **\Alexasomba\\Paystack\Model\PlanCode**|  | [optional] |
+| **plan_update** | [**\Alexasomba\\Paystack\Model\PlanUpdate**](../Model/PlanUpdate.md)|  | [optional] |
 
 ### Return type
 

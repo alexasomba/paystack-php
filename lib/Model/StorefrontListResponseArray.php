@@ -63,12 +63,12 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
         'slug' => 'string',
         'orders_count' => 'int',
         'status' => 'string',
-        'revenue' => 'object',
+        'revenue' => 'mixed',
         'currency' => 'string',
-        'products' => 'object[]',
-        'contacts' => 'object[]',
-        'social_media' => 'object[]',
-        'shipping_fees' => 'object[]'
+        'products' => 'mixed[]',
+        'contacts' => 'mixed[]',
+        'social_media' => 'mixed[]',
+        'shipping_fees' => 'mixed[]'
     ];
 
     /**
@@ -531,7 +531,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets revenue
      *
-     * @return object
+     * @return mixed
      */
     public function getRevenue()
     {
@@ -541,7 +541,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets revenue
      *
-     * @param object $revenue revenue
+     * @param mixed $revenue revenue
      *
      * @return self
      */
@@ -592,7 +592,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets products
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getProducts()
     {
@@ -602,7 +602,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets products
      *
-     * @param object[] $products products
+     * @param mixed[] $products products
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets contacts
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getContacts()
     {
@@ -629,7 +629,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets contacts
      *
-     * @param object[] $contacts contacts
+     * @param mixed[] $contacts contacts
      *
      * @return self
      */
@@ -646,7 +646,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets social_media
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getSocialMedia()
     {
@@ -656,7 +656,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets social_media
      *
-     * @param object[] $social_media social_media
+     * @param mixed[] $social_media social_media
      *
      * @return self
      */
@@ -673,7 +673,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets shipping_fees
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getShippingFees()
     {
@@ -683,7 +683,7 @@ class StorefrontListResponseArray implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets shipping_fees
      *
-     * @param object[] $shipping_fees shipping_fees
+     * @param mixed[] $shipping_fees shipping_fees
      *
      * @return self
      */

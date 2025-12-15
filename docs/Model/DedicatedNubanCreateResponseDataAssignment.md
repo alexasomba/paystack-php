@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **expired** | **bool** |  |
 **account_type** | **string** |  |
 **assigned_at** | **string** |  |
-**expired_at** | **object** |  |
+**expired_at** | **mixed** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

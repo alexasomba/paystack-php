@@ -66,26 +66,26 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
         'quantity' => 'int',
         'quantity_sold' => 'int',
         'type' => 'string',
-        'files' => 'object[]',
-        'file_path' => 'object',
+        'files' => 'mixed[]',
+        'file_path' => 'mixed',
         'is_shippable' => 'bool',
-        'shipping_fields' => '\Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields',
+        'shipping_fields' => '\Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields',
         'unlimited' => 'bool',
         'domain' => 'string',
         'active' => 'bool',
-        'features' => 'object',
+        'features' => 'mixed',
         'in_stock' => 'bool',
-        'metadata' => '\Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata',
         'slug' => 'string',
-        'success_message' => 'object',
-        'redirect_url' => 'object',
-        'split_code' => 'object',
-        'notification_emails' => 'object',
+        'success_message' => 'mixed',
+        'redirect_url' => 'mixed',
+        'split_code' => 'mixed',
+        'notification_emails' => 'mixed',
         'minimum_orderable' => 'int',
-        'maximum_orderable' => 'object',
+        'maximum_orderable' => 'mixed',
         'low_stock_alert' => 'bool',
-        'stock_threshold' => 'object',
-        'expires_in' => 'object',
+        'stock_threshold' => 'mixed',
+        'expires_in' => 'mixed',
         'id' => 'int',
         'integration' => 'int',
         'created_at' => 'string',
@@ -822,7 +822,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets files
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getFiles()
     {
@@ -832,7 +832,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets files
      *
-     * @param object[] $files files
+     * @param mixed[] $files files
      *
      * @return self
      */
@@ -849,7 +849,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets file_path
      *
-     * @return object
+     * @return mixed
      */
     public function getFilePath()
     {
@@ -859,7 +859,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets file_path
      *
-     * @param object $file_path file_path
+     * @param mixed $file_path file_path
      *
      * @return self
      */
@@ -910,7 +910,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets shipping_fields
      *
-     * @return \Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields
+     * @return \Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields
      */
     public function getShippingFields()
     {
@@ -920,7 +920,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shipping_fields
      *
-     * @param \Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields $shipping_fields shipping_fields
+     * @param \Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields $shipping_fields shipping_fields
      *
      * @return self
      */
@@ -1018,7 +1018,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets features
      *
-     * @return object
+     * @return mixed
      */
     public function getFeatures()
     {
@@ -1028,7 +1028,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets features
      *
-     * @param object $features features
+     * @param mixed $features features
      *
      * @return self
      */
@@ -1079,7 +1079,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata
      */
     public function getMetadata()
     {
@@ -1089,7 +1089,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata $metadata metadata
      *
      * @return self
      */
@@ -1133,7 +1133,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getSuccessMessage()
     {
@@ -1143,7 +1143,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets success_message
      *
-     * @param object $success_message success_message
+     * @param mixed $success_message success_message
      *
      * @return self
      */
@@ -1167,7 +1167,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getRedirectUrl()
     {
@@ -1177,7 +1177,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets redirect_url
      *
-     * @param object $redirect_url redirect_url
+     * @param mixed $redirect_url redirect_url
      *
      * @return self
      */
@@ -1201,7 +1201,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1211,7 +1211,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */
@@ -1235,7 +1235,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets notification_emails
      *
-     * @return object
+     * @return mixed
      */
     public function getNotificationEmails()
     {
@@ -1245,7 +1245,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets notification_emails
      *
-     * @param object $notification_emails notification_emails
+     * @param mixed $notification_emails notification_emails
      *
      * @return self
      */
@@ -1296,7 +1296,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets maximum_orderable
      *
-     * @return object
+     * @return mixed
      */
     public function getMaximumOrderable()
     {
@@ -1306,7 +1306,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets maximum_orderable
      *
-     * @param object $maximum_orderable maximum_orderable
+     * @param mixed $maximum_orderable maximum_orderable
      *
      * @return self
      */
@@ -1357,7 +1357,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets stock_threshold
      *
-     * @return object
+     * @return mixed
      */
     public function getStockThreshold()
     {
@@ -1367,7 +1367,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets stock_threshold
      *
-     * @param object $stock_threshold stock_threshold
+     * @param mixed $stock_threshold stock_threshold
      *
      * @return self
      */
@@ -1391,7 +1391,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets expires_in
      *
-     * @return object
+     * @return mixed
      */
     public function getExpiresIn()
     {
@@ -1401,7 +1401,7 @@ class ProductUpdateResponseData implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets expires_in
      *
-     * @param object $expires_in expires_in
+     * @param mixed $expires_in expires_in
      *
      * @return self
      */

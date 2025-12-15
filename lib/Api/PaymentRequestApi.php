@@ -1704,8 +1704,8 @@ class PaymentRequestApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1713,8 +1713,8 @@ class PaymentRequestApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1722,8 +1722,8 @@ class PaymentRequestApi
             $customer,
             'customer', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1731,8 +1731,8 @@ class PaymentRequestApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1740,8 +1740,8 @@ class PaymentRequestApi
             $currency,
             'currency', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1749,8 +1749,8 @@ class PaymentRequestApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1758,8 +1758,8 @@ class PaymentRequestApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -2452,16 +2452,16 @@ class PaymentRequestApi
      * Update Payment Request
      *
      * @param  int $id The unique identifier of a previously created payment request (required)
-     * @param  \Alexasomba\\Paystack\Model\PaymentrequestId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PaymentRequestUpdate $payment_request_update payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function paymentRequestUpdate($id, $body = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdate($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        list($response) = $this->paymentRequestUpdateWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->paymentRequestUpdateWithHttpInfo($id, $payment_request_update, $contentType);
         return $response;
     }
 
@@ -2471,16 +2471,16 @@ class PaymentRequestApi
      * Update Payment Request
      *
      * @param  int $id The unique identifier of a previously created payment request (required)
-     * @param  \Alexasomba\\Paystack\Model\PaymentrequestId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PaymentRequestUpdate $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\PaymentRequestUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function paymentRequestUpdateWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateWithHttpInfo($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        $request = $this->paymentRequestUpdateRequest($id, $body, $contentType);
+        $request = $this->paymentRequestUpdateRequest($id, $payment_request_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2618,15 +2618,15 @@ class PaymentRequestApi
      * Update Payment Request
      *
      * @param  int $id The unique identifier of a previously created payment request (required)
-     * @param  \Alexasomba\\Paystack\Model\PaymentrequestId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PaymentRequestUpdate $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function paymentRequestUpdateAsync($id, $body = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateAsync($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        return $this->paymentRequestUpdateAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->paymentRequestUpdateAsyncWithHttpInfo($id, $payment_request_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2640,16 +2640,16 @@ class PaymentRequestApi
      * Update Payment Request
      *
      * @param  int $id The unique identifier of a previously created payment request (required)
-     * @param  \Alexasomba\\Paystack\Model\PaymentrequestId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PaymentRequestUpdate $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function paymentRequestUpdateAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateAsyncWithHttpInfo($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\PaymentRequestUpdateResponse';
-        $request = $this->paymentRequestUpdateRequest($id, $body, $contentType);
+        $request = $this->paymentRequestUpdateRequest($id, $payment_request_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2691,13 +2691,13 @@ class PaymentRequestApi
      * Create request for operation 'paymentRequestUpdate'
      *
      * @param  int $id The unique identifier of a previously created payment request (required)
-     * @param  \Alexasomba\\Paystack\Model\PaymentrequestId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\PaymentRequestUpdate $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function paymentRequestUpdateRequest($id, $body = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateRequest($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2735,12 +2735,12 @@ class PaymentRequestApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($payment_request_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($payment_request_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $payment_request_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

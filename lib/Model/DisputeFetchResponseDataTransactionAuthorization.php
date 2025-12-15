@@ -58,8 +58,8 @@ class DisputeFetchResponseDataTransactionAuthorization implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'receiver_bank_account_number' => 'object',
-        'receiver_bank' => 'object'
+        'receiver_bank_account_number' => 'mixed',
+        'receiver_bank' => 'mixed'
     ];
 
     /**
@@ -306,7 +306,7 @@ class DisputeFetchResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Gets receiver_bank_account_number
      *
-     * @return object
+     * @return mixed
      */
     public function getReceiverBankAccountNumber()
     {
@@ -316,7 +316,7 @@ class DisputeFetchResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Sets receiver_bank_account_number
      *
-     * @param object $receiver_bank_account_number receiver_bank_account_number
+     * @param mixed $receiver_bank_account_number receiver_bank_account_number
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class DisputeFetchResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Gets receiver_bank
      *
-     * @return object
+     * @return mixed
      */
     public function getReceiverBank()
     {
@@ -350,7 +350,7 @@ class DisputeFetchResponseDataTransactionAuthorization implements ModelInterface
     /**
      * Sets receiver_bank
      *
-     * @param object $receiver_bank receiver_bank
+     * @param mixed $receiver_bank receiver_bank
      *
      * @return self
      */

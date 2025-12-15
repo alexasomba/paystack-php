@@ -1625,8 +1625,8 @@ class TransferApi
             $recipient,
             'recipient', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1634,8 +1634,8 @@ class TransferApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1643,8 +1643,8 @@ class TransferApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -1652,8 +1652,8 @@ class TransferApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -1727,7 +1727,7 @@ class TransferApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransferCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransferFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transferFetch($code, string $contentType = self::contentTypes['transferFetch'][0])
     {
@@ -1745,7 +1745,7 @@ class TransferApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransferCode|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransferFetchResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferFetchWithHttpInfo($code, string $contentType = self::contentTypes['transferFetch'][0])
     {
@@ -1788,17 +1788,17 @@ class TransferApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransferCode' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransferFetchResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransferCode' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransferFetchResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferCode', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferFetchResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1834,7 +1834,7 @@ class TransferApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransferCode';
+            $returnType = '\Alexasomba\\Paystack\Model\TransferFetchResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1855,7 +1855,7 @@ class TransferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransferCode',
+                        '\Alexasomba\\Paystack\Model\TransferFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1915,7 +1915,7 @@ class TransferApi
      */
     public function transferFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['transferFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransferCode';
+        $returnType = '\Alexasomba\\Paystack\Model\TransferFetchResponse';
         $request = $this->transferFetchRequest($code, $contentType);
 
         return $this->client
@@ -2967,8 +2967,8 @@ class TransferApi
             $use_cursor,
             'use_cursor', // param base name
             'boolean', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2976,8 +2976,8 @@ class TransferApi
             $next,
             'next', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2985,8 +2985,8 @@ class TransferApi
             $previous,
             'previous', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2994,8 +2994,8 @@ class TransferApi
             $per_page,
             'per_page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3003,8 +3003,8 @@ class TransferApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3012,8 +3012,8 @@ class TransferApi
             $from,
             'from', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3021,8 +3021,8 @@ class TransferApi
             $to,
             'to', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3030,8 +3030,8 @@ class TransferApi
             $recipient,
             'recipient', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -3039,8 +3039,8 @@ class TransferApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -3417,7 +3417,7 @@ class TransferApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\TransferVerifyReference|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\\Paystack\Model\TransferVerifyResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
     public function transferVerify($reference, string $contentType = self::contentTypes['transferVerify'][0])
     {
@@ -3435,7 +3435,7 @@ class TransferApi
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\TransferVerifyReference|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\\Paystack\Model\TransferVerifyResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferVerifyWithHttpInfo($reference, string $contentType = self::contentTypes['transferVerify'][0])
     {
@@ -3478,17 +3478,17 @@ class TransferApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Alexasomba\\Paystack\Model\TransferVerifyReference' === '\SplFileObject') {
+                    if ('\Alexasomba\\Paystack\Model\TransferVerifyResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Alexasomba\\Paystack\Model\TransferVerifyReference' !== 'string') {
+                        if ('\Alexasomba\\Paystack\Model\TransferVerifyResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferVerifyReference', []),
+                        ObjectSerializer::deserialize($content, '\Alexasomba\\Paystack\Model\TransferVerifyResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3524,7 +3524,7 @@ class TransferApi
                     ];
             }
 
-            $returnType = '\Alexasomba\\Paystack\Model\TransferVerifyReference';
+            $returnType = '\Alexasomba\\Paystack\Model\TransferVerifyResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3545,7 +3545,7 @@ class TransferApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\TransferVerifyReference',
+                        '\Alexasomba\\Paystack\Model\TransferVerifyResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3605,7 +3605,7 @@ class TransferApi
      */
     public function transferVerifyAsyncWithHttpInfo($reference, string $contentType = self::contentTypes['transferVerify'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\TransferVerifyReference';
+        $returnType = '\Alexasomba\\Paystack\Model\TransferVerifyResponse';
         $request = $this->transferVerifyRequest($reference, $contentType);
 
         return $this->client

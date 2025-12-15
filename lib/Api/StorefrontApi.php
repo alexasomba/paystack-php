@@ -162,16 +162,16 @@ class StorefrontApi
      * Add Products to Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontIdProduct $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontAddProducts $storefront_add_products storefront_add_products (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontAddProducts'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function storefrontAddProducts($id, $body = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
+    public function storefrontAddProducts($id, $storefront_add_products = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
     {
-        list($response) = $this->storefrontAddProductsWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->storefrontAddProductsWithHttpInfo($id, $storefront_add_products, $contentType);
         return $response;
     }
 
@@ -181,16 +181,16 @@ class StorefrontApi
      * Add Products to Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontAddProducts $storefront_add_products (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontAddProducts'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storefrontAddProductsWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
+    public function storefrontAddProductsWithHttpInfo($id, $storefront_add_products = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
     {
-        $request = $this->storefrontAddProductsRequest($id, $body, $contentType);
+        $request = $this->storefrontAddProductsRequest($id, $storefront_add_products, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -328,15 +328,15 @@ class StorefrontApi
      * Add Products to Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontAddProducts $storefront_add_products (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontAddProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storefrontAddProductsAsync($id, $body = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
+    public function storefrontAddProductsAsync($id, $storefront_add_products = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
     {
-        return $this->storefrontAddProductsAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->storefrontAddProductsAsyncWithHttpInfo($id, $storefront_add_products, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -350,16 +350,16 @@ class StorefrontApi
      * Add Products to Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontAddProducts $storefront_add_products (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontAddProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storefrontAddProductsAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
+    public function storefrontAddProductsAsyncWithHttpInfo($id, $storefront_add_products = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->storefrontAddProductsRequest($id, $body, $contentType);
+        $request = $this->storefrontAddProductsRequest($id, $storefront_add_products, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -401,13 +401,13 @@ class StorefrontApi
      * Create request for operation 'storefrontAddProducts'
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontIdProduct $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontAddProducts $storefront_add_products (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontAddProducts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storefrontAddProductsRequest($id, $body = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
+    public function storefrontAddProductsRequest($id, $storefront_add_products = null, string $contentType = self::contentTypes['storefrontAddProducts'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -445,12 +445,12 @@ class StorefrontApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($storefront_add_products)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($storefront_add_products));
             } else {
-                $httpBody = $body;
+                $httpBody = $storefront_add_products;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2389,8 +2389,8 @@ class StorefrontApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2398,8 +2398,8 @@ class StorefrontApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2407,8 +2407,8 @@ class StorefrontApi
             $status,
             'status', // param base name
             'string', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -3144,16 +3144,16 @@ class StorefrontApi
      * Update Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontId $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontUpdate $storefront_update storefront_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\StorefrontUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
      */
-    public function storefrontUpdate($id, $body = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
+    public function storefrontUpdate($id, $storefront_update = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
     {
-        list($response) = $this->storefrontUpdateWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->storefrontUpdateWithHttpInfo($id, $storefront_update, $contentType);
         return $response;
     }
 
@@ -3163,16 +3163,16 @@ class StorefrontApi
      * Update Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontUpdate $storefront_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\StorefrontUpdateResponse|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storefrontUpdateWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
+    public function storefrontUpdateWithHttpInfo($id, $storefront_update = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
     {
-        $request = $this->storefrontUpdateRequest($id, $body, $contentType);
+        $request = $this->storefrontUpdateRequest($id, $storefront_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3310,15 +3310,15 @@ class StorefrontApi
      * Update Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontUpdate $storefront_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storefrontUpdateAsync($id, $body = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
+    public function storefrontUpdateAsync($id, $storefront_update = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
     {
-        return $this->storefrontUpdateAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->storefrontUpdateAsyncWithHttpInfo($id, $storefront_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3332,16 +3332,16 @@ class StorefrontApi
      * Update Storefront
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontUpdate $storefront_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storefrontUpdateAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
+    public function storefrontUpdateAsyncWithHttpInfo($id, $storefront_update = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\StorefrontUpdateResponse';
-        $request = $this->storefrontUpdateRequest($id, $body, $contentType);
+        $request = $this->storefrontUpdateRequest($id, $storefront_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3383,13 +3383,13 @@ class StorefrontApi
      * Create request for operation 'storefrontUpdate'
      *
      * @param  int $id The unique identifier of the Storefront (required)
-     * @param  \Alexasomba\\Paystack\Model\StorefrontId $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\StorefrontUpdate $storefront_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['storefrontUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function storefrontUpdateRequest($id, $body = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
+    public function storefrontUpdateRequest($id, $storefront_update = null, string $contentType = self::contentTypes['storefrontUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -3427,12 +3427,12 @@ class StorefrontApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($storefront_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($storefront_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $storefront_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

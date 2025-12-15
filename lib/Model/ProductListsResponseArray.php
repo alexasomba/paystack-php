@@ -72,20 +72,20 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
         'type' => 'string',
         'in_stock' => 'bool',
         'unlimited' => 'bool',
-        'metadata' => '\Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata',
-        'files' => 'object[]',
-        'success_message' => 'object',
-        'redirect_url' => 'object',
-        'split_code' => 'object',
-        'notification_emails' => 'object',
+        'metadata' => '\Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata',
+        'files' => 'mixed[]',
+        'success_message' => 'mixed',
+        'redirect_url' => 'mixed',
+        'split_code' => 'mixed',
+        'notification_emails' => 'mixed',
         'minimum_orderable' => 'int',
-        'maximum_orderable' => 'object',
+        'maximum_orderable' => 'mixed',
         'created_at' => 'string',
         'updated_at' => 'string',
-        'digital_assets' => 'object[]',
-        'variant_options' => 'object[]',
+        'digital_assets' => 'mixed[]',
+        'variant_options' => 'mixed[]',
         'is_shippable' => 'bool',
-        'shipping_fields' => '\Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields',
+        'shipping_fields' => '\Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields',
         'integration' => 'int',
         'low_stock_alert' => 'int'
     ];
@@ -964,7 +964,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata
+     * @return \Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata
      */
     public function getMetadata()
     {
@@ -974,7 +974,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\ProductCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\\Paystack\Model\ProductListsResponseArrayMetadata $metadata metadata
      *
      * @return self
      */
@@ -991,7 +991,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets files
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getFiles()
     {
@@ -1001,7 +1001,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets files
      *
-     * @param object[] $files files
+     * @param mixed[] $files files
      *
      * @return self
      */
@@ -1018,7 +1018,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets success_message
      *
-     * @return object
+     * @return mixed
      */
     public function getSuccessMessage()
     {
@@ -1028,7 +1028,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets success_message
      *
-     * @param object $success_message success_message
+     * @param mixed $success_message success_message
      *
      * @return self
      */
@@ -1052,7 +1052,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets redirect_url
      *
-     * @return object
+     * @return mixed
      */
     public function getRedirectUrl()
     {
@@ -1062,7 +1062,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets redirect_url
      *
-     * @param object $redirect_url redirect_url
+     * @param mixed $redirect_url redirect_url
      *
      * @return self
      */
@@ -1086,7 +1086,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets split_code
      *
-     * @return object
+     * @return mixed
      */
     public function getSplitCode()
     {
@@ -1096,7 +1096,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets split_code
      *
-     * @param object $split_code split_code
+     * @param mixed $split_code split_code
      *
      * @return self
      */
@@ -1120,7 +1120,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets notification_emails
      *
-     * @return object
+     * @return mixed
      */
     public function getNotificationEmails()
     {
@@ -1130,7 +1130,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets notification_emails
      *
-     * @param object $notification_emails notification_emails
+     * @param mixed $notification_emails notification_emails
      *
      * @return self
      */
@@ -1181,7 +1181,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets maximum_orderable
      *
-     * @return object
+     * @return mixed
      */
     public function getMaximumOrderable()
     {
@@ -1191,7 +1191,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets maximum_orderable
      *
-     * @param object $maximum_orderable maximum_orderable
+     * @param mixed $maximum_orderable maximum_orderable
      *
      * @return self
      */
@@ -1269,7 +1269,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets digital_assets
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getDigitalAssets()
     {
@@ -1279,7 +1279,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets digital_assets
      *
-     * @param object[] $digital_assets digital_assets
+     * @param mixed[] $digital_assets digital_assets
      *
      * @return self
      */
@@ -1296,7 +1296,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets variant_options
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getVariantOptions()
     {
@@ -1306,7 +1306,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets variant_options
      *
-     * @param object[] $variant_options variant_options
+     * @param mixed[] $variant_options variant_options
      *
      * @return self
      */
@@ -1350,7 +1350,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets shipping_fields
      *
-     * @return \Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields
+     * @return \Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields
      */
     public function getShippingFields()
     {
@@ -1360,7 +1360,7 @@ class ProductListsResponseArray implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shipping_fields
      *
-     * @param \Alexasomba\\Paystack\Model\ProductCreateResponseDataShippingFields $shipping_fields shipping_fields
+     * @param \Alexasomba\\Paystack\Model\ProductListsResponseArrayShippingFields $shipping_fields shipping_fields
      *
      * @return self
      */

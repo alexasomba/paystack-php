@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **name** | **string** |  |
 **integration** | **int** |  |
 **domain** | **string** |  |
-**payment_methods** | **object[]** |  |
+**payment_methods** | **mixed[]** |  |
 **active** | **bool** |  |
 **created_at** | **string** |  |
-**connect_account_id** | **object** |  |
+**connect_account_id** | **mixed** |  |
 **destinations** | [**\Alexasomba\\Paystack\Model\VirtualTerminalFetchResponseDataDestinationsInner[]**](VirtualTerminalFetchResponseDataDestinationsInner.md) |  |
 **currency** | **string** |  |
 

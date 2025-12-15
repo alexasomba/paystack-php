@@ -63,10 +63,10 @@ class VirtualTerminalFetchResponseData implements ModelInterface, ArrayAccess, \
         'name' => 'string',
         'integration' => 'int',
         'domain' => 'string',
-        'payment_methods' => 'object[]',
+        'payment_methods' => 'mixed[]',
         'active' => 'bool',
         'created_at' => 'string',
-        'connect_account_id' => 'object',
+        'connect_account_id' => 'mixed',
         'destinations' => '\Alexasomba\\Paystack\Model\VirtualTerminalFetchResponseDataDestinationsInner[]',
         'currency' => 'string'
     ];
@@ -531,7 +531,7 @@ class VirtualTerminalFetchResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets payment_methods
      *
-     * @return object[]
+     * @return mixed[]
      */
     public function getPaymentMethods()
     {
@@ -541,7 +541,7 @@ class VirtualTerminalFetchResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets payment_methods
      *
-     * @param object[] $payment_methods payment_methods
+     * @param mixed[] $payment_methods payment_methods
      *
      * @return self
      */
@@ -612,7 +612,7 @@ class VirtualTerminalFetchResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Gets connect_account_id
      *
-     * @return object
+     * @return mixed
      */
     public function getConnectAccountId()
     {
@@ -622,7 +622,7 @@ class VirtualTerminalFetchResponseData implements ModelInterface, ArrayAccess, \
     /**
      * Sets connect_account_id
      *
-     * @param object $connect_account_id connect_account_id
+     * @param mixed $connect_account_id connect_account_id
      *
      * @return self
      */

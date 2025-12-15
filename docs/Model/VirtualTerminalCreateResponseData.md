@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **integration** | **int** |  |
 **domain** | **string** |  |
 **code** | **string** |  |
-**payment_methods** | **object[]** |  |
+**payment_methods** | **mixed[]** |  |
 **active** | **bool** |  |
-**metadata** | **object** |  |
+**metadata** | **mixed** |  |
 **destinations** | [**\Alexasomba\\Paystack\Model\VirtualTerminalCreateResponseDataDestinationsInner[]**](VirtualTerminalCreateResponseDataDestinationsInner.md) |  |
 **currency** | **string** |  |
 

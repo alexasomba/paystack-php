@@ -157,16 +157,16 @@ class VirtualTerminalApi
      * Add Split Code to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode $virtual_terminal_add_split_code virtual_terminal_add_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalAddSplitCode'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCodeResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function virtualTerminalAddSplitCode($code, $body = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
+    public function virtualTerminalAddSplitCode($code, $virtual_terminal_add_split_code = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
     {
-        list($response) = $this->virtualTerminalAddSplitCodeWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->virtualTerminalAddSplitCodeWithHttpInfo($code, $virtual_terminal_add_split_code, $contentType);
         return $response;
     }
 
@@ -176,16 +176,16 @@ class VirtualTerminalApi
      * Add Split Code to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode $virtual_terminal_add_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalAddSplitCode'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCodeResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function virtualTerminalAddSplitCodeWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
+    public function virtualTerminalAddSplitCodeWithHttpInfo($code, $virtual_terminal_add_split_code = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
     {
-        $request = $this->virtualTerminalAddSplitCodeRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalAddSplitCodeRequest($code, $virtual_terminal_add_split_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -300,15 +300,15 @@ class VirtualTerminalApi
      * Add Split Code to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode $virtual_terminal_add_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalAddSplitCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalAddSplitCodeAsync($code, $body = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
+    public function virtualTerminalAddSplitCodeAsync($code, $virtual_terminal_add_split_code = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
     {
-        return $this->virtualTerminalAddSplitCodeAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->virtualTerminalAddSplitCodeAsyncWithHttpInfo($code, $virtual_terminal_add_split_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -322,16 +322,16 @@ class VirtualTerminalApi
      * Add Split Code to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode $virtual_terminal_add_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalAddSplitCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalAddSplitCodeAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
+    public function virtualTerminalAddSplitCodeAsyncWithHttpInfo($code, $virtual_terminal_add_split_code = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCodeResponse';
-        $request = $this->virtualTerminalAddSplitCodeRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalAddSplitCodeRequest($code, $virtual_terminal_add_split_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -373,13 +373,13 @@ class VirtualTerminalApi
      * Create request for operation 'virtualTerminalAddSplitCode'
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode $virtual_terminal_add_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalAddSplitCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function virtualTerminalAddSplitCodeRequest($code, $body = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
+    public function virtualTerminalAddSplitCodeRequest($code, $virtual_terminal_add_split_code = null, string $contentType = self::contentTypes['virtualTerminalAddSplitCode'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -417,12 +417,12 @@ class VirtualTerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($virtual_terminal_add_split_code)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($virtual_terminal_add_split_code));
             } else {
-                $httpBody = $body;
+                $httpBody = $virtual_terminal_add_split_code;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1093,16 +1093,16 @@ class VirtualTerminalApi
      * Remove Split Code from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode $virtual_terminal_delete_split_code virtual_terminal_delete_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDeleteSplitCode'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCodeResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function virtualTerminalDeleteSplitCode($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
+    public function virtualTerminalDeleteSplitCode($code, $virtual_terminal_delete_split_code = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
     {
-        list($response) = $this->virtualTerminalDeleteSplitCodeWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->virtualTerminalDeleteSplitCodeWithHttpInfo($code, $virtual_terminal_delete_split_code, $contentType);
         return $response;
     }
 
@@ -1112,16 +1112,16 @@ class VirtualTerminalApi
      * Remove Split Code from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode $virtual_terminal_delete_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDeleteSplitCode'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCodeResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function virtualTerminalDeleteSplitCodeWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
+    public function virtualTerminalDeleteSplitCodeWithHttpInfo($code, $virtual_terminal_delete_split_code = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
     {
-        $request = $this->virtualTerminalDeleteSplitCodeRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalDeleteSplitCodeRequest($code, $virtual_terminal_delete_split_code, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1236,15 +1236,15 @@ class VirtualTerminalApi
      * Remove Split Code from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode $virtual_terminal_delete_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDeleteSplitCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalDeleteSplitCodeAsync($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
+    public function virtualTerminalDeleteSplitCodeAsync($code, $virtual_terminal_delete_split_code = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
     {
-        return $this->virtualTerminalDeleteSplitCodeAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->virtualTerminalDeleteSplitCodeAsyncWithHttpInfo($code, $virtual_terminal_delete_split_code, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1258,16 +1258,16 @@ class VirtualTerminalApi
      * Remove Split Code from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode $virtual_terminal_delete_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDeleteSplitCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalDeleteSplitCodeAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
+    public function virtualTerminalDeleteSplitCodeAsyncWithHttpInfo($code, $virtual_terminal_delete_split_code = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCodeResponse';
-        $request = $this->virtualTerminalDeleteSplitCodeRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalDeleteSplitCodeRequest($code, $virtual_terminal_delete_split_code, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1309,13 +1309,13 @@ class VirtualTerminalApi
      * Create request for operation 'virtualTerminalDeleteSplitCode'
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeSplitCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode $virtual_terminal_delete_split_code (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDeleteSplitCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function virtualTerminalDeleteSplitCodeRequest($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
+    public function virtualTerminalDeleteSplitCodeRequest($code, $virtual_terminal_delete_split_code = null, string $contentType = self::contentTypes['virtualTerminalDeleteSplitCode'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1353,12 +1353,12 @@ class VirtualTerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($virtual_terminal_delete_split_code)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($virtual_terminal_delete_split_code));
             } else {
-                $httpBody = $body;
+                $httpBody = $virtual_terminal_delete_split_code;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1416,16 +1416,16 @@ class VirtualTerminalApi
      * Assign Destination to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign $virtual_terminal_destination_assign virtual_terminal_destination_assign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationAssign'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssignResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function virtualTerminalDestinationAssign($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
+    public function virtualTerminalDestinationAssign($code, $virtual_terminal_destination_assign = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
     {
-        list($response) = $this->virtualTerminalDestinationAssignWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->virtualTerminalDestinationAssignWithHttpInfo($code, $virtual_terminal_destination_assign, $contentType);
         return $response;
     }
 
@@ -1435,16 +1435,16 @@ class VirtualTerminalApi
      * Assign Destination to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign $virtual_terminal_destination_assign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationAssign'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssignResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function virtualTerminalDestinationAssignWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
+    public function virtualTerminalDestinationAssignWithHttpInfo($code, $virtual_terminal_destination_assign = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
     {
-        $request = $this->virtualTerminalDestinationAssignRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalDestinationAssignRequest($code, $virtual_terminal_destination_assign, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1559,15 +1559,15 @@ class VirtualTerminalApi
      * Assign Destination to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign $virtual_terminal_destination_assign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalDestinationAssignAsync($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
+    public function virtualTerminalDestinationAssignAsync($code, $virtual_terminal_destination_assign = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
     {
-        return $this->virtualTerminalDestinationAssignAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->virtualTerminalDestinationAssignAsyncWithHttpInfo($code, $virtual_terminal_destination_assign, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1581,16 +1581,16 @@ class VirtualTerminalApi
      * Assign Destination to Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign $virtual_terminal_destination_assign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalDestinationAssignAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
+    public function virtualTerminalDestinationAssignAsyncWithHttpInfo($code, $virtual_terminal_destination_assign = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssignResponse';
-        $request = $this->virtualTerminalDestinationAssignRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalDestinationAssignRequest($code, $virtual_terminal_destination_assign, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1632,13 +1632,13 @@ class VirtualTerminalApi
      * Create request for operation 'virtualTerminalDestinationAssign'
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationAssign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign $virtual_terminal_destination_assign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function virtualTerminalDestinationAssignRequest($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
+    public function virtualTerminalDestinationAssignRequest($code, $virtual_terminal_destination_assign = null, string $contentType = self::contentTypes['virtualTerminalDestinationAssign'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1676,12 +1676,12 @@ class VirtualTerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($virtual_terminal_destination_assign)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($virtual_terminal_destination_assign));
             } else {
-                $httpBody = $body;
+                $httpBody = $virtual_terminal_destination_assign;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1739,16 +1739,16 @@ class VirtualTerminalApi
      * Unassign Destination from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign $virtual_terminal_destination_unassign virtual_terminal_destination_unassign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationUnassign'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassignResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function virtualTerminalDestinationUnassign($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
+    public function virtualTerminalDestinationUnassign($code, $virtual_terminal_destination_unassign = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
     {
-        list($response) = $this->virtualTerminalDestinationUnassignWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->virtualTerminalDestinationUnassignWithHttpInfo($code, $virtual_terminal_destination_unassign, $contentType);
         return $response;
     }
 
@@ -1758,16 +1758,16 @@ class VirtualTerminalApi
      * Unassign Destination from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign $virtual_terminal_destination_unassign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationUnassign'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassignResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function virtualTerminalDestinationUnassignWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
+    public function virtualTerminalDestinationUnassignWithHttpInfo($code, $virtual_terminal_destination_unassign = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
     {
-        $request = $this->virtualTerminalDestinationUnassignRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalDestinationUnassignRequest($code, $virtual_terminal_destination_unassign, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1882,15 +1882,15 @@ class VirtualTerminalApi
      * Unassign Destination from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign $virtual_terminal_destination_unassign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationUnassign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalDestinationUnassignAsync($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
+    public function virtualTerminalDestinationUnassignAsync($code, $virtual_terminal_destination_unassign = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
     {
-        return $this->virtualTerminalDestinationUnassignAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->virtualTerminalDestinationUnassignAsyncWithHttpInfo($code, $virtual_terminal_destination_unassign, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1904,16 +1904,16 @@ class VirtualTerminalApi
      * Unassign Destination from Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign $virtual_terminal_destination_unassign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationUnassign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalDestinationUnassignAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
+    public function virtualTerminalDestinationUnassignAsyncWithHttpInfo($code, $virtual_terminal_destination_unassign = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassignResponse';
-        $request = $this->virtualTerminalDestinationUnassignRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalDestinationUnassignRequest($code, $virtual_terminal_destination_unassign, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1955,13 +1955,13 @@ class VirtualTerminalApi
      * Create request for operation 'virtualTerminalDestinationUnassign'
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCodeDestinationUnassign $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign $virtual_terminal_destination_unassign (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalDestinationUnassign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function virtualTerminalDestinationUnassignRequest($code, $body = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
+    public function virtualTerminalDestinationUnassignRequest($code, $virtual_terminal_destination_unassign = null, string $contentType = self::contentTypes['virtualTerminalDestinationUnassign'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1999,12 +1999,12 @@ class VirtualTerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($virtual_terminal_destination_unassign)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($virtual_terminal_destination_unassign));
             } else {
-                $httpBody = $body;
+                $httpBody = $virtual_terminal_destination_unassign;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2612,8 +2612,8 @@ class VirtualTerminalApi
             $per_page,
             'perPage', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
         // query params
@@ -2621,8 +2621,8 @@ class VirtualTerminalApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            '', // style
-            false, // explode
+            'form', // style
+            true, // explode
             false // required
         ) ?? []);
 
@@ -2692,16 +2692,16 @@ class VirtualTerminalApi
      * Update Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCode $body body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalUpdate $virtual_terminal_update virtual_terminal_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Alexasomba\\Paystack\Model\VirtualTerminalUpdateResponse|\Alexasomba\\Paystack\Model\Error
      */
-    public function virtualTerminalUpdate($code, $body = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
+    public function virtualTerminalUpdate($code, $virtual_terminal_update = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
     {
-        list($response) = $this->virtualTerminalUpdateWithHttpInfo($code, $body, $contentType);
+        list($response) = $this->virtualTerminalUpdateWithHttpInfo($code, $virtual_terminal_update, $contentType);
         return $response;
     }
 
@@ -2711,16 +2711,16 @@ class VirtualTerminalApi
      * Update Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalUpdate $virtual_terminal_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalUpdate'] to see the possible values for this operation
      *
      * @throws \Alexasomba\\Paystack\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Alexasomba\\Paystack\Model\VirtualTerminalUpdateResponse|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function virtualTerminalUpdateWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
+    public function virtualTerminalUpdateWithHttpInfo($code, $virtual_terminal_update = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
     {
-        $request = $this->virtualTerminalUpdateRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalUpdateRequest($code, $virtual_terminal_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2835,15 +2835,15 @@ class VirtualTerminalApi
      * Update Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalUpdate $virtual_terminal_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalUpdateAsync($code, $body = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
+    public function virtualTerminalUpdateAsync($code, $virtual_terminal_update = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
     {
-        return $this->virtualTerminalUpdateAsyncWithHttpInfo($code, $body, $contentType)
+        return $this->virtualTerminalUpdateAsyncWithHttpInfo($code, $virtual_terminal_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2857,16 +2857,16 @@ class VirtualTerminalApi
      * Update Virtual Terminal
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalUpdate $virtual_terminal_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function virtualTerminalUpdateAsyncWithHttpInfo($code, $body = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
+    public function virtualTerminalUpdateAsyncWithHttpInfo($code, $virtual_terminal_update = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
     {
         $returnType = '\Alexasomba\\Paystack\Model\VirtualTerminalUpdateResponse';
-        $request = $this->virtualTerminalUpdateRequest($code, $body, $contentType);
+        $request = $this->virtualTerminalUpdateRequest($code, $virtual_terminal_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2908,13 +2908,13 @@ class VirtualTerminalApi
      * Create request for operation 'virtualTerminalUpdate'
      *
      * @param  string $code Code of the Virtual Terminal (required)
-     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalCode $body (optional)
+     * @param  \Alexasomba\\Paystack\Model\VirtualTerminalUpdate $virtual_terminal_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['virtualTerminalUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function virtualTerminalUpdateRequest($code, $body = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
+    public function virtualTerminalUpdateRequest($code, $virtual_terminal_update = null, string $contentType = self::contentTypes['virtualTerminalUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -2952,12 +2952,12 @@ class VirtualTerminalApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($virtual_terminal_update)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($virtual_terminal_update));
             } else {
-                $httpBody = $body;
+                $httpBody = $virtual_terminal_update;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
