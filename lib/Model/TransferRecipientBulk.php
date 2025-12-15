@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransferRecipientBulk Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class TransferRecipientBulk implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'batch' => '\Alexasomba\\Paystack\Model\TransferRecipientCreate[]'
+        'batch' => '\Alexasomba\Paystack\Model\TransferRecipientCreate[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class TransferRecipientBulk implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets batch
      *
-     * @return \Alexasomba\\Paystack\Model\TransferRecipientCreate[]
+     * @return \Alexasomba\Paystack\Model\TransferRecipientCreate[]
      */
     public function getBatch()
     {
@@ -306,7 +306,7 @@ class TransferRecipientBulk implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets batch
      *
-     * @param \Alexasomba\\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed.
+     * @param \Alexasomba\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object.
      *
      * @return self
      */

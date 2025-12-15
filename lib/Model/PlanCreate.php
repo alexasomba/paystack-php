@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PlanCreate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -271,6 +271,27 @@ class PlanCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const INTERVAL_DAILY = 'daily';
+    public const INTERVAL_WEEKLY = 'weekly';
+    public const INTERVAL_MONTHLY = 'monthly';
+    public const INTERVAL_BIANNUALLY = 'biannually';
+    public const INTERVAL_ANNUALLY = 'annually';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getIntervalAllowableValues()
+    {
+        return [
+            self::INTERVAL_DAILY,
+            self::INTERVAL_WEEKLY,
+            self::INTERVAL_MONTHLY,
+            self::INTERVAL_BIANNUALLY,
+            self::INTERVAL_ANNUALLY,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -333,6 +354,15 @@ class PlanCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['interval'] === null) {
             $invalidProperties[] = "'interval' can't be null";
         }
+        $allowedValues = $this->getIntervalAllowableValues();
+        if (!is_null($this->container['interval']) && !in_array($this->container['interval'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'interval', must be one of '%s'",
+                $this->container['interval'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -415,7 +445,7 @@ class PlanCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets interval
      *
-     * @param string $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually
+     * @param string $interval Payment interval
      *
      * @return self
      */
@@ -423,6 +453,16 @@ class PlanCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($interval)) {
             throw new \InvalidArgumentException('non-nullable interval cannot be null');
+        }
+        $allowedValues = $this->getIntervalAllowableValues();
+        if (!in_array($interval, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'interval', must be one of '%s'",
+                    $interval,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['interval'] = $interval;
 

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PaymentRequestUpdate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,8 +65,8 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'description' => 'string',
         'line_items' => 'object[]',
         'tax' => 'object[]',
-        'send_notification' => 'object[]',
-        'draft' => 'object[]',
+        'send_notification' => 'bool',
+        'draft' => 'bool',
         'has_invoice' => 'object[]',
         'invoice_number' => 'int',
         'split_code' => 'string'
@@ -559,7 +559,7 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets send_notification
      *
-     * @return object[]|null
+     * @return bool|null
      */
     public function getSendNotification()
     {
@@ -569,7 +569,7 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets send_notification
      *
-     * @param object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true
+     * @param bool|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true
      *
      * @return self
      */
@@ -586,7 +586,7 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets draft
      *
-     * @return object[]|null
+     * @return bool|null
      */
     public function getDraft()
     {
@@ -596,7 +596,7 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets draft
      *
-     * @param object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification
+     * @param bool|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification
      *
      * @return self
      */
@@ -623,7 +623,7 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets has_invoice
      *
-     * @param object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed
+     * @param object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided) even if there are no line_items or tax passed
      *
      * @return self
      */
@@ -650,7 +650,7 @@ class PaymentRequestUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets invoice_number
      *
-     * @param int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point.
+     * @param int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help override whatever value Paystack decides.  Auto increment for subsequent invoices continue from this point.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * ChargeCreateRequest Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,17 +59,17 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'email' => 'string',
-        'amount' => 'string',
+        'amount' => 'int',
         'authorization_code' => 'string',
         'pin' => 'string',
         'reference' => 'string',
         'birthday' => '\DateTime',
         'device_id' => 'string',
-        'metadata' => 'string',
-        'bank' => '\Alexasomba\\Paystack\Model\Bank',
-        'mobile_money' => '\Alexasomba\\Paystack\Model\MobileMoney',
-        'ussd' => '\Alexasomba\\Paystack\Model\USSD',
-        'eft' => '\Alexasomba\\Paystack\Model\EFT'
+        'metadata' => 'object',
+        'bank' => '\Alexasomba\Paystack\Model\Bank',
+        'mobile_money' => '\Alexasomba\Paystack\Model\MobileMoney',
+        'ussd' => '\Alexasomba\Paystack\Model\USSD',
+        'eft' => '\Alexasomba\Paystack\Model\EFT'
     ];
 
     /**
@@ -85,7 +85,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'authorization_code' => null,
         'pin' => null,
         'reference' => null,
-        'birthday' => 'date-time',
+        'birthday' => 'date',
         'device_id' => null,
         'metadata' => null,
         'bank' => null,
@@ -403,7 +403,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets amount
      *
-     * @return string
+     * @return int
      */
     public function getAmount()
     {
@@ -413,7 +413,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets amount
      *
-     * @param string $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
+     * @param int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
      *
      * @return self
      */
@@ -565,7 +565,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets metadata
      *
-     * @return string|null
+     * @return object|null
      */
     public function getMetadata()
     {
@@ -575,7 +575,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets metadata
      *
-     * @param string|null $metadata Stringified JSON object of custom data
+     * @param object|null $metadata JSON object of custom data
      *
      * @return self
      */
@@ -592,7 +592,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets bank
      *
-     * @return \Alexasomba\\Paystack\Model\Bank|null
+     * @return \Alexasomba\Paystack\Model\Bank|null
      */
     public function getBank()
     {
@@ -602,7 +602,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets bank
      *
-     * @param \Alexasomba\\Paystack\Model\Bank|null $bank bank
+     * @param \Alexasomba\Paystack\Model\Bank|null $bank bank
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets mobile_money
      *
-     * @return \Alexasomba\\Paystack\Model\MobileMoney|null
+     * @return \Alexasomba\Paystack\Model\MobileMoney|null
      */
     public function getMobileMoney()
     {
@@ -629,7 +629,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets mobile_money
      *
-     * @param \Alexasomba\\Paystack\Model\MobileMoney|null $mobile_money mobile_money
+     * @param \Alexasomba\Paystack\Model\MobileMoney|null $mobile_money mobile_money
      *
      * @return self
      */
@@ -646,7 +646,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets ussd
      *
-     * @return \Alexasomba\\Paystack\Model\USSD|null
+     * @return \Alexasomba\Paystack\Model\USSD|null
      */
     public function getUssd()
     {
@@ -656,7 +656,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets ussd
      *
-     * @param \Alexasomba\\Paystack\Model\USSD|null $ussd ussd
+     * @param \Alexasomba\Paystack\Model\USSD|null $ussd ussd
      *
      * @return self
      */
@@ -673,7 +673,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets eft
      *
-     * @return \Alexasomba\\Paystack\Model\EFT|null
+     * @return \Alexasomba\Paystack\Model\EFT|null
      */
     public function getEft()
     {
@@ -683,7 +683,7 @@ class ChargeCreateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets eft
      *
-     * @param \Alexasomba\\Paystack\Model\EFT|null $eft eft
+     * @param \Alexasomba\Paystack\Model\EFT|null $eft eft
      *
      * @return self
      */

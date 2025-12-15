@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * ProductApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,8 +76,8 @@ class ProductApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'productCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'productDelete' => [
             'application/json',
@@ -89,8 +89,8 @@ class ProductApi
             'application/json',
         ],
         'productUpdate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
     ];
 
@@ -145,21 +145,16 @@ class ProductApi
      *
      * Create Product
      *
-     * @param  string $name Name of product (required)
-     * @param  string $description The description of the product (required)
-     * @param  int $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (required)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  \Alexasomba\Paystack\Model\ProductCreate|null $product_create product_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ProductCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function productCreate($name, $description, $price, $currency, $limited = null, $quantity = null, string $contentType = self::contentTypes['productCreate'][0])
+    public function productCreate($product_create = null, string $contentType = self::contentTypes['productCreate'][0])
     {
-        list($response) = $this->productCreateWithHttpInfo($name, $description, $price, $currency, $limited, $quantity, $contentType);
+        list($response) = $this->productCreateWithHttpInfo($product_create, $contentType);
         return $response;
     }
 
@@ -168,21 +163,16 @@ class ProductApi
      *
      * Create Product
      *
-     * @param  string $name Name of product (required)
-     * @param  string $description The description of the product (required)
-     * @param  int $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (required)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  \Alexasomba\Paystack\Model\ProductCreate|null $product_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ProductCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productCreateWithHttpInfo($name, $description, $price, $currency, $limited = null, $quantity = null, string $contentType = self::contentTypes['productCreate'][0])
+    public function productCreateWithHttpInfo($product_create = null, string $contentType = self::contentTypes['productCreate'][0])
     {
-        $request = $this->productCreateRequest($name, $description, $price, $currency, $limited, $quantity, $contentType);
+        $request = $this->productCreateRequest($product_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -210,13 +200,13 @@ class ProductApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -238,7 +228,7 @@ class ProductApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ProductCreateResponse',
                 $request,
                 $response,
             );
@@ -247,7 +237,7 @@ class ProductApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -255,7 +245,7 @@ class ProductApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -272,20 +262,15 @@ class ProductApi
      *
      * Create Product
      *
-     * @param  string $name Name of product (required)
-     * @param  string $description The description of the product (required)
-     * @param  int $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (required)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  \Alexasomba\Paystack\Model\ProductCreate|null $product_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCreateAsync($name, $description, $price, $currency, $limited = null, $quantity = null, string $contentType = self::contentTypes['productCreate'][0])
+    public function productCreateAsync($product_create = null, string $contentType = self::contentTypes['productCreate'][0])
     {
-        return $this->productCreateAsyncWithHttpInfo($name, $description, $price, $currency, $limited, $quantity, $contentType)
+        return $this->productCreateAsyncWithHttpInfo($product_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -298,21 +283,16 @@ class ProductApi
      *
      * Create Product
      *
-     * @param  string $name Name of product (required)
-     * @param  string $description The description of the product (required)
-     * @param  int $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (required)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  \Alexasomba\Paystack\Model\ProductCreate|null $product_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCreateAsyncWithHttpInfo($name, $description, $price, $currency, $limited = null, $quantity = null, string $contentType = self::contentTypes['productCreate'][0])
+    public function productCreateAsyncWithHttpInfo($product_create = null, string $contentType = self::contentTypes['productCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->productCreateRequest($name, $description, $price, $currency, $limited, $quantity, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ProductCreateResponse';
+        $request = $this->productCreateRequest($product_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -353,48 +333,14 @@ class ProductApi
     /**
      * Create request for operation 'productCreate'
      *
-     * @param  string $name Name of product (required)
-     * @param  string $description The description of the product (required)
-     * @param  int $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (required)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  \Alexasomba\Paystack\Model\ProductCreate|null $product_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productCreateRequest($name, $description, $price, $currency, $limited = null, $quantity = null, string $contentType = self::contentTypes['productCreate'][0])
+    public function productCreateRequest($product_create = null, string $contentType = self::contentTypes['productCreate'][0])
     {
-
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling productCreate'
-            );
-        }
-
-        // verify the required parameter 'description' is set
-        if ($description === null || (is_array($description) && count($description) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $description when calling productCreate'
-            );
-        }
-
-        // verify the required parameter 'price' is set
-        if ($price === null || (is_array($price) && count($price) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $price when calling productCreate'
-            );
-        }
-
-        // verify the required parameter 'currency' is set
-        if ($currency === null || (is_array($currency) && count($currency) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $currency when calling productCreate'
-            );
-        }
-
 
 
 
@@ -408,20 +354,6 @@ class ProductApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'description' => $description,
-            'price' => $price,
-            'currency' => $currency,
-            'limited' => $limited,
-            'quantity' => $quantity,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -430,7 +362,14 @@ class ProductApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($product_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($product_create));
+            } else {
+                $httpBody = $product_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -485,12 +424,12 @@ class ProductApi
      *
      * Delete Product
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productDelete'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ProductDeleteResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function productDelete($id, string $contentType = self::contentTypes['productDelete'][0])
     {
@@ -503,12 +442,12 @@ class ProductApi
      *
      * Delete Product
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productDelete'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ProductDeleteResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function productDeleteWithHttpInfo($id, string $contentType = self::contentTypes['productDelete'][0])
     {
@@ -540,19 +479,19 @@ class ProductApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductDeleteResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -574,7 +513,7 @@ class ProductApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ProductDeleteResponse',
                 $request,
                 $response,
             );
@@ -583,7 +522,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductDeleteResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -591,7 +530,7 @@ class ProductApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -599,7 +538,7 @@ class ProductApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -616,7 +555,7 @@ class ProductApi
      *
      * Delete Product
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -637,7 +576,7 @@ class ProductApi
      *
      * Delete Product
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -645,7 +584,7 @@ class ProductApi
      */
     public function productDeleteAsyncWithHttpInfo($id, string $contentType = self::contentTypes['productDelete'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\ProductDeleteResponse';
         $request = $this->productDeleteRequest($id, $contentType);
 
         return $this->client
@@ -687,7 +626,7 @@ class ProductApi
     /**
      * Create request for operation 'productDelete'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -785,12 +724,12 @@ class ProductApi
      *
      * Fetch Product
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ProductFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function productFetch($id, string $contentType = self::contentTypes['productFetch'][0])
     {
@@ -803,12 +742,12 @@ class ProductApi
      *
      * Fetch Product
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ProductFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function productFetchWithHttpInfo($id, string $contentType = self::contentTypes['productFetch'][0])
     {
@@ -840,19 +779,19 @@ class ProductApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -874,7 +813,7 @@ class ProductApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ProductFetchResponse',
                 $request,
                 $response,
             );
@@ -883,7 +822,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -891,7 +830,7 @@ class ProductApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -899,7 +838,7 @@ class ProductApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -916,7 +855,7 @@ class ProductApi
      *
      * Fetch Product
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -937,7 +876,7 @@ class ProductApi
      *
      * Fetch Product
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -945,7 +884,7 @@ class ProductApi
      */
     public function productFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['productFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\ProductFetchResponse';
         $request = $this->productFetchRequest($id, $contentType);
 
         return $this->client
@@ -987,7 +926,7 @@ class ProductApi
     /**
      * Create request for operation 'productFetch'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of the product (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1085,16 +1024,16 @@ class ProductApi
      *
      * List Products
      *
-     * @param  int|null $per_page per_page (optional)
-     * @param  int|null $page page (optional)
-     * @param  bool|null $active active (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The section to retrieve (optional)
+     * @param  bool|null $active The state of the product (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ProductListsResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function productList($per_page = null, $page = null, $active = null, $from = null, $to = null, string $contentType = self::contentTypes['productList'][0])
     {
@@ -1107,16 +1046,16 @@ class ProductApi
      *
      * List Products
      *
-     * @param  int|null $per_page (optional)
-     * @param  int|null $page (optional)
-     * @param  bool|null $active (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The section to retrieve (optional)
+     * @param  bool|null $active The state of the product (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ProductListsResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function productListWithHttpInfo($per_page = null, $page = null, $active = null, $from = null, $to = null, string $contentType = self::contentTypes['productList'][0])
     {
@@ -1148,19 +1087,19 @@ class ProductApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductListsResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1182,7 +1121,7 @@ class ProductApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ProductListsResponse',
                 $request,
                 $response,
             );
@@ -1191,7 +1130,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductListsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1199,7 +1138,7 @@ class ProductApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1207,7 +1146,7 @@ class ProductApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1224,9 +1163,9 @@ class ProductApi
      *
      * List Products
      *
-     * @param  int|null $per_page (optional)
-     * @param  int|null $page (optional)
-     * @param  bool|null $active (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The section to retrieve (optional)
+     * @param  bool|null $active The state of the product (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
@@ -1249,9 +1188,9 @@ class ProductApi
      *
      * List Products
      *
-     * @param  int|null $per_page (optional)
-     * @param  int|null $page (optional)
-     * @param  bool|null $active (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The section to retrieve (optional)
+     * @param  bool|null $active The state of the product (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
@@ -1261,7 +1200,7 @@ class ProductApi
      */
     public function productListAsyncWithHttpInfo($per_page = null, $page = null, $active = null, $from = null, $to = null, string $contentType = self::contentTypes['productList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\ProductListsResponse';
         $request = $this->productListRequest($per_page, $page, $active, $from, $to, $contentType);
 
         return $this->client
@@ -1303,9 +1242,9 @@ class ProductApi
     /**
      * Create request for operation 'productList'
      *
-     * @param  int|null $per_page (optional)
-     * @param  int|null $page (optional)
-     * @param  bool|null $active (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The section to retrieve (optional)
+     * @param  bool|null $active The state of the product (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
@@ -1440,22 +1379,17 @@ class ProductApi
      *
      * Update product
      *
-     * @param  string $id id (required)
-     * @param  string|null $name Name of product (optional)
-     * @param  string|null $description The description of the product (optional)
-     * @param  int|null $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (optional)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  int $id The unique identifier of the product (required)
+     * @param  \Alexasomba\Paystack\Model\ProductUpdate|null $product_update product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ProductUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function productUpdate($id, $name = null, $description = null, $price = null, $currency = null, $limited = null, $quantity = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdate($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        list($response) = $this->productUpdateWithHttpInfo($id, $name, $description, $price, $currency, $limited, $quantity, $contentType);
+        list($response) = $this->productUpdateWithHttpInfo($id, $product_update, $contentType);
         return $response;
     }
 
@@ -1464,22 +1398,17 @@ class ProductApi
      *
      * Update product
      *
-     * @param  string $id (required)
-     * @param  string|null $name Name of product (optional)
-     * @param  string|null $description The description of the product (optional)
-     * @param  int|null $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (optional)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  int $id The unique identifier of the product (required)
+     * @param  \Alexasomba\Paystack\Model\ProductUpdate|null $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ProductUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productUpdateWithHttpInfo($id, $name = null, $description = null, $price = null, $currency = null, $limited = null, $quantity = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateWithHttpInfo($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        $request = $this->productUpdateRequest($id, $name, $description, $price, $currency, $limited, $quantity, $contentType);
+        $request = $this->productUpdateRequest($id, $product_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1507,19 +1436,19 @@ class ProductApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductUpdateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1541,7 +1470,7 @@ class ProductApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ProductUpdateResponse',
                 $request,
                 $response,
             );
@@ -1550,7 +1479,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ProductUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1558,7 +1487,7 @@ class ProductApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1566,7 +1495,7 @@ class ProductApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1583,21 +1512,16 @@ class ProductApi
      *
      * Update product
      *
-     * @param  string $id (required)
-     * @param  string|null $name Name of product (optional)
-     * @param  string|null $description The description of the product (optional)
-     * @param  int|null $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (optional)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  int $id The unique identifier of the product (required)
+     * @param  \Alexasomba\Paystack\Model\ProductUpdate|null $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productUpdateAsync($id, $name = null, $description = null, $price = null, $currency = null, $limited = null, $quantity = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateAsync($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        return $this->productUpdateAsyncWithHttpInfo($id, $name, $description, $price, $currency, $limited, $quantity, $contentType)
+        return $this->productUpdateAsyncWithHttpInfo($id, $product_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1610,22 +1534,17 @@ class ProductApi
      *
      * Update product
      *
-     * @param  string $id (required)
-     * @param  string|null $name Name of product (optional)
-     * @param  string|null $description The description of the product (optional)
-     * @param  int|null $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (optional)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  int $id The unique identifier of the product (required)
+     * @param  \Alexasomba\Paystack\Model\ProductUpdate|null $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productUpdateAsyncWithHttpInfo($id, $name = null, $description = null, $price = null, $currency = null, $limited = null, $quantity = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateAsyncWithHttpInfo($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->productUpdateRequest($id, $name, $description, $price, $currency, $limited, $quantity, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ProductUpdateResponse';
+        $request = $this->productUpdateRequest($id, $product_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1666,19 +1585,14 @@ class ProductApi
     /**
      * Create request for operation 'productUpdate'
      *
-     * @param  string $id (required)
-     * @param  string|null $name Name of product (optional)
-     * @param  string|null $description The description of the product (optional)
-     * @param  int|null $price Price should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $currency Currency in which price is set. Allowed values are: NGN, GHS, ZAR or USD (optional)
-     * @param  bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock (optional)
-     * @param  int|null $quantity Number of products in stock. Use if limited is true (optional)
+     * @param  int $id The unique identifier of the product (required)
+     * @param  \Alexasomba\Paystack\Model\ProductUpdate|null $product_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productUpdateRequest($id, $name = null, $description = null, $price = null, $currency = null, $limited = null, $quantity = null, string $contentType = self::contentTypes['productUpdate'][0])
+    public function productUpdateRequest($id, $product_update = null, string $contentType = self::contentTypes['productUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1687,11 +1601,6 @@ class ProductApi
                 'Missing the required parameter $id when calling productUpdate'
             );
         }
-
-
-
-
-
 
 
 
@@ -1713,20 +1622,6 @@ class ProductApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'description' => $description,
-            'price' => $price,
-            'currency' => $currency,
-            'limited' => $limited,
-            'quantity' => $quantity,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1735,7 +1630,14 @@ class ProductApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($product_update)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($product_update));
+            } else {
+                $httpBody = $product_update;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

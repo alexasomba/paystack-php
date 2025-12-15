@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * Error Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'status' => 'bool',
-        'message' => 'string'
+        'message' => 'string',
+        'meta' => '\Alexasomba\Paystack\Model\ErrorMeta',
+        'type' => 'string',
+        'code' => 'string',
+        'error_code_mapping_not_found' => 'bool'
     ];
 
     /**
@@ -71,7 +75,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'status' => null,
-        'message' => null
+        'message' => null,
+        'meta' => null,
+        'type' => null,
+        'code' => null,
+        'error_code_mapping_not_found' => null
     ];
 
     /**
@@ -81,7 +89,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'status' => false,
-        'message' => false
+        'message' => false,
+        'meta' => false,
+        'type' => false,
+        'code' => false,
+        'error_code_mapping_not_found' => false
     ];
 
     /**
@@ -171,7 +183,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'status' => 'status',
-        'message' => 'message'
+        'message' => 'message',
+        'meta' => 'meta',
+        'type' => 'type',
+        'code' => 'code',
+        'error_code_mapping_not_found' => 'errorCodeMappingNotFound'
     ];
 
     /**
@@ -181,7 +197,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'status' => 'setStatus',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'meta' => 'setMeta',
+        'type' => 'setType',
+        'code' => 'setCode',
+        'error_code_mapping_not_found' => 'setErrorCodeMappingNotFound'
     ];
 
     /**
@@ -191,7 +211,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'status' => 'getStatus',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'meta' => 'getMeta',
+        'type' => 'getType',
+        'code' => 'getCode',
+        'error_code_mapping_not_found' => 'getErrorCodeMappingNotFound'
     ];
 
     /**
@@ -235,6 +259,23 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CODE_VALIDATION_ERROR = 'validation_error';
+    public const CODE_PROCESSOR_ERROR = 'processor_error';
+    public const CODE_API_ERROR = 'api_error';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCodeAllowableValues()
+    {
+        return [
+            self::CODE_VALIDATION_ERROR,
+            self::CODE_PROCESSOR_ERROR,
+            self::CODE_API_ERROR,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -253,6 +294,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('meta', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('error_code_mapping_not_found', $data ?? [], null);
     }
 
     /**
@@ -282,6 +327,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getCodeAllowableValues();
+        if (!is_null($this->container['code']) && !in_array($this->container['code'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'code', must be one of '%s'",
+                $this->container['code'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -310,7 +364,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param bool|null $status status
+     * @param bool|null $status An indicator for the state of the request
      *
      * @return self
      */
@@ -337,7 +391,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string|null $message message
+     * @param string|null $message A short description of the error
      *
      * @return self
      */
@@ -347,6 +401,124 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \Alexasomba\Paystack\Model\ErrorMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \Alexasomba\Paystack\Model\ErrorMeta|null $meta meta
+     *
+     * @return self
+     */
+    public function setMeta($meta)
+    {
+        if (is_null($meta)) {
+            throw new \InvalidArgumentException('non-nullable meta cannot be null');
+        }
+        $this->container['meta'] = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type A tag to indicate the type of the error
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code The error code
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        }
+        $allowedValues = $this->getCodeAllowableValues();
+        if (!in_array($code, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'code', must be one of '%s'",
+                    $code,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_code_mapping_not_found
+     *
+     * @return bool|null
+     */
+    public function getErrorCodeMappingNotFound()
+    {
+        return $this->container['error_code_mapping_not_found'];
+    }
+
+    /**
+     * Sets error_code_mapping_not_found
+     *
+     * @param bool|null $error_code_mapping_not_found An indicator for error mapping for the request
+     *
+     * @return self
+     */
+    public function setErrorCodeMappingNotFound($error_code_mapping_not_found)
+    {
+        if (is_null($error_code_mapping_not_found)) {
+            throw new \InvalidArgumentException('non-nullable error_code_mapping_not_found cannot be null');
+        }
+        $this->container['error_code_mapping_not_found'] = $error_code_mapping_not_found;
 
         return $this;
     }

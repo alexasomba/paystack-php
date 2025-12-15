@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PageProduct Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'product' => 'string[]'
+        'products' => 'int[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'product' => null
+        'products' => null
     ];
 
     /**
@@ -78,7 +78,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'product' => false
+        'products' => false
     ];
 
     /**
@@ -167,7 +167,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'product' => 'product'
+        'products' => 'products'
     ];
 
     /**
@@ -176,7 +176,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'product' => 'setProduct'
+        'products' => 'setProducts'
     ];
 
     /**
@@ -185,7 +185,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'product' => 'getProduct'
+        'products' => 'getProducts'
     ];
 
     /**
@@ -245,7 +245,7 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('product', $data ?? [], null);
+        $this->setIfExists('products', $data ?? [], null);
     }
 
     /**
@@ -275,8 +275,8 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['product'] === null) {
-            $invalidProperties[] = "'product' can't be null";
+        if ($this->container['products'] === null) {
+            $invalidProperties[] = "'products' can't be null";
         }
         return $invalidProperties;
     }
@@ -294,28 +294,28 @@ class PageProduct implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets product
+     * Gets products
      *
-     * @return string[]
+     * @return int[]
      */
-    public function getProduct()
+    public function getProducts()
     {
-        return $this->container['product'];
+        return $this->container['products'];
     }
 
     /**
-     * Sets product
+     * Sets products
      *
-     * @param string[] $product IDs of all products to add to a page
+     * @param int[] $products A list of IDs of products to add to a page.
      *
      * @return self
      */
-    public function setProduct($product)
+    public function setProducts($products)
     {
-        if (is_null($product)) {
-            throw new \InvalidArgumentException('non-nullable product cannot be null');
+        if (is_null($products)) {
+            throw new \InvalidArgumentException('non-nullable products cannot be null');
         }
-        $this->container['product'] = $product;
+        $this->container['products'] = $products;
 
         return $this;
     }

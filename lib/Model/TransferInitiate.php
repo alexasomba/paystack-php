@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransferInitiate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @description Transfer initiation model
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,12 +59,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'source' => 'string',
-        'amount' => 'string',
+        'amount' => 'int',
         'recipient' => 'string',
+        'reference' => 'string',
         'reason' => 'string',
-        'currency' => 'string',
-        'reference' => 'string'
+        'source' => 'string',
+        'currency' => 'string'
     ];
 
     /**
@@ -74,12 +75,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'source' => null,
         'amount' => null,
         'recipient' => null,
+        'reference' => null,
         'reason' => null,
-        'currency' => null,
-        'reference' => null
+        'source' => null,
+        'currency' => null
     ];
 
     /**
@@ -88,12 +89,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'source' => false,
         'amount' => false,
         'recipient' => false,
+        'reference' => false,
         'reason' => false,
-        'currency' => false,
-        'reference' => false
+        'source' => false,
+        'currency' => false
     ];
 
     /**
@@ -182,12 +183,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'source' => 'source',
         'amount' => 'amount',
         'recipient' => 'recipient',
+        'reference' => 'reference',
         'reason' => 'reason',
-        'currency' => 'currency',
-        'reference' => 'reference'
+        'source' => 'source',
+        'currency' => 'currency'
     ];
 
     /**
@@ -196,12 +197,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'source' => 'setSource',
         'amount' => 'setAmount',
         'recipient' => 'setRecipient',
+        'reference' => 'setReference',
         'reason' => 'setReason',
-        'currency' => 'setCurrency',
-        'reference' => 'setReference'
+        'source' => 'setSource',
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -210,12 +211,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'source' => 'getSource',
         'amount' => 'getAmount',
         'recipient' => 'getRecipient',
+        'reference' => 'getReference',
         'reason' => 'getReason',
-        'currency' => 'getCurrency',
-        'reference' => 'getReference'
+        'source' => 'getSource',
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -259,6 +260,25 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CURRENCY_NGN = 'NGN';
+    public const CURRENCY_ZAR = 'ZAR';
+    public const CURRENCY_KES = 'KES';
+    public const CURRENCY_GHS = 'GHS';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCurrencyAllowableValues()
+    {
+        return [
+            self::CURRENCY_NGN,
+            self::CURRENCY_ZAR,
+            self::CURRENCY_KES,
+            self::CURRENCY_GHS,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -275,12 +295,12 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('source', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('recipient', $data ?? [], null);
-        $this->setIfExists('reason', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('reference', $data ?? [], null);
+        $this->setIfExists('reason', $data ?? [], null);
+        $this->setIfExists('source', $data ?? [], 'balance');
+        $this->setIfExists('currency', $data ?? [], 'NGN');
     }
 
     /**
@@ -310,15 +330,31 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['source'] === null) {
-            $invalidProperties[] = "'source' can't be null";
-        }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
         if ($this->container['recipient'] === null) {
             $invalidProperties[] = "'recipient' can't be null";
         }
+        if ($this->container['reference'] === null) {
+            $invalidProperties[] = "'reference' can't be null";
+        }
+        if ((mb_strlen($this->container['reference']) < 16)) {
+            $invalidProperties[] = "invalid value for 'reference', the character length must be bigger than or equal to 16.";
+        }
+
+        if ($this->container['source'] === null) {
+            $invalidProperties[] = "'source' can't be null";
+        }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'currency', must be one of '%s'",
+                $this->container['currency'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -335,36 +371,9 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets source
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param string $source Where should we transfer from? Only balance is allowed for now
-     *
-     * @return self
-     */
-    public function setSource($source)
-    {
-        if (is_null($source)) {
-            throw new \InvalidArgumentException('non-nullable source cannot be null');
-        }
-        $this->container['source'] = $source;
-
-        return $this;
-    }
-
-    /**
      * Gets amount
      *
-     * @return string
+     * @return int
      */
     public function getAmount()
     {
@@ -374,7 +383,7 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amount
      *
-     * @param string $amount Amount to transfer in kobo if currency is NGN and pesewas if currency is GHS.
+     * @param int $amount Amount to transfer in kobo if currency is NGN and pesewas if currency is GHS.
      *
      * @return self
      */
@@ -416,6 +425,38 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets reference
+     *
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->container['reference'];
+    }
+
+    /**
+     * Sets reference
+     *
+     * @param string $reference To ensure idempotency, you need to provide e a unique identifier for the request.  The identifier should be a lowercase alphanumeric string with only -,_  symbols allowed.
+     *
+     * @return self
+     */
+    public function setReference($reference)
+    {
+        if (is_null($reference)) {
+            throw new \InvalidArgumentException('non-nullable reference cannot be null');
+        }
+
+        if ((mb_strlen($reference) < 16)) {
+            throw new \InvalidArgumentException('invalid length for $reference when calling TransferInitiate., must be bigger than or equal to 16.');
+        }
+
+        $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
      * Gets reason
      *
      * @return string|null
@@ -443,6 +484,33 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets source
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string $source The source of funds to send from
+     *
+     * @return self
+     */
+    public function setSource($source)
+    {
+        if (is_null($source)) {
+            throw new \InvalidArgumentException('non-nullable source cannot be null');
+        }
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
      * Gets currency
      *
      * @return string|null
@@ -455,7 +523,7 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string|null $currency Specify the currency of the transfer. Defaults to NGN.
+     * @param string|null $currency Specify the currency of the transfer.
      *
      * @return self
      */
@@ -464,34 +532,17 @@ class TransferInitiate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($currency)) {
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string|null
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string|null $reference If specified, the field should be a unique identifier (in lowercase) for the object.  Only -,_ and alphanumeric characters are allowed.
-     *
-     * @return self
-     */
-    public function setReference($reference)
-    {
-        if (is_null($reference)) {
-            throw new \InvalidArgumentException('non-nullable reference cannot be null');
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!in_array($currency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'currency', must be one of '%s'",
+                    $currency,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
-        $this->container['reference'] = $reference;
+        $this->container['currency'] = $currency;
 
         return $this;
     }

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransferResendOTP Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -235,6 +235,23 @@ class TransferResendOTP implements ModelInterface, ArrayAccess, \JsonSerializabl
         return self::$openAPIModelName;
     }
 
+    public const REASON_DISABLE_OTP = 'disable_otp';
+    public const REASON_RESEND_OTP = 'resend_otp';
+    public const REASON_TRANSFER = 'transfer';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getReasonAllowableValues()
+    {
+        return [
+            self::REASON_DISABLE_OTP,
+            self::REASON_RESEND_OTP,
+            self::REASON_TRANSFER,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -252,7 +269,7 @@ class TransferResendOTP implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('transfer_code', $data ?? [], null);
-        $this->setIfExists('reason', $data ?? [], null);
+        $this->setIfExists('reason', $data ?? [], 'transfer');
     }
 
     /**
@@ -288,6 +305,15 @@ class TransferResendOTP implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['reason'] === null) {
             $invalidProperties[] = "'reason' can't be null";
         }
+        $allowedValues = $this->getReasonAllowableValues();
+        if (!is_null($this->container['reason']) && !in_array($this->container['reason'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'reason', must be one of '%s'",
+                $this->container['reason'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -343,7 +369,7 @@ class TransferResendOTP implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets reason
      *
-     * @param string $reason Either resend_otp or transfer
+     * @param string $reason Specify the flag to indicate the purpose of the OTP
      *
      * @return self
      */
@@ -351,6 +377,16 @@ class TransferResendOTP implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         if (is_null($reason)) {
             throw new \InvalidArgumentException('non-nullable reason cannot be null');
+        }
+        $allowedValues = $this->getReasonAllowableValues();
+        if (!in_array($reason, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'reason', must be one of '%s'",
+                    $reason,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['reason'] = $reason;
 

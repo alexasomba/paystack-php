@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * BulkChargeApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -83,6 +83,7 @@ class BulkChargeApi
         ],
         'bulkChargeInitiate' => [
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'bulkChargeList' => [
             'application/json',
@@ -144,36 +145,42 @@ class BulkChargeApi
     /**
      * Operation bulkChargeCharges
      *
-     * Fetch Charges in a Batch
+     * List Charges in a Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code An code for the batch whose charges you want to retrieve (required)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeCharges'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function bulkChargeCharges($code, string $contentType = self::contentTypes['bulkChargeCharges'][0])
+    public function bulkChargeCharges($code, $per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeCharges'][0])
     {
-        list($response) = $this->bulkChargeChargesWithHttpInfo($code, $contentType);
+        list($response) = $this->bulkChargeChargesWithHttpInfo($code, $per_page, $page, $status, $contentType);
         return $response;
     }
 
     /**
      * Operation bulkChargeChargesWithHttpInfo
      *
-     * Fetch Charges in a Batch
+     * List Charges in a Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code An code for the batch whose charges you want to retrieve (required)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeCharges'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bulkChargeChargesWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargeCharges'][0])
+    public function bulkChargeChargesWithHttpInfo($code, $per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeCharges'][0])
     {
-        $request = $this->bulkChargeChargesRequest($code, $contentType);
+        $request = $this->bulkChargeChargesRequest($code, $per_page, $page, $status, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -201,19 +208,19 @@ class BulkChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -235,7 +242,7 @@ class BulkChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse',
                 $request,
                 $response,
             );
@@ -244,7 +251,7 @@ class BulkChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -252,7 +259,7 @@ class BulkChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -260,7 +267,7 @@ class BulkChargeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -275,17 +282,20 @@ class BulkChargeApi
     /**
      * Operation bulkChargeChargesAsync
      *
-     * Fetch Charges in a Batch
+     * List Charges in a Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code An code for the batch whose charges you want to retrieve (required)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeCharges'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bulkChargeChargesAsync($code, string $contentType = self::contentTypes['bulkChargeCharges'][0])
+    public function bulkChargeChargesAsync($code, $per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeCharges'][0])
     {
-        return $this->bulkChargeChargesAsyncWithHttpInfo($code, $contentType)
+        return $this->bulkChargeChargesAsyncWithHttpInfo($code, $per_page, $page, $status, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -296,18 +306,21 @@ class BulkChargeApi
     /**
      * Operation bulkChargeChargesAsyncWithHttpInfo
      *
-     * Fetch Charges in a Batch
+     * List Charges in a Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code An code for the batch whose charges you want to retrieve (required)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeCharges'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bulkChargeChargesAsyncWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargeCharges'][0])
+    public function bulkChargeChargesAsyncWithHttpInfo($code, $per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeCharges'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->bulkChargeChargesRequest($code, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\BulkChargeFetchBulkBatchChargesResponse';
+        $request = $this->bulkChargeChargesRequest($code, $per_page, $page, $status, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -348,13 +361,16 @@ class BulkChargeApi
     /**
      * Create request for operation 'bulkChargeCharges'
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code An code for the batch whose charges you want to retrieve (required)
+     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeCharges'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function bulkChargeChargesRequest($code, string $contentType = self::contentTypes['bulkChargeCharges'][0])
+    public function bulkChargeChargesRequest($code, $per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeCharges'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -365,6 +381,9 @@ class BulkChargeApi
         }
 
 
+
+
+
         $resourcePath = '/bulkcharge/{code}/charges';
         $formParams = [];
         $queryParams = [];
@@ -372,6 +391,33 @@ class BulkChargeApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $per_page,
+            'perPage', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
         // path params
@@ -446,12 +492,12 @@ class BulkChargeApi
      *
      * Fetch Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The code for the charge whose batches you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\BulkChargeFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function bulkChargeFetch($code, string $contentType = self::contentTypes['bulkChargeFetch'][0])
     {
@@ -464,12 +510,12 @@ class BulkChargeApi
      *
      * Fetch Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The code for the charge whose batches you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\BulkChargeFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function bulkChargeFetchWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargeFetch'][0])
     {
@@ -501,19 +547,19 @@ class BulkChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -535,7 +581,7 @@ class BulkChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\BulkChargeFetchResponse',
                 $request,
                 $response,
             );
@@ -544,7 +590,7 @@ class BulkChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -552,7 +598,7 @@ class BulkChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -560,7 +606,7 @@ class BulkChargeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -577,7 +623,7 @@ class BulkChargeApi
      *
      * Fetch Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The code for the charge whose batches you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -598,7 +644,7 @@ class BulkChargeApi
      *
      * Fetch Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The code for the charge whose batches you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -606,7 +652,7 @@ class BulkChargeApi
      */
     public function bulkChargeFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargeFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\BulkChargeFetchResponse';
         $request = $this->bulkChargeFetchRequest($code, $contentType);
 
         return $this->client
@@ -648,7 +694,7 @@ class BulkChargeApi
     /**
      * Create request for operation 'bulkChargeFetch'
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The code for the charge whose batches you want to retrieve (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -746,12 +792,12 @@ class BulkChargeApi
      *
      * Initiate Bulk Charge
      *
-     * @param  \Alexasomba\\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate bulk_charge_initiate (optional)
+     * @param  \Alexasomba\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate bulk_charge_initiate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeInitiate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\BulkChargeInitiateResponse|\Alexasomba\Paystack\Model\Error
      */
     public function bulkChargeInitiate($bulk_charge_initiate = null, string $contentType = self::contentTypes['bulkChargeInitiate'][0])
     {
@@ -764,12 +810,12 @@ class BulkChargeApi
      *
      * Initiate Bulk Charge
      *
-     * @param  \Alexasomba\\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
+     * @param  \Alexasomba\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeInitiate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\BulkChargeInitiateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function bulkChargeInitiateWithHttpInfo($bulk_charge_initiate = null, string $contentType = self::contentTypes['bulkChargeInitiate'][0])
     {
@@ -801,13 +847,13 @@ class BulkChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeInitiateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -829,7 +875,7 @@ class BulkChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\BulkChargeInitiateResponse',
                 $request,
                 $response,
             );
@@ -838,7 +884,7 @@ class BulkChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeInitiateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -846,7 +892,7 @@ class BulkChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -863,7 +909,7 @@ class BulkChargeApi
      *
      * Initiate Bulk Charge
      *
-     * @param  \Alexasomba\\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
+     * @param  \Alexasomba\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeInitiate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -884,7 +930,7 @@ class BulkChargeApi
      *
      * Initiate Bulk Charge
      *
-     * @param  \Alexasomba\\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
+     * @param  \Alexasomba\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeInitiate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -892,7 +938,7 @@ class BulkChargeApi
      */
     public function bulkChargeInitiateAsyncWithHttpInfo($bulk_charge_initiate = null, string $contentType = self::contentTypes['bulkChargeInitiate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\BulkChargeInitiateResponse';
         $request = $this->bulkChargeInitiateRequest($bulk_charge_initiate, $contentType);
 
         return $this->client
@@ -934,7 +980,7 @@ class BulkChargeApi
     /**
      * Create request for operation 'bulkChargeInitiate'
      *
-     * @param  \Alexasomba\\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
+     * @param  \Alexasomba\Paystack\Model\BulkChargeInitiate[]|null $bulk_charge_initiate (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeInitiate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1026,18 +1072,17 @@ class BulkChargeApi
      * List Bulk Charge Batches
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\BulkChargeListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function bulkChargeList($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['bulkChargeList'][0])
+    public function bulkChargeList($per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeList'][0])
     {
-        list($response) = $this->bulkChargeListWithHttpInfo($per_page, $page, $from, $to, $contentType);
+        list($response) = $this->bulkChargeListWithHttpInfo($per_page, $page, $status, $contentType);
         return $response;
     }
 
@@ -1047,18 +1092,17 @@ class BulkChargeApi
      * List Bulk Charge Batches
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\BulkChargeListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bulkChargeListWithHttpInfo($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['bulkChargeList'][0])
+    public function bulkChargeListWithHttpInfo($per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeList'][0])
     {
-        $request = $this->bulkChargeListRequest($per_page, $page, $from, $to, $contentType);
+        $request = $this->bulkChargeListRequest($per_page, $page, $status, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1086,19 +1130,19 @@ class BulkChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1120,7 +1164,7 @@ class BulkChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\BulkChargeListResponse',
                 $request,
                 $response,
             );
@@ -1129,7 +1173,7 @@ class BulkChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1137,7 +1181,7 @@ class BulkChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1145,7 +1189,7 @@ class BulkChargeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1163,17 +1207,16 @@ class BulkChargeApi
      * List Bulk Charge Batches
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bulkChargeListAsync($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['bulkChargeList'][0])
+    public function bulkChargeListAsync($per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeList'][0])
     {
-        return $this->bulkChargeListAsyncWithHttpInfo($per_page, $page, $from, $to, $contentType)
+        return $this->bulkChargeListAsyncWithHttpInfo($per_page, $page, $status, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1187,18 +1230,17 @@ class BulkChargeApi
      * List Bulk Charge Batches
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bulkChargeListAsyncWithHttpInfo($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['bulkChargeList'][0])
+    public function bulkChargeListAsyncWithHttpInfo($per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->bulkChargeListRequest($per_page, $page, $from, $to, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\BulkChargeListResponse';
+        $request = $this->bulkChargeListRequest($per_page, $page, $status, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1240,17 +1282,15 @@ class BulkChargeApi
      * Create request for operation 'bulkChargeList'
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  string|null $status Filter by the status of the charges (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function bulkChargeListRequest($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['bulkChargeList'][0])
+    public function bulkChargeListRequest($per_page = null, $page = null, $status = null, string $contentType = self::contentTypes['bulkChargeList'][0])
     {
-
 
 
 
@@ -1283,17 +1323,8 @@ class BulkChargeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $from,
-            'from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $to,
-            'to', // param base name
+            $status,
+            'status', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1365,12 +1396,12 @@ class BulkChargeApi
      *
      * Pause Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargePause'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\BulkChargePauseResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function bulkChargePause($code, string $contentType = self::contentTypes['bulkChargePause'][0])
     {
@@ -1383,12 +1414,12 @@ class BulkChargeApi
      *
      * Pause Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargePause'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\BulkChargePauseResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function bulkChargePauseWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargePause'][0])
     {
@@ -1420,19 +1451,19 @@ class BulkChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargePauseResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1454,7 +1485,7 @@ class BulkChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\BulkChargePauseResponse',
                 $request,
                 $response,
             );
@@ -1463,7 +1494,7 @@ class BulkChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargePauseResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1471,7 +1502,7 @@ class BulkChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1479,7 +1510,7 @@ class BulkChargeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1496,7 +1527,7 @@ class BulkChargeApi
      *
      * Pause Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargePause'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1517,7 +1548,7 @@ class BulkChargeApi
      *
      * Pause Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargePause'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1525,7 +1556,7 @@ class BulkChargeApi
      */
     public function bulkChargePauseAsyncWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargePause'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\BulkChargePauseResponse';
         $request = $this->bulkChargePauseRequest($code, $contentType);
 
         return $this->client
@@ -1567,7 +1598,7 @@ class BulkChargeApi
     /**
      * Create request for operation 'bulkChargePause'
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargePause'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1665,12 +1696,12 @@ class BulkChargeApi
      *
      * Resume Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeResume'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\BulkChargeResumeResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function bulkChargeResume($code, string $contentType = self::contentTypes['bulkChargeResume'][0])
     {
@@ -1683,12 +1714,12 @@ class BulkChargeApi
      *
      * Resume Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeResume'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\BulkChargeResumeResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function bulkChargeResumeWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargeResume'][0])
     {
@@ -1720,19 +1751,19 @@ class BulkChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeResumeResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1754,7 +1785,7 @@ class BulkChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\BulkChargeResumeResponse',
                 $request,
                 $response,
             );
@@ -1763,7 +1794,7 @@ class BulkChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\BulkChargeResumeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1771,7 +1802,7 @@ class BulkChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1779,7 +1810,7 @@ class BulkChargeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1796,7 +1827,7 @@ class BulkChargeApi
      *
      * Resume Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeResume'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1817,7 +1848,7 @@ class BulkChargeApi
      *
      * Resume Bulk Charge Batch
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeResume'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1825,7 +1856,7 @@ class BulkChargeApi
      */
     public function bulkChargeResumeAsyncWithHttpInfo($code, string $contentType = self::contentTypes['bulkChargeResume'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\BulkChargeResumeResponse';
         $request = $this->bulkChargeResumeRequest($code, $contentType);
 
         return $this->client
@@ -1867,7 +1898,7 @@ class BulkChargeApi
     /**
      * Create request for operation 'bulkChargeResume'
      *
-     * @param  string $code Batch code (required)
+     * @param  string $code The batch code for the bulk charge you want to pause (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bulkChargeResume'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

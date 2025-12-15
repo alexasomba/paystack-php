@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * CustomerValidate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'first_name' => 'string',
+        'middle_name' => 'string',
         'last_name' => 'string',
         'type' => 'string',
         'value' => 'string',
-        'country' => 'string'
+        'country' => 'string',
+        'bvn' => 'string',
+        'bank_code' => 'string',
+        'account_number' => 'string'
     ];
 
     /**
@@ -74,10 +78,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'first_name' => null,
+        'middle_name' => null,
         'last_name' => null,
         'type' => null,
         'value' => null,
-        'country' => null
+        'country' => null,
+        'bvn' => null,
+        'bank_code' => null,
+        'account_number' => null
     ];
 
     /**
@@ -87,10 +95,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'first_name' => false,
+        'middle_name' => false,
         'last_name' => false,
         'type' => false,
         'value' => false,
-        'country' => false
+        'country' => false,
+        'bvn' => false,
+        'bank_code' => false,
+        'account_number' => false
     ];
 
     /**
@@ -180,10 +192,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'first_name' => 'first_name',
+        'middle_name' => 'middle_name',
         'last_name' => 'last_name',
         'type' => 'type',
         'value' => 'value',
-        'country' => 'country'
+        'country' => 'country',
+        'bvn' => 'bvn',
+        'bank_code' => 'bank_code',
+        'account_number' => 'account_number'
     ];
 
     /**
@@ -193,10 +209,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'first_name' => 'setFirstName',
+        'middle_name' => 'setMiddleName',
         'last_name' => 'setLastName',
         'type' => 'setType',
         'value' => 'setValue',
-        'country' => 'setCountry'
+        'country' => 'setCountry',
+        'bvn' => 'setBvn',
+        'bank_code' => 'setBankCode',
+        'account_number' => 'setAccountNumber'
     ];
 
     /**
@@ -206,10 +226,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'first_name' => 'getFirstName',
+        'middle_name' => 'getMiddleName',
         'last_name' => 'getLastName',
         'type' => 'getType',
         'value' => 'getValue',
-        'country' => 'getCountry'
+        'country' => 'getCountry',
+        'bvn' => 'getBvn',
+        'bank_code' => 'getBankCode',
+        'account_number' => 'getAccountNumber'
     ];
 
     /**
@@ -270,10 +294,14 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('first_name', $data ?? [], null);
+        $this->setIfExists('middle_name', $data ?? [], null);
         $this->setIfExists('last_name', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], 'bank_account');
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('bvn', $data ?? [], null);
+        $this->setIfExists('bank_code', $data ?? [], null);
+        $this->setIfExists('account_number', $data ?? [], null);
     }
 
     /**
@@ -312,11 +340,17 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
+        }
+        if ($this->container['bvn'] === null) {
+            $invalidProperties[] = "'bvn' can't be null";
+        }
+        if ($this->container['bank_code'] === null) {
+            $invalidProperties[] = "'bank_code' can't be null";
+        }
+        if ($this->container['account_number'] === null) {
+            $invalidProperties[] = "'account_number' can't be null";
         }
         return $invalidProperties;
     }
@@ -361,6 +395,33 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets middle_name
+     *
+     * @return string|null
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middle_name'];
+    }
+
+    /**
+     * Sets middle_name
+     *
+     * @param string|null $middle_name Customer's middle name
+     *
+     * @return self
+     */
+    public function setMiddleName($middle_name)
+    {
+        if (is_null($middle_name)) {
+            throw new \InvalidArgumentException('non-nullable middle_name cannot be null');
+        }
+        $this->container['middle_name'] = $middle_name;
+
+        return $this;
+    }
+
+    /**
      * Gets last_name
      *
      * @return string
@@ -400,7 +461,7 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param string $type Predefined types of identification. e.g. (BVN)
+     * @param string $type Predefined types of identification.
      *
      * @return self
      */
@@ -417,7 +478,7 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets value
      *
-     * @return string
+     * @return string|null
      */
     public function getValue()
     {
@@ -427,7 +488,7 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param string $value Customer's identification number
+     * @param string|null $value Customer's identification number.
      *
      * @return self
      */
@@ -454,7 +515,7 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets country
      *
-     * @param string $country 2 letter country code of identification issuer
+     * @param string $country Two-letter country code of identification issuer
      *
      * @return self
      */
@@ -464,6 +525,87 @@ class CustomerValidate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable country cannot be null');
         }
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets bvn
+     *
+     * @return string
+     */
+    public function getBvn()
+    {
+        return $this->container['bvn'];
+    }
+
+    /**
+     * Sets bvn
+     *
+     * @param string $bvn Customer's Bank Verification Number
+     *
+     * @return self
+     */
+    public function setBvn($bvn)
+    {
+        if (is_null($bvn)) {
+            throw new \InvalidArgumentException('non-nullable bvn cannot be null');
+        }
+        $this->container['bvn'] = $bvn;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_code
+     *
+     * @return string
+     */
+    public function getBankCode()
+    {
+        return $this->container['bank_code'];
+    }
+
+    /**
+     * Sets bank_code
+     *
+     * @param string $bank_code You can get the list of bank codes by calling the List Banks endpoint (https://api.paystack.co/bank).
+     *
+     * @return self
+     */
+    public function setBankCode($bank_code)
+    {
+        if (is_null($bank_code)) {
+            throw new \InvalidArgumentException('non-nullable bank_code cannot be null');
+        }
+        $this->container['bank_code'] = $bank_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_number
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->container['account_number'];
+    }
+
+    /**
+     * Sets account_number
+     *
+     * @param string $account_number Customer's bank account number.
+     *
+     * @return self
+     */
+    public function setAccountNumber($account_number)
+    {
+        if (is_null($account_number)) {
+            throw new \InvalidArgumentException('non-nullable account_number cannot be null');
+        }
+        $this->container['account_number'] = $account_number;
 
         return $this;
     }

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * SplitSubaccounts Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class SplitSubaccounts implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'subaccount' => 'string',
-        'share' => 'string'
+        'share' => 'int'
     ];
 
     /**
@@ -327,7 +327,7 @@ class SplitSubaccounts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets share
      *
-     * @return string|null
+     * @return int|null
      */
     public function getShare()
     {
@@ -337,7 +337,7 @@ class SplitSubaccounts implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets share
      *
-     * @param string|null $share The percentage or flat quota of the customer or partner
+     * @param int|null $share The percentage or flat quota of the customer or partner
      *
      * @return self
      */

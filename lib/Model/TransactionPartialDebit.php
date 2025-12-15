@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransactionPartialDebit Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,9 +61,9 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
         'email' => 'string',
         'amount' => 'int',
         'authorization_code' => 'string',
-        'currency' => 'string',
-        'reference' => 'string',
-        'at_least' => 'string'
+        'currency' => '\Alexasomba\Paystack\Model\Currency',
+        'at_least' => 'string',
+        'reference' => 'string'
     ];
 
     /**
@@ -75,11 +75,11 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPIFormats = [
         'email' => null,
-        'amount' => null,
+        'amount' => 'int64',
         'authorization_code' => null,
         'currency' => null,
-        'reference' => null,
-        'at_least' => null
+        'at_least' => null,
+        'reference' => null
     ];
 
     /**
@@ -92,8 +92,8 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => false,
         'authorization_code' => false,
         'currency' => false,
-        'reference' => false,
-        'at_least' => false
+        'at_least' => false,
+        'reference' => false
     ];
 
     /**
@@ -186,8 +186,8 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'amount',
         'authorization_code' => 'authorization_code',
         'currency' => 'currency',
-        'reference' => 'reference',
-        'at_least' => 'at_least'
+        'at_least' => 'at_least',
+        'reference' => 'reference'
     ];
 
     /**
@@ -200,8 +200,8 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'setAmount',
         'authorization_code' => 'setAuthorizationCode',
         'currency' => 'setCurrency',
-        'reference' => 'setReference',
-        'at_least' => 'setAtLeast'
+        'at_least' => 'setAtLeast',
+        'reference' => 'setReference'
     ];
 
     /**
@@ -214,8 +214,8 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'getAmount',
         'authorization_code' => 'getAuthorizationCode',
         'currency' => 'getCurrency',
-        'reference' => 'getReference',
-        'at_least' => 'getAtLeast'
+        'at_least' => 'getAtLeast',
+        'reference' => 'getReference'
     ];
 
     /**
@@ -279,8 +279,8 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('authorization_code', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('reference', $data ?? [], null);
         $this->setIfExists('at_least', $data ?? [], null);
+        $this->setIfExists('reference', $data ?? [], null);
     }
 
     /**
@@ -377,7 +377,7 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets amount
      *
-     * @param int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
+     * @param int $amount Specified in the lowest denomination of your currency
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets currency
      *
-     * @return string
+     * @return \Alexasomba\Paystack\Model\Currency
      */
     public function getCurrency()
     {
@@ -431,7 +431,7 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets currency
      *
-     * @param string $currency The transaction currency
+     * @param \Alexasomba\Paystack\Model\Currency $currency currency
      *
      * @return self
      */
@@ -441,33 +441,6 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
         $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets reference
-     *
-     * @return string|null
-     */
-    public function getReference()
-    {
-        return $this->container['reference'];
-    }
-
-    /**
-     * Sets reference
-     *
-     * @param string|null $reference Unique transaction reference. Only -, ., = and alphanumeric characters allowed.
-     *
-     * @return self
-     */
-    public function setReference($reference)
-    {
-        if (is_null($reference)) {
-            throw new \InvalidArgumentException('non-nullable reference cannot be null');
-        }
-        $this->container['reference'] = $reference;
 
         return $this;
     }
@@ -495,6 +468,33 @@ class TransactionPartialDebit implements ModelInterface, ArrayAccess, \JsonSeria
             throw new \InvalidArgumentException('non-nullable at_least cannot be null');
         }
         $this->container['at_least'] = $at_least;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference
+     *
+     * @return string|null
+     */
+    public function getReference()
+    {
+        return $this->container['reference'];
+    }
+
+    /**
+     * Sets reference
+     *
+     * @param string|null $reference Unique transaction reference. Only -, ., = and alphanumeric characters allowed.
+     *
+     * @return self
+     */
+    public function setReference($reference)
+    {
+        if (is_null($reference)) {
+            throw new \InvalidArgumentException('non-nullable reference cannot be null');
+        }
+        $this->container['reference'] = $reference;
 
         return $this;
     }

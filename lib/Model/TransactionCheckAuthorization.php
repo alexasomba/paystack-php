@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransactionCheckAuthorization Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -73,7 +73,7 @@ class TransactionCheckAuthorization implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'email' => null,
-        'amount' => null,
+        'amount' => 'int32',
         'authorization_code' => null,
         'currency' => null
     ];
@@ -357,7 +357,7 @@ class TransactionCheckAuthorization implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets amount
      *
-     * @param int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
+     * @param int $amount Amount should be in kobo if currency is NGN, pesewas if currency is GHS, and cents if currency is ZAR
      *
      * @return self
      */

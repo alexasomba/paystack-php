@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * SplitCreate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @description Split configuration for transactions
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +61,7 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'type' => 'string',
-        'subaccounts' => '\Alexasomba\\Paystack\Model\SplitSubaccounts[]',
+        'subaccounts' => '\Alexasomba\Paystack\Model\SplitSubaccounts[]',
         'currency' => 'string',
         'bearer_type' => 'string',
         'bearer_subaccount' => 'string'
@@ -259,6 +260,59 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const TYPE_PERCENTAGE = 'percentage';
+    public const TYPE_FLAT = 'flat';
+    public const CURRENCY_NGN = 'NGN';
+    public const CURRENCY_GHS = 'GHS';
+    public const CURRENCY_ZAR = 'ZAR';
+    public const CURRENCY_USD = 'USD';
+    public const BEARER_TYPE_SUBACCOUNT = 'subaccount';
+    public const BEARER_TYPE_ACCOUNT = 'account';
+    public const BEARER_TYPE_ALL_PROPORTIONAL = 'all-proportional';
+    public const BEARER_TYPE_ALL = 'all';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_PERCENTAGE,
+            self::TYPE_FLAT,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCurrencyAllowableValues()
+    {
+        return [
+            self::CURRENCY_NGN,
+            self::CURRENCY_GHS,
+            self::CURRENCY_ZAR,
+            self::CURRENCY_USD,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBearerTypeAllowableValues()
+    {
+        return [
+            self::BEARER_TYPE_SUBACCOUNT,
+            self::BEARER_TYPE_ACCOUNT,
+            self::BEARER_TYPE_ALL_PROPORTIONAL,
+            self::BEARER_TYPE_ALL,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -316,12 +370,39 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['subaccounts'] === null) {
             $invalidProperties[] = "'subaccounts' can't be null";
         }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
         }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'currency', must be one of '%s'",
+                $this->container['currency'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getBearerTypeAllowableValues();
+        if (!is_null($this->container['bearer_type']) && !in_array($this->container['bearer_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'bearer_type', must be one of '%s'",
+                $this->container['bearer_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -386,6 +467,16 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['type'] = $type;
 
         return $this;
@@ -394,7 +485,7 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets subaccounts
      *
-     * @return \Alexasomba\\Paystack\Model\SplitSubaccounts[]
+     * @return \Alexasomba\Paystack\Model\SplitSubaccounts[]
      */
     public function getSubaccounts()
     {
@@ -404,7 +495,7 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subaccounts
      *
-     * @param \Alexasomba\\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares
+     * @param \Alexasomba\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares
      *
      * @return self
      */
@@ -440,6 +531,16 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($currency)) {
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!in_array($currency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'currency', must be one of '%s'",
+                    $currency,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['currency'] = $currency;
 
         return $this;
@@ -466,6 +567,16 @@ class SplitCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($bearer_type)) {
             throw new \InvalidArgumentException('non-nullable bearer_type cannot be null');
+        }
+        $allowedValues = $this->getBearerTypeAllowableValues();
+        if (!in_array($bearer_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'bearer_type', must be one of '%s'",
+                    $bearer_type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['bearer_type'] = $bearer_type;
 

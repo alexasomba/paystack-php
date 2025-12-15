@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * BulkChargeInitiateRequest Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class BulkChargeInitiateRequest implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'charges' => '\Alexasomba\\Paystack\Model\BulkChargeInitiate[]'
+        'charges' => '\Alexasomba\Paystack\Model\BulkChargeInitiate[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class BulkChargeInitiateRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets charges
      *
-     * @return \Alexasomba\\Paystack\Model\BulkChargeInitiate[]
+     * @return \Alexasomba\Paystack\Model\BulkChargeInitiate[]
      */
     public function getCharges()
     {
@@ -306,7 +306,7 @@ class BulkChargeInitiateRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets charges
      *
-     * @param \Alexasomba\\Paystack\Model\BulkChargeInitiate[] $charges charges
+     * @param \Alexasomba\Paystack\Model\BulkChargeInitiate[] $charges charges
      *
      * @return self
      */

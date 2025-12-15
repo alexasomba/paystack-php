@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack\Model
+ * @package  Alexasomba\Paystack\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Alexasomba\\Paystack\Model
+ * @package Alexasomba\Paystack\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

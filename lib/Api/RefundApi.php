@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * RefundApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,14 +76,18 @@ class RefundApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'refundCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'refundFetch' => [
             'application/json',
         ],
         'refundList' => [
             'application/json',
+        ],
+        'refundRetry' => [
+            'application/json',
+            'application/x-www-form-urlencoded',
         ],
     ];
 
@@ -138,20 +142,16 @@ class RefundApi
      *
      * Create Refund
      *
-     * @param  string $transaction Transaction reference or id (required)
-     * @param  int|null $amount Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount (optional)
-     * @param  string|null $currency Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  string|null $customer_note Customer reason (optional)
-     * @param  string|null $merchant_note Merchant reason (optional)
+     * @param  \Alexasomba\Paystack\Model\RefundCreate|null $refund_create refund_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\RefundCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function refundCreate($transaction, $amount = null, $currency = null, $customer_note = null, $merchant_note = null, string $contentType = self::contentTypes['refundCreate'][0])
+    public function refundCreate($refund_create = null, string $contentType = self::contentTypes['refundCreate'][0])
     {
-        list($response) = $this->refundCreateWithHttpInfo($transaction, $amount, $currency, $customer_note, $merchant_note, $contentType);
+        list($response) = $this->refundCreateWithHttpInfo($refund_create, $contentType);
         return $response;
     }
 
@@ -160,20 +160,16 @@ class RefundApi
      *
      * Create Refund
      *
-     * @param  string $transaction Transaction reference or id (required)
-     * @param  int|null $amount Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount (optional)
-     * @param  string|null $currency Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  string|null $customer_note Customer reason (optional)
-     * @param  string|null $merchant_note Merchant reason (optional)
+     * @param  \Alexasomba\Paystack\Model\RefundCreate|null $refund_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\RefundCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function refundCreateWithHttpInfo($transaction, $amount = null, $currency = null, $customer_note = null, $merchant_note = null, string $contentType = self::contentTypes['refundCreate'][0])
+    public function refundCreateWithHttpInfo($refund_create = null, string $contentType = self::contentTypes['refundCreate'][0])
     {
-        $request = $this->refundCreateRequest($transaction, $amount, $currency, $customer_note, $merchant_note, $contentType);
+        $request = $this->refundCreateRequest($refund_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -201,13 +197,13 @@ class RefundApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\RefundCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -229,7 +225,7 @@ class RefundApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\RefundCreateResponse',
                 $request,
                 $response,
             );
@@ -238,7 +234,7 @@ class RefundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\RefundCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,7 +242,7 @@ class RefundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -263,19 +259,15 @@ class RefundApi
      *
      * Create Refund
      *
-     * @param  string $transaction Transaction reference or id (required)
-     * @param  int|null $amount Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount (optional)
-     * @param  string|null $currency Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  string|null $customer_note Customer reason (optional)
-     * @param  string|null $merchant_note Merchant reason (optional)
+     * @param  \Alexasomba\Paystack\Model\RefundCreate|null $refund_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundCreateAsync($transaction, $amount = null, $currency = null, $customer_note = null, $merchant_note = null, string $contentType = self::contentTypes['refundCreate'][0])
+    public function refundCreateAsync($refund_create = null, string $contentType = self::contentTypes['refundCreate'][0])
     {
-        return $this->refundCreateAsyncWithHttpInfo($transaction, $amount, $currency, $customer_note, $merchant_note, $contentType)
+        return $this->refundCreateAsyncWithHttpInfo($refund_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -288,20 +280,16 @@ class RefundApi
      *
      * Create Refund
      *
-     * @param  string $transaction Transaction reference or id (required)
-     * @param  int|null $amount Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount (optional)
-     * @param  string|null $currency Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  string|null $customer_note Customer reason (optional)
-     * @param  string|null $merchant_note Merchant reason (optional)
+     * @param  \Alexasomba\Paystack\Model\RefundCreate|null $refund_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundCreateAsyncWithHttpInfo($transaction, $amount = null, $currency = null, $customer_note = null, $merchant_note = null, string $contentType = self::contentTypes['refundCreate'][0])
+    public function refundCreateAsyncWithHttpInfo($refund_create = null, string $contentType = self::contentTypes['refundCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->refundCreateRequest($transaction, $amount, $currency, $customer_note, $merchant_note, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\RefundCreateResponse';
+        $request = $this->refundCreateRequest($refund_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -342,28 +330,14 @@ class RefundApi
     /**
      * Create request for operation 'refundCreate'
      *
-     * @param  string $transaction Transaction reference or id (required)
-     * @param  int|null $amount Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount (optional)
-     * @param  string|null $currency Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  string|null $customer_note Customer reason (optional)
-     * @param  string|null $merchant_note Merchant reason (optional)
+     * @param  \Alexasomba\Paystack\Model\RefundCreate|null $refund_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function refundCreateRequest($transaction, $amount = null, $currency = null, $customer_note = null, $merchant_note = null, string $contentType = self::contentTypes['refundCreate'][0])
+    public function refundCreateRequest($refund_create = null, string $contentType = self::contentTypes['refundCreate'][0])
     {
-
-        // verify the required parameter 'transaction' is set
-        if ($transaction === null || (is_array($transaction) && count($transaction) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $transaction when calling refundCreate'
-            );
-        }
-
-
-
 
 
 
@@ -377,19 +351,6 @@ class RefundApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'transaction' => $transaction,
-            'amount' => $amount,
-            'currency' => $currency,
-            'customer_note' => $customer_note,
-            'merchant_note' => $merchant_note,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -398,7 +359,14 @@ class RefundApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($refund_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($refund_create));
+            } else {
+                $httpBody = $refund_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -453,12 +421,12 @@ class RefundApi
      *
      * Fetch Refund
      *
-     * @param  string $id id (required)
+     * @param  int $id The identifier of the refund (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\RefundFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function refundFetch($id, string $contentType = self::contentTypes['refundFetch'][0])
     {
@@ -471,12 +439,12 @@ class RefundApi
      *
      * Fetch Refund
      *
-     * @param  string $id (required)
+     * @param  int $id The identifier of the refund (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\RefundFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function refundFetchWithHttpInfo($id, string $contentType = self::contentTypes['refundFetch'][0])
     {
@@ -508,19 +476,19 @@ class RefundApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\RefundFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -542,7 +510,7 @@ class RefundApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\RefundFetchResponse',
                 $request,
                 $response,
             );
@@ -551,7 +519,7 @@ class RefundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\RefundFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -559,7 +527,7 @@ class RefundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -567,7 +535,7 @@ class RefundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -584,7 +552,7 @@ class RefundApi
      *
      * Fetch Refund
      *
-     * @param  string $id (required)
+     * @param  int $id The identifier of the refund (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -605,7 +573,7 @@ class RefundApi
      *
      * Fetch Refund
      *
-     * @param  string $id (required)
+     * @param  int $id The identifier of the refund (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -613,7 +581,7 @@ class RefundApi
      */
     public function refundFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['refundFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\RefundFetchResponse';
         $request = $this->refundFetchRequest($id, $contentType);
 
         return $this->client
@@ -655,7 +623,7 @@ class RefundApi
     /**
      * Create request for operation 'refundFetch'
      *
-     * @param  string $id (required)
+     * @param  int $id The identifier of the refund (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -753,17 +721,17 @@ class RefundApi
      *
      * List Refunds
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional, default to 50)
      * @param  int|null $page The section to retrieve (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\RefundListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function refundList($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
+    public function refundList($per_page = 50, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
     {
         list($response) = $this->refundListWithHttpInfo($per_page, $page, $from, $to, $contentType);
         return $response;
@@ -774,17 +742,17 @@ class RefundApi
      *
      * List Refunds
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional, default to 50)
      * @param  int|null $page The section to retrieve (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\RefundListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function refundListWithHttpInfo($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
+    public function refundListWithHttpInfo($per_page = 50, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
     {
         $request = $this->refundListRequest($per_page, $page, $from, $to, $contentType);
 
@@ -814,19 +782,19 @@ class RefundApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\RefundListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -848,7 +816,7 @@ class RefundApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\RefundListResponse',
                 $request,
                 $response,
             );
@@ -857,7 +825,7 @@ class RefundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\RefundListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -865,7 +833,7 @@ class RefundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -873,7 +841,7 @@ class RefundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -890,7 +858,7 @@ class RefundApi
      *
      * List Refunds
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional, default to 50)
      * @param  int|null $page The section to retrieve (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
@@ -899,7 +867,7 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundListAsync($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
+    public function refundListAsync($per_page = 50, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
     {
         return $this->refundListAsyncWithHttpInfo($per_page, $page, $from, $to, $contentType)
             ->then(
@@ -914,7 +882,7 @@ class RefundApi
      *
      * List Refunds
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional, default to 50)
      * @param  int|null $page The section to retrieve (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
@@ -923,9 +891,9 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundListAsyncWithHttpInfo($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
+    public function refundListAsyncWithHttpInfo($per_page = 50, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\RefundListResponse';
         $request = $this->refundListRequest($per_page, $page, $from, $to, $contentType);
 
         return $this->client
@@ -967,7 +935,7 @@ class RefundApi
     /**
      * Create request for operation 'refundList'
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
+     * @param  int|null $per_page Number of records to fetch per page (optional, default to 50)
      * @param  int|null $page The section to retrieve (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
@@ -976,7 +944,7 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function refundListRequest($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
+    public function refundListRequest($per_page = 50, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['refundList'][0])
     {
 
 
@@ -1082,6 +1050,305 @@ class RefundApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation refundRetry
+     *
+     * Retry Refund
+     *
+     * @param  int $id The identifier of the refund (required)
+     * @param  \Alexasomba\Paystack\Model\RefundRetry|null $refund_retry refund_retry (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
+     *
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Alexasomba\Paystack\Model\RefundRetryResponse|\Alexasomba\Paystack\Model\Error
+     */
+    public function refundRetry($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
+    {
+        list($response) = $this->refundRetryWithHttpInfo($id, $refund_retry, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation refundRetryWithHttpInfo
+     *
+     * Retry Refund
+     *
+     * @param  int $id The identifier of the refund (required)
+     * @param  \Alexasomba\Paystack\Model\RefundRetry|null $refund_retry (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
+     *
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Alexasomba\Paystack\Model\RefundRetryResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function refundRetryWithHttpInfo($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
+    {
+        $request = $this->refundRetryRequest($id, $refund_retry, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\RefundRetryResponse',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\Error',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Alexasomba\Paystack\Model\RefundRetryResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\RefundRetryResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation refundRetryAsync
+     *
+     * Retry Refund
+     *
+     * @param  int $id The identifier of the refund (required)
+     * @param  \Alexasomba\Paystack\Model\RefundRetry|null $refund_retry (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function refundRetryAsync($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
+    {
+        return $this->refundRetryAsyncWithHttpInfo($id, $refund_retry, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation refundRetryAsyncWithHttpInfo
+     *
+     * Retry Refund
+     *
+     * @param  int $id The identifier of the refund (required)
+     * @param  \Alexasomba\Paystack\Model\RefundRetry|null $refund_retry (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function refundRetryAsyncWithHttpInfo($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
+    {
+        $returnType = '\Alexasomba\Paystack\Model\RefundRetryResponse';
+        $request = $this->refundRetryRequest($id, $refund_retry, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'refundRetry'
+     *
+     * @param  int $id The identifier of the refund (required)
+     * @param  \Alexasomba\Paystack\Model\RefundRetry|null $refund_retry (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundRetry'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function refundRetryRequest($id, $refund_retry = null, string $contentType = self::contentTypes['refundRetry'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling refundRetry'
+            );
+        }
+
+
+
+        $resourcePath = '/refund/retry_with_customer_details/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($refund_retry)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($refund_retry));
+            } else {
+                $httpBody = $refund_retry;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

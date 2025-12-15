@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PaymentRequestApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -79,8 +79,8 @@ class PaymentRequestApi
             'application/json',
         ],
         'paymentRequestCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'paymentRequestFetch' => [
             'application/json',
@@ -98,8 +98,8 @@ class PaymentRequestApi
             'application/json',
         ],
         'paymentRequestUpdate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'paymentRequestVerify' => [
             'application/json',
@@ -157,12 +157,12 @@ class PaymentRequestApi
      *
      * Archive Payment Request
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestArchive'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestArchiveResponse|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestArchive($id, string $contentType = self::contentTypes['paymentRequestArchive'][0])
     {
@@ -175,12 +175,12 @@ class PaymentRequestApi
      *
      * Archive Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestArchive'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestArchiveResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestArchiveWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestArchive'][0])
     {
@@ -212,13 +212,13 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestArchiveResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -240,7 +240,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestArchiveResponse',
                 $request,
                 $response,
             );
@@ -249,7 +249,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestArchiveResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -257,7 +257,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -274,7 +274,7 @@ class PaymentRequestApi
      *
      * Archive Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestArchive'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -295,7 +295,7 @@ class PaymentRequestApi
      *
      * Archive Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestArchive'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -303,7 +303,7 @@ class PaymentRequestApi
      */
     public function paymentRequestArchiveAsyncWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestArchive'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestArchiveResponse';
         $request = $this->paymentRequestArchiveRequest($id, $contentType);
 
         return $this->client
@@ -345,7 +345,7 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestArchive'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestArchive'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -443,27 +443,16 @@ class PaymentRequestApi
      *
      * Create Payment Request
      *
-     * @param  string $customer Customer id or code (required)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestCreate|null $payment_request_create payment_request_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function paymentRequestCreate($customer, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
+    public function paymentRequestCreate($payment_request_create = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
     {
-        list($response) = $this->paymentRequestCreateWithHttpInfo($customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType);
+        list($response) = $this->paymentRequestCreateWithHttpInfo($payment_request_create, $contentType);
         return $response;
     }
 
@@ -472,27 +461,16 @@ class PaymentRequestApi
      *
      * Create Payment Request
      *
-     * @param  string $customer Customer id or code (required)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestCreate|null $payment_request_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function paymentRequestCreateWithHttpInfo($customer, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
+    public function paymentRequestCreateWithHttpInfo($payment_request_create = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
     {
-        $request = $this->paymentRequestCreateRequest($customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType);
+        $request = $this->paymentRequestCreateRequest($payment_request_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -520,13 +498,13 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -548,7 +526,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestCreateResponse',
                 $request,
                 $response,
             );
@@ -557,7 +535,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -565,7 +543,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -582,26 +560,15 @@ class PaymentRequestApi
      *
      * Create Payment Request
      *
-     * @param  string $customer Customer id or code (required)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestCreate|null $payment_request_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function paymentRequestCreateAsync($customer, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
+    public function paymentRequestCreateAsync($payment_request_create = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
     {
-        return $this->paymentRequestCreateAsyncWithHttpInfo($customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType)
+        return $this->paymentRequestCreateAsyncWithHttpInfo($payment_request_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -614,27 +581,16 @@ class PaymentRequestApi
      *
      * Create Payment Request
      *
-     * @param  string $customer Customer id or code (required)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestCreate|null $payment_request_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function paymentRequestCreateAsyncWithHttpInfo($customer, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
+    public function paymentRequestCreateAsyncWithHttpInfo($payment_request_create = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->paymentRequestCreateRequest($customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestCreateResponse';
+        $request = $this->paymentRequestCreateRequest($payment_request_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -675,42 +631,14 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestCreate'
      *
-     * @param  string $customer Customer id or code (required)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestCreate|null $payment_request_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function paymentRequestCreateRequest($customer, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
+    public function paymentRequestCreateRequest($payment_request_create = null, string $contentType = self::contentTypes['paymentRequestCreate'][0])
     {
-
-        // verify the required parameter 'customer' is set
-        if ($customer === null || (is_array($customer) && count($customer) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $customer when calling paymentRequestCreate'
-            );
-        }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -724,26 +652,6 @@ class PaymentRequestApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'customer' => $customer,
-            'amount' => $amount,
-            'currency' => $currency,
-            'due_date' => $due_date,
-            'description' => $description,
-            'line_items' => $line_items,
-            'tax' => $tax,
-            'send_notification' => $send_notification,
-            'draft' => $draft,
-            'has_invoice' => $has_invoice,
-            'invoice_number' => $invoice_number,
-            'split_code' => $split_code,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -752,7 +660,14 @@ class PaymentRequestApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($payment_request_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($payment_request_create));
+            } else {
+                $httpBody = $payment_request_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -807,12 +722,12 @@ class PaymentRequestApi
      *
      * Fetch Payment Request
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestFetch($id, string $contentType = self::contentTypes['paymentRequestFetch'][0])
     {
@@ -825,12 +740,12 @@ class PaymentRequestApi
      *
      * Fetch Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestFetchWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestFetch'][0])
     {
@@ -862,19 +777,19 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -896,7 +811,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestListResponse',
                 $request,
                 $response,
             );
@@ -905,7 +820,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -913,7 +828,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -921,7 +836,7 @@ class PaymentRequestApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -938,7 +853,7 @@ class PaymentRequestApi
      *
      * Fetch Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -959,7 +874,7 @@ class PaymentRequestApi
      *
      * Fetch Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -967,7 +882,7 @@ class PaymentRequestApi
      */
     public function paymentRequestFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestListResponse';
         $request = $this->paymentRequestFetchRequest($id, $contentType);
 
         return $this->client
@@ -1009,7 +924,7 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestFetch'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1107,12 +1022,12 @@ class PaymentRequestApi
      *
      * Finalize Payment Request
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of a draft payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFinalize'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestFinalizeResponse|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestFinalize($id, string $contentType = self::contentTypes['paymentRequestFinalize'][0])
     {
@@ -1125,12 +1040,12 @@ class PaymentRequestApi
      *
      * Finalize Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a draft payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFinalize'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestFinalizeResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestFinalizeWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestFinalize'][0])
     {
@@ -1162,13 +1077,13 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestFinalizeResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1190,7 +1105,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestFinalizeResponse',
                 $request,
                 $response,
             );
@@ -1199,7 +1114,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestFinalizeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1207,7 +1122,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1224,7 +1139,7 @@ class PaymentRequestApi
      *
      * Finalize Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a draft payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFinalize'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1245,7 +1160,7 @@ class PaymentRequestApi
      *
      * Finalize Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a draft payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFinalize'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1253,7 +1168,7 @@ class PaymentRequestApi
      */
     public function paymentRequestFinalizeAsyncWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestFinalize'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestFinalizeResponse';
         $request = $this->paymentRequestFinalizeRequest($id, $contentType);
 
         return $this->client
@@ -1295,7 +1210,7 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestFinalize'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a draft payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestFinalize'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1402,9 +1317,9 @@ class PaymentRequestApi
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestList($per_page = null, $page = null, $customer = null, $status = null, $currency = null, $from = null, $to = null, string $contentType = self::contentTypes['paymentRequestList'][0])
     {
@@ -1426,9 +1341,9 @@ class PaymentRequestApi
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestListWithHttpInfo($per_page = null, $page = null, $customer = null, $status = null, $currency = null, $from = null, $to = null, string $contentType = self::contentTypes['paymentRequestList'][0])
     {
@@ -1460,19 +1375,19 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1494,7 +1409,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestListResponse',
                 $request,
                 $response,
             );
@@ -1503,7 +1418,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1511,7 +1426,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1519,7 +1434,7 @@ class PaymentRequestApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1577,7 +1492,7 @@ class PaymentRequestApi
      */
     public function paymentRequestListAsyncWithHttpInfo($per_page = null, $page = null, $customer = null, $status = null, $currency = null, $from = null, $to = null, string $contentType = self::contentTypes['paymentRequestList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestListResponse';
         $request = $this->paymentRequestListRequest($per_page, $page, $customer, $status, $currency, $from, $to, $contentType);
 
         return $this->client
@@ -1778,12 +1693,12 @@ class PaymentRequestApi
      *
      * Send Notification
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestNotify'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestSendNotificationResponse|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestNotify($id, string $contentType = self::contentTypes['paymentRequestNotify'][0])
     {
@@ -1796,12 +1711,12 @@ class PaymentRequestApi
      *
      * Send Notification
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestNotify'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestSendNotificationResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestNotifyWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestNotify'][0])
     {
@@ -1833,13 +1748,13 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestSendNotificationResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1861,7 +1776,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestSendNotificationResponse',
                 $request,
                 $response,
             );
@@ -1870,7 +1785,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestSendNotificationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1878,7 +1793,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1895,7 +1810,7 @@ class PaymentRequestApi
      *
      * Send Notification
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestNotify'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1916,7 +1831,7 @@ class PaymentRequestApi
      *
      * Send Notification
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestNotify'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1924,7 +1839,7 @@ class PaymentRequestApi
      */
     public function paymentRequestNotifyAsyncWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestNotify'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestSendNotificationResponse';
         $request = $this->paymentRequestNotifyRequest($id, $contentType);
 
         return $this->client
@@ -1966,7 +1881,7 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestNotify'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestNotify'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2066,9 +1981,9 @@ class PaymentRequestApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestTotals'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestTotalResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestTotals(string $contentType = self::contentTypes['paymentRequestTotals'][0])
     {
@@ -2083,9 +1998,9 @@ class PaymentRequestApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestTotals'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestTotalResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestTotalsWithHttpInfo(string $contentType = self::contentTypes['paymentRequestTotals'][0])
     {
@@ -2117,19 +2032,19 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestTotalResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -2151,7 +2066,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestTotalResponse',
                 $request,
                 $response,
             );
@@ -2160,7 +2075,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestTotalResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2168,7 +2083,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2176,7 +2091,7 @@ class PaymentRequestApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2220,7 +2135,7 @@ class PaymentRequestApi
      */
     public function paymentRequestTotalsAsyncWithHttpInfo(string $contentType = self::contentTypes['paymentRequestTotals'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestTotalResponse';
         $request = $this->paymentRequestTotalsRequest($contentType);
 
         return $this->client
@@ -2344,28 +2259,17 @@ class PaymentRequestApi
      *
      * Update Payment Request
      *
-     * @param  string $id id (required)
-     * @param  string|null $customer Customer id or code (optional)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  int $id The unique identifier of a previously created payment request (required)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestUpdate|null $payment_request_update payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function paymentRequestUpdate($id, $customer = null, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdate($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        list($response) = $this->paymentRequestUpdateWithHttpInfo($id, $customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType);
+        list($response) = $this->paymentRequestUpdateWithHttpInfo($id, $payment_request_update, $contentType);
         return $response;
     }
 
@@ -2374,28 +2278,17 @@ class PaymentRequestApi
      *
      * Update Payment Request
      *
-     * @param  string $id (required)
-     * @param  string|null $customer Customer id or code (optional)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  int $id The unique identifier of a previously created payment request (required)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestUpdate|null $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function paymentRequestUpdateWithHttpInfo($id, $customer = null, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateWithHttpInfo($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        $request = $this->paymentRequestUpdateRequest($id, $customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType);
+        $request = $this->paymentRequestUpdateRequest($id, $payment_request_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2423,19 +2316,19 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestUpdateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -2457,7 +2350,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestUpdateResponse',
                 $request,
                 $response,
             );
@@ -2466,7 +2359,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2474,7 +2367,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2482,7 +2375,7 @@ class PaymentRequestApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2499,27 +2392,16 @@ class PaymentRequestApi
      *
      * Update Payment Request
      *
-     * @param  string $id (required)
-     * @param  string|null $customer Customer id or code (optional)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  int $id The unique identifier of a previously created payment request (required)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestUpdate|null $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function paymentRequestUpdateAsync($id, $customer = null, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateAsync($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        return $this->paymentRequestUpdateAsyncWithHttpInfo($id, $customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType)
+        return $this->paymentRequestUpdateAsyncWithHttpInfo($id, $payment_request_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2532,28 +2414,17 @@ class PaymentRequestApi
      *
      * Update Payment Request
      *
-     * @param  string $id (required)
-     * @param  string|null $customer Customer id or code (optional)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  int $id The unique identifier of a previously created payment request (required)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestUpdate|null $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function paymentRequestUpdateAsyncWithHttpInfo($id, $customer = null, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateAsyncWithHttpInfo($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->paymentRequestUpdateRequest($id, $customer, $amount, $currency, $due_date, $description, $line_items, $tax, $send_notification, $draft, $has_invoice, $invoice_number, $split_code, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestUpdateResponse';
+        $request = $this->paymentRequestUpdateRequest($id, $payment_request_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2594,25 +2465,14 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestUpdate'
      *
-     * @param  string $id (required)
-     * @param  string|null $customer Customer id or code (optional)
-     * @param  int|null $amount Payment request amount. Only useful if line items and tax values are ignored.  The endpoint will throw a friendly warning if neither is available. (optional)
-     * @param  string|null $currency Specify the currency of the invoice. Allowed values are NGN, GHS, ZAR and USD. Defaults to NGN (optional)
-     * @param  \DateTime|null $due_date ISO 8601 representation of request due date (optional)
-     * @param  string|null $description A short description of the payment request (optional)
-     * @param  object[]|null $line_items Array of line items (optional)
-     * @param  object[]|null $tax Array of taxes (optional)
-     * @param  object[]|null $send_notification Indicates whether Paystack sends an email notification to customer. Defaults to true (optional)
-     * @param  object[]|null $draft Indicate if request should be saved as draft. Defaults to false and overrides send_notification (optional)
-     * @param  object[]|null $has_invoice Set to true to create a draft invoice (adds an auto incrementing invoice number if none is provided)  even if there are no line_items or tax passed (optional)
-     * @param  int|null $invoice_number Numeric value of invoice. Invoice will start from 1 and auto increment from there. This field is to help  override whatever value Paystack decides. Auto increment for subsequent invoices continue from this point. (optional)
-     * @param  string|null $split_code The split code of the transaction split. (optional)
+     * @param  int $id The unique identifier of a previously created payment request (required)
+     * @param  \Alexasomba\Paystack\Model\PaymentRequestUpdate|null $payment_request_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function paymentRequestUpdateRequest($id, $customer = null, $amount = null, $currency = null, $due_date = null, $description = null, $line_items = null, $tax = null, $send_notification = null, $draft = null, $has_invoice = null, $invoice_number = null, $split_code = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
+    public function paymentRequestUpdateRequest($id, $payment_request_update = null, string $contentType = self::contentTypes['paymentRequestUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2621,17 +2481,6 @@ class PaymentRequestApi
                 'Missing the required parameter $id when calling paymentRequestUpdate'
             );
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2653,26 +2502,6 @@ class PaymentRequestApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'customer' => $customer,
-            'amount' => $amount,
-            'currency' => $currency,
-            'due_date' => $due_date,
-            'description' => $description,
-            'line_items' => $line_items,
-            'tax' => $tax,
-            'send_notification' => $send_notification,
-            'draft' => $draft,
-            'has_invoice' => $has_invoice,
-            'invoice_number' => $invoice_number,
-            'split_code' => $split_code,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -2681,7 +2510,14 @@ class PaymentRequestApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($payment_request_update)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($payment_request_update));
+            } else {
+                $httpBody = $payment_request_update;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2736,12 +2572,12 @@ class PaymentRequestApi
      *
      * Verify Payment Request
      *
-     * @param  string $id id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestVerify'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PaymentRequestVerifyResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function paymentRequestVerify($id, string $contentType = self::contentTypes['paymentRequestVerify'][0])
     {
@@ -2754,12 +2590,12 @@ class PaymentRequestApi
      *
      * Verify Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestVerify'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PaymentRequestVerifyResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentRequestVerifyWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestVerify'][0])
     {
@@ -2791,19 +2627,19 @@ class PaymentRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestVerifyResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -2825,7 +2661,7 @@ class PaymentRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PaymentRequestVerifyResponse',
                 $request,
                 $response,
             );
@@ -2834,7 +2670,7 @@ class PaymentRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PaymentRequestVerifyResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2842,7 +2678,7 @@ class PaymentRequestApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2850,7 +2686,7 @@ class PaymentRequestApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2867,7 +2703,7 @@ class PaymentRequestApi
      *
      * Verify Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestVerify'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2888,7 +2724,7 @@ class PaymentRequestApi
      *
      * Verify Payment Request
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestVerify'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2896,7 +2732,7 @@ class PaymentRequestApi
      */
     public function paymentRequestVerifyAsyncWithHttpInfo($id, string $contentType = self::contentTypes['paymentRequestVerify'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PaymentRequestVerifyResponse';
         $request = $this->paymentRequestVerifyRequest($id, $contentType);
 
         return $this->client
@@ -2938,7 +2774,7 @@ class PaymentRequestApi
     /**
      * Create request for operation 'paymentRequestVerify'
      *
-     * @param  string $id (required)
+     * @param  int $id The unique identifier of a previously created payment request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['paymentRequestVerify'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

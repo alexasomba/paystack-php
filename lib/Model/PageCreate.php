@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PageCreate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,9 +61,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'description' => 'string',
         'amount' => 'int',
+        'currency' => 'string',
         'slug' => 'string',
-        'metadata' => 'string',
+        'type' => 'string',
+        'plan' => 'string',
+        'fixed_amount' => 'bool',
+        'split_code' => 'string',
+        'metadata' => 'object',
         'redirect_url' => 'string',
+        'success_message' => 'string',
+        'notification_email' => 'string',
+        'collect_phone' => 'bool',
         'custom_fields' => 'object[]'
     ];
 
@@ -78,9 +86,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'description' => null,
         'amount' => null,
+        'currency' => null,
         'slug' => null,
+        'type' => null,
+        'plan' => null,
+        'fixed_amount' => null,
+        'split_code' => null,
         'metadata' => null,
         'redirect_url' => null,
+        'success_message' => null,
+        'notification_email' => null,
+        'collect_phone' => null,
         'custom_fields' => null
     ];
 
@@ -93,9 +109,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => false,
         'description' => false,
         'amount' => false,
+        'currency' => false,
         'slug' => false,
+        'type' => false,
+        'plan' => false,
+        'fixed_amount' => false,
+        'split_code' => false,
         'metadata' => false,
         'redirect_url' => false,
+        'success_message' => false,
+        'notification_email' => false,
+        'collect_phone' => false,
         'custom_fields' => false
     ];
 
@@ -188,9 +212,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'description' => 'description',
         'amount' => 'amount',
+        'currency' => 'currency',
         'slug' => 'slug',
+        'type' => 'type',
+        'plan' => 'plan',
+        'fixed_amount' => 'fixed_amount',
+        'split_code' => 'split_code',
         'metadata' => 'metadata',
         'redirect_url' => 'redirect_url',
+        'success_message' => 'success_message',
+        'notification_email' => 'notification_email',
+        'collect_phone' => 'collect_phone',
         'custom_fields' => 'custom_fields'
     ];
 
@@ -203,9 +235,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'description' => 'setDescription',
         'amount' => 'setAmount',
+        'currency' => 'setCurrency',
         'slug' => 'setSlug',
+        'type' => 'setType',
+        'plan' => 'setPlan',
+        'fixed_amount' => 'setFixedAmount',
+        'split_code' => 'setSplitCode',
         'metadata' => 'setMetadata',
         'redirect_url' => 'setRedirectUrl',
+        'success_message' => 'setSuccessMessage',
+        'notification_email' => 'setNotificationEmail',
+        'collect_phone' => 'setCollectPhone',
         'custom_fields' => 'setCustomFields'
     ];
 
@@ -218,9 +258,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'description' => 'getDescription',
         'amount' => 'getAmount',
+        'currency' => 'getCurrency',
         'slug' => 'getSlug',
+        'type' => 'getType',
+        'plan' => 'getPlan',
+        'fixed_amount' => 'getFixedAmount',
+        'split_code' => 'getSplitCode',
         'metadata' => 'getMetadata',
         'redirect_url' => 'getRedirectUrl',
+        'success_message' => 'getSuccessMessage',
+        'notification_email' => 'getNotificationEmail',
+        'collect_phone' => 'getCollectPhone',
         'custom_fields' => 'getCustomFields'
     ];
 
@@ -265,6 +313,46 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CURRENCY_NGN = 'NGN';
+    public const CURRENCY_GHS = 'GHS';
+    public const CURRENCY_ZAR = 'ZAR';
+    public const CURRENCY_KES = 'KES';
+    public const CURRENCY_USD = 'USD';
+    public const TYPE_PAYMENT = 'payment';
+    public const TYPE_SUBSCRIPTION = 'subscription';
+    public const TYPE_PRODUCT = 'product';
+    public const TYPE_PLAN = 'plan';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCurrencyAllowableValues()
+    {
+        return [
+            self::CURRENCY_NGN,
+            self::CURRENCY_GHS,
+            self::CURRENCY_ZAR,
+            self::CURRENCY_KES,
+            self::CURRENCY_USD,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_PAYMENT,
+            self::TYPE_SUBSCRIPTION,
+            self::TYPE_PRODUCT,
+            self::TYPE_PLAN,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -284,9 +372,17 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('slug', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('plan', $data ?? [], null);
+        $this->setIfExists('fixed_amount', $data ?? [], null);
+        $this->setIfExists('split_code', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('redirect_url', $data ?? [], null);
+        $this->setIfExists('success_message', $data ?? [], null);
+        $this->setIfExists('notification_email', $data ?? [], null);
+        $this->setIfExists('collect_phone', $data ?? [], null);
         $this->setIfExists('custom_fields', $data ?? [], null);
     }
 
@@ -320,6 +416,24 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'currency', must be one of '%s'",
+                $this->container['currency'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -417,6 +531,43 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency The transaction currency. Defaults to your integration currency.
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!in_array($currency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'currency', must be one of '%s'",
+                    $currency,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
      * Gets slug
      *
      * @return string|null
@@ -429,7 +580,7 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets slug
      *
-     * @param string|null $slug URL slug you would like to be associated with this page. Page will be accessible at https://paystack.com/pay/[slug]
+     * @param string|null $slug URL slug you would like to be associated with this page. Page will be accessible at `https://paystack.com/pay/[slug]`
      *
      * @return self
      */
@@ -444,9 +595,127 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets metadata
+     * Gets type
      *
      * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type The type of payment page to create. Defaults to `payment` if no type is specified.
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan
+     *
+     * @return string|null
+     */
+    public function getPlan()
+    {
+        return $this->container['plan'];
+    }
+
+    /**
+     * Sets plan
+     *
+     * @param string|null $plan The ID of the plan to subscribe customers on this payment page to when `type` is set to `subscription`.
+     *
+     * @return self
+     */
+    public function setPlan($plan)
+    {
+        if (is_null($plan)) {
+            throw new \InvalidArgumentException('non-nullable plan cannot be null');
+        }
+        $this->container['plan'] = $plan;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_amount
+     *
+     * @return bool|null
+     */
+    public function getFixedAmount()
+    {
+        return $this->container['fixed_amount'];
+    }
+
+    /**
+     * Sets fixed_amount
+     *
+     * @param bool|null $fixed_amount Specifies whether to collect a fixed amount on the payment page. If true, `amount` must be passed.
+     *
+     * @return self
+     */
+    public function setFixedAmount($fixed_amount)
+    {
+        if (is_null($fixed_amount)) {
+            throw new \InvalidArgumentException('non-nullable fixed_amount cannot be null');
+        }
+        $this->container['fixed_amount'] = $fixed_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets split_code
+     *
+     * @return string|null
+     */
+    public function getSplitCode()
+    {
+        return $this->container['split_code'];
+    }
+
+    /**
+     * Sets split_code
+     *
+     * @param string|null $split_code The split code of the transaction split. e.g. `SPL_98WF13Eb3w`
+     *
+     * @return self
+     */
+    public function setSplitCode($split_code)
+    {
+        if (is_null($split_code)) {
+            throw new \InvalidArgumentException('non-nullable split_code cannot be null');
+        }
+        $this->container['split_code'] = $split_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object|null
      */
     public function getMetadata()
     {
@@ -456,7 +725,7 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param string|null $metadata Stringified JSON object of custom data
+     * @param object|null $metadata JSON object of custom data
      *
      * @return self
      */
@@ -493,6 +762,87 @@ class PageCreate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable redirect_url cannot be null');
         }
         $this->container['redirect_url'] = $redirect_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets success_message
+     *
+     * @return string|null
+     */
+    public function getSuccessMessage()
+    {
+        return $this->container['success_message'];
+    }
+
+    /**
+     * Sets success_message
+     *
+     * @param string|null $success_message A success message to display to the customer after a successful transaction
+     *
+     * @return self
+     */
+    public function setSuccessMessage($success_message)
+    {
+        if (is_null($success_message)) {
+            throw new \InvalidArgumentException('non-nullable success_message cannot be null');
+        }
+        $this->container['success_message'] = $success_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets notification_email
+     *
+     * @return string|null
+     */
+    public function getNotificationEmail()
+    {
+        return $this->container['notification_email'];
+    }
+
+    /**
+     * Sets notification_email
+     *
+     * @param string|null $notification_email An email address that will receive transaction notifications for this payment page
+     *
+     * @return self
+     */
+    public function setNotificationEmail($notification_email)
+    {
+        if (is_null($notification_email)) {
+            throw new \InvalidArgumentException('non-nullable notification_email cannot be null');
+        }
+        $this->container['notification_email'] = $notification_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets collect_phone
+     *
+     * @return bool|null
+     */
+    public function getCollectPhone()
+    {
+        return $this->container['collect_phone'];
+    }
+
+    /**
+     * Sets collect_phone
+     *
+     * @param bool|null $collect_phone Specify whether to collect phone numbers on the payment page
+     *
+     * @return self
+     */
+    public function setCollectPhone($collect_phone)
+    {
+        if (is_null($collect_phone)) {
+            throw new \InvalidArgumentException('non-nullable collect_phone cannot be null');
+        }
+        $this->container['collect_phone'] = $collect_phone;
 
         return $this;
     }

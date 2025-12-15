@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * ProductUpdate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,8 +62,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'price' => 'int',
         'currency' => 'string',
-        'limited' => 'bool',
-        'quantity' => 'int'
+        'unlimited' => 'bool',
+        'quantity' => 'int',
+        'split_code' => 'string',
+        'metadata' => 'object'
     ];
 
     /**
@@ -78,8 +80,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => null,
         'price' => null,
         'currency' => null,
-        'limited' => null,
-        'quantity' => null
+        'unlimited' => null,
+        'quantity' => null,
+        'split_code' => null,
+        'metadata' => null
     ];
 
     /**
@@ -92,8 +96,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => false,
         'price' => false,
         'currency' => false,
-        'limited' => false,
-        'quantity' => false
+        'unlimited' => false,
+        'quantity' => false,
+        'split_code' => false,
+        'metadata' => false
     ];
 
     /**
@@ -186,8 +192,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'description',
         'price' => 'price',
         'currency' => 'currency',
-        'limited' => 'limited',
-        'quantity' => 'quantity'
+        'unlimited' => 'unlimited',
+        'quantity' => 'quantity',
+        'split_code' => 'split_code',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -200,8 +208,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'setDescription',
         'price' => 'setPrice',
         'currency' => 'setCurrency',
-        'limited' => 'setLimited',
-        'quantity' => 'setQuantity'
+        'unlimited' => 'setUnlimited',
+        'quantity' => 'setQuantity',
+        'split_code' => 'setSplitCode',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -214,8 +224,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'getDescription',
         'price' => 'getPrice',
         'currency' => 'getCurrency',
-        'limited' => 'getLimited',
-        'quantity' => 'getQuantity'
+        'unlimited' => 'getUnlimited',
+        'quantity' => 'getQuantity',
+        'split_code' => 'getSplitCode',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -279,8 +291,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('limited', $data ?? [], null);
+        $this->setIfExists('unlimited', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('split_code', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
     }
 
     /**
@@ -434,28 +448,28 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets limited
+     * Gets unlimited
      *
      * @return bool|null
      */
-    public function getLimited()
+    public function getUnlimited()
     {
-        return $this->container['limited'];
+        return $this->container['unlimited'];
     }
 
     /**
-     * Sets limited
+     * Sets unlimited
      *
-     * @param bool|null $limited Set to true if the product has limited stock. Leave as false if the product has unlimited stock
+     * @param bool|null $unlimited Set to true if the product has unlimited stock. Leave as false if the product has limited stock
      *
      * @return self
      */
-    public function setLimited($limited)
+    public function setUnlimited($unlimited)
     {
-        if (is_null($limited)) {
-            throw new \InvalidArgumentException('non-nullable limited cannot be null');
+        if (is_null($unlimited)) {
+            throw new \InvalidArgumentException('non-nullable unlimited cannot be null');
         }
-        $this->container['limited'] = $limited;
+        $this->container['unlimited'] = $unlimited;
 
         return $this;
     }
@@ -483,6 +497,60 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
         $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets split_code
+     *
+     * @return string|null
+     */
+    public function getSplitCode()
+    {
+        return $this->container['split_code'];
+    }
+
+    /**
+     * Sets split_code
+     *
+     * @param string|null $split_code The split code if sharing the transaction with partners
+     *
+     * @return self
+     */
+    public function setSplitCode($split_code)
+    {
+        if (is_null($split_code)) {
+            throw new \InvalidArgumentException('non-nullable split_code cannot be null');
+        }
+        $this->container['split_code'] = $split_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param object|null $metadata JSON object of custom data
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+        }
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

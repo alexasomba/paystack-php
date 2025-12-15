@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * ChargeSubmitBirthday Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ChargeSubmitBirthday implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'birthday' => 'string',
+        'birthday' => '\DateTime',
         'reference' => 'string'
     ];
 
@@ -70,7 +70,7 @@ class ChargeSubmitBirthday implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'birthday' => null,
+        'birthday' => 'date',
         'reference' => null
     ];
 
@@ -306,7 +306,7 @@ class ChargeSubmitBirthday implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets birthday
      *
-     * @return string
+     * @return \DateTime
      */
     public function getBirthday()
     {
@@ -316,7 +316,7 @@ class ChargeSubmitBirthday implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets birthday
      *
-     * @param string $birthday Customer's birthday in the format YYYY-MM-DD e.g 2016-09-21
+     * @param \DateTime $birthday Customer's birthday in the format YYYY-MM-DD e.g 2016-09-21
      *
      * @return self
      */

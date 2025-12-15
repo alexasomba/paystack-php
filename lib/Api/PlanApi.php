@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PlanApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,8 +76,8 @@ class PlanApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'planCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'planFetch' => [
             'application/json',
@@ -86,8 +86,8 @@ class PlanApi
             'application/json',
         ],
         'planUpdate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
     ];
 
@@ -142,23 +142,16 @@ class PlanApi
      *
      * Create Plan
      *
-     * @param  string $name Name of plan (required)
-     * @param  int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (required)
-     * @param  string|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  \Alexasomba\Paystack\Model\PlanCreate|null $plan_create plan_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PlanCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function planCreate($name, $amount, $interval, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planCreate'][0])
+    public function planCreate($plan_create = null, string $contentType = self::contentTypes['planCreate'][0])
     {
-        list($response) = $this->planCreateWithHttpInfo($name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType);
+        list($response) = $this->planCreateWithHttpInfo($plan_create, $contentType);
         return $response;
     }
 
@@ -167,23 +160,16 @@ class PlanApi
      *
      * Create Plan
      *
-     * @param  string $name Name of plan (required)
-     * @param  int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (required)
-     * @param  string|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  \Alexasomba\Paystack\Model\PlanCreate|null $plan_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PlanCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function planCreateWithHttpInfo($name, $amount, $interval, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planCreate'][0])
+    public function planCreateWithHttpInfo($plan_create = null, string $contentType = self::contentTypes['planCreate'][0])
     {
-        $request = $this->planCreateRequest($name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType);
+        $request = $this->planCreateRequest($plan_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -211,13 +197,13 @@ class PlanApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -239,7 +225,7 @@ class PlanApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PlanCreateResponse',
                 $request,
                 $response,
             );
@@ -248,7 +234,7 @@ class PlanApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,7 +242,7 @@ class PlanApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -273,22 +259,15 @@ class PlanApi
      *
      * Create Plan
      *
-     * @param  string $name Name of plan (required)
-     * @param  int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (required)
-     * @param  string|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  \Alexasomba\Paystack\Model\PlanCreate|null $plan_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function planCreateAsync($name, $amount, $interval, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planCreate'][0])
+    public function planCreateAsync($plan_create = null, string $contentType = self::contentTypes['planCreate'][0])
     {
-        return $this->planCreateAsyncWithHttpInfo($name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType)
+        return $this->planCreateAsyncWithHttpInfo($plan_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -301,23 +280,16 @@ class PlanApi
      *
      * Create Plan
      *
-     * @param  string $name Name of plan (required)
-     * @param  int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (required)
-     * @param  string|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  \Alexasomba\Paystack\Model\PlanCreate|null $plan_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function planCreateAsyncWithHttpInfo($name, $amount, $interval, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planCreate'][0])
+    public function planCreateAsyncWithHttpInfo($plan_create = null, string $contentType = self::contentTypes['planCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->planCreateRequest($name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\PlanCreateResponse';
+        $request = $this->planCreateRequest($plan_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -358,46 +330,14 @@ class PlanApi
     /**
      * Create request for operation 'planCreate'
      *
-     * @param  string $name Name of plan (required)
-     * @param  int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (required)
-     * @param  string|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  \Alexasomba\Paystack\Model\PlanCreate|null $plan_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function planCreateRequest($name, $amount, $interval, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planCreate'][0])
+    public function planCreateRequest($plan_create = null, string $contentType = self::contentTypes['planCreate'][0])
     {
-
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling planCreate'
-            );
-        }
-
-        // verify the required parameter 'amount' is set
-        if ($amount === null || (is_array($amount) && count($amount) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $amount when calling planCreate'
-            );
-        }
-
-        // verify the required parameter 'interval' is set
-        if ($interval === null || (is_array($interval) && count($interval) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $interval when calling planCreate'
-            );
-        }
-
-
-
-
 
 
 
@@ -411,22 +351,6 @@ class PlanApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'amount' => $amount,
-            'interval' => $interval,
-            'description' => $description,
-            'send_invoices' => $send_invoices,
-            'send_sms' => $send_sms,
-            'currency' => $currency,
-            'invoice_limit' => $invoice_limit,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -435,7 +359,14 @@ class PlanApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($plan_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($plan_create));
+            } else {
+                $httpBody = $plan_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -490,12 +421,12 @@ class PlanApi
      *
      * Fetch Plan
      *
-     * @param  string $code code (required)
+     * @param  string $code The plan code you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PlanFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function planFetch($code, string $contentType = self::contentTypes['planFetch'][0])
     {
@@ -508,12 +439,12 @@ class PlanApi
      *
      * Fetch Plan
      *
-     * @param  string $code (required)
+     * @param  string $code The plan code you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PlanFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function planFetchWithHttpInfo($code, string $contentType = self::contentTypes['planFetch'][0])
     {
@@ -545,19 +476,19 @@ class PlanApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -579,7 +510,7 @@ class PlanApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PlanFetchResponse',
                 $request,
                 $response,
             );
@@ -588,7 +519,7 @@ class PlanApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -596,7 +527,7 @@ class PlanApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -604,7 +535,7 @@ class PlanApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -621,7 +552,7 @@ class PlanApi
      *
      * Fetch Plan
      *
-     * @param  string $code (required)
+     * @param  string $code The plan code you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -642,7 +573,7 @@ class PlanApi
      *
      * Fetch Plan
      *
-     * @param  string $code (required)
+     * @param  string $code The plan code you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -650,7 +581,7 @@ class PlanApi
      */
     public function planFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['planFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PlanFetchResponse';
         $request = $this->planFetchRequest($code, $contentType);
 
         return $this->client
@@ -692,7 +623,7 @@ class PlanApi
     /**
      * Create request for operation 'planFetch'
      *
-     * @param  string $code (required)
+     * @param  string $code The plan code you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -798,9 +729,9 @@ class PlanApi
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PlanListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function planList($per_page = null, $page = null, $interval = null, $amount = null, $from = null, $to = null, string $contentType = self::contentTypes['planList'][0])
     {
@@ -821,9 +752,9 @@ class PlanApi
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PlanListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function planListWithHttpInfo($per_page = null, $page = null, $interval = null, $amount = null, $from = null, $to = null, string $contentType = self::contentTypes['planList'][0])
     {
@@ -855,19 +786,19 @@ class PlanApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -889,7 +820,7 @@ class PlanApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PlanListResponse',
                 $request,
                 $response,
             );
@@ -898,7 +829,7 @@ class PlanApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -906,7 +837,7 @@ class PlanApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -914,7 +845,7 @@ class PlanApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -970,7 +901,7 @@ class PlanApi
      */
     public function planListAsyncWithHttpInfo($per_page = null, $page = null, $interval = null, $amount = null, $from = null, $to = null, string $contentType = self::contentTypes['planList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\PlanListResponse';
         $request = $this->planListRequest($per_page, $page, $interval, $amount, $from, $to, $contentType);
 
         return $this->client
@@ -1160,24 +1091,17 @@ class PlanApi
      *
      * Update Plan
      *
-     * @param  string $code code (required)
-     * @param  string|null $name Name of plan (optional)
-     * @param  int|null $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (optional)
-     * @param  bool|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  string $code The plan code you want to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\PlanUpdate|null $plan_update plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\PlanUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function planUpdate($code, $name = null, $amount = null, $interval = null, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdate($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        list($response) = $this->planUpdateWithHttpInfo($code, $name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType);
+        list($response) = $this->planUpdateWithHttpInfo($code, $plan_update, $contentType);
         return $response;
     }
 
@@ -1186,24 +1110,17 @@ class PlanApi
      *
      * Update Plan
      *
-     * @param  string $code (required)
-     * @param  string|null $name Name of plan (optional)
-     * @param  int|null $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (optional)
-     * @param  bool|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  string $code The plan code you want to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\PlanUpdate|null $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\PlanUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function planUpdateWithHttpInfo($code, $name = null, $amount = null, $interval = null, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateWithHttpInfo($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        $request = $this->planUpdateRequest($code, $name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType);
+        $request = $this->planUpdateRequest($code, $plan_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1231,19 +1148,19 @@ class PlanApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanUpdateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1265,7 +1182,7 @@ class PlanApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\PlanUpdateResponse',
                 $request,
                 $response,
             );
@@ -1274,7 +1191,7 @@ class PlanApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\PlanUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1282,7 +1199,7 @@ class PlanApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1290,7 +1207,7 @@ class PlanApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1307,23 +1224,16 @@ class PlanApi
      *
      * Update Plan
      *
-     * @param  string $code (required)
-     * @param  string|null $name Name of plan (optional)
-     * @param  int|null $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (optional)
-     * @param  bool|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  string $code The plan code you want to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\PlanUpdate|null $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function planUpdateAsync($code, $name = null, $amount = null, $interval = null, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateAsync($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        return $this->planUpdateAsyncWithHttpInfo($code, $name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType)
+        return $this->planUpdateAsyncWithHttpInfo($code, $plan_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1336,24 +1246,17 @@ class PlanApi
      *
      * Update Plan
      *
-     * @param  string $code (required)
-     * @param  string|null $name Name of plan (optional)
-     * @param  int|null $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (optional)
-     * @param  bool|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  string $code The plan code you want to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\PlanUpdate|null $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function planUpdateAsyncWithHttpInfo($code, $name = null, $amount = null, $interval = null, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateAsyncWithHttpInfo($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->planUpdateRequest($code, $name, $amount, $interval, $description, $send_invoices, $send_sms, $currency, $invoice_limit, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\PlanUpdateResponse';
+        $request = $this->planUpdateRequest($code, $plan_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1394,21 +1297,14 @@ class PlanApi
     /**
      * Create request for operation 'planUpdate'
      *
-     * @param  string $code (required)
-     * @param  string|null $name Name of plan (optional)
-     * @param  int|null $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (optional)
-     * @param  string|null $interval Interval in words. Valid intervals are daily, weekly, monthly,biannually, annually (optional)
-     * @param  bool|null $description A description for this plan (optional)
-     * @param  bool|null $send_invoices Set to false if you don&#39;t want invoices to be sent to your customers (optional)
-     * @param  bool|null $send_sms Set to false if you don&#39;t want text messages to be sent to your customers (optional)
-     * @param  string|null $currency Currency in which amount is set. Allowed values are NGN, GHS, ZAR or USD (optional)
-     * @param  int|null $invoice_limit Number of invoices to raise during subscription to this plan.  Can be overridden by specifying an invoice_limit while subscribing. (optional)
+     * @param  string $code The plan code you want to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\PlanUpdate|null $plan_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['planUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function planUpdateRequest($code, $name = null, $amount = null, $interval = null, $description = null, $send_invoices = null, $send_sms = null, $currency = null, $invoice_limit = null, string $contentType = self::contentTypes['planUpdate'][0])
+    public function planUpdateRequest($code, $plan_update = null, string $contentType = self::contentTypes['planUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1417,13 +1313,6 @@ class PlanApi
                 'Missing the required parameter $code when calling planUpdate'
             );
         }
-
-
-
-
-
-
-
 
 
 
@@ -1445,22 +1334,6 @@ class PlanApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'amount' => $amount,
-            'interval' => $interval,
-            'description' => $description,
-            'send_invoices' => $send_invoices,
-            'send_sms' => $send_sms,
-            'currency' => $currency,
-            'invoice_limit' => $invoice_limit,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1469,7 +1342,14 @@ class PlanApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($plan_update)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($plan_update));
+            } else {
+                $httpBody = $plan_update;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

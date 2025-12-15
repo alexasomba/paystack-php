@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransactionChargeAuthorization Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,12 +62,13 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         'amount' => 'int',
         'authorization_code' => 'string',
         'reference' => 'string',
-        'currency' => 'string',
-        'metadata' => 'string',
+        'currency' => '\Alexasomba\Paystack\Model\Currency',
         'split_code' => 'string',
+        'split' => '\Alexasomba\Paystack\Model\SplitCreate',
         'subaccount' => 'string',
         'transaction_charge' => 'string',
         'bearer' => 'string',
+        'metadata' => 'string',
         'queue' => 'bool'
     ];
 
@@ -84,11 +85,12 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         'authorization_code' => null,
         'reference' => null,
         'currency' => null,
-        'metadata' => null,
         'split_code' => null,
+        'split' => null,
         'subaccount' => null,
         'transaction_charge' => null,
         'bearer' => null,
+        'metadata' => null,
         'queue' => null
     ];
 
@@ -103,11 +105,12 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         'authorization_code' => false,
         'reference' => false,
         'currency' => false,
-        'metadata' => false,
         'split_code' => false,
+        'split' => false,
         'subaccount' => false,
         'transaction_charge' => false,
         'bearer' => false,
+        'metadata' => false,
         'queue' => false
     ];
 
@@ -202,11 +205,12 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         'authorization_code' => 'authorization_code',
         'reference' => 'reference',
         'currency' => 'currency',
-        'metadata' => 'metadata',
         'split_code' => 'split_code',
+        'split' => 'split',
         'subaccount' => 'subaccount',
         'transaction_charge' => 'transaction_charge',
         'bearer' => 'bearer',
+        'metadata' => 'metadata',
         'queue' => 'queue'
     ];
 
@@ -221,11 +225,12 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         'authorization_code' => 'setAuthorizationCode',
         'reference' => 'setReference',
         'currency' => 'setCurrency',
-        'metadata' => 'setMetadata',
         'split_code' => 'setSplitCode',
+        'split' => 'setSplit',
         'subaccount' => 'setSubaccount',
         'transaction_charge' => 'setTransactionCharge',
         'bearer' => 'setBearer',
+        'metadata' => 'setMetadata',
         'queue' => 'setQueue'
     ];
 
@@ -240,11 +245,12 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         'authorization_code' => 'getAuthorizationCode',
         'reference' => 'getReference',
         'currency' => 'getCurrency',
-        'metadata' => 'getMetadata',
         'split_code' => 'getSplitCode',
+        'split' => 'getSplit',
         'subaccount' => 'getSubaccount',
         'transaction_charge' => 'getTransactionCharge',
         'bearer' => 'getBearer',
+        'metadata' => 'getMetadata',
         'queue' => 'getQueue'
     ];
 
@@ -289,6 +295,21 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         return self::$openAPIModelName;
     }
 
+    public const BEARER_ACCOUNT = 'account';
+    public const BEARER_SUBACCOUNT = 'subaccount';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBearerAllowableValues()
+    {
+        return [
+            self::BEARER_ACCOUNT,
+            self::BEARER_SUBACCOUNT,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -310,11 +331,12 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('authorization_code', $data ?? [], null);
         $this->setIfExists('reference', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('split_code', $data ?? [], null);
+        $this->setIfExists('split', $data ?? [], null);
         $this->setIfExists('subaccount', $data ?? [], null);
         $this->setIfExists('transaction_charge', $data ?? [], null);
         $this->setIfExists('bearer', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('queue', $data ?? [], null);
     }
 
@@ -354,6 +376,15 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         if ($this->container['authorization_code'] === null) {
             $invalidProperties[] = "'authorization_code' can't be null";
         }
+        $allowedValues = $this->getBearerAllowableValues();
+        if (!is_null($this->container['bearer']) && !in_array($this->container['bearer'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'bearer', must be one of '%s'",
+                $this->container['bearer'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -409,7 +440,7 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets amount
      *
-     * @param int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
+     * @param int $amount Amount in the lower denomination of your currency
      *
      * @return self
      */
@@ -480,7 +511,7 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets currency
      *
-     * @return string|null
+     * @return \Alexasomba\Paystack\Model\Currency|null
      */
     public function getCurrency()
     {
@@ -490,7 +521,7 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets currency
      *
-     * @param string|null $currency The transaction currency
+     * @param \Alexasomba\Paystack\Model\Currency|null $currency currency
      *
      * @return self
      */
@@ -500,33 +531,6 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
         }
         $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return string|null
-     */
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param string|null $metadata Stringified JSON object of custom data
-     *
-     * @return self
-     */
-    public function setMetadata($metadata)
-    {
-        if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
-        }
-        $this->container['metadata'] = $metadata;
 
         return $this;
     }
@@ -554,6 +558,33 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable split_code cannot be null');
         }
         $this->container['split_code'] = $split_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets split
+     *
+     * @return \Alexasomba\Paystack\Model\SplitCreate|null
+     */
+    public function getSplit()
+    {
+        return $this->container['split'];
+    }
+
+    /**
+     * Sets split
+     *
+     * @param \Alexasomba\Paystack\Model\SplitCreate|null $split split
+     *
+     * @return self
+     */
+    public function setSplit($split)
+    {
+        if (is_null($split)) {
+            throw new \InvalidArgumentException('non-nullable split cannot be null');
+        }
+        $this->container['split'] = $split;
 
         return $this;
     }
@@ -625,7 +656,7 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets bearer
      *
-     * @param string|null $bearer The beare of the transaction charge
+     * @param string|null $bearer The bearer of the transaction charge
      *
      * @return self
      */
@@ -634,7 +665,44 @@ class TransactionChargeAuthorization implements ModelInterface, ArrayAccess, \Js
         if (is_null($bearer)) {
             throw new \InvalidArgumentException('non-nullable bearer cannot be null');
         }
+        $allowedValues = $this->getBearerAllowableValues();
+        if (!in_array($bearer, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'bearer', must be one of '%s'",
+                    $bearer,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['bearer'] = $bearer;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return string|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string|null $metadata Stringified JSON object of custom data
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+        }
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

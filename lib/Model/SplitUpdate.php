@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * SplitUpdate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -247,6 +247,25 @@ class SplitUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const BEARER_TYPE_SUBACCOUNT = 'subaccount';
+    public const BEARER_TYPE_ACCOUNT = 'account';
+    public const BEARER_TYPE_ALL_PROPORTIONAL = 'all-proportional';
+    public const BEARER_TYPE_ALL = 'all';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBearerTypeAllowableValues()
+    {
+        return [
+            self::BEARER_TYPE_SUBACCOUNT,
+            self::BEARER_TYPE_ACCOUNT,
+            self::BEARER_TYPE_ALL_PROPORTIONAL,
+            self::BEARER_TYPE_ALL,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -295,6 +314,15 @@ class SplitUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getBearerTypeAllowableValues();
+        if (!is_null($this->container['bearer_type']) && !in_array($this->container['bearer_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'bearer_type', must be one of '%s'",
+                $this->container['bearer_type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -386,6 +414,16 @@ class SplitUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($bearer_type)) {
             throw new \InvalidArgumentException('non-nullable bearer_type cannot be null');
+        }
+        $allowedValues = $this->getBearerTypeAllowableValues();
+        if (!in_array($bearer_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'bearer_type', must be one of '%s'",
+                    $bearer_type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['bearer_type'] = $bearer_type;
 

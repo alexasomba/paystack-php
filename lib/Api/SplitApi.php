@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * SplitApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,12 +76,12 @@ class SplitApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'splitAddSubaccount' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'splitCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'splitFetch' => [
             'application/json',
@@ -90,12 +90,12 @@ class SplitApi
             'application/json',
         ],
         'splitRemoveSubaccount' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'splitUpdate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
     ];
 
@@ -150,18 +150,17 @@ class SplitApi
      *
      * Add Subaccount to Split
      *
-     * @param  string $id id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitAddSubaccount'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SplitAddUpdateSubaccountResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function splitAddSubaccount($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
+    public function splitAddSubaccount($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
     {
-        list($response) = $this->splitAddSubaccountWithHttpInfo($id, $subaccount, $share, $contentType);
+        list($response) = $this->splitAddSubaccountWithHttpInfo($id, $split_subaccounts, $contentType);
         return $response;
     }
 
@@ -170,18 +169,17 @@ class SplitApi
      *
      * Add Subaccount to Split
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitAddSubaccount'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SplitAddUpdateSubaccountResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function splitAddSubaccountWithHttpInfo($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
+    public function splitAddSubaccountWithHttpInfo($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
     {
-        $request = $this->splitAddSubaccountRequest($id, $subaccount, $share, $contentType);
+        $request = $this->splitAddSubaccountRequest($id, $split_subaccounts, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -209,13 +207,13 @@ class SplitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitAddUpdateSubaccountResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -237,7 +235,7 @@ class SplitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SplitAddUpdateSubaccountResponse',
                 $request,
                 $response,
             );
@@ -246,7 +244,7 @@ class SplitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitAddUpdateSubaccountResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -254,7 +252,7 @@ class SplitApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -271,17 +269,16 @@ class SplitApi
      *
      * Add Subaccount to Split
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitAddSubaccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitAddSubaccountAsync($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
+    public function splitAddSubaccountAsync($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
     {
-        return $this->splitAddSubaccountAsyncWithHttpInfo($id, $subaccount, $share, $contentType)
+        return $this->splitAddSubaccountAsyncWithHttpInfo($id, $split_subaccounts, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -294,18 +291,17 @@ class SplitApi
      *
      * Add Subaccount to Split
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitAddSubaccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitAddSubaccountAsyncWithHttpInfo($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
+    public function splitAddSubaccountAsyncWithHttpInfo($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->splitAddSubaccountRequest($id, $subaccount, $share, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SplitAddUpdateSubaccountResponse';
+        $request = $this->splitAddSubaccountRequest($id, $split_subaccounts, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -346,15 +342,14 @@ class SplitApi
     /**
      * Create request for operation 'splitAddSubaccount'
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitAddSubaccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function splitAddSubaccountRequest($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
+    public function splitAddSubaccountRequest($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitAddSubaccount'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -363,7 +358,6 @@ class SplitApi
                 'Missing the required parameter $id when calling splitAddSubaccount'
             );
         }
-
 
 
 
@@ -385,16 +379,6 @@ class SplitApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'subaccount' => $subaccount,
-            'share' => $share,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -403,7 +387,14 @@ class SplitApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($split_subaccounts)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($split_subaccounts));
+            } else {
+                $httpBody = $split_subaccounts;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -458,21 +449,16 @@ class SplitApi
      *
      * Create Split
      *
-     * @param  string $name Name of the transaction split (required)
-     * @param  string $type The type of transaction split you want to create. (required)
-     * @param  \Alexasomba\\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares (required)
-     * @param  string $currency The transaction currency (required)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitCreate|null $split_create split_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SplitCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function splitCreate($name, $type, $subaccounts, $currency, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitCreate'][0])
+    public function splitCreate($split_create = null, string $contentType = self::contentTypes['splitCreate'][0])
     {
-        list($response) = $this->splitCreateWithHttpInfo($name, $type, $subaccounts, $currency, $bearer_type, $bearer_subaccount, $contentType);
+        list($response) = $this->splitCreateWithHttpInfo($split_create, $contentType);
         return $response;
     }
 
@@ -481,21 +467,16 @@ class SplitApi
      *
      * Create Split
      *
-     * @param  string $name Name of the transaction split (required)
-     * @param  string $type The type of transaction split you want to create. (required)
-     * @param  \Alexasomba\\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares (required)
-     * @param  string $currency The transaction currency (required)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitCreate|null $split_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SplitCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function splitCreateWithHttpInfo($name, $type, $subaccounts, $currency, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitCreate'][0])
+    public function splitCreateWithHttpInfo($split_create = null, string $contentType = self::contentTypes['splitCreate'][0])
     {
-        $request = $this->splitCreateRequest($name, $type, $subaccounts, $currency, $bearer_type, $bearer_subaccount, $contentType);
+        $request = $this->splitCreateRequest($split_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -523,13 +504,13 @@ class SplitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -551,7 +532,7 @@ class SplitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SplitCreateResponse',
                 $request,
                 $response,
             );
@@ -560,7 +541,7 @@ class SplitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +549,7 @@ class SplitApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -585,20 +566,15 @@ class SplitApi
      *
      * Create Split
      *
-     * @param  string $name Name of the transaction split (required)
-     * @param  string $type The type of transaction split you want to create. (required)
-     * @param  \Alexasomba\\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares (required)
-     * @param  string $currency The transaction currency (required)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitCreate|null $split_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitCreateAsync($name, $type, $subaccounts, $currency, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitCreate'][0])
+    public function splitCreateAsync($split_create = null, string $contentType = self::contentTypes['splitCreate'][0])
     {
-        return $this->splitCreateAsyncWithHttpInfo($name, $type, $subaccounts, $currency, $bearer_type, $bearer_subaccount, $contentType)
+        return $this->splitCreateAsyncWithHttpInfo($split_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -611,21 +587,16 @@ class SplitApi
      *
      * Create Split
      *
-     * @param  string $name Name of the transaction split (required)
-     * @param  string $type The type of transaction split you want to create. (required)
-     * @param  \Alexasomba\\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares (required)
-     * @param  string $currency The transaction currency (required)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitCreate|null $split_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitCreateAsyncWithHttpInfo($name, $type, $subaccounts, $currency, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitCreate'][0])
+    public function splitCreateAsyncWithHttpInfo($split_create = null, string $contentType = self::contentTypes['splitCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->splitCreateRequest($name, $type, $subaccounts, $currency, $bearer_type, $bearer_subaccount, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SplitCreateResponse';
+        $request = $this->splitCreateRequest($split_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -666,48 +637,14 @@ class SplitApi
     /**
      * Create request for operation 'splitCreate'
      *
-     * @param  string $name Name of the transaction split (required)
-     * @param  string $type The type of transaction split you want to create. (required)
-     * @param  \Alexasomba\\Paystack\Model\SplitSubaccounts[] $subaccounts A list of object containing subaccount code and number of shares (required)
-     * @param  string $currency The transaction currency (required)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitCreate|null $split_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function splitCreateRequest($name, $type, $subaccounts, $currency, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitCreate'][0])
+    public function splitCreateRequest($split_create = null, string $contentType = self::contentTypes['splitCreate'][0])
     {
-
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling splitCreate'
-            );
-        }
-
-        // verify the required parameter 'type' is set
-        if ($type === null || (is_array($type) && count($type) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $type when calling splitCreate'
-            );
-        }
-
-        // verify the required parameter 'subaccounts' is set
-        if ($subaccounts === null || (is_array($subaccounts) && count($subaccounts) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $subaccounts when calling splitCreate'
-            );
-        }
-
-        // verify the required parameter 'currency' is set
-        if ($currency === null || (is_array($currency) && count($currency) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $currency when calling splitCreate'
-            );
-        }
-
 
 
 
@@ -721,20 +658,6 @@ class SplitApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'type' => $type,
-            'subaccounts' => $subaccounts,
-            'currency' => $currency,
-            'bearer_type' => $bearer_type,
-            'bearer_subaccount' => $bearer_subaccount,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -743,7 +666,14 @@ class SplitApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($split_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($split_create));
+            } else {
+                $httpBody = $split_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -798,12 +728,12 @@ class SplitApi
      *
      * Fetch Split
      *
-     * @param  string $id id (required)
+     * @param  int $id The ID of the split configuration to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SplitFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function splitFetch($id, string $contentType = self::contentTypes['splitFetch'][0])
     {
@@ -816,12 +746,12 @@ class SplitApi
      *
      * Fetch Split
      *
-     * @param  string $id (required)
+     * @param  int $id The ID of the split configuration to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SplitFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function splitFetchWithHttpInfo($id, string $contentType = self::contentTypes['splitFetch'][0])
     {
@@ -853,19 +783,19 @@ class SplitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -887,7 +817,7 @@ class SplitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SplitFetchResponse',
                 $request,
                 $response,
             );
@@ -896,7 +826,7 @@ class SplitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -904,7 +834,7 @@ class SplitApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -912,7 +842,7 @@ class SplitApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -929,7 +859,7 @@ class SplitApi
      *
      * Fetch Split
      *
-     * @param  string $id (required)
+     * @param  int $id The ID of the split configuration to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -950,7 +880,7 @@ class SplitApi
      *
      * Fetch Split
      *
-     * @param  string $id (required)
+     * @param  int $id The ID of the split configuration to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -958,7 +888,7 @@ class SplitApi
      */
     public function splitFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['splitFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\SplitFetchResponse';
         $request = $this->splitFetchRequest($id, $contentType);
 
         return $this->client
@@ -1000,7 +930,7 @@ class SplitApi
     /**
      * Create request for operation 'splitFetch'
      *
-     * @param  string $id (required)
+     * @param  int $id The ID of the split configuration to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1096,48 +1026,48 @@ class SplitApi
     /**
      * Operation splitList
      *
-     * List/Search Splits
+     * List Splits
      *
-     * @param  string|null $name name (optional)
-     * @param  string|null $active active (optional)
-     * @param  string|null $sort_by sort_by (optional)
-     * @param  string|null $from from (optional)
-     * @param  string|null $to to (optional)
-     * @param  string|null $per_page per_page (optional)
-     * @param  string|null $page page (optional)
+     * @param  string|null $subaccount_code Filter by subaccount code (optional)
+     * @param  string|null $name The name of the split (optional)
+     * @param  bool|null $active The status of the split (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  \DateTime|null $from The start date (optional)
+     * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SplitListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function splitList($name = null, $active = null, $sort_by = null, $from = null, $to = null, $per_page = null, $page = null, string $contentType = self::contentTypes['splitList'][0])
+    public function splitList($subaccount_code = null, $name = null, $active = null, $per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['splitList'][0])
     {
-        list($response) = $this->splitListWithHttpInfo($name, $active, $sort_by, $from, $to, $per_page, $page, $contentType);
+        list($response) = $this->splitListWithHttpInfo($subaccount_code, $name, $active, $per_page, $page, $from, $to, $contentType);
         return $response;
     }
 
     /**
      * Operation splitListWithHttpInfo
      *
-     * List/Search Splits
+     * List Splits
      *
-     * @param  string|null $name (optional)
-     * @param  string|null $active (optional)
-     * @param  string|null $sort_by (optional)
-     * @param  string|null $from (optional)
-     * @param  string|null $to (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  string|null $subaccount_code Filter by subaccount code (optional)
+     * @param  string|null $name The name of the split (optional)
+     * @param  bool|null $active The status of the split (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  \DateTime|null $from The start date (optional)
+     * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SplitListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function splitListWithHttpInfo($name = null, $active = null, $sort_by = null, $from = null, $to = null, $per_page = null, $page = null, string $contentType = self::contentTypes['splitList'][0])
+    public function splitListWithHttpInfo($subaccount_code = null, $name = null, $active = null, $per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['splitList'][0])
     {
-        $request = $this->splitListRequest($name, $active, $sort_by, $from, $to, $per_page, $page, $contentType);
+        $request = $this->splitListRequest($subaccount_code, $name, $active, $per_page, $page, $from, $to, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1165,19 +1095,19 @@ class SplitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1199,7 +1129,7 @@ class SplitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SplitListResponse',
                 $request,
                 $response,
             );
@@ -1208,7 +1138,7 @@ class SplitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1216,7 +1146,7 @@ class SplitApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1224,7 +1154,7 @@ class SplitApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1239,23 +1169,23 @@ class SplitApi
     /**
      * Operation splitListAsync
      *
-     * List/Search Splits
+     * List Splits
      *
-     * @param  string|null $name (optional)
-     * @param  string|null $active (optional)
-     * @param  string|null $sort_by (optional)
-     * @param  string|null $from (optional)
-     * @param  string|null $to (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  string|null $subaccount_code Filter by subaccount code (optional)
+     * @param  string|null $name The name of the split (optional)
+     * @param  bool|null $active The status of the split (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  \DateTime|null $from The start date (optional)
+     * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitListAsync($name = null, $active = null, $sort_by = null, $from = null, $to = null, $per_page = null, $page = null, string $contentType = self::contentTypes['splitList'][0])
+    public function splitListAsync($subaccount_code = null, $name = null, $active = null, $per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['splitList'][0])
     {
-        return $this->splitListAsyncWithHttpInfo($name, $active, $sort_by, $from, $to, $per_page, $page, $contentType)
+        return $this->splitListAsyncWithHttpInfo($subaccount_code, $name, $active, $per_page, $page, $from, $to, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1266,24 +1196,24 @@ class SplitApi
     /**
      * Operation splitListAsyncWithHttpInfo
      *
-     * List/Search Splits
+     * List Splits
      *
-     * @param  string|null $name (optional)
-     * @param  string|null $active (optional)
-     * @param  string|null $sort_by (optional)
-     * @param  string|null $from (optional)
-     * @param  string|null $to (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  string|null $subaccount_code Filter by subaccount code (optional)
+     * @param  string|null $name The name of the split (optional)
+     * @param  bool|null $active The status of the split (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  \DateTime|null $from The start date (optional)
+     * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitListAsyncWithHttpInfo($name = null, $active = null, $sort_by = null, $from = null, $to = null, $per_page = null, $page = null, string $contentType = self::contentTypes['splitList'][0])
+    public function splitListAsyncWithHttpInfo($subaccount_code = null, $name = null, $active = null, $per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['splitList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->splitListRequest($name, $active, $sort_by, $from, $to, $per_page, $page, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SplitListResponse';
+        $request = $this->splitListRequest($subaccount_code, $name, $active, $per_page, $page, $from, $to, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1324,19 +1254,19 @@ class SplitApi
     /**
      * Create request for operation 'splitList'
      *
-     * @param  string|null $name (optional)
-     * @param  string|null $active (optional)
-     * @param  string|null $sort_by (optional)
-     * @param  string|null $from (optional)
-     * @param  string|null $to (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  string|null $subaccount_code Filter by subaccount code (optional)
+     * @param  string|null $name The name of the split (optional)
+     * @param  bool|null $active The status of the split (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
+     * @param  \DateTime|null $from The start date (optional)
+     * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function splitListRequest($name = null, $active = null, $sort_by = null, $from = null, $to = null, $per_page = null, $page = null, string $contentType = self::contentTypes['splitList'][0])
+    public function splitListRequest($subaccount_code = null, $name = null, $active = null, $per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['splitList'][0])
     {
 
 
@@ -1356,6 +1286,15 @@ class SplitApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $subaccount_code,
+            'subaccount_code', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $name,
             'name', // param base name
             'string', // openApiType
@@ -1367,16 +1306,25 @@ class SplitApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $active,
             'active', // param base name
-            'string', // openApiType
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sort_by,
-            'sort_by', // param base name
-            'string', // openApiType
+            $per_page,
+            'per_page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1394,24 +1342,6 @@ class SplitApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $to,
             'to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $per_page,
-            'perPage', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page,
-            'page', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1483,18 +1413,17 @@ class SplitApi
      *
      * Remove Subaccount from split
      *
-     * @param  string $id id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitRemoveSubaccount'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SplitRemoveSubaccountResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function splitRemoveSubaccount($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
+    public function splitRemoveSubaccount($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
     {
-        list($response) = $this->splitRemoveSubaccountWithHttpInfo($id, $subaccount, $share, $contentType);
+        list($response) = $this->splitRemoveSubaccountWithHttpInfo($id, $split_subaccounts, $contentType);
         return $response;
     }
 
@@ -1503,18 +1432,17 @@ class SplitApi
      *
      * Remove Subaccount from split
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitRemoveSubaccount'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SplitRemoveSubaccountResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function splitRemoveSubaccountWithHttpInfo($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
+    public function splitRemoveSubaccountWithHttpInfo($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
     {
-        $request = $this->splitRemoveSubaccountRequest($id, $subaccount, $share, $contentType);
+        $request = $this->splitRemoveSubaccountRequest($id, $split_subaccounts, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1542,13 +1470,13 @@ class SplitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitRemoveSubaccountResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1570,7 +1498,7 @@ class SplitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SplitRemoveSubaccountResponse',
                 $request,
                 $response,
             );
@@ -1579,7 +1507,7 @@ class SplitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitRemoveSubaccountResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1587,7 +1515,7 @@ class SplitApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1604,17 +1532,16 @@ class SplitApi
      *
      * Remove Subaccount from split
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitRemoveSubaccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitRemoveSubaccountAsync($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
+    public function splitRemoveSubaccountAsync($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
     {
-        return $this->splitRemoveSubaccountAsyncWithHttpInfo($id, $subaccount, $share, $contentType)
+        return $this->splitRemoveSubaccountAsyncWithHttpInfo($id, $split_subaccounts, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1627,18 +1554,17 @@ class SplitApi
      *
      * Remove Subaccount from split
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitRemoveSubaccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitRemoveSubaccountAsyncWithHttpInfo($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
+    public function splitRemoveSubaccountAsyncWithHttpInfo($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->splitRemoveSubaccountRequest($id, $subaccount, $share, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SplitRemoveSubaccountResponse';
+        $request = $this->splitRemoveSubaccountRequest($id, $split_subaccounts, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1679,15 +1605,14 @@ class SplitApi
     /**
      * Create request for operation 'splitRemoveSubaccount'
      *
-     * @param  string $id (required)
-     * @param  string|null $subaccount Subaccount code of the customer or partner (optional)
-     * @param  string|null $share The percentage or flat quota of the customer or partner (optional)
+     * @param  int $id The ID of the split configuration to fetch (required)
+     * @param  \Alexasomba\Paystack\Model\SplitSubaccounts|null $split_subaccounts (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitRemoveSubaccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function splitRemoveSubaccountRequest($id, $subaccount = null, $share = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
+    public function splitRemoveSubaccountRequest($id, $split_subaccounts = null, string $contentType = self::contentTypes['splitRemoveSubaccount'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1696,7 +1621,6 @@ class SplitApi
                 'Missing the required parameter $id when calling splitRemoveSubaccount'
             );
         }
-
 
 
 
@@ -1718,16 +1642,6 @@ class SplitApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'subaccount' => $subaccount,
-            'share' => $share,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1736,7 +1650,14 @@ class SplitApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($split_subaccounts)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($split_subaccounts));
+            } else {
+                $httpBody = $split_subaccounts;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1792,19 +1713,16 @@ class SplitApi
      * Update Split
      *
      * @param  string $id id (required)
-     * @param  string|null $name Name of the transaction split (optional)
-     * @param  bool|null $active Toggle status of split. When true, the split is active, else it&#39;s inactive (optional)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitUpdate|null $split_update split_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SplitUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function splitUpdate($id, $name = null, $active = null, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitUpdate'][0])
+    public function splitUpdate($id, $split_update = null, string $contentType = self::contentTypes['splitUpdate'][0])
     {
-        list($response) = $this->splitUpdateWithHttpInfo($id, $name, $active, $bearer_type, $bearer_subaccount, $contentType);
+        list($response) = $this->splitUpdateWithHttpInfo($id, $split_update, $contentType);
         return $response;
     }
 
@@ -1814,19 +1732,16 @@ class SplitApi
      * Update Split
      *
      * @param  string $id (required)
-     * @param  string|null $name Name of the transaction split (optional)
-     * @param  bool|null $active Toggle status of split. When true, the split is active, else it&#39;s inactive (optional)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitUpdate|null $split_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SplitUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function splitUpdateWithHttpInfo($id, $name = null, $active = null, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitUpdate'][0])
+    public function splitUpdateWithHttpInfo($id, $split_update = null, string $contentType = self::contentTypes['splitUpdate'][0])
     {
-        $request = $this->splitUpdateRequest($id, $name, $active, $bearer_type, $bearer_subaccount, $contentType);
+        $request = $this->splitUpdateRequest($id, $split_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1854,19 +1769,19 @@ class SplitApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitUpdateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1888,7 +1803,7 @@ class SplitApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SplitUpdateResponse',
                 $request,
                 $response,
             );
@@ -1897,7 +1812,7 @@ class SplitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SplitUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1905,7 +1820,7 @@ class SplitApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1913,7 +1828,7 @@ class SplitApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1931,18 +1846,15 @@ class SplitApi
      * Update Split
      *
      * @param  string $id (required)
-     * @param  string|null $name Name of the transaction split (optional)
-     * @param  bool|null $active Toggle status of split. When true, the split is active, else it&#39;s inactive (optional)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitUpdate|null $split_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitUpdateAsync($id, $name = null, $active = null, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitUpdate'][0])
+    public function splitUpdateAsync($id, $split_update = null, string $contentType = self::contentTypes['splitUpdate'][0])
     {
-        return $this->splitUpdateAsyncWithHttpInfo($id, $name, $active, $bearer_type, $bearer_subaccount, $contentType)
+        return $this->splitUpdateAsyncWithHttpInfo($id, $split_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1956,19 +1868,16 @@ class SplitApi
      * Update Split
      *
      * @param  string $id (required)
-     * @param  string|null $name Name of the transaction split (optional)
-     * @param  bool|null $active Toggle status of split. When true, the split is active, else it&#39;s inactive (optional)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitUpdate|null $split_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function splitUpdateAsyncWithHttpInfo($id, $name = null, $active = null, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitUpdate'][0])
+    public function splitUpdateAsyncWithHttpInfo($id, $split_update = null, string $contentType = self::contentTypes['splitUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->splitUpdateRequest($id, $name, $active, $bearer_type, $bearer_subaccount, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SplitUpdateResponse';
+        $request = $this->splitUpdateRequest($id, $split_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2010,16 +1919,13 @@ class SplitApi
      * Create request for operation 'splitUpdate'
      *
      * @param  string $id (required)
-     * @param  string|null $name Name of the transaction split (optional)
-     * @param  bool|null $active Toggle status of split. When true, the split is active, else it&#39;s inactive (optional)
-     * @param  string|null $bearer_type This allows you specify how the transaction charge should be processed (optional)
-     * @param  string|null $bearer_subaccount This is the subaccount code of the customer or partner that would bear the transaction charge if you specified subaccount as the bearer type (optional)
+     * @param  \Alexasomba\Paystack\Model\SplitUpdate|null $split_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['splitUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function splitUpdateRequest($id, $name = null, $active = null, $bearer_type = null, $bearer_subaccount = null, string $contentType = self::contentTypes['splitUpdate'][0])
+    public function splitUpdateRequest($id, $split_update = null, string $contentType = self::contentTypes['splitUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2028,9 +1934,6 @@ class SplitApi
                 'Missing the required parameter $id when calling splitUpdate'
             );
         }
-
-
-
 
 
 
@@ -2052,18 +1955,6 @@ class SplitApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'active' => $active,
-            'bearer_type' => $bearer_type,
-            'bearer_subaccount' => $bearer_subaccount,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -2072,7 +1963,14 @@ class SplitApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($split_update)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($split_update));
+            } else {
+                $httpBody = $split_update;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

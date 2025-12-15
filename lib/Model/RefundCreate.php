@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * RefundCreate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -253,6 +253,27 @@ class RefundCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CURRENCY_GHS = 'GHS';
+    public const CURRENCY_KES = 'KES';
+    public const CURRENCY_NGN = 'NGN';
+    public const CURRENCY_USD = 'USD';
+    public const CURRENCY_ZAR = 'ZAR';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCurrencyAllowableValues()
+    {
+        return [
+            self::CURRENCY_GHS,
+            self::CURRENCY_KES,
+            self::CURRENCY_NGN,
+            self::CURRENCY_USD,
+            self::CURRENCY_ZAR,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -306,6 +327,15 @@ class RefundCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['transaction'] === null) {
             $invalidProperties[] = "'transaction' can't be null";
         }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'currency', must be one of '%s'",
+                $this->container['currency'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -334,7 +364,7 @@ class RefundCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transaction
      *
-     * @param string $transaction Transaction reference or id
+     * @param string $transaction The reference of a previosuly completed transaction
      *
      * @return self
      */
@@ -361,7 +391,7 @@ class RefundCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amount
      *
-     * @param int|null $amount Amount ( in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR ) to be refunded to the customer.  Amount cannot be more than the original transaction amount
+     * @param int|null $amount Amount to be refunded to the customer. It cannot be more than the original transaction amount
      *
      * @return self
      */
@@ -388,7 +418,7 @@ class RefundCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string|null $currency Three-letter ISO currency. Allowed values are NGN, GHS, ZAR or USD
+     * @param string|null $currency Three-letter ISO currency
      *
      * @return self
      */
@@ -396,6 +426,16 @@ class RefundCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($currency)) {
             throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!in_array($currency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'currency', must be one of '%s'",
+                    $currency,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['currency'] = $currency;
 

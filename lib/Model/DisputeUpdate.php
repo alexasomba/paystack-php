@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * DisputeUpdate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class DisputeUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'refund_amount' => 'string',
+        'refund_amount' => 'int',
         'uploaded_filename' => 'string'
     ];
 
@@ -303,7 +303,7 @@ class DisputeUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets refund_amount
      *
-     * @return string
+     * @return int
      */
     public function getRefundAmount()
     {
@@ -313,7 +313,7 @@ class DisputeUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets refund_amount
      *
-     * @param string $refund_amount The amount to refund, in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
+     * @param int $refund_amount The amount to refund, in the subunit of your currency
      *
      * @return self
      */

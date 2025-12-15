@@ -1,5 +1,5 @@
 {
-    "name": "alexasomba/paystack",
+    "name": "alexasomba/paystack-openapi",
     "version": "0.1.0",
     "description": "The OpenAPI specification of the Paystack API that merchants and developers can harness to build financial solutions in Africa.",
     "keywords": [

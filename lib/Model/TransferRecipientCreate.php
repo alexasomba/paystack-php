@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransferRecipientCreate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,7 +65,7 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
         'description' => 'string',
         'currency' => 'string',
         'authorization_code' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'object'
     ];
 
     /**
@@ -271,6 +271,27 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
         return self::$openAPIModelName;
     }
 
+    public const TYPE_NUBAN = 'nuban';
+    public const TYPE_GHIPSS = 'ghipss';
+    public const TYPE_MOBILE_MONEY = 'mobile_money';
+    public const TYPE_BASA = 'basa';
+    public const TYPE_AUTHORIZATION = 'authorization';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_NUBAN,
+            self::TYPE_GHIPSS,
+            self::TYPE_MOBILE_MONEY,
+            self::TYPE_BASA,
+            self::TYPE_AUTHORIZATION,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -327,6 +348,15 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -364,7 +394,7 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets type
      *
-     * @param string $type Recipient Type (Only nuban at this time)
+     * @param string $type Recipient Type
      *
      * @return self
      */
@@ -372,6 +402,16 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -391,7 +431,7 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets name
      *
-     * @param string $name Recipient's name
+     * @param string $name The recipient's name according to their account registration.
      *
      * @return self
      */
@@ -543,7 +583,7 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets metadata
      *
-     * @return string|null
+     * @return object|null
      */
     public function getMetadata()
     {
@@ -553,7 +593,7 @@ class TransferRecipientCreate implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets metadata
      *
-     * @param string|null $metadata Stringified JSON object of custom data
+     * @param object|null $metadata JSON object of custom data
      *
      * @return self
      */

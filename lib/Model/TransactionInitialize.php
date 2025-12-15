@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransactionInitialize Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @description Initialize a transaction
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,17 +61,19 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'email' => 'string',
         'amount' => 'int',
-        'currency' => 'string',
+        'currency' => '\Alexasomba\Paystack\Model\Currency',
         'reference' => 'string',
+        'channels' => 'string[]',
         'callback_url' => 'string',
         'plan' => 'string',
         'invoice_limit' => 'int',
-        'metadata' => 'string',
-        'channels' => 'string[]',
         'split_code' => 'string',
+        'split' => '\Alexasomba\Paystack\Model\SplitCreate',
         'subaccount' => 'string',
         'transaction_charge' => 'string',
-        'bearer' => 'string'
+        'bearer' => 'string',
+        'label' => 'string',
+        'metadata' => 'object'
     ];
 
     /**
@@ -85,15 +88,17 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         'amount' => null,
         'currency' => null,
         'reference' => null,
+        'channels' => null,
         'callback_url' => null,
         'plan' => null,
         'invoice_limit' => null,
-        'metadata' => null,
-        'channels' => null,
         'split_code' => null,
+        'split' => null,
         'subaccount' => null,
         'transaction_charge' => null,
-        'bearer' => null
+        'bearer' => null,
+        'label' => null,
+        'metadata' => null
     ];
 
     /**
@@ -106,15 +111,17 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         'amount' => false,
         'currency' => false,
         'reference' => false,
+        'channels' => false,
         'callback_url' => false,
         'plan' => false,
         'invoice_limit' => false,
-        'metadata' => false,
-        'channels' => false,
         'split_code' => false,
+        'split' => false,
         'subaccount' => false,
         'transaction_charge' => false,
-        'bearer' => false
+        'bearer' => false,
+        'label' => false,
+        'metadata' => false
     ];
 
     /**
@@ -207,15 +214,17 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         'amount' => 'amount',
         'currency' => 'currency',
         'reference' => 'reference',
+        'channels' => 'channels',
         'callback_url' => 'callback_url',
         'plan' => 'plan',
         'invoice_limit' => 'invoice_limit',
-        'metadata' => 'metadata',
-        'channels' => 'channels',
         'split_code' => 'split_code',
+        'split' => 'split',
         'subaccount' => 'subaccount',
         'transaction_charge' => 'transaction_charge',
-        'bearer' => 'bearer'
+        'bearer' => 'bearer',
+        'label' => 'label',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -228,15 +237,17 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         'amount' => 'setAmount',
         'currency' => 'setCurrency',
         'reference' => 'setReference',
+        'channels' => 'setChannels',
         'callback_url' => 'setCallbackUrl',
         'plan' => 'setPlan',
         'invoice_limit' => 'setInvoiceLimit',
-        'metadata' => 'setMetadata',
-        'channels' => 'setChannels',
         'split_code' => 'setSplitCode',
+        'split' => 'setSplit',
         'subaccount' => 'setSubaccount',
         'transaction_charge' => 'setTransactionCharge',
-        'bearer' => 'setBearer'
+        'bearer' => 'setBearer',
+        'label' => 'setLabel',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -249,15 +260,17 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         'amount' => 'getAmount',
         'currency' => 'getCurrency',
         'reference' => 'getReference',
+        'channels' => 'getChannels',
         'callback_url' => 'getCallbackUrl',
         'plan' => 'getPlan',
         'invoice_limit' => 'getInvoiceLimit',
-        'metadata' => 'getMetadata',
-        'channels' => 'getChannels',
         'split_code' => 'getSplitCode',
+        'split' => 'getSplit',
         'subaccount' => 'getSubaccount',
         'transaction_charge' => 'getTransactionCharge',
-        'bearer' => 'getBearer'
+        'bearer' => 'getBearer',
+        'label' => 'getLabel',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -301,6 +314,46 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
+    public const CHANNELS_CARD = 'card';
+    public const CHANNELS_BANK = 'bank';
+    public const CHANNELS_USSD = 'ussd';
+    public const CHANNELS_QR = 'qr';
+    public const CHANNELS_EFT = 'eft';
+    public const CHANNELS_MOBILE_MONEY = 'mobile_money';
+    public const CHANNELS_BANK_TRANSFER = 'bank_transfer';
+    public const BEARER_ACCOUNT = 'account';
+    public const BEARER_SUBACCOUNT = 'subaccount';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getChannelsAllowableValues()
+    {
+        return [
+            self::CHANNELS_CARD,
+            self::CHANNELS_BANK,
+            self::CHANNELS_USSD,
+            self::CHANNELS_QR,
+            self::CHANNELS_EFT,
+            self::CHANNELS_MOBILE_MONEY,
+            self::CHANNELS_BANK_TRANSFER,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBearerAllowableValues()
+    {
+        return [
+            self::BEARER_ACCOUNT,
+            self::BEARER_SUBACCOUNT,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -321,15 +374,17 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('reference', $data ?? [], null);
+        $this->setIfExists('channels', $data ?? [], null);
         $this->setIfExists('callback_url', $data ?? [], null);
         $this->setIfExists('plan', $data ?? [], null);
         $this->setIfExists('invoice_limit', $data ?? [], null);
-        $this->setIfExists('metadata', $data ?? [], null);
-        $this->setIfExists('channels', $data ?? [], null);
         $this->setIfExists('split_code', $data ?? [], null);
+        $this->setIfExists('split', $data ?? [], null);
         $this->setIfExists('subaccount', $data ?? [], null);
         $this->setIfExists('transaction_charge', $data ?? [], null);
         $this->setIfExists('bearer', $data ?? [], null);
+        $this->setIfExists('label', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
     }
 
     /**
@@ -365,6 +420,15 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
+        $allowedValues = $this->getBearerAllowableValues();
+        if (!is_null($this->container['bearer']) && !in_array($this->container['bearer'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'bearer', must be one of '%s'",
+                $this->container['bearer'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -420,7 +484,7 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets amount
      *
-     * @param int $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR
+     * @param int $amount Amount should be in smallest denomination of the currency.
      *
      * @return self
      */
@@ -437,7 +501,7 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets currency
      *
-     * @return string|null
+     * @return \Alexasomba\Paystack\Model\Currency|null
      */
     public function getCurrency()
     {
@@ -447,7 +511,7 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets currency
      *
-     * @param string|null $currency The transaction currency
+     * @param \Alexasomba\Paystack\Model\Currency|null $currency currency
      *
      * @return self
      */
@@ -489,6 +553,42 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets channels
+     *
+     * @return string[]|null
+     */
+    public function getChannels()
+    {
+        return $this->container['channels'];
+    }
+
+    /**
+     * Sets channels
+     *
+     * @param string[]|null $channels An array of payment channels to control what channels you want to make available to the user to make a payment with
+     *
+     * @return self
+     */
+    public function setChannels($channels)
+    {
+        if (is_null($channels)) {
+            throw new \InvalidArgumentException('non-nullable channels cannot be null');
+        }
+        $allowedValues = $this->getChannelsAllowableValues();
+        if (array_diff($channels, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'channels', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['channels'] = $channels;
+
+        return $this;
+    }
+
+    /**
      * Gets callback_url
      *
      * @return string|null
@@ -501,7 +601,7 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets callback_url
      *
-     * @param string|null $callback_url Fully qualified url, e.g. https://example.com/ . Use this to override the callback url provided on the dashboard for this transaction
+     * @param string|null $callback_url Fully qualified url, e.g. https://example.com/ to redirect your customers to after a successful payment. Use this to override the callback url provided on the dashboard for this transaction
      *
      * @return self
      */
@@ -570,60 +670,6 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets metadata
-     *
-     * @return string|null
-     */
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param string|null $metadata Stringified JSON object of custom data
-     *
-     * @return self
-     */
-    public function setMetadata($metadata)
-    {
-        if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
-        }
-        $this->container['metadata'] = $metadata;
-
-        return $this;
-    }
-
-    /**
-     * Gets channels
-     *
-     * @return string[]|null
-     */
-    public function getChannels()
-    {
-        return $this->container['channels'];
-    }
-
-    /**
-     * Sets channels
-     *
-     * @param string[]|null $channels An array of payment channels to control what channels you want to make available to the user to make a payment with
-     *
-     * @return self
-     */
-    public function setChannels($channels)
-    {
-        if (is_null($channels)) {
-            throw new \InvalidArgumentException('non-nullable channels cannot be null');
-        }
-        $this->container['channels'] = $channels;
-
-        return $this;
-    }
-
-    /**
      * Gets split_code
      *
      * @return string|null
@@ -646,6 +692,33 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable split_code cannot be null');
         }
         $this->container['split_code'] = $split_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets split
+     *
+     * @return \Alexasomba\Paystack\Model\SplitCreate|null
+     */
+    public function getSplit()
+    {
+        return $this->container['split'];
+    }
+
+    /**
+     * Sets split
+     *
+     * @param \Alexasomba\Paystack\Model\SplitCreate|null $split split
+     *
+     * @return self
+     */
+    public function setSplit($split)
+    {
+        if (is_null($split)) {
+            throw new \InvalidArgumentException('non-nullable split cannot be null');
+        }
+        $this->container['split'] = $split;
 
         return $this;
     }
@@ -717,7 +790,7 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets bearer
      *
-     * @param string|null $bearer The beare of the transaction charge
+     * @param string|null $bearer The bearer of the transaction charge
      *
      * @return self
      */
@@ -726,7 +799,71 @@ class TransactionInitialize implements ModelInterface, ArrayAccess, \JsonSeriali
         if (is_null($bearer)) {
             throw new \InvalidArgumentException('non-nullable bearer cannot be null');
         }
+        $allowedValues = $this->getBearerAllowableValues();
+        if (!in_array($bearer, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'bearer', must be one of '%s'",
+                    $bearer,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['bearer'] = $bearer;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
+     *
+     * @return string|null
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     *
+     * @param string|null $label Used to replace the email address shown on the Checkout
+     *
+     * @return self
+     */
+    public function setLabel($label)
+    {
+        if (is_null($label)) {
+            throw new \InvalidArgumentException('non-nullable label cannot be null');
+        }
+        $this->container['label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param object|null $metadata JSON object of custom data
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+        }
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

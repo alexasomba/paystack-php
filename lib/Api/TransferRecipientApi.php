@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransferRecipientApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,12 +76,12 @@ class TransferRecipientApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'transferrecipientBulk' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'transferrecipientCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'transferrecipientDelete' => [
             'application/json',
@@ -93,8 +93,8 @@ class TransferRecipientApi
             'application/json',
         ],
         'transferrecipientUpdate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
     ];
 
@@ -149,16 +149,16 @@ class TransferRecipientApi
      *
      * Bulk Create Transfer Recipient
      *
-     * @param  \Alexasomba\\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed. (required)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientBulk|null $transfer_recipient_bulk transfer_recipient_bulk (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientBulk'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\TransferRecipientBulkCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function transferrecipientBulk($batch, string $contentType = self::contentTypes['transferrecipientBulk'][0])
+    public function transferrecipientBulk($transfer_recipient_bulk = null, string $contentType = self::contentTypes['transferrecipientBulk'][0])
     {
-        list($response) = $this->transferrecipientBulkWithHttpInfo($batch, $contentType);
+        list($response) = $this->transferrecipientBulkWithHttpInfo($transfer_recipient_bulk, $contentType);
         return $response;
     }
 
@@ -167,16 +167,16 @@ class TransferRecipientApi
      *
      * Bulk Create Transfer Recipient
      *
-     * @param  \Alexasomba\\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed. (required)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientBulk|null $transfer_recipient_bulk (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientBulk'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\TransferRecipientBulkCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferrecipientBulkWithHttpInfo($batch, string $contentType = self::contentTypes['transferrecipientBulk'][0])
+    public function transferrecipientBulkWithHttpInfo($transfer_recipient_bulk = null, string $contentType = self::contentTypes['transferrecipientBulk'][0])
     {
-        $request = $this->transferrecipientBulkRequest($batch, $contentType);
+        $request = $this->transferrecipientBulkRequest($transfer_recipient_bulk, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -204,13 +204,13 @@ class TransferRecipientApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientBulkCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -232,7 +232,7 @@ class TransferRecipientApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\TransferRecipientBulkCreateResponse',
                 $request,
                 $response,
             );
@@ -241,7 +241,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientBulkCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -249,7 +249,7 @@ class TransferRecipientApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -266,15 +266,15 @@ class TransferRecipientApi
      *
      * Bulk Create Transfer Recipient
      *
-     * @param  \Alexasomba\\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed. (required)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientBulk|null $transfer_recipient_bulk (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientBulkAsync($batch, string $contentType = self::contentTypes['transferrecipientBulk'][0])
+    public function transferrecipientBulkAsync($transfer_recipient_bulk = null, string $contentType = self::contentTypes['transferrecipientBulk'][0])
     {
-        return $this->transferrecipientBulkAsyncWithHttpInfo($batch, $contentType)
+        return $this->transferrecipientBulkAsyncWithHttpInfo($transfer_recipient_bulk, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -287,16 +287,16 @@ class TransferRecipientApi
      *
      * Bulk Create Transfer Recipient
      *
-     * @param  \Alexasomba\\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed. (required)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientBulk|null $transfer_recipient_bulk (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientBulkAsyncWithHttpInfo($batch, string $contentType = self::contentTypes['transferrecipientBulk'][0])
+    public function transferrecipientBulkAsyncWithHttpInfo($transfer_recipient_bulk = null, string $contentType = self::contentTypes['transferrecipientBulk'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->transferrecipientBulkRequest($batch, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\TransferRecipientBulkCreateResponse';
+        $request = $this->transferrecipientBulkRequest($transfer_recipient_bulk, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -337,21 +337,15 @@ class TransferRecipientApi
     /**
      * Create request for operation 'transferrecipientBulk'
      *
-     * @param  \Alexasomba\\Paystack\Model\TransferRecipientCreate[] $batch A list of transfer recipient object. Each object should contain type, name, and bank_code.  Any Create Transfer Recipient param can also be passed. (required)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientBulk|null $transfer_recipient_bulk (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientBulk'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferrecipientBulkRequest($batch, string $contentType = self::contentTypes['transferrecipientBulk'][0])
+    public function transferrecipientBulkRequest($transfer_recipient_bulk = null, string $contentType = self::contentTypes['transferrecipientBulk'][0])
     {
 
-        // verify the required parameter 'batch' is set
-        if ($batch === null || (is_array($batch) && count($batch) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $batch when calling transferrecipientBulk'
-            );
-        }
 
 
         $resourcePath = '/transferrecipient/bulk';
@@ -364,15 +358,6 @@ class TransferRecipientApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'batch' => $batch,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -381,7 +366,14 @@ class TransferRecipientApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($transfer_recipient_bulk)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($transfer_recipient_bulk));
+            } else {
+                $httpBody = $transfer_recipient_bulk;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -436,23 +428,16 @@ class TransferRecipientApi
      *
      * Create Transfer Recipient
      *
-     * @param  string $type Recipient Type (Only nuban at this time) (required)
-     * @param  string $name Recipient&#39;s name (required)
-     * @param  string $account_number Recipient&#39;s bank account number (required)
-     * @param  string $bank_code Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint (required)
-     * @param  string|null $description A description for this recipient (optional)
-     * @param  string|null $currency Currency for the account receiving the transfer (optional)
-     * @param  string|null $authorization_code An authorization code from a previous transaction (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientCreate|null $transfer_recipient_create transfer_recipient_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\TransferRecipientCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function transferrecipientCreate($type, $name, $account_number, $bank_code, $description = null, $currency = null, $authorization_code = null, $metadata = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
+    public function transferrecipientCreate($transfer_recipient_create = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
     {
-        list($response) = $this->transferrecipientCreateWithHttpInfo($type, $name, $account_number, $bank_code, $description, $currency, $authorization_code, $metadata, $contentType);
+        list($response) = $this->transferrecipientCreateWithHttpInfo($transfer_recipient_create, $contentType);
         return $response;
     }
 
@@ -461,23 +446,16 @@ class TransferRecipientApi
      *
      * Create Transfer Recipient
      *
-     * @param  string $type Recipient Type (Only nuban at this time) (required)
-     * @param  string $name Recipient&#39;s name (required)
-     * @param  string $account_number Recipient&#39;s bank account number (required)
-     * @param  string $bank_code Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint (required)
-     * @param  string|null $description A description for this recipient (optional)
-     * @param  string|null $currency Currency for the account receiving the transfer (optional)
-     * @param  string|null $authorization_code An authorization code from a previous transaction (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientCreate|null $transfer_recipient_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\TransferRecipientCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferrecipientCreateWithHttpInfo($type, $name, $account_number, $bank_code, $description = null, $currency = null, $authorization_code = null, $metadata = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
+    public function transferrecipientCreateWithHttpInfo($transfer_recipient_create = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
     {
-        $request = $this->transferrecipientCreateRequest($type, $name, $account_number, $bank_code, $description, $currency, $authorization_code, $metadata, $contentType);
+        $request = $this->transferrecipientCreateRequest($transfer_recipient_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -505,13 +483,13 @@ class TransferRecipientApi
             switch($statusCode) {
                 case 201:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -533,7 +511,7 @@ class TransferRecipientApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\TransferRecipientCreateResponse',
                 $request,
                 $response,
             );
@@ -542,7 +520,7 @@ class TransferRecipientApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -550,7 +528,7 @@ class TransferRecipientApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -567,22 +545,15 @@ class TransferRecipientApi
      *
      * Create Transfer Recipient
      *
-     * @param  string $type Recipient Type (Only nuban at this time) (required)
-     * @param  string $name Recipient&#39;s name (required)
-     * @param  string $account_number Recipient&#39;s bank account number (required)
-     * @param  string $bank_code Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint (required)
-     * @param  string|null $description A description for this recipient (optional)
-     * @param  string|null $currency Currency for the account receiving the transfer (optional)
-     * @param  string|null $authorization_code An authorization code from a previous transaction (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientCreate|null $transfer_recipient_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientCreateAsync($type, $name, $account_number, $bank_code, $description = null, $currency = null, $authorization_code = null, $metadata = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
+    public function transferrecipientCreateAsync($transfer_recipient_create = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
     {
-        return $this->transferrecipientCreateAsyncWithHttpInfo($type, $name, $account_number, $bank_code, $description, $currency, $authorization_code, $metadata, $contentType)
+        return $this->transferrecipientCreateAsyncWithHttpInfo($transfer_recipient_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -595,23 +566,16 @@ class TransferRecipientApi
      *
      * Create Transfer Recipient
      *
-     * @param  string $type Recipient Type (Only nuban at this time) (required)
-     * @param  string $name Recipient&#39;s name (required)
-     * @param  string $account_number Recipient&#39;s bank account number (required)
-     * @param  string $bank_code Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint (required)
-     * @param  string|null $description A description for this recipient (optional)
-     * @param  string|null $currency Currency for the account receiving the transfer (optional)
-     * @param  string|null $authorization_code An authorization code from a previous transaction (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientCreate|null $transfer_recipient_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientCreateAsyncWithHttpInfo($type, $name, $account_number, $bank_code, $description = null, $currency = null, $authorization_code = null, $metadata = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
+    public function transferrecipientCreateAsyncWithHttpInfo($transfer_recipient_create = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->transferrecipientCreateRequest($type, $name, $account_number, $bank_code, $description, $currency, $authorization_code, $metadata, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\TransferRecipientCreateResponse';
+        $request = $this->transferrecipientCreateRequest($transfer_recipient_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -652,52 +616,14 @@ class TransferRecipientApi
     /**
      * Create request for operation 'transferrecipientCreate'
      *
-     * @param  string $type Recipient Type (Only nuban at this time) (required)
-     * @param  string $name Recipient&#39;s name (required)
-     * @param  string $account_number Recipient&#39;s bank account number (required)
-     * @param  string $bank_code Recipient&#39;s bank code. You can get the list of Bank Codes by calling the List Banks endpoint (required)
-     * @param  string|null $description A description for this recipient (optional)
-     * @param  string|null $currency Currency for the account receiving the transfer (optional)
-     * @param  string|null $authorization_code An authorization code from a previous transaction (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientCreate|null $transfer_recipient_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferrecipientCreateRequest($type, $name, $account_number, $bank_code, $description = null, $currency = null, $authorization_code = null, $metadata = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
+    public function transferrecipientCreateRequest($transfer_recipient_create = null, string $contentType = self::contentTypes['transferrecipientCreate'][0])
     {
-
-        // verify the required parameter 'type' is set
-        if ($type === null || (is_array($type) && count($type) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $type when calling transferrecipientCreate'
-            );
-        }
-
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling transferrecipientCreate'
-            );
-        }
-
-        // verify the required parameter 'account_number' is set
-        if ($account_number === null || (is_array($account_number) && count($account_number) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_number when calling transferrecipientCreate'
-            );
-        }
-
-        // verify the required parameter 'bank_code' is set
-        if ($bank_code === null || (is_array($bank_code) && count($bank_code) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bank_code when calling transferrecipientCreate'
-            );
-        }
-
-
-
 
 
 
@@ -711,22 +637,6 @@ class TransferRecipientApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'type' => $type,
-            'name' => $name,
-            'account_number' => $account_number,
-            'bank_code' => $bank_code,
-            'description' => $description,
-            'currency' => $currency,
-            'authorization_code' => $authorization_code,
-            'metadata' => $metadata,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -735,7 +645,14 @@ class TransferRecipientApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($transfer_recipient_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($transfer_recipient_create));
+            } else {
+                $httpBody = $transfer_recipient_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -793,9 +710,9 @@ class TransferRecipientApi
      * @param  string $code Transfer recipient code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientDelete'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\TransferRecipientDeleteResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function transferrecipientDelete($code, string $contentType = self::contentTypes['transferrecipientDelete'][0])
     {
@@ -811,9 +728,9 @@ class TransferRecipientApi
      * @param  string $code Transfer recipient code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientDelete'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\TransferRecipientDeleteResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferrecipientDeleteWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientDelete'][0])
     {
@@ -845,19 +762,19 @@ class TransferRecipientApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientDeleteResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -879,7 +796,7 @@ class TransferRecipientApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\TransferRecipientDeleteResponse',
                 $request,
                 $response,
             );
@@ -888,7 +805,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientDeleteResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -896,7 +813,7 @@ class TransferRecipientApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -904,7 +821,7 @@ class TransferRecipientApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -950,7 +867,7 @@ class TransferRecipientApi
      */
     public function transferrecipientDeleteAsyncWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientDelete'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\TransferRecipientDeleteResponse';
         $request = $this->transferrecipientDeleteRequest($code, $contentType);
 
         return $this->client
@@ -1093,9 +1010,9 @@ class TransferRecipientApi
      * @param  string $code Transfer recipient code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\TransferRecipientFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function transferrecipientFetch($code, string $contentType = self::contentTypes['transferrecipientFetch'][0])
     {
@@ -1111,9 +1028,9 @@ class TransferRecipientApi
      * @param  string $code Transfer recipient code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\TransferRecipientFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function transferrecipientFetchWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientFetch'][0])
     {
@@ -1145,19 +1062,19 @@ class TransferRecipientApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1179,7 +1096,7 @@ class TransferRecipientApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\TransferRecipientFetchResponse',
                 $request,
                 $response,
             );
@@ -1188,7 +1105,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1196,7 +1113,7 @@ class TransferRecipientApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1204,7 +1121,7 @@ class TransferRecipientApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1250,7 +1167,7 @@ class TransferRecipientApi
      */
     public function transferrecipientFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['transferrecipientFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\TransferRecipientFetchResponse';
         $request = $this->transferrecipientFetchRequest($code, $contentType);
 
         return $this->client
@@ -1390,19 +1307,20 @@ class TransferRecipientApi
      *
      * List Transfer Recipients
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  bool|null $use_cursor A flag to indicate if cursor based pagination should be used (optional)
+     * @param  string|null $next An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data (optional)
+     * @param  string|null $previous An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\TransferRecipientListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function transferrecipientList($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['transferrecipientList'][0])
+    public function transferrecipientList($use_cursor = null, $next = null, $previous = null, $per_page = null, $page = null, string $contentType = self::contentTypes['transferrecipientList'][0])
     {
-        list($response) = $this->transferrecipientListWithHttpInfo($per_page, $page, $from, $to, $contentType);
+        list($response) = $this->transferrecipientListWithHttpInfo($use_cursor, $next, $previous, $per_page, $page, $contentType);
         return $response;
     }
 
@@ -1411,19 +1329,20 @@ class TransferRecipientApi
      *
      * List Transfer Recipients
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  bool|null $use_cursor A flag to indicate if cursor based pagination should be used (optional)
+     * @param  string|null $next An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data (optional)
+     * @param  string|null $previous An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\TransferRecipientListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferrecipientListWithHttpInfo($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['transferrecipientList'][0])
+    public function transferrecipientListWithHttpInfo($use_cursor = null, $next = null, $previous = null, $per_page = null, $page = null, string $contentType = self::contentTypes['transferrecipientList'][0])
     {
-        $request = $this->transferrecipientListRequest($per_page, $page, $from, $to, $contentType);
+        $request = $this->transferrecipientListRequest($use_cursor, $next, $previous, $per_page, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1451,19 +1370,19 @@ class TransferRecipientApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1485,7 +1404,7 @@ class TransferRecipientApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\TransferRecipientListResponse',
                 $request,
                 $response,
             );
@@ -1494,7 +1413,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1502,7 +1421,7 @@ class TransferRecipientApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1510,7 +1429,7 @@ class TransferRecipientApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1527,18 +1446,19 @@ class TransferRecipientApi
      *
      * List Transfer Recipients
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  bool|null $use_cursor A flag to indicate if cursor based pagination should be used (optional)
+     * @param  string|null $next An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data (optional)
+     * @param  string|null $previous An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientListAsync($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['transferrecipientList'][0])
+    public function transferrecipientListAsync($use_cursor = null, $next = null, $previous = null, $per_page = null, $page = null, string $contentType = self::contentTypes['transferrecipientList'][0])
     {
-        return $this->transferrecipientListAsyncWithHttpInfo($per_page, $page, $from, $to, $contentType)
+        return $this->transferrecipientListAsyncWithHttpInfo($use_cursor, $next, $previous, $per_page, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1551,19 +1471,20 @@ class TransferRecipientApi
      *
      * List Transfer Recipients
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  bool|null $use_cursor A flag to indicate if cursor based pagination should be used (optional)
+     * @param  string|null $next An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data (optional)
+     * @param  string|null $previous An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientListAsyncWithHttpInfo($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['transferrecipientList'][0])
+    public function transferrecipientListAsyncWithHttpInfo($use_cursor = null, $next = null, $previous = null, $per_page = null, $page = null, string $contentType = self::contentTypes['transferrecipientList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->transferrecipientListRequest($per_page, $page, $from, $to, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\TransferRecipientListResponse';
+        $request = $this->transferrecipientListRequest($use_cursor, $next, $previous, $per_page, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1604,17 +1525,19 @@ class TransferRecipientApi
     /**
      * Create request for operation 'transferrecipientList'
      *
-     * @param  int|null $per_page Number of records to fetch per page (optional)
-     * @param  int|null $page The section to retrieve (optional)
-     * @param  \DateTime|null $from The start date (optional)
-     * @param  \DateTime|null $to The end date (optional)
+     * @param  bool|null $use_cursor A flag to indicate if cursor based pagination should be used (optional)
+     * @param  string|null $next An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data (optional)
+     * @param  string|null $previous An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional)
+     * @param  int|null $page The offset to retrieve data from (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferrecipientListRequest($per_page = null, $page = null, $from = null, $to = null, string $contentType = self::contentTypes['transferrecipientList'][0])
+    public function transferrecipientListRequest($use_cursor = null, $next = null, $previous = null, $per_page = null, $page = null, string $contentType = self::contentTypes['transferrecipientList'][0])
     {
+
 
 
 
@@ -1630,8 +1553,35 @@ class TransferRecipientApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $use_cursor,
+            'use_cursor', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $next,
+            'next', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $previous,
+            'previous', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $per_page,
-            'perPage', // param base name
+            'per_page', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode
@@ -1642,24 +1592,6 @@ class TransferRecipientApi
             $page,
             'page', // param base name
             'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $from,
-            'from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $to,
-            'to', // param base name
-            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1728,40 +1660,38 @@ class TransferRecipientApi
     /**
      * Operation transferrecipientUpdate
      *
-     * Update Transfer recipient
+     * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  string|null $name Recipient&#39;s name (optional)
-     * @param  string|null $email Recipient&#39;s email address (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientUpdate|null $transfer_recipient_update transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\TransferRecipientUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function transferrecipientUpdate($code, $name = null, $email = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdate($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        list($response) = $this->transferrecipientUpdateWithHttpInfo($code, $name, $email, $contentType);
+        list($response) = $this->transferrecipientUpdateWithHttpInfo($code, $transfer_recipient_update, $contentType);
         return $response;
     }
 
     /**
      * Operation transferrecipientUpdateWithHttpInfo
      *
-     * Update Transfer recipient
+     * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  string|null $name Recipient&#39;s name (optional)
-     * @param  string|null $email Recipient&#39;s email address (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientUpdate|null $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\TransferRecipientUpdateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferrecipientUpdateWithHttpInfo($code, $name = null, $email = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateWithHttpInfo($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        $request = $this->transferrecipientUpdateRequest($code, $name, $email, $contentType);
+        $request = $this->transferrecipientUpdateRequest($code, $transfer_recipient_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1789,19 +1719,19 @@ class TransferRecipientApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientUpdateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1823,7 +1753,7 @@ class TransferRecipientApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\TransferRecipientUpdateResponse',
                 $request,
                 $response,
             );
@@ -1832,7 +1762,7 @@ class TransferRecipientApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\TransferRecipientUpdateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1840,7 +1770,7 @@ class TransferRecipientApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1848,7 +1778,7 @@ class TransferRecipientApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1863,19 +1793,18 @@ class TransferRecipientApi
     /**
      * Operation transferrecipientUpdateAsync
      *
-     * Update Transfer recipient
+     * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  string|null $name Recipient&#39;s name (optional)
-     * @param  string|null $email Recipient&#39;s email address (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientUpdate|null $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientUpdateAsync($code, $name = null, $email = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateAsync($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        return $this->transferrecipientUpdateAsyncWithHttpInfo($code, $name, $email, $contentType)
+        return $this->transferrecipientUpdateAsyncWithHttpInfo($code, $transfer_recipient_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1886,20 +1815,19 @@ class TransferRecipientApi
     /**
      * Operation transferrecipientUpdateAsyncWithHttpInfo
      *
-     * Update Transfer recipient
+     * Update Transfer Recipient
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  string|null $name Recipient&#39;s name (optional)
-     * @param  string|null $email Recipient&#39;s email address (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientUpdate|null $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferrecipientUpdateAsyncWithHttpInfo($code, $name = null, $email = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateAsyncWithHttpInfo($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->transferrecipientUpdateRequest($code, $name, $email, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\TransferRecipientUpdateResponse';
+        $request = $this->transferrecipientUpdateRequest($code, $transfer_recipient_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1941,14 +1869,13 @@ class TransferRecipientApi
      * Create request for operation 'transferrecipientUpdate'
      *
      * @param  string $code Transfer recipient code (required)
-     * @param  string|null $name Recipient&#39;s name (optional)
-     * @param  string|null $email Recipient&#39;s email address (optional)
+     * @param  \Alexasomba\Paystack\Model\TransferRecipientUpdate|null $transfer_recipient_update (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['transferrecipientUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferrecipientUpdateRequest($code, $name = null, $email = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
+    public function transferrecipientUpdateRequest($code, $transfer_recipient_update = null, string $contentType = self::contentTypes['transferrecipientUpdate'][0])
     {
 
         // verify the required parameter 'code' is set
@@ -1957,7 +1884,6 @@ class TransferRecipientApi
                 'Missing the required parameter $code when calling transferrecipientUpdate'
             );
         }
-
 
 
 
@@ -1979,16 +1905,6 @@ class TransferRecipientApi
             );
         }
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'name' => $name,
-            'email' => $email,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1997,7 +1913,14 @@ class TransferRecipientApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($transfer_recipient_update)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($transfer_recipient_update));
+            } else {
+                $httpBody = $transfer_recipient_update;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

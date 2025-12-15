@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * ChargeApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -79,28 +79,28 @@ class ChargeApi
             'application/json',
         ],
         'chargeCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'chargeSubmitAddress' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'chargeSubmitBirthday' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'chargeSubmitOtp' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'chargeSubmitPhone' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'chargeSubmitPin' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
     ];
 
@@ -155,12 +155,12 @@ class ChargeApi
      *
      * Check pending charge
      *
-     * @param  string $reference reference (required)
+     * @param  string $reference The reference of the ongoing transaction (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCheck'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ChargeCheckPendingResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function chargeCheck($reference, string $contentType = self::contentTypes['chargeCheck'][0])
     {
@@ -173,12 +173,12 @@ class ChargeApi
      *
      * Check pending charge
      *
-     * @param  string $reference (required)
+     * @param  string $reference The reference of the ongoing transaction (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCheck'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ChargeCheckPendingResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function chargeCheckWithHttpInfo($reference, string $contentType = self::contentTypes['chargeCheck'][0])
     {
@@ -210,19 +210,19 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeCheckPendingResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -244,7 +244,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ChargeCheckPendingResponse',
                 $request,
                 $response,
             );
@@ -253,7 +253,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeCheckPendingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -261,7 +261,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -269,7 +269,7 @@ class ChargeApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -286,7 +286,7 @@ class ChargeApi
      *
      * Check pending charge
      *
-     * @param  string $reference (required)
+     * @param  string $reference The reference of the ongoing transaction (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -307,7 +307,7 @@ class ChargeApi
      *
      * Check pending charge
      *
-     * @param  string $reference (required)
+     * @param  string $reference The reference of the ongoing transaction (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -315,7 +315,7 @@ class ChargeApi
      */
     public function chargeCheckAsyncWithHttpInfo($reference, string $contentType = self::contentTypes['chargeCheck'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\ChargeCheckPendingResponse';
         $request = $this->chargeCheckRequest($reference, $contentType);
 
         return $this->client
@@ -357,7 +357,7 @@ class ChargeApi
     /**
      * Create request for operation 'chargeCheck'
      *
-     * @param  string $reference (required)
+     * @param  string $reference The reference of the ongoing transaction (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -455,27 +455,16 @@ class ChargeApi
      *
      * Create Charge
      *
-     * @param  string $email Customer&#39;s email address (required)
-     * @param  string $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string|null $authorization_code An authorization code to charge. (optional)
-     * @param  string|null $pin 4-digit PIN (send with a non-reusable authorization code) (optional)
-     * @param  string|null $reference Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed. (optional)
-     * @param  \DateTime|null $birthday The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16 (optional)
-     * @param  string|null $device_id This is the unique identifier of the device a user uses in making payment.  Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
-     * @param  \Alexasomba\\Paystack\Model\Bank|null $bank bank (optional)
-     * @param  \Alexasomba\\Paystack\Model\MobileMoney|null $mobile_money mobile_money (optional)
-     * @param  \Alexasomba\\Paystack\Model\USSD|null $ussd ussd (optional)
-     * @param  \Alexasomba\\Paystack\Model\EFT|null $eft eft (optional)
+     * @param  \Alexasomba\Paystack\Model\ChargeCreateRequest|null $charge_create_request charge_create_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ChargeCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function chargeCreate($email, $amount, $authorization_code = null, $pin = null, $reference = null, $birthday = null, $device_id = null, $metadata = null, $bank = null, $mobile_money = null, $ussd = null, $eft = null, string $contentType = self::contentTypes['chargeCreate'][0])
+    public function chargeCreate($charge_create_request = null, string $contentType = self::contentTypes['chargeCreate'][0])
     {
-        list($response) = $this->chargeCreateWithHttpInfo($email, $amount, $authorization_code, $pin, $reference, $birthday, $device_id, $metadata, $bank, $mobile_money, $ussd, $eft, $contentType);
+        list($response) = $this->chargeCreateWithHttpInfo($charge_create_request, $contentType);
         return $response;
     }
 
@@ -484,27 +473,16 @@ class ChargeApi
      *
      * Create Charge
      *
-     * @param  string $email Customer&#39;s email address (required)
-     * @param  string $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string|null $authorization_code An authorization code to charge. (optional)
-     * @param  string|null $pin 4-digit PIN (send with a non-reusable authorization code) (optional)
-     * @param  string|null $reference Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed. (optional)
-     * @param  \DateTime|null $birthday The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16 (optional)
-     * @param  string|null $device_id This is the unique identifier of the device a user uses in making payment.  Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
-     * @param  \Alexasomba\\Paystack\Model\Bank|null $bank (optional)
-     * @param  \Alexasomba\\Paystack\Model\MobileMoney|null $mobile_money (optional)
-     * @param  \Alexasomba\\Paystack\Model\USSD|null $ussd (optional)
-     * @param  \Alexasomba\\Paystack\Model\EFT|null $eft (optional)
+     * @param  \Alexasomba\Paystack\Model\ChargeCreateRequest|null $charge_create_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ChargeCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function chargeCreateWithHttpInfo($email, $amount, $authorization_code = null, $pin = null, $reference = null, $birthday = null, $device_id = null, $metadata = null, $bank = null, $mobile_money = null, $ussd = null, $eft = null, string $contentType = self::contentTypes['chargeCreate'][0])
+    public function chargeCreateWithHttpInfo($charge_create_request = null, string $contentType = self::contentTypes['chargeCreate'][0])
     {
-        $request = $this->chargeCreateRequest($email, $amount, $authorization_code, $pin, $reference, $birthday, $device_id, $metadata, $bank, $mobile_money, $ussd, $eft, $contentType);
+        $request = $this->chargeCreateRequest($charge_create_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -532,13 +510,13 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -560,7 +538,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ChargeCreateResponse',
                 $request,
                 $response,
             );
@@ -569,7 +547,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -577,7 +555,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -594,26 +572,15 @@ class ChargeApi
      *
      * Create Charge
      *
-     * @param  string $email Customer&#39;s email address (required)
-     * @param  string $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string|null $authorization_code An authorization code to charge. (optional)
-     * @param  string|null $pin 4-digit PIN (send with a non-reusable authorization code) (optional)
-     * @param  string|null $reference Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed. (optional)
-     * @param  \DateTime|null $birthday The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16 (optional)
-     * @param  string|null $device_id This is the unique identifier of the device a user uses in making payment.  Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
-     * @param  \Alexasomba\\Paystack\Model\Bank|null $bank (optional)
-     * @param  \Alexasomba\\Paystack\Model\MobileMoney|null $mobile_money (optional)
-     * @param  \Alexasomba\\Paystack\Model\USSD|null $ussd (optional)
-     * @param  \Alexasomba\\Paystack\Model\EFT|null $eft (optional)
+     * @param  \Alexasomba\Paystack\Model\ChargeCreateRequest|null $charge_create_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeCreateAsync($email, $amount, $authorization_code = null, $pin = null, $reference = null, $birthday = null, $device_id = null, $metadata = null, $bank = null, $mobile_money = null, $ussd = null, $eft = null, string $contentType = self::contentTypes['chargeCreate'][0])
+    public function chargeCreateAsync($charge_create_request = null, string $contentType = self::contentTypes['chargeCreate'][0])
     {
-        return $this->chargeCreateAsyncWithHttpInfo($email, $amount, $authorization_code, $pin, $reference, $birthday, $device_id, $metadata, $bank, $mobile_money, $ussd, $eft, $contentType)
+        return $this->chargeCreateAsyncWithHttpInfo($charge_create_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -626,27 +593,16 @@ class ChargeApi
      *
      * Create Charge
      *
-     * @param  string $email Customer&#39;s email address (required)
-     * @param  string $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string|null $authorization_code An authorization code to charge. (optional)
-     * @param  string|null $pin 4-digit PIN (send with a non-reusable authorization code) (optional)
-     * @param  string|null $reference Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed. (optional)
-     * @param  \DateTime|null $birthday The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16 (optional)
-     * @param  string|null $device_id This is the unique identifier of the device a user uses in making payment.  Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
-     * @param  \Alexasomba\\Paystack\Model\Bank|null $bank (optional)
-     * @param  \Alexasomba\\Paystack\Model\MobileMoney|null $mobile_money (optional)
-     * @param  \Alexasomba\\Paystack\Model\USSD|null $ussd (optional)
-     * @param  \Alexasomba\\Paystack\Model\EFT|null $eft (optional)
+     * @param  \Alexasomba\Paystack\Model\ChargeCreateRequest|null $charge_create_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeCreateAsyncWithHttpInfo($email, $amount, $authorization_code = null, $pin = null, $reference = null, $birthday = null, $device_id = null, $metadata = null, $bank = null, $mobile_money = null, $ussd = null, $eft = null, string $contentType = self::contentTypes['chargeCreate'][0])
+    public function chargeCreateAsyncWithHttpInfo($charge_create_request = null, string $contentType = self::contentTypes['chargeCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->chargeCreateRequest($email, $amount, $authorization_code, $pin, $reference, $birthday, $device_id, $metadata, $bank, $mobile_money, $ussd, $eft, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ChargeCreateResponse';
+        $request = $this->chargeCreateRequest($charge_create_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -687,48 +643,14 @@ class ChargeApi
     /**
      * Create request for operation 'chargeCreate'
      *
-     * @param  string $email Customer&#39;s email address (required)
-     * @param  string $amount Amount should be in kobo if currency is NGN, pesewas, if currency is GHS, and cents, if currency is ZAR (required)
-     * @param  string|null $authorization_code An authorization code to charge. (optional)
-     * @param  string|null $pin 4-digit PIN (send with a non-reusable authorization code) (optional)
-     * @param  string|null $reference Unique transaction reference. Only -, .&#x60;, &#x3D; and alphanumeric characters allowed. (optional)
-     * @param  \DateTime|null $birthday The customer&#39;s birthday in the format YYYY-MM-DD e.g 2017-05-16 (optional)
-     * @param  string|null $device_id This is the unique identifier of the device a user uses in making payment.  Only -, .&#x60;, &#x3D; and alphanumeric characters are allowed. (optional)
-     * @param  string|null $metadata Stringified JSON object of custom data (optional)
-     * @param  \Alexasomba\\Paystack\Model\Bank|null $bank (optional)
-     * @param  \Alexasomba\\Paystack\Model\MobileMoney|null $mobile_money (optional)
-     * @param  \Alexasomba\\Paystack\Model\USSD|null $ussd (optional)
-     * @param  \Alexasomba\\Paystack\Model\EFT|null $eft (optional)
+     * @param  \Alexasomba\Paystack\Model\ChargeCreateRequest|null $charge_create_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function chargeCreateRequest($email, $amount, $authorization_code = null, $pin = null, $reference = null, $birthday = null, $device_id = null, $metadata = null, $bank = null, $mobile_money = null, $ussd = null, $eft = null, string $contentType = self::contentTypes['chargeCreate'][0])
+    public function chargeCreateRequest($charge_create_request = null, string $contentType = self::contentTypes['chargeCreate'][0])
     {
-
-        // verify the required parameter 'email' is set
-        if ($email === null || (is_array($email) && count($email) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling chargeCreate'
-            );
-        }
-
-        // verify the required parameter 'amount' is set
-        if ($amount === null || (is_array($amount) && count($amount) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $amount when calling chargeCreate'
-            );
-        }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -742,26 +664,6 @@ class ChargeApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'email' => $email,
-            'amount' => $amount,
-            'authorization_code' => $authorization_code,
-            'pin' => $pin,
-            'reference' => $reference,
-            'birthday' => $birthday,
-            'device_id' => $device_id,
-            'metadata' => $metadata,
-            'bank' => $bank,
-            'mobile_money' => $mobile_money,
-            'ussd' => $ussd,
-            'eft' => $eft,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -770,7 +672,14 @@ class ChargeApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($charge_create_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($charge_create_request));
+            } else {
+                $httpBody = $charge_create_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -825,20 +734,16 @@ class ChargeApi
      *
      * Submit Address
      *
-     * @param  string $address Customer&#39;s address (required)
-     * @param  string $city Customer&#39;s city (required)
-     * @param  string $state Customer&#39;s state (required)
-     * @param  string $zipcode Customer&#39;s zipcode (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitAddress|null $charge_submit_address charge_submit_address (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitAddress'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error
      */
-    public function chargeSubmitAddress($address, $city, $state, $zipcode, $reference, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
+    public function chargeSubmitAddress($charge_submit_address = null, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
     {
-        list($response) = $this->chargeSubmitAddressWithHttpInfo($address, $city, $state, $zipcode, $reference, $contentType);
+        list($response) = $this->chargeSubmitAddressWithHttpInfo($charge_submit_address, $contentType);
         return $response;
     }
 
@@ -847,20 +752,16 @@ class ChargeApi
      *
      * Submit Address
      *
-     * @param  string $address Customer&#39;s address (required)
-     * @param  string $city Customer&#39;s city (required)
-     * @param  string $state Customer&#39;s state (required)
-     * @param  string $zipcode Customer&#39;s zipcode (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitAddress|null $charge_submit_address (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitAddress'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function chargeSubmitAddressWithHttpInfo($address, $city, $state, $zipcode, $reference, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
+    public function chargeSubmitAddressWithHttpInfo($charge_submit_address = null, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
     {
-        $request = $this->chargeSubmitAddressRequest($address, $city, $state, $zipcode, $reference, $contentType);
+        $request = $this->chargeSubmitAddressRequest($charge_submit_address, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -888,13 +789,13 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -916,7 +817,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -925,7 +826,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -933,7 +834,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -950,19 +851,15 @@ class ChargeApi
      *
      * Submit Address
      *
-     * @param  string $address Customer&#39;s address (required)
-     * @param  string $city Customer&#39;s city (required)
-     * @param  string $state Customer&#39;s state (required)
-     * @param  string $zipcode Customer&#39;s zipcode (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitAddress|null $charge_submit_address (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitAddress'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitAddressAsync($address, $city, $state, $zipcode, $reference, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
+    public function chargeSubmitAddressAsync($charge_submit_address = null, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
     {
-        return $this->chargeSubmitAddressAsyncWithHttpInfo($address, $city, $state, $zipcode, $reference, $contentType)
+        return $this->chargeSubmitAddressAsyncWithHttpInfo($charge_submit_address, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -975,20 +872,16 @@ class ChargeApi
      *
      * Submit Address
      *
-     * @param  string $address Customer&#39;s address (required)
-     * @param  string $city Customer&#39;s city (required)
-     * @param  string $state Customer&#39;s state (required)
-     * @param  string $zipcode Customer&#39;s zipcode (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitAddress|null $charge_submit_address (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitAddress'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitAddressAsyncWithHttpInfo($address, $city, $state, $zipcode, $reference, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
+    public function chargeSubmitAddressAsyncWithHttpInfo($charge_submit_address = null, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->chargeSubmitAddressRequest($address, $city, $state, $zipcode, $reference, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\Response';
+        $request = $this->chargeSubmitAddressRequest($charge_submit_address, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1029,53 +922,15 @@ class ChargeApi
     /**
      * Create request for operation 'chargeSubmitAddress'
      *
-     * @param  string $address Customer&#39;s address (required)
-     * @param  string $city Customer&#39;s city (required)
-     * @param  string $state Customer&#39;s state (required)
-     * @param  string $zipcode Customer&#39;s zipcode (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitAddress|null $charge_submit_address (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitAddress'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function chargeSubmitAddressRequest($address, $city, $state, $zipcode, $reference, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
+    public function chargeSubmitAddressRequest($charge_submit_address = null, string $contentType = self::contentTypes['chargeSubmitAddress'][0])
     {
 
-        // verify the required parameter 'address' is set
-        if ($address === null || (is_array($address) && count($address) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $address when calling chargeSubmitAddress'
-            );
-        }
-
-        // verify the required parameter 'city' is set
-        if ($city === null || (is_array($city) && count($city) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $city when calling chargeSubmitAddress'
-            );
-        }
-
-        // verify the required parameter 'state' is set
-        if ($state === null || (is_array($state) && count($state) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $state when calling chargeSubmitAddress'
-            );
-        }
-
-        // verify the required parameter 'zipcode' is set
-        if ($zipcode === null || (is_array($zipcode) && count($zipcode) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $zipcode when calling chargeSubmitAddress'
-            );
-        }
-
-        // verify the required parameter 'reference' is set
-        if ($reference === null || (is_array($reference) && count($reference) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $reference when calling chargeSubmitAddress'
-            );
-        }
 
 
         $resourcePath = '/charge/submit_address';
@@ -1088,19 +943,6 @@ class ChargeApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'address' => $address,
-            'city' => $city,
-            'state' => $state,
-            'zipcode' => $zipcode,
-            'reference' => $reference,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1109,7 +951,14 @@ class ChargeApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($charge_submit_address)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($charge_submit_address));
+            } else {
+                $httpBody = $charge_submit_address;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1164,17 +1013,16 @@ class ChargeApi
      *
      * Submit Birthday
      *
-     * @param  string $birthday Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitBirthday|null $charge_submit_birthday charge_submit_birthday (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitBirthday'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ChargeSubmitBirthdayResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function chargeSubmitBirthday($birthday, $reference, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
+    public function chargeSubmitBirthday($charge_submit_birthday = null, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
     {
-        list($response) = $this->chargeSubmitBirthdayWithHttpInfo($birthday, $reference, $contentType);
+        list($response) = $this->chargeSubmitBirthdayWithHttpInfo($charge_submit_birthday, $contentType);
         return $response;
     }
 
@@ -1183,17 +1031,16 @@ class ChargeApi
      *
      * Submit Birthday
      *
-     * @param  string $birthday Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitBirthday|null $charge_submit_birthday (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitBirthday'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ChargeSubmitBirthdayResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function chargeSubmitBirthdayWithHttpInfo($birthday, $reference, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
+    public function chargeSubmitBirthdayWithHttpInfo($charge_submit_birthday = null, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
     {
-        $request = $this->chargeSubmitBirthdayRequest($birthday, $reference, $contentType);
+        $request = $this->chargeSubmitBirthdayRequest($charge_submit_birthday, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1221,13 +1068,13 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitBirthdayResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1249,7 +1096,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ChargeSubmitBirthdayResponse',
                 $request,
                 $response,
             );
@@ -1258,7 +1105,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitBirthdayResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1266,7 +1113,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1283,16 +1130,15 @@ class ChargeApi
      *
      * Submit Birthday
      *
-     * @param  string $birthday Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitBirthday|null $charge_submit_birthday (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitBirthday'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitBirthdayAsync($birthday, $reference, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
+    public function chargeSubmitBirthdayAsync($charge_submit_birthday = null, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
     {
-        return $this->chargeSubmitBirthdayAsyncWithHttpInfo($birthday, $reference, $contentType)
+        return $this->chargeSubmitBirthdayAsyncWithHttpInfo($charge_submit_birthday, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1305,17 +1151,16 @@ class ChargeApi
      *
      * Submit Birthday
      *
-     * @param  string $birthday Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitBirthday|null $charge_submit_birthday (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitBirthday'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitBirthdayAsyncWithHttpInfo($birthday, $reference, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
+    public function chargeSubmitBirthdayAsyncWithHttpInfo($charge_submit_birthday = null, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->chargeSubmitBirthdayRequest($birthday, $reference, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ChargeSubmitBirthdayResponse';
+        $request = $this->chargeSubmitBirthdayRequest($charge_submit_birthday, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1356,29 +1201,15 @@ class ChargeApi
     /**
      * Create request for operation 'chargeSubmitBirthday'
      *
-     * @param  string $birthday Customer&#39;s birthday in the format YYYY-MM-DD e.g 2016-09-21 (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitBirthday|null $charge_submit_birthday (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitBirthday'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function chargeSubmitBirthdayRequest($birthday, $reference, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
+    public function chargeSubmitBirthdayRequest($charge_submit_birthday = null, string $contentType = self::contentTypes['chargeSubmitBirthday'][0])
     {
 
-        // verify the required parameter 'birthday' is set
-        if ($birthday === null || (is_array($birthday) && count($birthday) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $birthday when calling chargeSubmitBirthday'
-            );
-        }
-
-        // verify the required parameter 'reference' is set
-        if ($reference === null || (is_array($reference) && count($reference) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $reference when calling chargeSubmitBirthday'
-            );
-        }
 
 
         $resourcePath = '/charge/submit_birthday';
@@ -1391,16 +1222,6 @@ class ChargeApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'birthday' => $birthday,
-            'reference' => $reference,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1409,7 +1230,14 @@ class ChargeApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($charge_submit_birthday)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($charge_submit_birthday));
+            } else {
+                $httpBody = $charge_submit_birthday;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1464,17 +1292,16 @@ class ChargeApi
      *
      * Submit OTP
      *
-     * @param  string $otp Customer&#39;s OTP (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitOTP|null $charge_submit_otp charge_submit_otp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitOtp'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ChargeSubmitOtpResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function chargeSubmitOtp($otp, $reference, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
+    public function chargeSubmitOtp($charge_submit_otp = null, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
     {
-        list($response) = $this->chargeSubmitOtpWithHttpInfo($otp, $reference, $contentType);
+        list($response) = $this->chargeSubmitOtpWithHttpInfo($charge_submit_otp, $contentType);
         return $response;
     }
 
@@ -1483,17 +1310,16 @@ class ChargeApi
      *
      * Submit OTP
      *
-     * @param  string $otp Customer&#39;s OTP (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitOTP|null $charge_submit_otp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitOtp'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ChargeSubmitOtpResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function chargeSubmitOtpWithHttpInfo($otp, $reference, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
+    public function chargeSubmitOtpWithHttpInfo($charge_submit_otp = null, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
     {
-        $request = $this->chargeSubmitOtpRequest($otp, $reference, $contentType);
+        $request = $this->chargeSubmitOtpRequest($charge_submit_otp, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1521,13 +1347,13 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitOtpResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1549,7 +1375,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ChargeSubmitOtpResponse',
                 $request,
                 $response,
             );
@@ -1558,7 +1384,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitOtpResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1566,7 +1392,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1583,16 +1409,15 @@ class ChargeApi
      *
      * Submit OTP
      *
-     * @param  string $otp Customer&#39;s OTP (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitOTP|null $charge_submit_otp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitOtp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitOtpAsync($otp, $reference, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
+    public function chargeSubmitOtpAsync($charge_submit_otp = null, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
     {
-        return $this->chargeSubmitOtpAsyncWithHttpInfo($otp, $reference, $contentType)
+        return $this->chargeSubmitOtpAsyncWithHttpInfo($charge_submit_otp, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1605,17 +1430,16 @@ class ChargeApi
      *
      * Submit OTP
      *
-     * @param  string $otp Customer&#39;s OTP (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitOTP|null $charge_submit_otp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitOtp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitOtpAsyncWithHttpInfo($otp, $reference, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
+    public function chargeSubmitOtpAsyncWithHttpInfo($charge_submit_otp = null, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->chargeSubmitOtpRequest($otp, $reference, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ChargeSubmitOtpResponse';
+        $request = $this->chargeSubmitOtpRequest($charge_submit_otp, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1656,29 +1480,15 @@ class ChargeApi
     /**
      * Create request for operation 'chargeSubmitOtp'
      *
-     * @param  string $otp Customer&#39;s OTP (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitOTP|null $charge_submit_otp (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitOtp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function chargeSubmitOtpRequest($otp, $reference, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
+    public function chargeSubmitOtpRequest($charge_submit_otp = null, string $contentType = self::contentTypes['chargeSubmitOtp'][0])
     {
 
-        // verify the required parameter 'otp' is set
-        if ($otp === null || (is_array($otp) && count($otp) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $otp when calling chargeSubmitOtp'
-            );
-        }
-
-        // verify the required parameter 'reference' is set
-        if ($reference === null || (is_array($reference) && count($reference) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $reference when calling chargeSubmitOtp'
-            );
-        }
 
 
         $resourcePath = '/charge/submit_otp';
@@ -1691,16 +1501,6 @@ class ChargeApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'otp' => $otp,
-            'reference' => $reference,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1709,7 +1509,14 @@ class ChargeApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($charge_submit_otp)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($charge_submit_otp));
+            } else {
+                $httpBody = $charge_submit_otp;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1764,17 +1571,16 @@ class ChargeApi
      *
      * Submit Phone
      *
-     * @param  string $phone Customer&#39;s mobile number (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPhone|null $charge_submit_phone charge_submit_phone (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPhone'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ChargeSubmitPhoneResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function chargeSubmitPhone($phone, $reference, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
+    public function chargeSubmitPhone($charge_submit_phone = null, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
     {
-        list($response) = $this->chargeSubmitPhoneWithHttpInfo($phone, $reference, $contentType);
+        list($response) = $this->chargeSubmitPhoneWithHttpInfo($charge_submit_phone, $contentType);
         return $response;
     }
 
@@ -1783,17 +1589,16 @@ class ChargeApi
      *
      * Submit Phone
      *
-     * @param  string $phone Customer&#39;s mobile number (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPhone|null $charge_submit_phone (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPhone'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ChargeSubmitPhoneResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function chargeSubmitPhoneWithHttpInfo($phone, $reference, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
+    public function chargeSubmitPhoneWithHttpInfo($charge_submit_phone = null, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
     {
-        $request = $this->chargeSubmitPhoneRequest($phone, $reference, $contentType);
+        $request = $this->chargeSubmitPhoneRequest($charge_submit_phone, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1821,13 +1626,13 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitPhoneResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1849,7 +1654,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ChargeSubmitPhoneResponse',
                 $request,
                 $response,
             );
@@ -1858,7 +1663,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitPhoneResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1866,7 +1671,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1883,16 +1688,15 @@ class ChargeApi
      *
      * Submit Phone
      *
-     * @param  string $phone Customer&#39;s mobile number (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPhone|null $charge_submit_phone (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPhone'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitPhoneAsync($phone, $reference, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
+    public function chargeSubmitPhoneAsync($charge_submit_phone = null, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
     {
-        return $this->chargeSubmitPhoneAsyncWithHttpInfo($phone, $reference, $contentType)
+        return $this->chargeSubmitPhoneAsyncWithHttpInfo($charge_submit_phone, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1905,17 +1709,16 @@ class ChargeApi
      *
      * Submit Phone
      *
-     * @param  string $phone Customer&#39;s mobile number (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPhone|null $charge_submit_phone (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPhone'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitPhoneAsyncWithHttpInfo($phone, $reference, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
+    public function chargeSubmitPhoneAsyncWithHttpInfo($charge_submit_phone = null, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->chargeSubmitPhoneRequest($phone, $reference, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ChargeSubmitPhoneResponse';
+        $request = $this->chargeSubmitPhoneRequest($charge_submit_phone, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1956,29 +1759,15 @@ class ChargeApi
     /**
      * Create request for operation 'chargeSubmitPhone'
      *
-     * @param  string $phone Customer&#39;s mobile number (required)
-     * @param  string $reference The reference of the ongoing transaction (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPhone|null $charge_submit_phone (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPhone'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function chargeSubmitPhoneRequest($phone, $reference, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
+    public function chargeSubmitPhoneRequest($charge_submit_phone = null, string $contentType = self::contentTypes['chargeSubmitPhone'][0])
     {
 
-        // verify the required parameter 'phone' is set
-        if ($phone === null || (is_array($phone) && count($phone) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $phone when calling chargeSubmitPhone'
-            );
-        }
-
-        // verify the required parameter 'reference' is set
-        if ($reference === null || (is_array($reference) && count($reference) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $reference when calling chargeSubmitPhone'
-            );
-        }
 
 
         $resourcePath = '/charge/submit_phone';
@@ -1991,16 +1780,6 @@ class ChargeApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'phone' => $phone,
-            'reference' => $reference,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -2009,7 +1788,14 @@ class ChargeApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($charge_submit_phone)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($charge_submit_phone));
+            } else {
+                $httpBody = $charge_submit_phone;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2064,17 +1850,16 @@ class ChargeApi
      *
      * Submit PIN
      *
-     * @param  string $pin Customer&#39;s PIN (required)
-     * @param  string $reference Transaction reference that requires the PIN (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPin|null $charge_submit_pin charge_submit_pin (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPin'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ChargeSubmitPinResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function chargeSubmitPin($pin, $reference, string $contentType = self::contentTypes['chargeSubmitPin'][0])
+    public function chargeSubmitPin($charge_submit_pin = null, string $contentType = self::contentTypes['chargeSubmitPin'][0])
     {
-        list($response) = $this->chargeSubmitPinWithHttpInfo($pin, $reference, $contentType);
+        list($response) = $this->chargeSubmitPinWithHttpInfo($charge_submit_pin, $contentType);
         return $response;
     }
 
@@ -2083,17 +1868,16 @@ class ChargeApi
      *
      * Submit PIN
      *
-     * @param  string $pin Customer&#39;s PIN (required)
-     * @param  string $reference Transaction reference that requires the PIN (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPin|null $charge_submit_pin (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPin'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ChargeSubmitPinResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function chargeSubmitPinWithHttpInfo($pin, $reference, string $contentType = self::contentTypes['chargeSubmitPin'][0])
+    public function chargeSubmitPinWithHttpInfo($charge_submit_pin = null, string $contentType = self::contentTypes['chargeSubmitPin'][0])
     {
-        $request = $this->chargeSubmitPinRequest($pin, $reference, $contentType);
+        $request = $this->chargeSubmitPinRequest($charge_submit_pin, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2121,13 +1905,13 @@ class ChargeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitPinResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -2149,7 +1933,7 @@ class ChargeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ChargeSubmitPinResponse',
                 $request,
                 $response,
             );
@@ -2158,7 +1942,7 @@ class ChargeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ChargeSubmitPinResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2166,7 +1950,7 @@ class ChargeApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2183,16 +1967,15 @@ class ChargeApi
      *
      * Submit PIN
      *
-     * @param  string $pin Customer&#39;s PIN (required)
-     * @param  string $reference Transaction reference that requires the PIN (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPin|null $charge_submit_pin (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitPinAsync($pin, $reference, string $contentType = self::contentTypes['chargeSubmitPin'][0])
+    public function chargeSubmitPinAsync($charge_submit_pin = null, string $contentType = self::contentTypes['chargeSubmitPin'][0])
     {
-        return $this->chargeSubmitPinAsyncWithHttpInfo($pin, $reference, $contentType)
+        return $this->chargeSubmitPinAsyncWithHttpInfo($charge_submit_pin, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2205,17 +1988,16 @@ class ChargeApi
      *
      * Submit PIN
      *
-     * @param  string $pin Customer&#39;s PIN (required)
-     * @param  string $reference Transaction reference that requires the PIN (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPin|null $charge_submit_pin (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function chargeSubmitPinAsyncWithHttpInfo($pin, $reference, string $contentType = self::contentTypes['chargeSubmitPin'][0])
+    public function chargeSubmitPinAsyncWithHttpInfo($charge_submit_pin = null, string $contentType = self::contentTypes['chargeSubmitPin'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->chargeSubmitPinRequest($pin, $reference, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ChargeSubmitPinResponse';
+        $request = $this->chargeSubmitPinRequest($charge_submit_pin, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2256,29 +2038,15 @@ class ChargeApi
     /**
      * Create request for operation 'chargeSubmitPin'
      *
-     * @param  string $pin Customer&#39;s PIN (required)
-     * @param  string $reference Transaction reference that requires the PIN (required)
+     * @param  \Alexasomba\Paystack\Model\ChargeSubmitPin|null $charge_submit_pin (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chargeSubmitPin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function chargeSubmitPinRequest($pin, $reference, string $contentType = self::contentTypes['chargeSubmitPin'][0])
+    public function chargeSubmitPinRequest($charge_submit_pin = null, string $contentType = self::contentTypes['chargeSubmitPin'][0])
     {
 
-        // verify the required parameter 'pin' is set
-        if ($pin === null || (is_array($pin) && count($pin) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $pin when calling chargeSubmitPin'
-            );
-        }
-
-        // verify the required parameter 'reference' is set
-        if ($reference === null || (is_array($reference) && count($reference) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $reference when calling chargeSubmitPin'
-            );
-        }
 
 
         $resourcePath = '/charge/submit_pin';
@@ -2291,16 +2059,6 @@ class ChargeApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'pin' => $pin,
-            'reference' => $reference,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -2309,7 +2067,14 @@ class ChargeApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($charge_submit_pin)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($charge_submit_pin));
+            } else {
+                $httpBody = $charge_submit_pin;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

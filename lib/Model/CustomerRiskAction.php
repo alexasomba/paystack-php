@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * CustomerRiskAction Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -235,6 +235,23 @@ class CustomerRiskAction implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
+    public const RISK_ACTION_ALLOW = 'allow';
+    public const RISK_ACTION_DENY = 'deny';
+    public const RISK_ACTION__DEFAULT = 'default';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getRiskActionAllowableValues()
+    {
+        return [
+            self::RISK_ACTION_ALLOW,
+            self::RISK_ACTION_DENY,
+            self::RISK_ACTION__DEFAULT,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -252,7 +269,7 @@ class CustomerRiskAction implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(?array $data = null)
     {
         $this->setIfExists('customer', $data ?? [], null);
-        $this->setIfExists('risk_action', $data ?? [], null);
+        $this->setIfExists('risk_action', $data ?? [], 'default');
     }
 
     /**
@@ -285,6 +302,15 @@ class CustomerRiskAction implements ModelInterface, ArrayAccess, \JsonSerializab
         if ($this->container['customer'] === null) {
             $invalidProperties[] = "'customer' can't be null";
         }
+        $allowedValues = $this->getRiskActionAllowableValues();
+        if (!is_null($this->container['risk_action']) && !in_array($this->container['risk_action'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'risk_action', must be one of '%s'",
+                $this->container['risk_action'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -313,7 +339,7 @@ class CustomerRiskAction implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets customer
      *
-     * @param string $customer Customer's code, or email address
+     * @param string $customer The customer code from the response of the customer creation
      *
      * @return self
      */
@@ -340,7 +366,7 @@ class CustomerRiskAction implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets risk_action
      *
-     * @param string|null $risk_action One of the possible risk actions [ default, allow, deny ]. allow to whitelist.  deny to blacklist. Customers start with a default risk action.
+     * @param string|null $risk_action This determines the fraud rules that should be applied to the customer
      *
      * @return self
      */
@@ -348,6 +374,16 @@ class CustomerRiskAction implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         if (is_null($risk_action)) {
             throw new \InvalidArgumentException('non-nullable risk_action cannot be null');
+        }
+        $allowedValues = $this->getRiskActionAllowableValues();
+        if (!in_array($risk_action, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'risk_action', must be one of '%s'",
+                    $risk_action,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['risk_action'] = $risk_action;
 

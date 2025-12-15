@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * IntegrationApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -136,9 +136,9 @@ class IntegrationApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationFetchPaymentSessionTimeout'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ControlPanelFetchPaymentSessionTimeoutResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function integrationFetchPaymentSessionTimeout(string $contentType = self::contentTypes['integrationFetchPaymentSessionTimeout'][0])
     {
@@ -153,9 +153,9 @@ class IntegrationApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationFetchPaymentSessionTimeout'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ControlPanelFetchPaymentSessionTimeoutResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function integrationFetchPaymentSessionTimeoutWithHttpInfo(string $contentType = self::contentTypes['integrationFetchPaymentSessionTimeout'][0])
     {
@@ -187,19 +187,19 @@ class IntegrationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ControlPanelFetchPaymentSessionTimeoutResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -221,7 +221,7 @@ class IntegrationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ControlPanelFetchPaymentSessionTimeoutResponse',
                 $request,
                 $response,
             );
@@ -230,7 +230,7 @@ class IntegrationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ControlPanelFetchPaymentSessionTimeoutResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -238,7 +238,7 @@ class IntegrationApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,7 +246,7 @@ class IntegrationApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -290,7 +290,7 @@ class IntegrationApi
      */
     public function integrationFetchPaymentSessionTimeoutAsyncWithHttpInfo(string $contentType = self::contentTypes['integrationFetchPaymentSessionTimeout'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\ControlPanelFetchPaymentSessionTimeoutResponse';
         $request = $this->integrationFetchPaymentSessionTimeoutRequest($contentType);
 
         return $this->client
@@ -414,16 +414,16 @@ class IntegrationApi
      *
      * Update Payment Session Timeout
      *
-     * @param  object|null $body body (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentSession|null $payment_session payment_session (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationUpdatePaymentSessionTimeout'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\ControlPanelUpdatePaymentSessionTimeoutResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function integrationUpdatePaymentSessionTimeout($body = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
+    public function integrationUpdatePaymentSessionTimeout($payment_session = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
     {
-        list($response) = $this->integrationUpdatePaymentSessionTimeoutWithHttpInfo($body, $contentType);
+        list($response) = $this->integrationUpdatePaymentSessionTimeoutWithHttpInfo($payment_session, $contentType);
         return $response;
     }
 
@@ -432,16 +432,16 @@ class IntegrationApi
      *
      * Update Payment Session Timeout
      *
-     * @param  object|null $body (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentSession|null $payment_session (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationUpdatePaymentSessionTimeout'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\ControlPanelUpdatePaymentSessionTimeoutResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function integrationUpdatePaymentSessionTimeoutWithHttpInfo($body = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
+    public function integrationUpdatePaymentSessionTimeoutWithHttpInfo($payment_session = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
     {
-        $request = $this->integrationUpdatePaymentSessionTimeoutRequest($body, $contentType);
+        $request = $this->integrationUpdatePaymentSessionTimeoutRequest($payment_session, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -469,19 +469,19 @@ class IntegrationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ControlPanelUpdatePaymentSessionTimeoutResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -503,7 +503,7 @@ class IntegrationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\ControlPanelUpdatePaymentSessionTimeoutResponse',
                 $request,
                 $response,
             );
@@ -512,7 +512,7 @@ class IntegrationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\ControlPanelUpdatePaymentSessionTimeoutResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -520,7 +520,7 @@ class IntegrationApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -528,7 +528,7 @@ class IntegrationApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -545,15 +545,15 @@ class IntegrationApi
      *
      * Update Payment Session Timeout
      *
-     * @param  object|null $body (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentSession|null $payment_session (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationUpdatePaymentSessionTimeout'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function integrationUpdatePaymentSessionTimeoutAsync($body = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
+    public function integrationUpdatePaymentSessionTimeoutAsync($payment_session = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
     {
-        return $this->integrationUpdatePaymentSessionTimeoutAsyncWithHttpInfo($body, $contentType)
+        return $this->integrationUpdatePaymentSessionTimeoutAsyncWithHttpInfo($payment_session, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -566,16 +566,16 @@ class IntegrationApi
      *
      * Update Payment Session Timeout
      *
-     * @param  object|null $body (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentSession|null $payment_session (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationUpdatePaymentSessionTimeout'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function integrationUpdatePaymentSessionTimeoutAsyncWithHttpInfo($body = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
+    public function integrationUpdatePaymentSessionTimeoutAsyncWithHttpInfo($payment_session = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->integrationUpdatePaymentSessionTimeoutRequest($body, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\ControlPanelUpdatePaymentSessionTimeoutResponse';
+        $request = $this->integrationUpdatePaymentSessionTimeoutRequest($payment_session, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -616,13 +616,13 @@ class IntegrationApi
     /**
      * Create request for operation 'integrationUpdatePaymentSessionTimeout'
      *
-     * @param  object|null $body (optional)
+     * @param  \Alexasomba\Paystack\Model\PaymentSession|null $payment_session (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['integrationUpdatePaymentSessionTimeout'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function integrationUpdatePaymentSessionTimeoutRequest($body = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
+    public function integrationUpdatePaymentSessionTimeoutRequest($payment_session = null, string $contentType = self::contentTypes['integrationUpdatePaymentSessionTimeout'][0])
     {
 
 
@@ -645,12 +645,12 @@ class IntegrationApi
         );
 
         // for model (json/xml)
-        if (isset($body)) {
+        if (isset($payment_session)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($payment_session));
             } else {
-                $httpBody = $body;
+                $httpBody = $payment_session;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

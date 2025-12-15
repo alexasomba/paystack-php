@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * BulkChargeInitiate Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @description A list of charge object
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +60,11 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'authorization' => 'string',
-        'amount' => 'string'
+        'amount' => 'int',
+        'reference' => 'string',
+        'attempt_partial_debit' => 'bool',
+        'at_least' => 'int',
+        'metadata' => 'object'
     ];
 
     /**
@@ -71,7 +76,11 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'authorization' => null,
-        'amount' => null
+        'amount' => null,
+        'reference' => null,
+        'attempt_partial_debit' => null,
+        'at_least' => null,
+        'metadata' => null
     ];
 
     /**
@@ -81,7 +90,11 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'authorization' => false,
-        'amount' => false
+        'amount' => false,
+        'reference' => false,
+        'attempt_partial_debit' => false,
+        'at_least' => false,
+        'metadata' => false
     ];
 
     /**
@@ -171,7 +184,11 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'authorization' => 'authorization',
-        'amount' => 'amount'
+        'amount' => 'amount',
+        'reference' => 'reference',
+        'attempt_partial_debit' => 'attempt_partial_debit',
+        'at_least' => 'at_least',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -181,7 +198,11 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'authorization' => 'setAuthorization',
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'reference' => 'setReference',
+        'attempt_partial_debit' => 'setAttemptPartialDebit',
+        'at_least' => 'setAtLeast',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -191,7 +212,11 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'authorization' => 'getAuthorization',
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'reference' => 'getReference',
+        'attempt_partial_debit' => 'getAttemptPartialDebit',
+        'at_least' => 'getAtLeast',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -253,6 +278,10 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->setIfExists('authorization', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('reference', $data ?? [], null);
+        $this->setIfExists('attempt_partial_debit', $data ?? [], null);
+        $this->setIfExists('at_least', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
     }
 
     /**
@@ -333,7 +362,7 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets amount
      *
-     * @return string
+     * @return int
      */
     public function getAmount()
     {
@@ -343,7 +372,7 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets amount
      *
-     * @param string $amount Amount to charge on the authorization
+     * @param int $amount Amount to charge on the authorization
      *
      * @return self
      */
@@ -353,6 +382,114 @@ class BulkChargeInitiate implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference
+     *
+     * @return string|null
+     */
+    public function getReference()
+    {
+        return $this->container['reference'];
+    }
+
+    /**
+     * Sets reference
+     *
+     * @param string|null $reference A unique identifier containing lowercase letters `(a-z)`, digits `(0-9)` and these symbols: dash (`-`), underscore(`_`)
+     *
+     * @return self
+     */
+    public function setReference($reference)
+    {
+        if (is_null($reference)) {
+            throw new \InvalidArgumentException('non-nullable reference cannot be null');
+        }
+        $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets attempt_partial_debit
+     *
+     * @return bool|null
+     */
+    public function getAttemptPartialDebit()
+    {
+        return $this->container['attempt_partial_debit'];
+    }
+
+    /**
+     * Sets attempt_partial_debit
+     *
+     * @param bool|null $attempt_partial_debit A flag to indicate if you want us to try recouping lower amounts when the customer has insufficient fund
+     *
+     * @return self
+     */
+    public function setAttemptPartialDebit($attempt_partial_debit)
+    {
+        if (is_null($attempt_partial_debit)) {
+            throw new \InvalidArgumentException('non-nullable attempt_partial_debit cannot be null');
+        }
+        $this->container['attempt_partial_debit'] = $attempt_partial_debit;
+
+        return $this;
+    }
+
+    /**
+     * Gets at_least
+     *
+     * @return int|null
+     */
+    public function getAtLeast()
+    {
+        return $this->container['at_least'];
+    }
+
+    /**
+     * Sets at_least
+     *
+     * @param int|null $at_least Minimum amount to charge if the attempt_partial_debit flag is set
+     *
+     * @return self
+     */
+    public function setAtLeast($at_least)
+    {
+        if (is_null($at_least)) {
+            throw new \InvalidArgumentException('non-nullable at_least cannot be null');
+        }
+        $this->container['at_least'] = $at_least;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object|null
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param object|null $metadata JSON object of custom data
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+        }
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

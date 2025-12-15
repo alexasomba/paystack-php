@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * DedicatedVirtualAccountApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,15 +76,19 @@ class DedicatedVirtualAccountApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'dedicatedAccountAddSplit' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
+        ],
+        'dedicatedAccountAssign' => [
+            'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'dedicatedAccountAvailableProviders' => [
             'application/json',
         ],
         'dedicatedAccountCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'dedicatedAccountDeactivate' => [
             'application/json',
@@ -96,7 +100,10 @@ class DedicatedVirtualAccountApi
             'application/json',
         ],
         'dedicatedAccountRemoveSplit' => [
+            'application/json',
             'application/x-www-form-urlencoded',
+        ],
+        'dedicatedAccountRequery' => [
             'application/json',
         ],
     ];
@@ -152,18 +159,16 @@ class DedicatedVirtualAccountApi
      *
      * Split Dedicated Account Transaction
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountSplit|null $dedicated_virtual_account_split dedicated_virtual_account_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAddSplit'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error
      */
-    public function dedicatedAccountAddSplit($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
+    public function dedicatedAccountAddSplit($dedicated_virtual_account_split = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
     {
-        list($response) = $this->dedicatedAccountAddSplitWithHttpInfo($account_number, $subaccount, $split_code, $contentType);
+        list($response) = $this->dedicatedAccountAddSplitWithHttpInfo($dedicated_virtual_account_split, $contentType);
         return $response;
     }
 
@@ -172,18 +177,16 @@ class DedicatedVirtualAccountApi
      *
      * Split Dedicated Account Transaction
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountSplit|null $dedicated_virtual_account_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAddSplit'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dedicatedAccountAddSplitWithHttpInfo($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
+    public function dedicatedAccountAddSplitWithHttpInfo($dedicated_virtual_account_split = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
     {
-        $request = $this->dedicatedAccountAddSplitRequest($account_number, $subaccount, $split_code, $contentType);
+        $request = $this->dedicatedAccountAddSplitRequest($dedicated_virtual_account_split, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -211,13 +214,13 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -239,7 +242,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -248,7 +251,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,7 +259,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -273,17 +276,15 @@ class DedicatedVirtualAccountApi
      *
      * Split Dedicated Account Transaction
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountSplit|null $dedicated_virtual_account_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAddSplit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountAddSplitAsync($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
+    public function dedicatedAccountAddSplitAsync($dedicated_virtual_account_split = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
     {
-        return $this->dedicatedAccountAddSplitAsyncWithHttpInfo($account_number, $subaccount, $split_code, $contentType)
+        return $this->dedicatedAccountAddSplitAsyncWithHttpInfo($dedicated_virtual_account_split, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -296,18 +297,16 @@ class DedicatedVirtualAccountApi
      *
      * Split Dedicated Account Transaction
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountSplit|null $dedicated_virtual_account_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAddSplit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountAddSplitAsyncWithHttpInfo($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
+    public function dedicatedAccountAddSplitAsyncWithHttpInfo($dedicated_virtual_account_split = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->dedicatedAccountAddSplitRequest($account_number, $subaccount, $split_code, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\Response';
+        $request = $this->dedicatedAccountAddSplitRequest($dedicated_virtual_account_split, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -348,24 +347,14 @@ class DedicatedVirtualAccountApi
     /**
      * Create request for operation 'dedicatedAccountAddSplit'
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountSplit|null $dedicated_virtual_account_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAddSplit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function dedicatedAccountAddSplitRequest($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
+    public function dedicatedAccountAddSplitRequest($dedicated_virtual_account_split = null, string $contentType = self::contentTypes['dedicatedAccountAddSplit'][0])
     {
-
-        // verify the required parameter 'account_number' is set
-        if ($account_number === null || (is_array($account_number) && count($account_number) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_number when calling dedicatedAccountAddSplit'
-            );
-        }
-
 
 
 
@@ -379,17 +368,6 @@ class DedicatedVirtualAccountApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'account_number' => $account_number,
-            'subaccount' => $subaccount,
-            'split_code' => $split_code,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -398,7 +376,293 @@ class DedicatedVirtualAccountApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($dedicated_virtual_account_split)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dedicated_virtual_account_split));
+            } else {
+                $httpBody = $dedicated_virtual_account_split;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation dedicatedAccountAssign
+     *
+     * Assign Dedicated Account
+     *
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountAssign|null $dedicated_virtual_account_assign dedicated_virtual_account_assign (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAssign'] to see the possible values for this operation
+     *
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error
+     */
+    public function dedicatedAccountAssign($dedicated_virtual_account_assign = null, string $contentType = self::contentTypes['dedicatedAccountAssign'][0])
+    {
+        list($response) = $this->dedicatedAccountAssignWithHttpInfo($dedicated_virtual_account_assign, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation dedicatedAccountAssignWithHttpInfo
+     *
+     * Assign Dedicated Account
+     *
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountAssign|null $dedicated_virtual_account_assign (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAssign'] to see the possible values for this operation
+     *
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function dedicatedAccountAssignWithHttpInfo($dedicated_virtual_account_assign = null, string $contentType = self::contentTypes['dedicatedAccountAssign'][0])
+    {
+        $request = $this->dedicatedAccountAssignRequest($dedicated_virtual_account_assign, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\Error',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Alexasomba\Paystack\Model\Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation dedicatedAccountAssignAsync
+     *
+     * Assign Dedicated Account
+     *
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountAssign|null $dedicated_virtual_account_assign (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAssign'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function dedicatedAccountAssignAsync($dedicated_virtual_account_assign = null, string $contentType = self::contentTypes['dedicatedAccountAssign'][0])
+    {
+        return $this->dedicatedAccountAssignAsyncWithHttpInfo($dedicated_virtual_account_assign, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation dedicatedAccountAssignAsyncWithHttpInfo
+     *
+     * Assign Dedicated Account
+     *
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountAssign|null $dedicated_virtual_account_assign (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAssign'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function dedicatedAccountAssignAsyncWithHttpInfo($dedicated_virtual_account_assign = null, string $contentType = self::contentTypes['dedicatedAccountAssign'][0])
+    {
+        $returnType = '\Alexasomba\Paystack\Model\Response';
+        $request = $this->dedicatedAccountAssignRequest($dedicated_virtual_account_assign, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'dedicatedAccountAssign'
+     *
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountAssign|null $dedicated_virtual_account_assign (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAssign'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function dedicatedAccountAssignRequest($dedicated_virtual_account_assign = null, string $contentType = self::contentTypes['dedicatedAccountAssign'][0])
+    {
+
+
+
+        $resourcePath = '/dedicated_account/assign';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($dedicated_virtual_account_assign)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dedicated_virtual_account_assign));
+            } else {
+                $httpBody = $dedicated_virtual_account_assign;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -455,9 +719,9 @@ class DedicatedVirtualAccountApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAvailableProviders'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function dedicatedAccountAvailableProviders(string $contentType = self::contentTypes['dedicatedAccountAvailableProviders'][0])
     {
@@ -472,9 +736,9 @@ class DedicatedVirtualAccountApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountAvailableProviders'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function dedicatedAccountAvailableProvidersWithHttpInfo(string $contentType = self::contentTypes['dedicatedAccountAvailableProviders'][0])
     {
@@ -506,19 +770,19 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -540,7 +804,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -549,7 +813,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -557,7 +821,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -565,7 +829,7 @@ class DedicatedVirtualAccountApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -609,7 +873,7 @@ class DedicatedVirtualAccountApi
      */
     public function dedicatedAccountAvailableProvidersAsyncWithHttpInfo(string $contentType = self::contentTypes['dedicatedAccountAvailableProviders'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\Response';
         $request = $this->dedicatedAccountAvailableProvidersRequest($contentType);
 
         return $this->client
@@ -733,19 +997,16 @@ class DedicatedVirtualAccountApi
      *
      * Create Dedicated Account
      *
-     * @param  string $customer Customer ID or code (required)
-     * @param  string|null $preferred_bank The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint (optional)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountCreate|null $dedicated_virtual_account_create dedicated_virtual_account_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\DedicatedNubanCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function dedicatedAccountCreate($customer, $preferred_bank = null, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
+    public function dedicatedAccountCreate($dedicated_virtual_account_create = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
     {
-        list($response) = $this->dedicatedAccountCreateWithHttpInfo($customer, $preferred_bank, $subaccount, $split_code, $contentType);
+        list($response) = $this->dedicatedAccountCreateWithHttpInfo($dedicated_virtual_account_create, $contentType);
         return $response;
     }
 
@@ -754,19 +1015,16 @@ class DedicatedVirtualAccountApi
      *
      * Create Dedicated Account
      *
-     * @param  string $customer Customer ID or code (required)
-     * @param  string|null $preferred_bank The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint (optional)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountCreate|null $dedicated_virtual_account_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\DedicatedNubanCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dedicatedAccountCreateWithHttpInfo($customer, $preferred_bank = null, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
+    public function dedicatedAccountCreateWithHttpInfo($dedicated_virtual_account_create = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
     {
-        $request = $this->dedicatedAccountCreateRequest($customer, $preferred_bank, $subaccount, $split_code, $contentType);
+        $request = $this->dedicatedAccountCreateRequest($dedicated_virtual_account_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -794,13 +1052,13 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -822,7 +1080,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\DedicatedNubanCreateResponse',
                 $request,
                 $response,
             );
@@ -831,7 +1089,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -839,7 +1097,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -856,18 +1114,15 @@ class DedicatedVirtualAccountApi
      *
      * Create Dedicated Account
      *
-     * @param  string $customer Customer ID or code (required)
-     * @param  string|null $preferred_bank The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint (optional)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountCreate|null $dedicated_virtual_account_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountCreateAsync($customer, $preferred_bank = null, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
+    public function dedicatedAccountCreateAsync($dedicated_virtual_account_create = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
     {
-        return $this->dedicatedAccountCreateAsyncWithHttpInfo($customer, $preferred_bank, $subaccount, $split_code, $contentType)
+        return $this->dedicatedAccountCreateAsyncWithHttpInfo($dedicated_virtual_account_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -880,19 +1135,16 @@ class DedicatedVirtualAccountApi
      *
      * Create Dedicated Account
      *
-     * @param  string $customer Customer ID or code (required)
-     * @param  string|null $preferred_bank The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint (optional)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountCreate|null $dedicated_virtual_account_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountCreateAsyncWithHttpInfo($customer, $preferred_bank = null, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
+    public function dedicatedAccountCreateAsyncWithHttpInfo($dedicated_virtual_account_create = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->dedicatedAccountCreateRequest($customer, $preferred_bank, $subaccount, $split_code, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\DedicatedNubanCreateResponse';
+        $request = $this->dedicatedAccountCreateRequest($dedicated_virtual_account_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -933,26 +1185,14 @@ class DedicatedVirtualAccountApi
     /**
      * Create request for operation 'dedicatedAccountCreate'
      *
-     * @param  string $customer Customer ID or code (required)
-     * @param  string|null $preferred_bank The bank slug for preferred bank. To get a list of available banks, use the List Providers endpoint (optional)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountCreate|null $dedicated_virtual_account_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function dedicatedAccountCreateRequest($customer, $preferred_bank = null, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
+    public function dedicatedAccountCreateRequest($dedicated_virtual_account_create = null, string $contentType = self::contentTypes['dedicatedAccountCreate'][0])
     {
-
-        // verify the required parameter 'customer' is set
-        if ($customer === null || (is_array($customer) && count($customer) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $customer when calling dedicatedAccountCreate'
-            );
-        }
-
-
 
 
 
@@ -966,18 +1206,6 @@ class DedicatedVirtualAccountApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'customer' => $customer,
-            'preferred_bank' => $preferred_bank,
-            'subaccount' => $subaccount,
-            'split_code' => $split_code,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -986,7 +1214,14 @@ class DedicatedVirtualAccountApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($dedicated_virtual_account_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dedicated_virtual_account_create));
+            } else {
+                $httpBody = $dedicated_virtual_account_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1041,16 +1276,16 @@ class DedicatedVirtualAccountApi
      *
      * Deactivate Dedicated Account
      *
-     * @param  string $account_id account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountDeactivate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\DedicatedNubanDeactivateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function dedicatedAccountDeactivate($account_id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
+    public function dedicatedAccountDeactivate($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
-        list($response) = $this->dedicatedAccountDeactivateWithHttpInfo($account_id, $contentType);
+        list($response) = $this->dedicatedAccountDeactivateWithHttpInfo($id, $contentType);
         return $response;
     }
 
@@ -1059,16 +1294,16 @@ class DedicatedVirtualAccountApi
      *
      * Deactivate Dedicated Account
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountDeactivate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\DedicatedNubanDeactivateResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dedicatedAccountDeactivateWithHttpInfo($account_id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
+    public function dedicatedAccountDeactivateWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
-        $request = $this->dedicatedAccountDeactivateRequest($account_id, $contentType);
+        $request = $this->dedicatedAccountDeactivateRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1096,19 +1331,19 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanDeactivateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1130,7 +1365,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\DedicatedNubanDeactivateResponse',
                 $request,
                 $response,
             );
@@ -1139,7 +1374,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanDeactivateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1147,7 +1382,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1155,7 +1390,7 @@ class DedicatedVirtualAccountApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1172,15 +1407,15 @@ class DedicatedVirtualAccountApi
      *
      * Deactivate Dedicated Account
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountDeactivate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountDeactivateAsync($account_id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
+    public function dedicatedAccountDeactivateAsync($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
-        return $this->dedicatedAccountDeactivateAsyncWithHttpInfo($account_id, $contentType)
+        return $this->dedicatedAccountDeactivateAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1193,16 +1428,16 @@ class DedicatedVirtualAccountApi
      *
      * Deactivate Dedicated Account
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountDeactivate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountDeactivateAsyncWithHttpInfo($account_id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
+    public function dedicatedAccountDeactivateAsyncWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->dedicatedAccountDeactivateRequest($account_id, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\DedicatedNubanDeactivateResponse';
+        $request = $this->dedicatedAccountDeactivateRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1243,24 +1478,24 @@ class DedicatedVirtualAccountApi
     /**
      * Create request for operation 'dedicatedAccountDeactivate'
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountDeactivate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function dedicatedAccountDeactivateRequest($account_id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
+    public function dedicatedAccountDeactivateRequest($id, string $contentType = self::contentTypes['dedicatedAccountDeactivate'][0])
     {
 
-        // verify the required parameter 'account_id' is set
-        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $account_id when calling dedicatedAccountDeactivate'
+                'Missing the required parameter $id when calling dedicatedAccountDeactivate'
             );
         }
 
 
-        $resourcePath = '/dedicated_account/{account_id}';
+        $resourcePath = '/dedicated_account/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1270,10 +1505,10 @@ class DedicatedVirtualAccountApi
 
 
         // path params
-        if ($account_id !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'account_id' . '}',
-                ObjectSerializer::toPathValue($account_id),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
@@ -1341,16 +1576,16 @@ class DedicatedVirtualAccountApi
      *
      * Fetch Dedicated Account
      *
-     * @param  string $account_id account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\DedicatedNubanFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function dedicatedAccountFetch($account_id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
+    public function dedicatedAccountFetch($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
-        list($response) = $this->dedicatedAccountFetchWithHttpInfo($account_id, $contentType);
+        list($response) = $this->dedicatedAccountFetchWithHttpInfo($id, $contentType);
         return $response;
     }
 
@@ -1359,16 +1594,16 @@ class DedicatedVirtualAccountApi
      *
      * Fetch Dedicated Account
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\DedicatedNubanFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dedicatedAccountFetchWithHttpInfo($account_id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
+    public function dedicatedAccountFetchWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
-        $request = $this->dedicatedAccountFetchRequest($account_id, $contentType);
+        $request = $this->dedicatedAccountFetchRequest($id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1396,19 +1631,19 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1430,7 +1665,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\DedicatedNubanFetchResponse',
                 $request,
                 $response,
             );
@@ -1439,7 +1674,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1447,7 +1682,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1455,7 +1690,7 @@ class DedicatedVirtualAccountApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1472,15 +1707,15 @@ class DedicatedVirtualAccountApi
      *
      * Fetch Dedicated Account
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountFetchAsync($account_id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
+    public function dedicatedAccountFetchAsync($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
-        return $this->dedicatedAccountFetchAsyncWithHttpInfo($account_id, $contentType)
+        return $this->dedicatedAccountFetchAsyncWithHttpInfo($id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1493,16 +1728,16 @@ class DedicatedVirtualAccountApi
      *
      * Fetch Dedicated Account
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountFetchAsyncWithHttpInfo($account_id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
+    public function dedicatedAccountFetchAsyncWithHttpInfo($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->dedicatedAccountFetchRequest($account_id, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\DedicatedNubanFetchResponse';
+        $request = $this->dedicatedAccountFetchRequest($id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1543,24 +1778,24 @@ class DedicatedVirtualAccountApi
     /**
      * Create request for operation 'dedicatedAccountFetch'
      *
-     * @param  string $account_id (required)
+     * @param  string $id ID of dedicated virtual account (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function dedicatedAccountFetchRequest($account_id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
+    public function dedicatedAccountFetchRequest($id, string $contentType = self::contentTypes['dedicatedAccountFetch'][0])
     {
 
-        // verify the required parameter 'account_id' is set
-        if ($account_id === null || (is_array($account_id) && count($account_id) === 0)) {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $account_id when calling dedicatedAccountFetch'
+                'Missing the required parameter $id when calling dedicatedAccountFetch'
             );
         }
 
 
-        $resourcePath = '/dedicated_account/{account_id}';
+        $resourcePath = '/dedicated_account/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1570,10 +1805,10 @@ class DedicatedVirtualAccountApi
 
 
         // path params
-        if ($account_id !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'account_id' . '}',
-                ObjectSerializer::toPathValue($account_id),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
@@ -1641,23 +1876,22 @@ class DedicatedVirtualAccountApi
      *
      * List Dedicated Accounts
      *
-     * @param  string|null $account_number account_number (optional)
-     * @param  string|null $customer customer (optional)
-     * @param  bool|null $active active (optional)
-     * @param  string|null $currency currency (optional)
-     * @param  string|null $provider_slug provider_slug (optional)
-     * @param  string|null $bank_id bank_id (optional)
-     * @param  string|null $per_page per_page (optional)
-     * @param  string|null $page page (optional)
+     * @param  bool|null $active Status of the dedicated virtual account (optional)
+     * @param  int|null $customer The customer&#39;s ID (optional)
+     * @param  string|null $currency The currency of the dedicated virtual account (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces (optional)
+     * @param  string|null $bank_id The bank&#39;s ID (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional, default to 50)
+     * @param  int|null $page The offset to retrieve data from (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\DedicatedNubanListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function dedicatedAccountList($account_number = null, $customer = null, $active = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = null, $page = null, string $contentType = self::contentTypes['dedicatedAccountList'][0])
+    public function dedicatedAccountList($active = null, $customer = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = 50, $page = 1, string $contentType = self::contentTypes['dedicatedAccountList'][0])
     {
-        list($response) = $this->dedicatedAccountListWithHttpInfo($account_number, $customer, $active, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType);
+        list($response) = $this->dedicatedAccountListWithHttpInfo($active, $customer, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType);
         return $response;
     }
 
@@ -1666,23 +1900,22 @@ class DedicatedVirtualAccountApi
      *
      * List Dedicated Accounts
      *
-     * @param  string|null $account_number (optional)
-     * @param  string|null $customer (optional)
-     * @param  bool|null $active (optional)
-     * @param  string|null $currency (optional)
-     * @param  string|null $provider_slug (optional)
-     * @param  string|null $bank_id (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  bool|null $active Status of the dedicated virtual account (optional)
+     * @param  int|null $customer The customer&#39;s ID (optional)
+     * @param  string|null $currency The currency of the dedicated virtual account (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces (optional)
+     * @param  string|null $bank_id The bank&#39;s ID (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional, default to 50)
+     * @param  int|null $page The offset to retrieve data from (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\DedicatedNubanListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dedicatedAccountListWithHttpInfo($account_number = null, $customer = null, $active = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = null, $page = null, string $contentType = self::contentTypes['dedicatedAccountList'][0])
+    public function dedicatedAccountListWithHttpInfo($active = null, $customer = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = 50, $page = 1, string $contentType = self::contentTypes['dedicatedAccountList'][0])
     {
-        $request = $this->dedicatedAccountListRequest($account_number, $customer, $active, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType);
+        $request = $this->dedicatedAccountListRequest($active, $customer, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1710,19 +1943,19 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1744,7 +1977,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\DedicatedNubanListResponse',
                 $request,
                 $response,
             );
@@ -1753,7 +1986,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\DedicatedNubanListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1761,7 +1994,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1769,7 +2002,7 @@ class DedicatedVirtualAccountApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1786,22 +2019,21 @@ class DedicatedVirtualAccountApi
      *
      * List Dedicated Accounts
      *
-     * @param  string|null $account_number (optional)
-     * @param  string|null $customer (optional)
-     * @param  bool|null $active (optional)
-     * @param  string|null $currency (optional)
-     * @param  string|null $provider_slug (optional)
-     * @param  string|null $bank_id (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  bool|null $active Status of the dedicated virtual account (optional)
+     * @param  int|null $customer The customer&#39;s ID (optional)
+     * @param  string|null $currency The currency of the dedicated virtual account (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces (optional)
+     * @param  string|null $bank_id The bank&#39;s ID (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional, default to 50)
+     * @param  int|null $page The offset to retrieve data from (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountListAsync($account_number = null, $customer = null, $active = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = null, $page = null, string $contentType = self::contentTypes['dedicatedAccountList'][0])
+    public function dedicatedAccountListAsync($active = null, $customer = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = 50, $page = 1, string $contentType = self::contentTypes['dedicatedAccountList'][0])
     {
-        return $this->dedicatedAccountListAsyncWithHttpInfo($account_number, $customer, $active, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType)
+        return $this->dedicatedAccountListAsyncWithHttpInfo($active, $customer, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1814,23 +2046,22 @@ class DedicatedVirtualAccountApi
      *
      * List Dedicated Accounts
      *
-     * @param  string|null $account_number (optional)
-     * @param  string|null $customer (optional)
-     * @param  bool|null $active (optional)
-     * @param  string|null $currency (optional)
-     * @param  string|null $provider_slug (optional)
-     * @param  string|null $bank_id (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  bool|null $active Status of the dedicated virtual account (optional)
+     * @param  int|null $customer The customer&#39;s ID (optional)
+     * @param  string|null $currency The currency of the dedicated virtual account (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces (optional)
+     * @param  string|null $bank_id The bank&#39;s ID (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional, default to 50)
+     * @param  int|null $page The offset to retrieve data from (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountListAsyncWithHttpInfo($account_number = null, $customer = null, $active = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = null, $page = null, string $contentType = self::contentTypes['dedicatedAccountList'][0])
+    public function dedicatedAccountListAsyncWithHttpInfo($active = null, $customer = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = 50, $page = 1, string $contentType = self::contentTypes['dedicatedAccountList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->dedicatedAccountListRequest($account_number, $customer, $active, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\DedicatedNubanListResponse';
+        $request = $this->dedicatedAccountListRequest($active, $customer, $currency, $provider_slug, $bank_id, $per_page, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1871,22 +2102,20 @@ class DedicatedVirtualAccountApi
     /**
      * Create request for operation 'dedicatedAccountList'
      *
-     * @param  string|null $account_number (optional)
-     * @param  string|null $customer (optional)
-     * @param  bool|null $active (optional)
-     * @param  string|null $currency (optional)
-     * @param  string|null $provider_slug (optional)
-     * @param  string|null $bank_id (optional)
-     * @param  string|null $per_page (optional)
-     * @param  string|null $page (optional)
+     * @param  bool|null $active Status of the dedicated virtual account (optional)
+     * @param  int|null $customer The customer&#39;s ID (optional)
+     * @param  string|null $currency The currency of the dedicated virtual account (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces (optional)
+     * @param  string|null $bank_id The bank&#39;s ID (optional)
+     * @param  int|null $per_page The number of records to fetch per request (optional, default to 50)
+     * @param  int|null $page The offset to retrieve data from (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function dedicatedAccountListRequest($account_number = null, $customer = null, $active = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = null, $page = null, string $contentType = self::contentTypes['dedicatedAccountList'][0])
+    public function dedicatedAccountListRequest($active = null, $customer = null, $currency = null, $provider_slug = null, $bank_id = null, $per_page = 50, $page = 1, string $contentType = self::contentTypes['dedicatedAccountList'][0])
     {
-
 
 
 
@@ -1905,9 +2134,9 @@ class DedicatedVirtualAccountApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $account_number,
-            'account_number', // param base name
-            'string', // openApiType
+            $active,
+            'active', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1916,16 +2145,7 @@ class DedicatedVirtualAccountApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $customer,
             'customer', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $active,
-            'active', // param base name
-            'boolean', // openApiType
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1961,7 +2181,7 @@ class DedicatedVirtualAccountApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $per_page,
             'perPage', // param base name
-            'string', // openApiType
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1970,7 +2190,7 @@ class DedicatedVirtualAccountApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page,
             'page', // param base name
-            'string', // openApiType
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2041,18 +2261,16 @@ class DedicatedVirtualAccountApi
      *
      * Remove Split from Dedicated Account
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountRemoveSplit|null $dedicated_virtual_account_remove_split dedicated_virtual_account_remove_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRemoveSplit'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
-    public function dedicatedAccountRemoveSplit($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
+    public function dedicatedAccountRemoveSplit($dedicated_virtual_account_remove_split = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
     {
-        list($response) = $this->dedicatedAccountRemoveSplitWithHttpInfo($account_number, $subaccount, $split_code, $contentType);
+        list($response) = $this->dedicatedAccountRemoveSplitWithHttpInfo($dedicated_virtual_account_remove_split, $contentType);
         return $response;
     }
 
@@ -2061,18 +2279,16 @@ class DedicatedVirtualAccountApi
      *
      * Remove Split from Dedicated Account
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountRemoveSplit|null $dedicated_virtual_account_remove_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRemoveSplit'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function dedicatedAccountRemoveSplitWithHttpInfo($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
+    public function dedicatedAccountRemoveSplitWithHttpInfo($dedicated_virtual_account_remove_split = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
     {
-        $request = $this->dedicatedAccountRemoveSplitRequest($account_number, $subaccount, $split_code, $contentType);
+        $request = $this->dedicatedAccountRemoveSplitRequest($dedicated_virtual_account_remove_split, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2100,19 +2316,19 @@ class DedicatedVirtualAccountApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -2134,7 +2350,7 @@ class DedicatedVirtualAccountApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -2143,7 +2359,7 @@ class DedicatedVirtualAccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2151,7 +2367,7 @@ class DedicatedVirtualAccountApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2159,7 +2375,7 @@ class DedicatedVirtualAccountApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2176,17 +2392,15 @@ class DedicatedVirtualAccountApi
      *
      * Remove Split from Dedicated Account
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountRemoveSplit|null $dedicated_virtual_account_remove_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRemoveSplit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountRemoveSplitAsync($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
+    public function dedicatedAccountRemoveSplitAsync($dedicated_virtual_account_remove_split = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
     {
-        return $this->dedicatedAccountRemoveSplitAsyncWithHttpInfo($account_number, $subaccount, $split_code, $contentType)
+        return $this->dedicatedAccountRemoveSplitAsyncWithHttpInfo($dedicated_virtual_account_remove_split, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2199,18 +2413,16 @@ class DedicatedVirtualAccountApi
      *
      * Remove Split from Dedicated Account
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountRemoveSplit|null $dedicated_virtual_account_remove_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRemoveSplit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function dedicatedAccountRemoveSplitAsyncWithHttpInfo($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
+    public function dedicatedAccountRemoveSplitAsyncWithHttpInfo($dedicated_virtual_account_remove_split = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->dedicatedAccountRemoveSplitRequest($account_number, $subaccount, $split_code, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\Response';
+        $request = $this->dedicatedAccountRemoveSplitRequest($dedicated_virtual_account_remove_split, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2251,24 +2463,14 @@ class DedicatedVirtualAccountApi
     /**
      * Create request for operation 'dedicatedAccountRemoveSplit'
      *
-     * @param  string $account_number Valid Dedicated virtual account (required)
-     * @param  string|null $subaccount Subaccount code of the account you want to split the transaction with (optional)
-     * @param  string|null $split_code Split code consisting of the lists of accounts you want to split the transaction with (optional)
+     * @param  \Alexasomba\Paystack\Model\DedicatedVirtualAccountRemoveSplit|null $dedicated_virtual_account_remove_split (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRemoveSplit'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function dedicatedAccountRemoveSplitRequest($account_number, $subaccount = null, $split_code = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
+    public function dedicatedAccountRemoveSplitRequest($dedicated_virtual_account_remove_split = null, string $contentType = self::contentTypes['dedicatedAccountRemoveSplit'][0])
     {
-
-        // verify the required parameter 'account_number' is set
-        if ($account_number === null || (is_array($account_number) && count($account_number) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $account_number when calling dedicatedAccountRemoveSplit'
-            );
-        }
-
 
 
 
@@ -2282,17 +2484,338 @@ class DedicatedVirtualAccountApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
 
-        $formData = $formDataProcessor->prepare([
-            'account_number' => $account_number,
-            'subaccount' => $subaccount,
-            'split_code' => $split_code,
-        ]);
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
 
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
+        // for model (json/xml)
+        if (isset($dedicated_virtual_account_remove_split)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($dedicated_virtual_account_remove_split));
+            } else {
+                $httpBody = $dedicated_virtual_account_remove_split;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation dedicatedAccountRequery
+     *
+     * Requery Dedicated Account
+     *
+     * @param  string|null $account_number Virtual account number to requery (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces. (optional)
+     * @param  \DateTime|null $date The day the transfer was made (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRequery'] to see the possible values for this operation
+     *
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
+     */
+    public function dedicatedAccountRequery($account_number = null, $provider_slug = null, $date = null, string $contentType = self::contentTypes['dedicatedAccountRequery'][0])
+    {
+        list($response) = $this->dedicatedAccountRequeryWithHttpInfo($account_number, $provider_slug, $date, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation dedicatedAccountRequeryWithHttpInfo
+     *
+     * Requery Dedicated Account
+     *
+     * @param  string|null $account_number Virtual account number to requery (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces. (optional)
+     * @param  \DateTime|null $date The day the transfer was made (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRequery'] to see the possible values for this operation
+     *
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function dedicatedAccountRequeryWithHttpInfo($account_number = null, $provider_slug = null, $date = null, string $contentType = self::contentTypes['dedicatedAccountRequery'][0])
+    {
+        $request = $this->dedicatedAccountRequeryRequest($account_number, $provider_slug, $date, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\Error',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\Alexasomba\Paystack\Model\Error',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Alexasomba\Paystack\Model\Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Alexasomba\Paystack\Model\Error',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation dedicatedAccountRequeryAsync
+     *
+     * Requery Dedicated Account
+     *
+     * @param  string|null $account_number Virtual account number to requery (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces. (optional)
+     * @param  \DateTime|null $date The day the transfer was made (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRequery'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function dedicatedAccountRequeryAsync($account_number = null, $provider_slug = null, $date = null, string $contentType = self::contentTypes['dedicatedAccountRequery'][0])
+    {
+        return $this->dedicatedAccountRequeryAsyncWithHttpInfo($account_number, $provider_slug, $date, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation dedicatedAccountRequeryAsyncWithHttpInfo
+     *
+     * Requery Dedicated Account
+     *
+     * @param  string|null $account_number Virtual account number to requery (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces. (optional)
+     * @param  \DateTime|null $date The day the transfer was made (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRequery'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function dedicatedAccountRequeryAsyncWithHttpInfo($account_number = null, $provider_slug = null, $date = null, string $contentType = self::contentTypes['dedicatedAccountRequery'][0])
+    {
+        $returnType = '\Alexasomba\Paystack\Model\Response';
+        $request = $this->dedicatedAccountRequeryRequest($account_number, $provider_slug, $date, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'dedicatedAccountRequery'
+     *
+     * @param  string|null $account_number Virtual account number to requery (optional)
+     * @param  string|null $provider_slug The bank&#39;s slug in lowercase, without spaces. (optional)
+     * @param  \DateTime|null $date The day the transfer was made (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['dedicatedAccountRequery'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function dedicatedAccountRequeryRequest($account_number = null, $provider_slug = null, $date = null, string $contentType = self::contentTypes['dedicatedAccountRequery'][0])
+    {
+
+
+
+
+
+        $resourcePath = '/dedicated_account/requery';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $account_number,
+            'account_number', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $provider_slug,
+            'provider_slug', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $date,
+            'date', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -2344,7 +2867,7 @@ class DedicatedVirtualAccountApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'DELETE',
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

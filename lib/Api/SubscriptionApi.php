@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Api;
+namespace Alexasomba\Paystack\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Alexasomba\\Paystack\ApiException;
-use Alexasomba\\Paystack\Configuration;
-use Alexasomba\\Paystack\FormDataProcessor;
-use Alexasomba\\Paystack\HeaderSelector;
-use Alexasomba\\Paystack\ObjectSerializer;
+use Alexasomba\Paystack\ApiException;
+use Alexasomba\Paystack\Configuration;
+use Alexasomba\Paystack\FormDataProcessor;
+use Alexasomba\Paystack\HeaderSelector;
+use Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * SubscriptionApi Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -76,16 +76,16 @@ class SubscriptionApi
     /** @var string[] $contentTypes **/
     public const contentTypes = [
         'subscriptionCreate' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'subscriptionDisable' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'subscriptionEnable' => [
-            'application/x-www-form-urlencoded',
             'application/json',
+            'application/x-www-form-urlencoded',
         ],
         'subscriptionFetch' => [
             'application/json',
@@ -152,19 +152,16 @@ class SubscriptionApi
      *
      * Create Subscription
      *
-     * @param  string $customer Customer&#39;s email address or customer code (required)
-     * @param  string $plan Plan code (required)
-     * @param  string|null $authorization If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here.  If this is not supplied, the customer&#39;s most recent authorization would be used (optional)
-     * @param  \DateTime|null $start_date Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00 (optional)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionCreate|null $subscription_create subscription_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SubscriptionCreateResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function subscriptionCreate($customer, $plan, $authorization = null, $start_date = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
+    public function subscriptionCreate($subscription_create = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
     {
-        list($response) = $this->subscriptionCreateWithHttpInfo($customer, $plan, $authorization, $start_date, $contentType);
+        list($response) = $this->subscriptionCreateWithHttpInfo($subscription_create, $contentType);
         return $response;
     }
 
@@ -173,19 +170,16 @@ class SubscriptionApi
      *
      * Create Subscription
      *
-     * @param  string $customer Customer&#39;s email address or customer code (required)
-     * @param  string $plan Plan code (required)
-     * @param  string|null $authorization If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here.  If this is not supplied, the customer&#39;s most recent authorization would be used (optional)
-     * @param  \DateTime|null $start_date Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00 (optional)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionCreate|null $subscription_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionCreate'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SubscriptionCreateResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionCreateWithHttpInfo($customer, $plan, $authorization = null, $start_date = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
+    public function subscriptionCreateWithHttpInfo($subscription_create = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
     {
-        $request = $this->subscriptionCreateRequest($customer, $plan, $authorization, $start_date, $contentType);
+        $request = $this->subscriptionCreateRequest($subscription_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -213,13 +207,13 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionCreateResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -241,7 +235,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SubscriptionCreateResponse',
                 $request,
                 $response,
             );
@@ -250,7 +244,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionCreateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -258,7 +252,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -275,18 +269,15 @@ class SubscriptionApi
      *
      * Create Subscription
      *
-     * @param  string $customer Customer&#39;s email address or customer code (required)
-     * @param  string $plan Plan code (required)
-     * @param  string|null $authorization If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here.  If this is not supplied, the customer&#39;s most recent authorization would be used (optional)
-     * @param  \DateTime|null $start_date Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00 (optional)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionCreate|null $subscription_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionCreateAsync($customer, $plan, $authorization = null, $start_date = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
+    public function subscriptionCreateAsync($subscription_create = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
     {
-        return $this->subscriptionCreateAsyncWithHttpInfo($customer, $plan, $authorization, $start_date, $contentType)
+        return $this->subscriptionCreateAsyncWithHttpInfo($subscription_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -299,19 +290,16 @@ class SubscriptionApi
      *
      * Create Subscription
      *
-     * @param  string $customer Customer&#39;s email address or customer code (required)
-     * @param  string $plan Plan code (required)
-     * @param  string|null $authorization If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here.  If this is not supplied, the customer&#39;s most recent authorization would be used (optional)
-     * @param  \DateTime|null $start_date Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00 (optional)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionCreate|null $subscription_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionCreateAsyncWithHttpInfo($customer, $plan, $authorization = null, $start_date = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
+    public function subscriptionCreateAsyncWithHttpInfo($subscription_create = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->subscriptionCreateRequest($customer, $plan, $authorization, $start_date, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SubscriptionCreateResponse';
+        $request = $this->subscriptionCreateRequest($subscription_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -352,32 +340,14 @@ class SubscriptionApi
     /**
      * Create request for operation 'subscriptionCreate'
      *
-     * @param  string $customer Customer&#39;s email address or customer code (required)
-     * @param  string $plan Plan code (required)
-     * @param  string|null $authorization If customer has multiple authorizations, you can set the desired authorization you wish to use for this subscription here.  If this is not supplied, the customer&#39;s most recent authorization would be used (optional)
-     * @param  \DateTime|null $start_date Set the date for the first debit. (ISO 8601 format) e.g. 2017-05-16T00:30:13+01:00 (optional)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionCreate|null $subscription_create (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function subscriptionCreateRequest($customer, $plan, $authorization = null, $start_date = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
+    public function subscriptionCreateRequest($subscription_create = null, string $contentType = self::contentTypes['subscriptionCreate'][0])
     {
-
-        // verify the required parameter 'customer' is set
-        if ($customer === null || (is_array($customer) && count($customer) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $customer when calling subscriptionCreate'
-            );
-        }
-
-        // verify the required parameter 'plan' is set
-        if ($plan === null || (is_array($plan) && count($plan) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $plan when calling subscriptionCreate'
-            );
-        }
-
 
 
 
@@ -391,18 +361,6 @@ class SubscriptionApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'customer' => $customer,
-            'plan' => $plan,
-            'authorization' => $authorization,
-            'start_date' => $start_date,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -411,7 +369,14 @@ class SubscriptionApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($subscription_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($subscription_create));
+            } else {
+                $httpBody = $subscription_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -466,17 +431,16 @@ class SubscriptionApi
      *
      * Disable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionDisable'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SubscriptionDisableResponse|\Alexasomba\Paystack\Model\Error
      */
-    public function subscriptionDisable($code, $token, string $contentType = self::contentTypes['subscriptionDisable'][0])
+    public function subscriptionDisable($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionDisable'][0])
     {
-        list($response) = $this->subscriptionDisableWithHttpInfo($code, $token, $contentType);
+        list($response) = $this->subscriptionDisableWithHttpInfo($subscription_toggle, $contentType);
         return $response;
     }
 
@@ -485,17 +449,16 @@ class SubscriptionApi
      *
      * Disable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionDisable'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SubscriptionDisableResponse|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionDisableWithHttpInfo($code, $token, string $contentType = self::contentTypes['subscriptionDisable'][0])
+    public function subscriptionDisableWithHttpInfo($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionDisable'][0])
     {
-        $request = $this->subscriptionDisableRequest($code, $token, $contentType);
+        $request = $this->subscriptionDisableRequest($subscription_toggle, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -523,13 +486,13 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionDisableResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -551,7 +514,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SubscriptionDisableResponse',
                 $request,
                 $response,
             );
@@ -560,7 +523,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionDisableResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +531,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -585,16 +548,15 @@ class SubscriptionApi
      *
      * Disable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionDisable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionDisableAsync($code, $token, string $contentType = self::contentTypes['subscriptionDisable'][0])
+    public function subscriptionDisableAsync($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionDisable'][0])
     {
-        return $this->subscriptionDisableAsyncWithHttpInfo($code, $token, $contentType)
+        return $this->subscriptionDisableAsyncWithHttpInfo($subscription_toggle, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -607,17 +569,16 @@ class SubscriptionApi
      *
      * Disable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionDisable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionDisableAsyncWithHttpInfo($code, $token, string $contentType = self::contentTypes['subscriptionDisable'][0])
+    public function subscriptionDisableAsyncWithHttpInfo($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionDisable'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->subscriptionDisableRequest($code, $token, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\SubscriptionDisableResponse';
+        $request = $this->subscriptionDisableRequest($subscription_toggle, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -658,29 +619,15 @@ class SubscriptionApi
     /**
      * Create request for operation 'subscriptionDisable'
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionDisable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function subscriptionDisableRequest($code, $token, string $contentType = self::contentTypes['subscriptionDisable'][0])
+    public function subscriptionDisableRequest($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionDisable'][0])
     {
 
-        // verify the required parameter 'code' is set
-        if ($code === null || (is_array($code) && count($code) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $code when calling subscriptionDisable'
-            );
-        }
-
-        // verify the required parameter 'token' is set
-        if ($token === null || (is_array($token) && count($token) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $token when calling subscriptionDisable'
-            );
-        }
 
 
         $resourcePath = '/subscription/disable';
@@ -693,16 +640,6 @@ class SubscriptionApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'code' => $code,
-            'token' => $token,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -711,7 +648,14 @@ class SubscriptionApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($subscription_toggle)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($subscription_toggle));
+            } else {
+                $httpBody = $subscription_toggle;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -766,17 +710,16 @@ class SubscriptionApi
      *
      * Enable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionEnable'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error
      */
-    public function subscriptionEnable($code, $token, string $contentType = self::contentTypes['subscriptionEnable'][0])
+    public function subscriptionEnable($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionEnable'][0])
     {
-        list($response) = $this->subscriptionEnableWithHttpInfo($code, $token, $contentType);
+        list($response) = $this->subscriptionEnableWithHttpInfo($subscription_toggle, $contentType);
         return $response;
     }
 
@@ -785,17 +728,16 @@ class SubscriptionApi
      *
      * Enable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionEnable'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionEnableWithHttpInfo($code, $token, string $contentType = self::contentTypes['subscriptionEnable'][0])
+    public function subscriptionEnableWithHttpInfo($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionEnable'][0])
     {
-        $request = $this->subscriptionEnableRequest($code, $token, $contentType);
+        $request = $this->subscriptionEnableRequest($subscription_toggle, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -823,13 +765,13 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -851,7 +793,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -860,7 +802,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -868,7 +810,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -885,16 +827,15 @@ class SubscriptionApi
      *
      * Enable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionEnable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionEnableAsync($code, $token, string $contentType = self::contentTypes['subscriptionEnable'][0])
+    public function subscriptionEnableAsync($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionEnable'][0])
     {
-        return $this->subscriptionEnableAsyncWithHttpInfo($code, $token, $contentType)
+        return $this->subscriptionEnableAsyncWithHttpInfo($subscription_toggle, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -907,17 +848,16 @@ class SubscriptionApi
      *
      * Enable Subscription
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionEnable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionEnableAsyncWithHttpInfo($code, $token, string $contentType = self::contentTypes['subscriptionEnable'][0])
+    public function subscriptionEnableAsyncWithHttpInfo($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionEnable'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
-        $request = $this->subscriptionEnableRequest($code, $token, $contentType);
+        $returnType = '\Alexasomba\Paystack\Model\Response';
+        $request = $this->subscriptionEnableRequest($subscription_toggle, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -958,29 +898,15 @@ class SubscriptionApi
     /**
      * Create request for operation 'subscriptionEnable'
      *
-     * @param  string $code Subscription code (required)
-     * @param  string $token Email token (required)
+     * @param  \Alexasomba\Paystack\Model\SubscriptionToggle|null $subscription_toggle (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionEnable'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function subscriptionEnableRequest($code, $token, string $contentType = self::contentTypes['subscriptionEnable'][0])
+    public function subscriptionEnableRequest($subscription_toggle = null, string $contentType = self::contentTypes['subscriptionEnable'][0])
     {
 
-        // verify the required parameter 'code' is set
-        if ($code === null || (is_array($code) && count($code) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $code when calling subscriptionEnable'
-            );
-        }
-
-        // verify the required parameter 'token' is set
-        if ($token === null || (is_array($token) && count($token) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $token when calling subscriptionEnable'
-            );
-        }
 
 
         $resourcePath = '/subscription/enable';
@@ -993,16 +919,6 @@ class SubscriptionApi
 
 
 
-        // form params
-        $formDataProcessor = new FormDataProcessor();
-
-        $formData = $formDataProcessor->prepare([
-            'code' => $code,
-            'token' => $token,
-        ]);
-
-        $formParams = $formDataProcessor->flatten($formData);
-        $multipart = $formDataProcessor->has_file;
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json', ],
@@ -1011,7 +927,14 @@ class SubscriptionApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($subscription_toggle)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($subscription_toggle));
+            } else {
+                $httpBody = $subscription_toggle;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1066,12 +989,12 @@ class SubscriptionApi
      *
      * Fetch Subscription
      *
-     * @param  string $code code (required)
+     * @param  string $code The subscription code for the subscription you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SubscriptionFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function subscriptionFetch($code, string $contentType = self::contentTypes['subscriptionFetch'][0])
     {
@@ -1084,12 +1007,12 @@ class SubscriptionApi
      *
      * Fetch Subscription
      *
-     * @param  string $code (required)
+     * @param  string $code The subscription code for the subscription you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionFetch'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SubscriptionFetchResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionFetchWithHttpInfo($code, string $contentType = self::contentTypes['subscriptionFetch'][0])
     {
@@ -1121,19 +1044,19 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionFetchResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1155,7 +1078,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SubscriptionFetchResponse',
                 $request,
                 $response,
             );
@@ -1164,7 +1087,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionFetchResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1172,7 +1095,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1180,7 +1103,7 @@ class SubscriptionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1197,7 +1120,7 @@ class SubscriptionApi
      *
      * Fetch Subscription
      *
-     * @param  string $code (required)
+     * @param  string $code The subscription code for the subscription you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1218,7 +1141,7 @@ class SubscriptionApi
      *
      * Fetch Subscription
      *
-     * @param  string $code (required)
+     * @param  string $code The subscription code for the subscription you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1226,7 +1149,7 @@ class SubscriptionApi
      */
     public function subscriptionFetchAsyncWithHttpInfo($code, string $contentType = self::contentTypes['subscriptionFetch'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\SubscriptionFetchResponse';
         $request = $this->subscriptionFetchRequest($code, $contentType);
 
         return $this->client
@@ -1268,7 +1191,7 @@ class SubscriptionApi
     /**
      * Create request for operation 'subscriptionFetch'
      *
-     * @param  string $code (required)
+     * @param  string $code The subscription code for the subscription you want to fetch (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionFetch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1368,15 +1291,15 @@ class SubscriptionApi
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
      * @param  int|null $page The section to retrieve (optional)
-     * @param  string|null $plan Plan ID (optional)
+     * @param  int|null $plan Plan ID (optional)
      * @param  string|null $customer Customer ID (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\SubscriptionListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error
      */
     public function subscriptionList($per_page = null, $page = null, $plan = null, $customer = null, $from = null, $to = null, string $contentType = self::contentTypes['subscriptionList'][0])
     {
@@ -1391,15 +1314,15 @@ class SubscriptionApi
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
      * @param  int|null $page The section to retrieve (optional)
-     * @param  string|null $plan Plan ID (optional)
+     * @param  int|null $plan Plan ID (optional)
      * @param  string|null $customer Customer ID (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionList'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\SubscriptionListResponse|\Alexasomba\Paystack\Model\Error|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionListWithHttpInfo($per_page = null, $page = null, $plan = null, $customer = null, $from = null, $to = null, string $contentType = self::contentTypes['subscriptionList'][0])
     {
@@ -1431,19 +1354,19 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionListResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1465,7 +1388,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\SubscriptionListResponse',
                 $request,
                 $response,
             );
@@ -1474,7 +1397,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\SubscriptionListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1482,7 +1405,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1490,7 +1413,7 @@ class SubscriptionApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1509,7 +1432,7 @@ class SubscriptionApi
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
      * @param  int|null $page The section to retrieve (optional)
-     * @param  string|null $plan Plan ID (optional)
+     * @param  int|null $plan Plan ID (optional)
      * @param  string|null $customer Customer ID (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
@@ -1535,7 +1458,7 @@ class SubscriptionApi
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
      * @param  int|null $page The section to retrieve (optional)
-     * @param  string|null $plan Plan ID (optional)
+     * @param  int|null $plan Plan ID (optional)
      * @param  string|null $customer Customer ID (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
@@ -1546,7 +1469,7 @@ class SubscriptionApi
      */
     public function subscriptionListAsyncWithHttpInfo($per_page = null, $page = null, $plan = null, $customer = null, $from = null, $to = null, string $contentType = self::contentTypes['subscriptionList'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\SubscriptionListResponse';
         $request = $this->subscriptionListRequest($per_page, $page, $plan, $customer, $from, $to, $contentType);
 
         return $this->client
@@ -1590,7 +1513,7 @@ class SubscriptionApi
      *
      * @param  int|null $per_page Number of records to fetch per page (optional)
      * @param  int|null $page The section to retrieve (optional)
-     * @param  string|null $plan Plan ID (optional)
+     * @param  int|null $plan Plan ID (optional)
      * @param  string|null $customer Customer ID (optional)
      * @param  \DateTime|null $from The start date (optional)
      * @param  \DateTime|null $to The end date (optional)
@@ -1638,7 +1561,7 @@ class SubscriptionApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $plan,
             'plan', // param base name
-            'string', // openApiType
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1736,12 +1659,12 @@ class SubscriptionApi
      *
      * Send Update Subscription Link
      *
-     * @param  string $code code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageEmail'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error
      */
     public function subscriptionManageEmail($code, string $contentType = self::contentTypes['subscriptionManageEmail'][0])
     {
@@ -1754,12 +1677,12 @@ class SubscriptionApi
      *
      * Send Update Subscription Link
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageEmail'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionManageEmailWithHttpInfo($code, string $contentType = self::contentTypes['subscriptionManageEmail'][0])
     {
@@ -1791,13 +1714,13 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -1819,7 +1742,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -1828,7 +1751,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1836,7 +1759,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1853,7 +1776,7 @@ class SubscriptionApi
      *
      * Send Update Subscription Link
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageEmail'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1874,7 +1797,7 @@ class SubscriptionApi
      *
      * Send Update Subscription Link
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageEmail'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1882,7 +1805,7 @@ class SubscriptionApi
      */
     public function subscriptionManageEmailAsyncWithHttpInfo($code, string $contentType = self::contentTypes['subscriptionManageEmail'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\Response';
         $request = $this->subscriptionManageEmailRequest($code, $contentType);
 
         return $this->client
@@ -1924,7 +1847,7 @@ class SubscriptionApi
     /**
      * Create request for operation 'subscriptionManageEmail'
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageEmail'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2022,12 +1945,12 @@ class SubscriptionApi
      *
      * Generate Update Subscription Link
      *
-     * @param  string $code code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageLink'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error
+     * @return \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error
      */
     public function subscriptionManageLink($code, string $contentType = self::contentTypes['subscriptionManageLink'][0])
     {
@@ -2040,12 +1963,12 @@ class SubscriptionApi
      *
      * Generate Update Subscription Link
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageLink'] to see the possible values for this operation
      *
-     * @throws \Alexasomba\\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Alexasomba\Paystack\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Alexasomba\\Paystack\Model\Response|\Alexasomba\\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Alexasomba\Paystack\Model\Response|\Alexasomba\Paystack\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionManageLinkWithHttpInfo($code, string $contentType = self::contentTypes['subscriptionManageLink'][0])
     {
@@ -2077,13 +2000,13 @@ class SubscriptionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $request,
                         $response,
                     );
@@ -2105,7 +2028,7 @@ class SubscriptionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Alexasomba\\Paystack\Model\Response',
+                '\Alexasomba\Paystack\Model\Response',
                 $request,
                 $response,
             );
@@ -2114,7 +2037,7 @@ class SubscriptionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Response',
+                        '\Alexasomba\Paystack\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2122,7 +2045,7 @@ class SubscriptionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Alexasomba\\Paystack\Model\Error',
+                        '\Alexasomba\Paystack\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2139,7 +2062,7 @@ class SubscriptionApi
      *
      * Generate Update Subscription Link
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageLink'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2160,7 +2083,7 @@ class SubscriptionApi
      *
      * Generate Update Subscription Link
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageLink'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2168,7 +2091,7 @@ class SubscriptionApi
      */
     public function subscriptionManageLinkAsyncWithHttpInfo($code, string $contentType = self::contentTypes['subscriptionManageLink'][0])
     {
-        $returnType = '\Alexasomba\\Paystack\Model\Response';
+        $returnType = '\Alexasomba\Paystack\Model\Response';
         $request = $this->subscriptionManageLinkRequest($code, $contentType);
 
         return $this->client
@@ -2210,7 +2133,7 @@ class SubscriptionApi
     /**
      * Create request for operation 'subscriptionManageLink'
      *
-     * @param  string $code (required)
+     * @param  string $code Subscription code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriptionManageLink'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

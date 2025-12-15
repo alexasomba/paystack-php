@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * TransferBulk Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,8 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'source' => 'string',
-        'transfers' => '\Alexasomba\\Paystack\Model\TransferInitiate[]'
+        'currency' => 'string',
+        'transfers' => '\Alexasomba\Paystack\Model\TransferBase[]'
     ];
 
     /**
@@ -71,6 +72,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'source' => null,
+        'currency' => null,
         'transfers' => null
     ];
 
@@ -81,6 +83,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'source' => false,
+        'currency' => false,
         'transfers' => false
     ];
 
@@ -171,6 +174,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'source' => 'source',
+        'currency' => 'currency',
         'transfers' => 'transfers'
     ];
 
@@ -181,6 +185,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'source' => 'setSource',
+        'currency' => 'setCurrency',
         'transfers' => 'setTransfers'
     ];
 
@@ -191,6 +196,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'source' => 'getSource',
+        'currency' => 'getCurrency',
         'transfers' => 'getTransfers'
     ];
 
@@ -235,6 +241,25 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const CURRENCY_NGN = 'NGN';
+    public const CURRENCY_ZAR = 'ZAR';
+    public const CURRENCY_KES = 'KES';
+    public const CURRENCY_GHS = 'GHS';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCurrencyAllowableValues()
+    {
+        return [
+            self::CURRENCY_NGN,
+            self::CURRENCY_ZAR,
+            self::CURRENCY_KES,
+            self::CURRENCY_GHS,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -251,7 +276,8 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('source', $data ?? [], null);
+        $this->setIfExists('source', $data ?? [], 'balance');
+        $this->setIfExists('currency', $data ?? [], 'NGN');
         $this->setIfExists('transfers', $data ?? [], null);
     }
 
@@ -285,6 +311,15 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['source'] === null) {
             $invalidProperties[] = "'source' can't be null";
         }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!is_null($this->container['currency']) && !in_array($this->container['currency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'currency', must be one of '%s'",
+                $this->container['currency'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['transfers'] === null) {
             $invalidProperties[] = "'transfers' can't be null";
         }
@@ -316,7 +351,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets source
      *
-     * @param string $source Where should we transfer from? Only balance is allowed for now
+     * @param string $source The source of funds for the transfer.
      *
      * @return self
      */
@@ -331,9 +366,46 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency Specify the currency of the transfer.
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $allowedValues = $this->getCurrencyAllowableValues();
+        if (!in_array($currency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'currency', must be one of '%s'",
+                    $currency,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
      * Gets transfers
      *
-     * @return \Alexasomba\\Paystack\Model\TransferInitiate[]
+     * @return \Alexasomba\Paystack\Model\TransferBase[]
      */
     public function getTransfers()
     {
@@ -343,7 +415,7 @@ class TransferBulk implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transfers
      *
-     * @param \Alexasomba\\Paystack\Model\TransferInitiate[] $transfers A list of transfer object. Each object should contain amount, recipient, and reference
+     * @param \Alexasomba\Paystack\Model\TransferBase[] $transfers A list of transfer object
      *
      * @return self
      */
