@@ -1,0 +1,22 @@
+# # ChargeSubmitPinResponseData
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**status** | **string** |  |
+**amount** | **int** |  |
+**currency** | **string** |  |
+**transaction_date** | **string** |  |
+**reference** | **string** |  |
+**domain** | **string** |  |
+**redirect_url** | **string** |  |
+**metadata** | **object** |  |
+**gateway_response** | **string** |  |
+**message** | **string** |  |
+**channel** | **string** |  |
+**fees** | **int** |  |
+**authorization** | [**\Alexasomba\\Paystack\Model\ChargeSubmitPinResponseDataAuthorization**](ChargeSubmitPinResponseDataAuthorization.md) |  |
+**customer** | [**\Alexasomba\\Paystack\Model\ChargeSubmitPinResponseDataCustomer**](ChargeSubmitPinResponseDataCustomer.md) |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
