@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * PaymentRequestUpdateResponseDataCustomer Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,7 +64,7 @@ class PaymentRequestUpdateResponseDataCustomer implements ModelInterface, ArrayA
         'email' => 'string',
         'customer_code' => 'string',
         'phone' => 'string',
-        'metadata' => '\Alexasomba\\Paystack\Model\CustomerCreateResponseDataMetadata',
+        'metadata' => '\Alexasomba\Paystack\Model\CustomerCreateResponseDataMetadata',
         'risk_action' => 'string',
         'international_format_phone' => 'string'
     ];
@@ -538,7 +538,7 @@ class PaymentRequestUpdateResponseDataCustomer implements ModelInterface, ArrayA
     /**
      * Gets metadata
      *
-     * @return \Alexasomba\\Paystack\Model\CustomerCreateResponseDataMetadata
+     * @return \Alexasomba\Paystack\Model\CustomerCreateResponseDataMetadata
      */
     public function getMetadata()
     {
@@ -548,7 +548,7 @@ class PaymentRequestUpdateResponseDataCustomer implements ModelInterface, ArrayA
     /**
      * Sets metadata
      *
-     * @param \Alexasomba\\Paystack\Model\CustomerCreateResponseDataMetadata $metadata metadata
+     * @param \Alexasomba\Paystack\Model\CustomerCreateResponseDataMetadata $metadata metadata
      *
      * @return self
      */
