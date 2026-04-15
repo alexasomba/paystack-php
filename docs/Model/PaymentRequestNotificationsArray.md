@@ -2,9 +2,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**sent_at** | **string** |  |
-**channel** | **string** |  |
+| Name        | Type       | Description | Notes |
+| ----------- | ---------- | ----------- | ----- |
+| **sent_at** | **string** |             |
+| **channel** | **string** |             |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

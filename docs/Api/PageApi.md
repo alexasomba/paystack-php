@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**pageAddProducts()**](PageApi.md#pageAddProducts) | **POST** /page/{id}/product | Add Products |
+| Method                                                                  | HTTP request                                 | Description             |
+| ----------------------------------------------------------------------- | -------------------------------------------- | ----------------------- |
+| [**pageAddProducts()**](PageApi.md#pageAddProducts)                     | **POST** /page/{id}/product                  | Add Products            |
 | [**pageCheckSlugAvailability()**](PageApi.md#pageCheckSlugAvailability) | **GET** /page/check_slug_availability/{slug} | Check Slug Availability |
-| [**pageCreate()**](PageApi.md#pageCreate) | **POST** /page | Create Page |
-| [**pageFetch()**](PageApi.md#pageFetch) | **GET** /page/{id} | Fetch Page |
-| [**pageList()**](PageApi.md#pageList) | **GET** /page | List Pages |
-| [**pageUpdate()**](PageApi.md#pageUpdate) | **PUT** /page/{id} | Update Page |
-
+| [**pageCreate()**](PageApi.md#pageCreate)                               | **POST** /page                               | Create Page             |
+| [**pageFetch()**](PageApi.md#pageFetch)                                 | **GET** /page/{id}                           | Fetch Page              |
+| [**pageList()**](PageApi.md#pageList)                                   | **GET** /page                                | List Pages              |
+| [**pageUpdate()**](PageApi.md#pageUpdate)                               | **PUT** /page/{id}                           | Update Page             |
 
 ## `pageAddProducts()`
 
@@ -52,10 +51,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**|  | |
-| **page_product** | [**\Alexasomba\\Paystack\Model\PageProduct**](../Model/PageProduct.md)|  | [optional] |
+| Name             | Type                                                                   | Description | Notes      |
+| ---------------- | ---------------------------------------------------------------------- | ----------- | ---------- |
+| **id**           | **string**                                                             |             |            |
+| **page_product** | [**\Alexasomba\\Paystack\Model\PageProduct**](../Model/PageProduct.md) |             | [optional] |
 
 ### Return type
 
@@ -113,9 +112,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **slug** | **string**| The custom slug to check | |
+| Name     | Type       | Description              | Notes |
+| -------- | ---------- | ------------------------ | ----- |
+| **slug** | **string** | The custom slug to check |       |
 
 ### Return type
 
@@ -173,9 +172,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **page_create** | [**\Alexasomba\\Paystack\Model\PageCreate**](../Model/PageCreate.md)|  | [optional] |
+| Name            | Type                                                                 | Description | Notes      |
+| --------------- | -------------------------------------------------------------------- | ----------- | ---------- |
+| **page_create** | [**\Alexasomba\\Paystack\Model\PageCreate**](../Model/PageCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -233,9 +232,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a payment page | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of a payment page |       |
 
 ### Return type
 
@@ -296,12 +295,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] [default to 50] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes                      |
+| ------------ | ------------- | ----------------------------------- | -------------------------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] [default to 50] |
+| **page**     | **int**       | The section to retrieve             | [optional]                 |
+| **from**     | **\DateTime** | The start date                      | [optional]                 |
+| **to**       | **\DateTime** | The end date                        | [optional]                 |
 
 ### Return type
 
@@ -360,10 +359,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a payment page | |
-| **page_update** | [**\Alexasomba\\Paystack\Model\PageUpdate**](../Model/PageUpdate.md)|  | [optional] |
+| Name            | Type                                                                 | Description                             | Notes      |
+| --------------- | -------------------------------------------------------------------- | --------------------------------------- | ---------- |
+| **id**          | **int**                                                              | The unique identifier of a payment page |            |
+| **page_update** | [**\Alexasomba\\Paystack\Model\PageUpdate**](../Model/PageUpdate.md) |                                         | [optional] |
 
 ### Return type
 

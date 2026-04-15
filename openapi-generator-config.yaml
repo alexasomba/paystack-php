@@ -6,5 +6,5 @@ packageName: Paystack
 artifactVersion: 1.1.1
 gitHost: github.com
 gitUserId: alexasomba
-gitRepoId: paystack-openapi
+gitRepoId: paystack-php
 hideGenerationTimestamp: true

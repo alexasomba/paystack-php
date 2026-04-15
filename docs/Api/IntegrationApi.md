@@ -2,11 +2,10 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**integrationFetchPaymentSessionTimeout()**](IntegrationApi.md#integrationFetchPaymentSessionTimeout) | **GET** /integration/payment_session_timeout | Fetch Payment Session Timeout |
+| Method                                                                                                   | HTTP request                                 | Description                    |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------ |
+| [**integrationFetchPaymentSessionTimeout()**](IntegrationApi.md#integrationFetchPaymentSessionTimeout)   | **GET** /integration/payment_session_timeout | Fetch Payment Session Timeout  |
 | [**integrationUpdatePaymentSessionTimeout()**](IntegrationApi.md#integrationUpdatePaymentSessionTimeout) | **PUT** /integration/payment_session_timeout | Update Payment Session Timeout |
-
 
 ## `integrationFetchPaymentSessionTimeout()`
 
@@ -104,9 +103,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **payment_session** | [**\Alexasomba\\Paystack\Model\PaymentSession**](../Model/PaymentSession.md)|  | [optional] |
+| Name                | Type                                                                         | Description | Notes      |
+| ------------------- | ---------------------------------------------------------------------------- | ----------- | ---------- |
+| **payment_session** | [**\Alexasomba\\Paystack\Model\PaymentSession**](../Model/PaymentSession.md) |             | [optional] |
 
 ### Return type
 

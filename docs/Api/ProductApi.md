@@ -2,14 +2,13 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**productCreate()**](ProductApi.md#productCreate) | **POST** /product | Create Product |
+| Method                                             | HTTP request             | Description    |
+| -------------------------------------------------- | ------------------------ | -------------- |
+| [**productCreate()**](ProductApi.md#productCreate) | **POST** /product        | Create Product |
 | [**productDelete()**](ProductApi.md#productDelete) | **DELETE** /product/{id} | Delete Product |
-| [**productFetch()**](ProductApi.md#productFetch) | **GET** /product/{id} | Fetch Product |
-| [**productList()**](ProductApi.md#productList) | **GET** /product | List Products |
-| [**productUpdate()**](ProductApi.md#productUpdate) | **PUT** /product/{id} | Update product |
-
+| [**productFetch()**](ProductApi.md#productFetch)   | **GET** /product/{id}    | Fetch Product  |
+| [**productList()**](ProductApi.md#productList)     | **GET** /product         | List Products  |
+| [**productUpdate()**](ProductApi.md#productUpdate) | **PUT** /product/{id}    | Update product |
 
 ## `productCreate()`
 
@@ -50,9 +49,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **product_create** | [**\Alexasomba\\Paystack\Model\ProductCreate**](../Model/ProductCreate.md)|  | [optional] |
+| Name               | Type                                                                       | Description | Notes      |
+| ------------------ | -------------------------------------------------------------------------- | ----------- | ---------- |
+| **product_create** | [**\Alexasomba\\Paystack\Model\ProductCreate**](../Model/ProductCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -110,9 +109,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the product | |
+| Name   | Type    | Description                          | Notes |
+| ------ | ------- | ------------------------------------ | ----- |
+| **id** | **int** | The unique identifier of the product |       |
 
 ### Return type
 
@@ -170,9 +169,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the product | |
+| Name   | Type    | Description                          | Notes |
+| ------ | ------- | ------------------------------------ | ----- |
+| **id** | **int** | The unique identifier of the product |       |
 
 ### Return type
 
@@ -234,13 +233,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **active** | **bool**| The state of the product | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes      |
+| ------------ | ------------- | ----------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] |
+| **page**     | **int**       | The section to retrieve             | [optional] |
+| **active**   | **bool**      | The state of the product            | [optional] |
+| **from**     | **\DateTime** | The start date                      | [optional] |
+| **to**       | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 
@@ -299,10 +298,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the product | |
-| **product_update** | [**\Alexasomba\\Paystack\Model\ProductUpdate**](../Model/ProductUpdate.md)|  | [optional] |
+| Name               | Type                                                                       | Description                          | Notes      |
+| ------------------ | -------------------------------------------------------------------------- | ------------------------------------ | ---------- |
+| **id**             | **int**                                                                    | The unique identifier of the product |            |
+| **product_update** | [**\Alexasomba\\Paystack\Model\ProductUpdate**](../Model/ProductUpdate.md) |                                      | [optional] |
 
 ### Return type
 

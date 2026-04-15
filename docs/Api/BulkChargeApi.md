@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**bulkChargeCharges()**](BulkChargeApi.md#bulkChargeCharges) | **GET** /bulkcharge/{code}/charges | List Charges in a Batch |
-| [**bulkChargeFetch()**](BulkChargeApi.md#bulkChargeFetch) | **GET** /bulkcharge/{code} | Fetch Bulk Charge Batch |
-| [**bulkChargeInitiate()**](BulkChargeApi.md#bulkChargeInitiate) | **POST** /bulkcharge | Initiate Bulk Charge |
-| [**bulkChargeList()**](BulkChargeApi.md#bulkChargeList) | **GET** /bulkcharge | List Bulk Charge Batches |
-| [**bulkChargePause()**](BulkChargeApi.md#bulkChargePause) | **GET** /bulkcharge/pause/{code} | Pause Bulk Charge Batch |
-| [**bulkChargeResume()**](BulkChargeApi.md#bulkChargeResume) | **GET** /bulkcharge/resume/{code} | Resume Bulk Charge Batch |
-
+| Method                                                          | HTTP request                       | Description              |
+| --------------------------------------------------------------- | ---------------------------------- | ------------------------ |
+| [**bulkChargeCharges()**](BulkChargeApi.md#bulkChargeCharges)   | **GET** /bulkcharge/{code}/charges | List Charges in a Batch  |
+| [**bulkChargeFetch()**](BulkChargeApi.md#bulkChargeFetch)       | **GET** /bulkcharge/{code}         | Fetch Bulk Charge Batch  |
+| [**bulkChargeInitiate()**](BulkChargeApi.md#bulkChargeInitiate) | **POST** /bulkcharge               | Initiate Bulk Charge     |
+| [**bulkChargeList()**](BulkChargeApi.md#bulkChargeList)         | **GET** /bulkcharge                | List Bulk Charge Batches |
+| [**bulkChargePause()**](BulkChargeApi.md#bulkChargePause)       | **GET** /bulkcharge/pause/{code}   | Pause Bulk Charge Batch  |
+| [**bulkChargeResume()**](BulkChargeApi.md#bulkChargeResume)     | **GET** /bulkcharge/resume/{code}  | Resume Bulk Charge Batch |
 
 ## `bulkChargeCharges()`
 
@@ -54,12 +53,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| An code for the batch whose charges you want to retrieve | |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
-| **status** | **string**| Filter by the status of the charges | [optional] |
+| Name         | Type       | Description                                              | Notes      |
+| ------------ | ---------- | -------------------------------------------------------- | ---------- |
+| **code**     | **string** | An code for the batch whose charges you want to retrieve |            |
+| **per_page** | **int**    | Number of records to fetch per page                      | [optional] |
+| **page**     | **int**    | The offset to retrieve data from                         | [optional] |
+| **status**   | **string** | Filter by the status of the charges                      | [optional] |
 
 ### Return type
 
@@ -86,7 +85,7 @@ bulkChargeFetch($code): \Alexasomba\\Paystack\Model\BulkChargeFetchResponse
 
 Fetch Bulk Charge Batch
 
-This endpoint retrieves a specific batch code. It also returns useful information on its progress by  way of the `total_charges` and `pending_charges` attributes.
+This endpoint retrieves a specific batch code. It also returns useful information on its progress by way of the `total_charges` and `pending_charges` attributes.
 
 ### Example
 
@@ -117,9 +116,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The code for the charge whose batches you want to retrieve | |
+| Name     | Type       | Description                                                | Notes |
+| -------- | ---------- | ---------------------------------------------------------- | ----- |
+| **code** | **string** | The code for the charge whose batches you want to retrieve |       |
 
 ### Return type
 
@@ -177,9 +176,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bulk_charge_initiate** | [**\Alexasomba\\Paystack\Model\BulkChargeInitiate[]**](../Model/BulkChargeInitiate.md)|  | [optional] |
+| Name                     | Type                                                                                   | Description | Notes      |
+| ------------------------ | -------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **bulk_charge_initiate** | [**\Alexasomba\\Paystack\Model\BulkChargeInitiate[]**](../Model/BulkChargeInitiate.md) |             | [optional] |
 
 ### Return type
 
@@ -239,11 +238,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
-| **status** | **string**| Filter by the status of the charges | [optional] |
+| Name         | Type       | Description                         | Notes      |
+| ------------ | ---------- | ----------------------------------- | ---------- |
+| **per_page** | **int**    | Number of records to fetch per page | [optional] |
+| **page**     | **int**    | The offset to retrieve data from    | [optional] |
+| **status**   | **string** | Filter by the status of the charges | [optional] |
 
 ### Return type
 
@@ -301,9 +300,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The batch code for the bulk charge you want to pause | |
+| Name     | Type       | Description                                          | Notes |
+| -------- | ---------- | ---------------------------------------------------- | ----- |
+| **code** | **string** | The batch code for the bulk charge you want to pause |       |
 
 ### Return type
 
@@ -361,9 +360,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The batch code for the bulk charge you want to pause | |
+| Name     | Type       | Description                                          | Notes |
+| -------- | ---------- | ---------------------------------------------------- | ----- |
+| **code** | **string** | The batch code for the bulk charge you want to pause |       |
 
 ### Return type
 

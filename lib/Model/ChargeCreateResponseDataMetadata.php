@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Alexasomba\\Paystack\Model;
+namespace Alexasomba\Paystack\Model;
 
 use \ArrayAccess;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\ObjectSerializer;
 
 /**
  * ChargeCreateResponseDataMetadata Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ChargeCreateResponseDataMetadata implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'custom_fields' => '\Alexasomba\\Paystack\Model\MetadataCustomFieldsArray[]'
+        'custom_fields' => '\Alexasomba\Paystack\Model\MetadataCustomFieldsArray[]'
     ];
 
     /**
@@ -296,7 +296,7 @@ class ChargeCreateResponseDataMetadata implements ModelInterface, ArrayAccess, \
     /**
      * Gets custom_fields
      *
-     * @return \Alexasomba\\Paystack\Model\MetadataCustomFieldsArray[]
+     * @return \Alexasomba\Paystack\Model\MetadataCustomFieldsArray[]
      */
     public function getCustomFields()
     {
@@ -306,7 +306,7 @@ class ChargeCreateResponseDataMetadata implements ModelInterface, ArrayAccess, \
     /**
      * Sets custom_fields
      *
-     * @param \Alexasomba\\Paystack\Model\MetadataCustomFieldsArray[] $custom_fields custom_fields
+     * @param \Alexasomba\Paystack\Model\MetadataCustomFieldsArray[] $custom_fields custom_fields
      *
      * @return self
      */

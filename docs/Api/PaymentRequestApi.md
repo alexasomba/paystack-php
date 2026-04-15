@@ -2,18 +2,17 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**paymentRequestArchive()**](PaymentRequestApi.md#paymentRequestArchive) | **POST** /paymentrequest/archive/{id} | Archive Payment Request |
-| [**paymentRequestCreate()**](PaymentRequestApi.md#paymentRequestCreate) | **POST** /paymentrequest | Create Payment Request |
-| [**paymentRequestFetch()**](PaymentRequestApi.md#paymentRequestFetch) | **GET** /paymentrequest/{id} | Fetch Payment Request |
+| Method                                                                      | HTTP request                           | Description              |
+| --------------------------------------------------------------------------- | -------------------------------------- | ------------------------ |
+| [**paymentRequestArchive()**](PaymentRequestApi.md#paymentRequestArchive)   | **POST** /paymentrequest/archive/{id}  | Archive Payment Request  |
+| [**paymentRequestCreate()**](PaymentRequestApi.md#paymentRequestCreate)     | **POST** /paymentrequest               | Create Payment Request   |
+| [**paymentRequestFetch()**](PaymentRequestApi.md#paymentRequestFetch)       | **GET** /paymentrequest/{id}           | Fetch Payment Request    |
 | [**paymentRequestFinalize()**](PaymentRequestApi.md#paymentRequestFinalize) | **POST** /paymentrequest/finalize/{id} | Finalize Payment Request |
-| [**paymentRequestList()**](PaymentRequestApi.md#paymentRequestList) | **GET** /paymentrequest | List Payment Request |
-| [**paymentRequestNotify()**](PaymentRequestApi.md#paymentRequestNotify) | **POST** /paymentrequest/notify/{id} | Send Notification |
-| [**paymentRequestTotals()**](PaymentRequestApi.md#paymentRequestTotals) | **GET** /paymentrequest/totals | Payment Request Total |
-| [**paymentRequestUpdate()**](PaymentRequestApi.md#paymentRequestUpdate) | **PUT** /paymentrequest/{id} | Update Payment Request |
-| [**paymentRequestVerify()**](PaymentRequestApi.md#paymentRequestVerify) | **GET** /paymentrequest/verify/{id} | Verify Payment Request |
-
+| [**paymentRequestList()**](PaymentRequestApi.md#paymentRequestList)         | **GET** /paymentrequest                | List Payment Request     |
+| [**paymentRequestNotify()**](PaymentRequestApi.md#paymentRequestNotify)     | **POST** /paymentrequest/notify/{id}   | Send Notification        |
+| [**paymentRequestTotals()**](PaymentRequestApi.md#paymentRequestTotals)     | **GET** /paymentrequest/totals         | Payment Request Total    |
+| [**paymentRequestUpdate()**](PaymentRequestApi.md#paymentRequestUpdate)     | **PUT** /paymentrequest/{id}           | Update Payment Request   |
+| [**paymentRequestVerify()**](PaymentRequestApi.md#paymentRequestVerify)     | **GET** /paymentrequest/verify/{id}    | Verify Payment Request   |
 
 ## `paymentRequestArchive()`
 
@@ -23,7 +22,7 @@ paymentRequestArchive($id): \Alexasomba\\Paystack\Model\PaymentRequestArchiveRes
 
 Archive Payment Request
 
-Archive a payment request to clean up your records. An archived payment request cannot be verified and will not  be returned when listing all previously created payment requests.
+Archive a payment request to clean up your records. An archived payment request cannot be verified and will not be returned when listing all previously created payment requests.
 
 ### Example
 
@@ -54,9 +53,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a previously created payment request | |
+| Name   | Type    | Description                                                   | Notes |
+| ------ | ------- | ------------------------------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of a previously created payment request |       |
 
 ### Return type
 
@@ -114,9 +113,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **payment_request_create** | [**\Alexasomba\\Paystack\Model\PaymentRequestCreate**](../Model/PaymentRequestCreate.md)|  | [optional] |
+| Name                       | Type                                                                                     | Description | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **payment_request_create** | [**\Alexasomba\\Paystack\Model\PaymentRequestCreate**](../Model/PaymentRequestCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -174,9 +173,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a previously created payment request | |
+| Name   | Type    | Description                                                   | Notes |
+| ------ | ------- | ------------------------------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of a previously created payment request |       |
 
 ### Return type
 
@@ -234,9 +233,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a draft payment request | |
+| Name   | Type    | Description                                      | Notes |
+| ------ | ------- | ------------------------------------------------ | ----- |
+| **id** | **int** | The unique identifier of a draft payment request |       |
 
 ### Return type
 
@@ -300,15 +299,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **customer** | **string**| Customer ID | [optional] |
-| **status** | **string**| Invoice status to filter | [optional] |
-| **currency** | **string**| If your integration supports more than one currency, choose the one to filter | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                                                                   | Notes      |
+| ------------ | ------------- | ----------------------------------------------------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page                                           | [optional] |
+| **page**     | **int**       | The section to retrieve                                                       | [optional] |
+| **customer** | **string**    | Customer ID                                                                   | [optional] |
+| **status**   | **string**    | Invoice status to filter                                                      | [optional] |
+| **currency** | **string**    | If your integration supports more than one currency, choose the one to filter | [optional] |
+| **from**     | **\DateTime** | The start date                                                                | [optional] |
+| **to**       | **\DateTime** | The end date                                                                  | [optional] |
 
 ### Return type
 
@@ -366,9 +365,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a previously created payment request | |
+| Name   | Type    | Description                                                   | Notes |
+| ------ | ------- | ------------------------------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of a previously created payment request |       |
 
 ### Return type
 
@@ -484,10 +483,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a previously created payment request | |
-| **payment_request_update** | [**\Alexasomba\\Paystack\Model\PaymentRequestUpdate**](../Model/PaymentRequestUpdate.md)|  | [optional] |
+| Name                       | Type                                                                                     | Description                                                   | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------- |
+| **id**                     | **int**                                                                                  | The unique identifier of a previously created payment request |            |
+| **payment_request_update** | [**\Alexasomba\\Paystack\Model\PaymentRequestUpdate**](../Model/PaymentRequestUpdate.md) |                                                               | [optional] |
 
 ### Return type
 
@@ -545,9 +544,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of a previously created payment request | |
+| Name   | Type    | Description                                                   | Notes |
+| ------ | ------- | ------------------------------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of a previously created payment request |       |
 
 ### Return type
 

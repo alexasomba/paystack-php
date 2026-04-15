@@ -2,17 +2,16 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**terminalCommission()**](TerminalApi.md#terminalCommission) | **POST** /terminal/commission_device | Commission Terminal |
-| [**terminalDecommission()**](TerminalApi.md#terminalDecommission) | **POST** /terminal/decommission_device | Decommission Terminal |
-| [**terminalFetch()**](TerminalApi.md#terminalFetch) | **GET** /terminal/{terminal_id} | Fetch Terminal |
-| [**terminalFetchEventStatus()**](TerminalApi.md#terminalFetchEventStatus) | **GET** /terminal/{terminal_id}/event/{event_id} | Fetch Event Status |
-| [**terminalFetchTerminalStatus()**](TerminalApi.md#terminalFetchTerminalStatus) | **GET** /terminal/{terminal_id}/presence | Fetch Terminal Status |
-| [**terminalList()**](TerminalApi.md#terminalList) | **GET** /terminal | List Terminals |
-| [**terminalSendEvent()**](TerminalApi.md#terminalSendEvent) | **POST** /terminal/{id}/event | Send Event |
-| [**terminalUpdate()**](TerminalApi.md#terminalUpdate) | **PUT** /terminal/{terminal_id} | Update Terminal |
-
+| Method                                                                          | HTTP request                                     | Description           |
+| ------------------------------------------------------------------------------- | ------------------------------------------------ | --------------------- |
+| [**terminalCommission()**](TerminalApi.md#terminalCommission)                   | **POST** /terminal/commission_device             | Commission Terminal   |
+| [**terminalDecommission()**](TerminalApi.md#terminalDecommission)               | **POST** /terminal/decommission_device           | Decommission Terminal |
+| [**terminalFetch()**](TerminalApi.md#terminalFetch)                             | **GET** /terminal/{terminal_id}                  | Fetch Terminal        |
+| [**terminalFetchEventStatus()**](TerminalApi.md#terminalFetchEventStatus)       | **GET** /terminal/{terminal_id}/event/{event_id} | Fetch Event Status    |
+| [**terminalFetchTerminalStatus()**](TerminalApi.md#terminalFetchTerminalStatus) | **GET** /terminal/{terminal_id}/presence         | Fetch Terminal Status |
+| [**terminalList()**](TerminalApi.md#terminalList)                               | **GET** /terminal                                | List Terminals        |
+| [**terminalSendEvent()**](TerminalApi.md#terminalSendEvent)                     | **POST** /terminal/{id}/event                    | Send Event            |
+| [**terminalUpdate()**](TerminalApi.md#terminalUpdate)                           | **PUT** /terminal/{terminal_id}                  | Update Terminal       |
 
 ## `terminalCommission()`
 
@@ -53,9 +52,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **terminal_activation_toggle** | [**\Alexasomba\\Paystack\Model\TerminalActivationToggle**](../Model/TerminalActivationToggle.md)|  | [optional] |
+| Name                           | Type                                                                                             | Description | Notes      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **terminal_activation_toggle** | [**\Alexasomba\\Paystack\Model\TerminalActivationToggle**](../Model/TerminalActivationToggle.md) |             | [optional] |
 
 ### Return type
 
@@ -113,9 +112,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **terminal_activation_toggle** | [**\Alexasomba\\Paystack\Model\TerminalActivationToggle**](../Model/TerminalActivationToggle.md)|  | [optional] |
+| Name                           | Type                                                                                             | Description | Notes      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **terminal_activation_toggle** | [**\Alexasomba\\Paystack\Model\TerminalActivationToggle**](../Model/TerminalActivationToggle.md) |             | [optional] |
 
 ### Return type
 
@@ -173,9 +172,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **terminal_id** | **string**| The ID of the Terminal the event should be sent to. | |
+| Name            | Type       | Description                                         | Notes |
+| --------------- | ---------- | --------------------------------------------------- | ----- |
+| **terminal_id** | **string** | The ID of the Terminal the event should be sent to. |       |
 
 ### Return type
 
@@ -234,10 +233,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **terminal_id** | **string**| The ID of the Terminal the event should be sent to. | |
-| **event_id** | **string**| The ID of the event that was sent to the Terminal | |
+| Name            | Type       | Description                                         | Notes |
+| --------------- | ---------- | --------------------------------------------------- | ----- |
+| **terminal_id** | **string** | The ID of the Terminal the event should be sent to. |       |
+| **event_id**    | **string** | The ID of the event that was sent to the Terminal   |       |
 
 ### Return type
 
@@ -295,9 +294,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **terminal_id** | **string**| The ID of the Terminal the event should be sent to. | |
+| Name            | Type       | Description                                         | Notes |
+| --------------- | ---------- | --------------------------------------------------- | ----- |
+| **terminal_id** | **string** | The ID of the Terminal the event should be sent to. |       |
 
 ### Return type
 
@@ -357,11 +356,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **next** | **string**| A cursor that indicates your place in the list. It can be used to fetch the next page of the list | [optional] |
-| **previous** | **string**| A cursor that indicates your place in the list. It should be used to fetch the previous page of the list after an intial next request | [optional] |
-| **per_page** | **int**| Specify how many records you want to retrieve per page | [optional] [default to 50] |
+| Name         | Type       | Description                                                                                                                           | Notes                      |
+| ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| **next**     | **string** | A cursor that indicates your place in the list. It can be used to fetch the next page of the list                                     | [optional]                 |
+| **previous** | **string** | A cursor that indicates your place in the list. It should be used to fetch the previous page of the list after an intial next request | [optional]                 |
+| **per_page** | **int**    | Specify how many records you want to retrieve per page                                                                                | [optional] [default to 50] |
 
 ### Return type
 
@@ -420,10 +419,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| The ID of the Terminal the event should be sent to. | |
-| **terminal_send_event** | [**\Alexasomba\\Paystack\Model\TerminalSendEvent**](../Model/TerminalSendEvent.md)|  | [optional] |
+| Name                    | Type                                                                               | Description                                         | Notes      |
+| ----------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------- | ---------- |
+| **id**                  | **string**                                                                         | The ID of the Terminal the event should be sent to. |            |
+| **terminal_send_event** | [**\Alexasomba\\Paystack\Model\TerminalSendEvent**](../Model/TerminalSendEvent.md) |                                                     | [optional] |
 
 ### Return type
 
@@ -482,10 +481,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **terminal_id** | **string**| The ID of the Terminal the event should be sent to. | |
-| **terminal_upate** | [**\Alexasomba\\Paystack\Model\TerminalUpate**](../Model/TerminalUpate.md)|  | [optional] |
+| Name               | Type                                                                       | Description                                         | Notes      |
+| ------------------ | -------------------------------------------------------------------------- | --------------------------------------------------- | ---------- |
+| **terminal_id**    | **string**                                                                 | The ID of the Terminal the event should be sent to. |            |
+| **terminal_upate** | [**\Alexasomba\\Paystack\Model\TerminalUpate**](../Model/TerminalUpate.md) |                                                     | [optional] |
 
 ### Return type
 

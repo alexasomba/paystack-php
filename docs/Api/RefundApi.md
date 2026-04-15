@@ -2,13 +2,12 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**refundCreate()**](RefundApi.md#refundCreate) | **POST** /refund | Create Refund |
-| [**refundFetch()**](RefundApi.md#refundFetch) | **GET** /refund/{id} | Fetch Refund |
-| [**refundList()**](RefundApi.md#refundList) | **GET** /refund | List Refunds |
-| [**refundRetry()**](RefundApi.md#refundRetry) | **POST** /refund/retry_with_customer_details/{id} | Retry Refund |
-
+| Method                                          | HTTP request                                      | Description   |
+| ----------------------------------------------- | ------------------------------------------------- | ------------- |
+| [**refundCreate()**](RefundApi.md#refundCreate) | **POST** /refund                                  | Create Refund |
+| [**refundFetch()**](RefundApi.md#refundFetch)   | **GET** /refund/{id}                              | Fetch Refund  |
+| [**refundList()**](RefundApi.md#refundList)     | **GET** /refund                                   | List Refunds  |
+| [**refundRetry()**](RefundApi.md#refundRetry)   | **POST** /refund/retry_with_customer_details/{id} | Retry Refund  |
 
 ## `refundCreate()`
 
@@ -49,9 +48,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **refund_create** | [**\Alexasomba\\Paystack\Model\RefundCreate**](../Model/RefundCreate.md)|  | [optional] |
+| Name              | Type                                                                     | Description | Notes      |
+| ----------------- | ------------------------------------------------------------------------ | ----------- | ---------- |
+| **refund_create** | [**\Alexasomba\\Paystack\Model\RefundCreate**](../Model/RefundCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -109,9 +108,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The identifier of the refund | |
+| Name   | Type    | Description                  | Notes |
+| ------ | ------- | ---------------------------- | ----- |
+| **id** | **int** | The identifier of the refund |       |
 
 ### Return type
 
@@ -172,12 +171,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] [default to 50] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes                      |
+| ------------ | ------------- | ----------------------------------- | -------------------------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] [default to 50] |
+| **page**     | **int**       | The section to retrieve             | [optional]                 |
+| **from**     | **\DateTime** | The start date                      | [optional]                 |
+| **to**       | **\DateTime** | The end date                        | [optional]                 |
 
 ### Return type
 
@@ -236,10 +235,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The identifier of the refund | |
-| **refund_retry** | [**\Alexasomba\\Paystack\Model\RefundRetry**](../Model/RefundRetry.md)|  | [optional] |
+| Name             | Type                                                                   | Description                  | Notes      |
+| ---------------- | ---------------------------------------------------------------------- | ---------------------------- | ---------- |
+| **id**           | **int**                                                                | The identifier of the refund |            |
+| **refund_retry** | [**\Alexasomba\\Paystack\Model\RefundRetry**](../Model/RefundRetry.md) |                              | [optional] |
 
 ### Return type
 

@@ -2,20 +2,19 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**storefrontAddProducts()**](StorefrontApi.md#storefrontAddProducts) | **POST** /storefront/{id}/product | Add Products to Storefront |
-| [**storefrontCreate()**](StorefrontApi.md#storefrontCreate) | **POST** /storefront | Create Storefront |
-| [**storefrontDelete()**](StorefrontApi.md#storefrontDelete) | **DELETE** /storefront/{id} | Delete Storefront |
-| [**storefrontDuplicate()**](StorefrontApi.md#storefrontDuplicate) | **POST** /storefront/{id}/duplicate | Duplicate Storefront |
-| [**storefrontFetch()**](StorefrontApi.md#storefrontFetch) | **GET** /storefront/{id} | Fetch Storefront |
-| [**storefrontFetchOrders()**](StorefrontApi.md#storefrontFetchOrders) | **GET** /storefront/{id}/order | Fetch Storefront Orders |
-| [**storefrontList()**](StorefrontApi.md#storefrontList) | **GET** /storefront | List Storefronts |
-| [**storefrontListProducts()**](StorefrontApi.md#storefrontListProducts) | **GET** /storefront/{id}/product | List Storefront Products |
-| [**storefrontPublish()**](StorefrontApi.md#storefrontPublish) | **POST** /storefront/{id}/publish | Publish Storefront |
-| [**storefrontUpdate()**](StorefrontApi.md#storefrontUpdate) | **PUT** /storefront/{id} | Update Storefront |
-| [**storefrontVerifySlug()**](StorefrontApi.md#storefrontVerifySlug) | **GET** /storefront/verify/{slug} | Verify Storefront Slug |
-
+| Method                                                                  | HTTP request                        | Description                |
+| ----------------------------------------------------------------------- | ----------------------------------- | -------------------------- |
+| [**storefrontAddProducts()**](StorefrontApi.md#storefrontAddProducts)   | **POST** /storefront/{id}/product   | Add Products to Storefront |
+| [**storefrontCreate()**](StorefrontApi.md#storefrontCreate)             | **POST** /storefront                | Create Storefront          |
+| [**storefrontDelete()**](StorefrontApi.md#storefrontDelete)             | **DELETE** /storefront/{id}         | Delete Storefront          |
+| [**storefrontDuplicate()**](StorefrontApi.md#storefrontDuplicate)       | **POST** /storefront/{id}/duplicate | Duplicate Storefront       |
+| [**storefrontFetch()**](StorefrontApi.md#storefrontFetch)               | **GET** /storefront/{id}            | Fetch Storefront           |
+| [**storefrontFetchOrders()**](StorefrontApi.md#storefrontFetchOrders)   | **GET** /storefront/{id}/order      | Fetch Storefront Orders    |
+| [**storefrontList()**](StorefrontApi.md#storefrontList)                 | **GET** /storefront                 | List Storefronts           |
+| [**storefrontListProducts()**](StorefrontApi.md#storefrontListProducts) | **GET** /storefront/{id}/product    | List Storefront Products   |
+| [**storefrontPublish()**](StorefrontApi.md#storefrontPublish)           | **POST** /storefront/{id}/publish   | Publish Storefront         |
+| [**storefrontUpdate()**](StorefrontApi.md#storefrontUpdate)             | **PUT** /storefront/{id}            | Update Storefront          |
+| [**storefrontVerifySlug()**](StorefrontApi.md#storefrontVerifySlug)     | **GET** /storefront/verify/{slug}   | Verify Storefront Slug     |
 
 ## `storefrontAddProducts()`
 
@@ -57,10 +56,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
-| **storefront_add_products** | [**\Alexasomba\\Paystack\Model\StorefrontAddProducts**](../Model/StorefrontAddProducts.md)|  | [optional] |
+| Name                        | Type                                                                                       | Description                             | Notes      |
+| --------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------- | ---------- |
+| **id**                      | **int**                                                                                    | The unique identifier of the Storefront |            |
+| **storefront_add_products** | [**\Alexasomba\\Paystack\Model\StorefrontAddProducts**](../Model/StorefrontAddProducts.md) |                                         | [optional] |
 
 ### Return type
 
@@ -118,9 +117,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **storefront_create** | [**\Alexasomba\\Paystack\Model\StorefrontCreate**](../Model/StorefrontCreate.md)|  | [optional] |
+| Name                  | Type                                                                             | Description | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ----------- | ---------- |
+| **storefront_create** | [**\Alexasomba\\Paystack\Model\StorefrontCreate**](../Model/StorefrontCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -178,9 +177,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the Storefront |       |
 
 ### Return type
 
@@ -238,9 +237,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the Storefront |       |
 
 ### Return type
 
@@ -298,9 +297,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the Storefront |       |
 
 ### Return type
 
@@ -358,9 +357,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the Storefront |       |
 
 ### Return type
 
@@ -420,11 +419,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per request | [optional] [default to 50] |
-| **page** | **int**| The offset to retrieve data from | [optional] [default to 1] |
-| **status** | **string**|  | [optional] |
+| Name         | Type       | Description                            | Notes                      |
+| ------------ | ---------- | -------------------------------------- | -------------------------- |
+| **per_page** | **int**    | Number of records to fetch per request | [optional] [default to 50] |
+| **page**     | **int**    | The offset to retrieve data from       | [optional] [default to 1]  |
+| **status**   | **string** |                                        | [optional]                 |
 
 ### Return type
 
@@ -482,9 +481,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the Storefront |       |
 
 ### Return type
 
@@ -542,9 +541,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
+| Name   | Type    | Description                             | Notes |
+| ------ | ------- | --------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the Storefront |       |
 
 ### Return type
 
@@ -603,10 +602,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the Storefront | |
-| **storefront_update** | [**\Alexasomba\\Paystack\Model\StorefrontUpdate**](../Model/StorefrontUpdate.md)|  | [optional] |
+| Name                  | Type                                                                             | Description                             | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | --------------------------------------- | ---------- |
+| **id**                | **int**                                                                          | The unique identifier of the Storefront |            |
+| **storefront_update** | [**\Alexasomba\\Paystack\Model\StorefrontUpdate**](../Model/StorefrontUpdate.md) |                                         | [optional] |
 
 ### Return type
 
@@ -664,9 +663,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **slug** | **string**| The custom slug to check | |
+| Name     | Type       | Description              | Notes |
+| -------- | ---------- | ------------------------ | ----- |
+| **slug** | **string** | The custom slug to check |       |
 
 ### Return type
 
