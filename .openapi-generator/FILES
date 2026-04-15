@@ -8,6 +8,8 @@ lib/Api/ApplePayApi.php
 lib/Api/BalanceApi.php
 lib/Api/BankApi.php
 lib/Api/BulkChargeApi.php
+lib/Api/CapitecPayApi.php
+lib/Api/CardPreauthorizationApi.php
 lib/Api/ChargeApi.php
 lib/Api/CustomerApi.php
 lib/Api/DedicatedVirtualAccountApi.php
@@ -43,7 +45,6 @@ lib/Model/BalanceCheckResponse.php
 lib/Model/BalanceCheckResponseArray.php
 lib/Model/BalanceFetchLedgerResponse.php
 lib/Model/BalanceFetchLedgerResponseArray.php
-lib/Model/BalanceFetchLedgerResponseMeta.php
 lib/Model/Bank.php
 lib/Model/BankValidateRequest.php
 lib/Model/BulkChargeFetchBulkBatchChargesResponse.php
@@ -52,7 +53,6 @@ lib/Model/BulkChargeFetchBulkBatchChargesResponseArrayAuthorization.php
 lib/Model/BulkChargeFetchBulkBatchChargesResponseArrayCustomer.php
 lib/Model/BulkChargeFetchBulkBatchChargesResponseArrayCustomerMetadata.php
 lib/Model/BulkChargeFetchBulkBatchChargesResponseArrayMetadata.php
-lib/Model/BulkChargeFetchBulkBatchChargesResponseMeta.php
 lib/Model/BulkChargeFetchResponse.php
 lib/Model/BulkChargeFetchResponseData.php
 lib/Model/BulkChargeInitiate.php
@@ -62,6 +62,8 @@ lib/Model/BulkChargeListResponse.php
 lib/Model/BulkChargeListResponseArray.php
 lib/Model/BulkChargePauseResponse.php
 lib/Model/BulkChargeResumeResponse.php
+lib/Model/CapitecPayRequeryResponse.php
+lib/Model/CapitecPayRequeryResponseData.php
 lib/Model/ChargeAuthorizationResponse.php
 lib/Model/ChargeAuthorizationResponseData.php
 lib/Model/ChargeAuthorizationResponseDataAuthorization.php
@@ -71,6 +73,7 @@ lib/Model/ChargeAuthorizationResponseDataLogHistoryInner.php
 lib/Model/ChargeAuthorizationResponseDataMetadata.php
 lib/Model/ChargeCheckPendingResponse.php
 lib/Model/ChargeCreate.php
+lib/Model/ChargeCreateMetadata.php
 lib/Model/ChargeCreateRequest.php
 lib/Model/ChargeCreateResponse.php
 lib/Model/ChargeCreateResponseData.php
@@ -179,6 +182,7 @@ lib/Model/EFT.php
 lib/Model/Error.php
 lib/Model/ErrorMeta.php
 lib/Model/ErrorRecordsArray.php
+lib/Model/FormulaSubaccountsArray.php
 lib/Model/Meta.php
 lib/Model/MetaPerPage.php
 lib/Model/MetaWithVolume.php
@@ -248,7 +252,6 @@ lib/Model/PaymentRequestFinalizeResponseDataDiscount.php
 lib/Model/PaymentRequestLineItemsArray.php
 lib/Model/PaymentRequestListResponse.php
 lib/Model/PaymentRequestListResponseArray.php
-lib/Model/PaymentRequestListResponseMeta.php
 lib/Model/PaymentRequestNotificationsArray.php
 lib/Model/PaymentRequestPendingArray.php
 lib/Model/PaymentRequestSendNotificationResponse.php
@@ -276,6 +279,28 @@ lib/Model/PlanListResponse.php
 lib/Model/PlanListResponseArray.php
 lib/Model/PlanUpdate.php
 lib/Model/PlanUpdateResponse.php
+lib/Model/PreAuthorizationCapture.php
+lib/Model/PreAuthorizationCaptureResponse.php
+lib/Model/PreAuthorizationCaptureResponseData.php
+lib/Model/PreAuthorizationCaptureResponseDataSplit.php
+lib/Model/PreAuthorizationCaptureResponseDataTransaction.php
+lib/Model/PreAuthorizationCaptureResponseDataTransactionCustomer.php
+lib/Model/PreAuthorizationCaptureResponseDataTransactionSplit.php
+lib/Model/PreAuthorizationCaptureResponseDataTransactionSplitFormula.php
+lib/Model/PreAuthorizationCaptureResponseDataTransactionSplitShares.php
+lib/Model/PreAuthorizationInitialize.php
+lib/Model/PreAuthorizationInitializeMetadata.php
+lib/Model/PreAuthorizationInitializeResponse.php
+lib/Model/PreAuthorizationListResponse.php
+lib/Model/PreAuthorizationListResponseArray.php
+lib/Model/PreAuthorizationRelease.php
+lib/Model/PreAuthorizationReleaseResponse.php
+lib/Model/PreAuthorizationReleaseResponseData.php
+lib/Model/PreAuthorizationReserve.php
+lib/Model/PreAuthorizationReserveWithAuthCodeResponse.php
+lib/Model/PreAuthorizationReserveWithAuthCodeResponseData.php
+lib/Model/PreAuthorizationVerifyResponse.php
+lib/Model/PreAuthorizationVerifyResponseData.php
 lib/Model/ProductCreate.php
 lib/Model/ProductCreateResponse.php
 lib/Model/ProductCreateResponseData.php
@@ -309,6 +334,7 @@ lib/Model/Response.php
 lib/Model/SettlementListResponse.php
 lib/Model/SettlementListResponseArray.php
 lib/Model/SettlementTransactionsResponse.php
+lib/Model/ShareSubaccountsArray.php
 lib/Model/SplitAddUpdateSubaccountResponse.php
 lib/Model/SplitCreate.php
 lib/Model/SplitCreateResponse.php
@@ -335,6 +361,7 @@ lib/Model/StorefrontListResponseArray.php
 lib/Model/StorefrontUpdate.php
 lib/Model/StorefrontUpdateResponse.php
 lib/Model/SubaccountCreate.php
+lib/Model/SubaccountCreateMetadata.php
 lib/Model/SubaccountCreateResponse.php
 lib/Model/SubaccountCreateResponseData.php
 lib/Model/SubaccountFetchResponse.php
@@ -342,6 +369,7 @@ lib/Model/SubaccountFetchResponseData.php
 lib/Model/SubaccountListResponse.php
 lib/Model/SubaccountListResponseArray.php
 lib/Model/SubaccountUpdate.php
+lib/Model/SubaccountUpdateMetadata.php
 lib/Model/SubaccountUpdateResponse.php
 lib/Model/SubaccountUpdateResponseData.php
 lib/Model/SubscriptionCreate.php
@@ -463,6 +491,7 @@ lib/Model/VerifyResponseDataAuthorization.php
 lib/Model/VerifyResponseDataCustomer.php
 lib/Model/VerifyResponseDataLog.php
 lib/Model/VerifyResponseDataLogHistoryInner.php
+lib/Model/VerifyResponseDataMetadata.php
 lib/Model/VerifyResponseDataPlanObject.php
 lib/Model/VirtualTerminalAddSplitCode.php
 lib/Model/VirtualTerminalAddSplitCodeResponse.php
