@@ -2,20 +2,19 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**transferBulk()**](TransferApi.md#transferBulk) | **POST** /transfer/bulk | Initiate Bulk Transfer |
-| [**transferDisableOtp()**](TransferApi.md#transferDisableOtp) | **POST** /transfer/disable_otp | Disable OTP for Transfers |
+| Method                                                                        | HTTP request                            | Description                          |
+| ----------------------------------------------------------------------------- | --------------------------------------- | ------------------------------------ |
+| [**transferBulk()**](TransferApi.md#transferBulk)                             | **POST** /transfer/bulk                 | Initiate Bulk Transfer               |
+| [**transferDisableOtp()**](TransferApi.md#transferDisableOtp)                 | **POST** /transfer/disable_otp          | Disable OTP for Transfers            |
 | [**transferDisableOtpFinalize()**](TransferApi.md#transferDisableOtpFinalize) | **POST** /transfer/disable_otp_finalize | Finalize Disabling OTP for Transfers |
-| [**transferEnableOtp()**](TransferApi.md#transferEnableOtp) | **POST** /transfer/enable_otp | Enable OTP requirement for Transfers |
-| [**transferExportTransfer()**](TransferApi.md#transferExportTransfer) | **GET** /transfer/export | Export Transfers |
-| [**transferFetch()**](TransferApi.md#transferFetch) | **GET** /transfer/{code} | Fetch Transfer |
-| [**transferFinalize()**](TransferApi.md#transferFinalize) | **POST** /transfer/finalize_transfer | Finalize Transfer |
-| [**transferInitiate()**](TransferApi.md#transferInitiate) | **POST** /transfer | Initiate Transfer |
-| [**transferList()**](TransferApi.md#transferList) | **GET** /transfer | List Transfers |
-| [**transferResendOtp()**](TransferApi.md#transferResendOtp) | **POST** /transfer/resend_otp | Resend OTP for Transfer |
-| [**transferVerify()**](TransferApi.md#transferVerify) | **GET** /transfer/verify/{reference} | Verify Transfer |
-
+| [**transferEnableOtp()**](TransferApi.md#transferEnableOtp)                   | **POST** /transfer/enable_otp           | Enable OTP requirement for Transfers |
+| [**transferExportTransfer()**](TransferApi.md#transferExportTransfer)         | **GET** /transfer/export                | Export Transfers                     |
+| [**transferFetch()**](TransferApi.md#transferFetch)                           | **GET** /transfer/{code}                | Fetch Transfer                       |
+| [**transferFinalize()**](TransferApi.md#transferFinalize)                     | **POST** /transfer/finalize_transfer    | Finalize Transfer                    |
+| [**transferInitiate()**](TransferApi.md#transferInitiate)                     | **POST** /transfer                      | Initiate Transfer                    |
+| [**transferList()**](TransferApi.md#transferList)                             | **GET** /transfer                       | List Transfers                       |
+| [**transferResendOtp()**](TransferApi.md#transferResendOtp)                   | **POST** /transfer/resend_otp           | Resend OTP for Transfer              |
+| [**transferVerify()**](TransferApi.md#transferVerify)                         | **GET** /transfer/verify/{reference}    | Verify Transfer                      |
 
 ## `transferBulk()`
 
@@ -25,7 +24,7 @@ transferBulk($transfer_bulk): \Alexasomba\\Paystack\Model\TransferBulkResponse
 
 Initiate Bulk Transfer
 
-Batch multiple transfers in a single request.  You need to disable the Transfers OTP requirement to use this endpoint.
+Batch multiple transfers in a single request. You need to disable the Transfers OTP requirement to use this endpoint.
 
 ### Example
 
@@ -56,9 +55,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_bulk** | [**\Alexasomba\\Paystack\Model\TransferBulk**](../Model/TransferBulk.md)|  | [optional] |
+| Name              | Type                                                                     | Description | Notes      |
+| ----------------- | ------------------------------------------------------------------------ | ----------- | ---------- |
+| **transfer_bulk** | [**\Alexasomba\\Paystack\Model\TransferBulk**](../Model/TransferBulk.md) |             | [optional] |
 
 ### Return type
 
@@ -85,7 +84,7 @@ transferDisableOtp(): \Alexasomba\\Paystack\Model\TransferDisablesOtpResponse
 
 Disable OTP for Transfers
 
-This is used in the event that you want to be able to complete transfers programmatically without use of OTPs.  No arguments required. You will get an OTP to complete the request.
+This is used in the event that you want to be able to complete transfers programmatically without use of OTPs. No arguments required. You will get an OTP to complete the request.
 
 ### Example
 
@@ -173,9 +172,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_finalize_disable_otp** | [**\Alexasomba\\Paystack\Model\TransferFinalizeDisableOTP**](../Model/TransferFinalizeDisableOTP.md)|  | [optional] |
+| Name                              | Type                                                                                                 | Description | Notes      |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **transfer_finalize_disable_otp** | [**\Alexasomba\\Paystack\Model\TransferFinalizeDisableOTP**](../Model/TransferFinalizeDisableOTP.md) |             | [optional] |
 
 ### Return type
 
@@ -202,7 +201,7 @@ transferEnableOtp(): \Alexasomba\\Paystack\Model\TransferEnablesOtpResponse
 
 Enable OTP requirement for Transfers
 
-In the event that a customer wants to stop being able to complete transfers programmatically, this endpoint helps turn OTP requirement back on.  No arguments required.
+In the event that a customer wants to stop being able to complete transfers programmatically, this endpoint helps turn OTP requirement back on. No arguments required.
 
 ### Example
 
@@ -293,12 +292,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **recipient** | **string**| Export transfer by the recipient code | [optional] |
-| **status** | **string**| Export transfer by status | [optional] [default to &#39;pending&#39;] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name          | Type          | Description                           | Notes                                     |
+| ------------- | ------------- | ------------------------------------- | ----------------------------------------- |
+| **recipient** | **string**    | Export transfer by the recipient code | [optional]                                |
+| **status**    | **string**    | Export transfer by status             | [optional] [default to &#39;pending&#39;] |
+| **from**      | **\DateTime** | The start date                        | [optional]                                |
+| **to**        | **\DateTime** | The end date                          | [optional]                                |
 
 ### Return type
 
@@ -356,9 +355,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Transfer code | |
+| Name     | Type       | Description   | Notes |
+| -------- | ---------- | ------------- | ----- |
+| **code** | **string** | Transfer code |       |
 
 ### Return type
 
@@ -416,9 +415,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_finalize** | [**\Alexasomba\\Paystack\Model\TransferFinalize**](../Model/TransferFinalize.md)|  | [optional] |
+| Name                  | Type                                                                             | Description | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ----------- | ---------- |
+| **transfer_finalize** | [**\Alexasomba\\Paystack\Model\TransferFinalize**](../Model/TransferFinalize.md) |             | [optional] |
 
 ### Return type
 
@@ -476,9 +475,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_initiate** | [**\Alexasomba\\Paystack\Model\TransferInitiate**](../Model/TransferInitiate.md)|  | [optional] |
+| Name                  | Type                                                                             | Description | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ----------- | ---------- |
+| **transfer_initiate** | [**\Alexasomba\\Paystack\Model\TransferInitiate**](../Model/TransferInitiate.md) |             | [optional] |
 
 ### Return type
 
@@ -544,17 +543,17 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **use_cursor** | **bool**| A flag to indicate if cursor based pagination should be used | [optional] |
-| **next** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data | [optional] |
-| **previous** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
-| **per_page** | **int**| The number of records to fetch per request | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
-| **recipient** | **string**| Filter transfer by the recipient code | [optional] |
-| **status** | **string**| Filter transfer by status | [optional] [default to &#39;pending&#39;] |
+| Name           | Type          | Description                                                                                                | Notes                                     |
+| -------------- | ------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| **use_cursor** | **bool**      | A flag to indicate if cursor based pagination should be used                                               | [optional]                                |
+| **next**       | **string**    | An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data     | [optional]                                |
+| **previous**   | **string**    | An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional]                                |
+| **per_page**   | **int**       | The number of records to fetch per request                                                                 | [optional]                                |
+| **page**       | **int**       | The offset to retrieve data from                                                                           | [optional]                                |
+| **from**       | **\DateTime** | The start date                                                                                             | [optional]                                |
+| **to**         | **\DateTime** | The end date                                                                                               | [optional]                                |
+| **recipient**  | **string**    | Filter transfer by the recipient code                                                                      | [optional]                                |
+| **status**     | **string**    | Filter transfer by status                                                                                  | [optional] [default to &#39;pending&#39;] |
 
 ### Return type
 
@@ -612,9 +611,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_resend_otp** | [**\Alexasomba\\Paystack\Model\TransferResendOTP**](../Model/TransferResendOTP.md)|  | [optional] |
+| Name                    | Type                                                                               | Description | Notes      |
+| ----------------------- | ---------------------------------------------------------------------------------- | ----------- | ---------- |
+| **transfer_resend_otp** | [**\Alexasomba\\Paystack\Model\TransferResendOTP**](../Model/TransferResendOTP.md) |             | [optional] |
 
 ### Return type
 
@@ -672,9 +671,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **reference** | **string**| Transfer reference | |
+| Name          | Type       | Description        | Notes |
+| ------------- | ---------- | ------------------ | ----- |
+| **reference** | **string** | Transfer reference |       |
 
 ### Return type
 

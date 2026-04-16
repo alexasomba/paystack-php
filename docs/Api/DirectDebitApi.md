@@ -2,11 +2,10 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
+| Method                                                                                               | HTTP request                                | Description                 |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------- | --------------------------- |
 | [**directdebitListMandateAuthorizations()**](DirectDebitApi.md#directdebitListMandateAuthorizations) | **GET** /directdebit/mandate-authorizations | List Mandate Authorizations |
-| [**directdebitTriggerActivationCharge()**](DirectDebitApi.md#directdebitTriggerActivationCharge) | **PUT** /directdebit/activation-charge | Trigger Activation Charge |
-
+| [**directdebitTriggerActivationCharge()**](DirectDebitApi.md#directdebitTriggerActivationCharge)     | **PUT** /directdebit/activation-charge      | Trigger Activation Charge   |
 
 ## `directdebitListMandateAuthorizations()`
 
@@ -49,11 +48,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cursor** | **string**| The cursor value of the next set of authorizations to fetch. You can get this from the meta object of the response | [optional] |
-| **status** | **string**| Filter by the authorization status | [optional] |
-| **per_page** | **int**| The number of authorizations to fetch per request | [optional] |
+| Name         | Type       | Description                                                                                                        | Notes      |
+| ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **cursor**   | **string** | The cursor value of the next set of authorizations to fetch. You can get this from the meta object of the response | [optional] |
+| **status**   | **string** | Filter by the authorization status                                                                                 | [optional] |
+| **per_page** | **int**    | The number of authorizations to fetch per request                                                                  | [optional] |
 
 ### Return type
 
@@ -111,9 +110,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **direct_debit_activation_charge_request** | [**\Alexasomba\\Paystack\Model\DirectDebitActivationChargeRequest**](../Model/DirectDebitActivationChargeRequest.md)|  | |
+| Name                                       | Type                                                                                                                 | Description | Notes |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ----------- | ----- |
+| **direct_debit_activation_charge_request** | [**\Alexasomba\\Paystack\Model\DirectDebitActivationChargeRequest**](../Model/DirectDebitActivationChargeRequest.md) |             |       |
 
 ### Return type
 

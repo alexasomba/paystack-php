@@ -2,11 +2,10 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**balanceFetch()**](BalanceApi.md#balanceFetch) | **GET** /balance | Fetch Balance |
+| Method                                             | HTTP request            | Description    |
+| -------------------------------------------------- | ----------------------- | -------------- |
+| [**balanceFetch()**](BalanceApi.md#balanceFetch)   | **GET** /balance        | Fetch Balance  |
 | [**balanceLedger()**](BalanceApi.md#balanceLedger) | **GET** /balance/ledger | Balance Ledger |
-
 
 ## `balanceFetch()`
 
@@ -107,12 +106,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes      |
+| ------------ | ------------- | ----------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] |
+| **page**     | **int**       | The section to retrieve             | [optional] |
+| **from**     | **\DateTime** | The start date                      | [optional] |
+| **to**       | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 

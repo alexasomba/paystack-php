@@ -2,16 +2,15 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**subscriptionCreate()**](SubscriptionApi.md#subscriptionCreate) | **POST** /subscription | Create Subscription |
-| [**subscriptionDisable()**](SubscriptionApi.md#subscriptionDisable) | **POST** /subscription/disable | Disable Subscription |
-| [**subscriptionEnable()**](SubscriptionApi.md#subscriptionEnable) | **POST** /subscription/enable | Enable Subscription |
-| [**subscriptionFetch()**](SubscriptionApi.md#subscriptionFetch) | **GET** /subscription/{code} | Fetch Subscription |
-| [**subscriptionList()**](SubscriptionApi.md#subscriptionList) | **GET** /subscription | List Subscriptions |
-| [**subscriptionManageEmail()**](SubscriptionApi.md#subscriptionManageEmail) | **POST** /subscription/{code}/manage/email | Send Update Subscription Link |
-| [**subscriptionManageLink()**](SubscriptionApi.md#subscriptionManageLink) | **GET** /subscription/{code}/manage/link | Generate Update Subscription Link |
-
+| Method                                                                      | HTTP request                               | Description                       |
+| --------------------------------------------------------------------------- | ------------------------------------------ | --------------------------------- |
+| [**subscriptionCreate()**](SubscriptionApi.md#subscriptionCreate)           | **POST** /subscription                     | Create Subscription               |
+| [**subscriptionDisable()**](SubscriptionApi.md#subscriptionDisable)         | **POST** /subscription/disable             | Disable Subscription              |
+| [**subscriptionEnable()**](SubscriptionApi.md#subscriptionEnable)           | **POST** /subscription/enable              | Enable Subscription               |
+| [**subscriptionFetch()**](SubscriptionApi.md#subscriptionFetch)             | **GET** /subscription/{code}               | Fetch Subscription                |
+| [**subscriptionList()**](SubscriptionApi.md#subscriptionList)               | **GET** /subscription                      | List Subscriptions                |
+| [**subscriptionManageEmail()**](SubscriptionApi.md#subscriptionManageEmail) | **POST** /subscription/{code}/manage/email | Send Update Subscription Link     |
+| [**subscriptionManageLink()**](SubscriptionApi.md#subscriptionManageLink)   | **GET** /subscription/{code}/manage/link   | Generate Update Subscription Link |
 
 ## `subscriptionCreate()`
 
@@ -52,9 +51,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subscription_create** | [**\Alexasomba\\Paystack\Model\SubscriptionCreate**](../Model/SubscriptionCreate.md)|  | [optional] |
+| Name                    | Type                                                                                 | Description | Notes      |
+| ----------------------- | ------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **subscription_create** | [**\Alexasomba\\Paystack\Model\SubscriptionCreate**](../Model/SubscriptionCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -112,9 +111,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subscription_toggle** | [**\Alexasomba\\Paystack\Model\SubscriptionToggle**](../Model/SubscriptionToggle.md)|  | [optional] |
+| Name                    | Type                                                                                 | Description | Notes      |
+| ----------------------- | ------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **subscription_toggle** | [**\Alexasomba\\Paystack\Model\SubscriptionToggle**](../Model/SubscriptionToggle.md) |             | [optional] |
 
 ### Return type
 
@@ -172,9 +171,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subscription_toggle** | [**\Alexasomba\\Paystack\Model\SubscriptionToggle**](../Model/SubscriptionToggle.md)|  | [optional] |
+| Name                    | Type                                                                                 | Description | Notes      |
+| ----------------------- | ------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **subscription_toggle** | [**\Alexasomba\\Paystack\Model\SubscriptionToggle**](../Model/SubscriptionToggle.md) |             | [optional] |
 
 ### Return type
 
@@ -232,9 +231,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The subscription code for the subscription you want to fetch | |
+| Name     | Type       | Description                                                  | Notes |
+| -------- | ---------- | ------------------------------------------------------------ | ----- |
+| **code** | **string** | The subscription code for the subscription you want to fetch |       |
 
 ### Return type
 
@@ -297,14 +296,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **plan** | **int**| Plan ID | [optional] |
-| **customer** | **string**| Customer ID | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes      |
+| ------------ | ------------- | ----------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] |
+| **page**     | **int**       | The section to retrieve             | [optional] |
+| **plan**     | **int**       | Plan ID                             | [optional] |
+| **customer** | **string**    | Customer ID                         | [optional] |
+| **from**     | **\DateTime** | The start date                      | [optional] |
+| **to**       | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 
@@ -362,9 +361,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Subscription code | |
+| Name     | Type       | Description       | Notes |
+| -------- | ---------- | ----------------- | ----- |
+| **code** | **string** | Subscription code |       |
 
 ### Return type
 
@@ -422,9 +421,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Subscription code | |
+| Name     | Type       | Description       | Notes |
+| -------- | ---------- | ----------------- | ----- |
+| **code** | **string** | Subscription code |       |
 
 ### Return type
 

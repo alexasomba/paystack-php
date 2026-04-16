@@ -2,21 +2,20 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**customerCreate()**](CustomerApi.md#customerCreate) | **POST** /customer | Create Customer |
-| [**customerDeactivateAuthorization()**](CustomerApi.md#customerDeactivateAuthorization) | **POST** /customer/authorization/deactivate | Deactivate Authorization |
-| [**customerDirectDebitActivationCharge()**](CustomerApi.md#customerDirectDebitActivationCharge) | **PUT** /customer/{id}/directdebit-activation-charge | Direct Debit Activation Charge |
-| [**customerFetch()**](CustomerApi.md#customerFetch) | **GET** /customer/{code} | Fetch Customer |
-| [**customerFetchMandateAuthorizations()**](CustomerApi.md#customerFetchMandateAuthorizations) | **GET** /customer/{id}/directdebit-mandate-authorizations | Fetch Mandate Authorizations |
-| [**customerInitializeAuthorization()**](CustomerApi.md#customerInitializeAuthorization) | **POST** /customer/authorization/initialize | Initialize Authorization |
-| [**customerInitializeDirectDebit()**](CustomerApi.md#customerInitializeDirectDebit) | **POST** /customer/{id}/initialize-direct-debit | Initialize Direct Debit |
-| [**customerList()**](CustomerApi.md#customerList) | **GET** /customer | List Customers |
-| [**customerRiskAction()**](CustomerApi.md#customerRiskAction) | **POST** /customer/set_risk_action | Set Risk Action |
-| [**customerUpdate()**](CustomerApi.md#customerUpdate) | **PUT** /customer/{code} | Update Customer |
-| [**customerValidate()**](CustomerApi.md#customerValidate) | **POST** /customer/{code}/identification | Validate Customer |
-| [**customerVerifyAuthorization()**](CustomerApi.md#customerVerifyAuthorization) | **GET** /customer/authorization/verify/{reference} | Verify Authorization |
-
+| Method                                                                                          | HTTP request                                              | Description                    |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------ |
+| [**customerCreate()**](CustomerApi.md#customerCreate)                                           | **POST** /customer                                        | Create Customer                |
+| [**customerDeactivateAuthorization()**](CustomerApi.md#customerDeactivateAuthorization)         | **POST** /customer/authorization/deactivate               | Deactivate Authorization       |
+| [**customerDirectDebitActivationCharge()**](CustomerApi.md#customerDirectDebitActivationCharge) | **PUT** /customer/{id}/directdebit-activation-charge      | Direct Debit Activation Charge |
+| [**customerFetch()**](CustomerApi.md#customerFetch)                                             | **GET** /customer/{code}                                  | Fetch Customer                 |
+| [**customerFetchMandateAuthorizations()**](CustomerApi.md#customerFetchMandateAuthorizations)   | **GET** /customer/{id}/directdebit-mandate-authorizations | Fetch Mandate Authorizations   |
+| [**customerInitializeAuthorization()**](CustomerApi.md#customerInitializeAuthorization)         | **POST** /customer/authorization/initialize               | Initialize Authorization       |
+| [**customerInitializeDirectDebit()**](CustomerApi.md#customerInitializeDirectDebit)             | **POST** /customer/{id}/initialize-direct-debit           | Initialize Direct Debit        |
+| [**customerList()**](CustomerApi.md#customerList)                                               | **GET** /customer                                         | List Customers                 |
+| [**customerRiskAction()**](CustomerApi.md#customerRiskAction)                                   | **POST** /customer/set_risk_action                        | Set Risk Action                |
+| [**customerUpdate()**](CustomerApi.md#customerUpdate)                                           | **PUT** /customer/{code}                                  | Update Customer                |
+| [**customerValidate()**](CustomerApi.md#customerValidate)                                       | **POST** /customer/{code}/identification                  | Validate Customer              |
+| [**customerVerifyAuthorization()**](CustomerApi.md#customerVerifyAuthorization)                 | **GET** /customer/authorization/verify/{reference}        | Verify Authorization           |
 
 ## `customerCreate()`
 
@@ -57,9 +56,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customer_create** | [**\Alexasomba\\Paystack\Model\CustomerCreate**](../Model/CustomerCreate.md)|  | [optional] |
+| Name                | Type                                                                         | Description | Notes      |
+| ------------------- | ---------------------------------------------------------------------------- | ----------- | ---------- |
+| **customer_create** | [**\Alexasomba\\Paystack\Model\CustomerCreate**](../Model/CustomerCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -117,9 +116,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customer_deactivate_authorization** | [**\Alexasomba\\Paystack\Model\CustomerDeactivateAuthorization**](../Model/CustomerDeactivateAuthorization.md)|  | [optional] |
+| Name                                  | Type                                                                                                           | Description | Notes      |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **customer_deactivate_authorization** | [**\Alexasomba\\Paystack\Model\CustomerDeactivateAuthorization**](../Model/CustomerDeactivateAuthorization.md) |             | [optional] |
 
 ### Return type
 
@@ -178,10 +177,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The customer ID attached to the authorization | |
-| **customer_direct_debit_activation_charge_request** | [**\Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest**](../Model/CustomerDirectDebitActivationChargeRequest.md)|  | [optional] |
+| Name                                                | Type                                                                                                                                 | Description                                   | Notes      |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------- | ---------- |
+| **id**                                              | **int**                                                                                                                              | The customer ID attached to the authorization |            |
+| **customer_direct_debit_activation_charge_request** | [**\Alexasomba\\Paystack\Model\CustomerDirectDebitActivationChargeRequest**](../Model/CustomerDirectDebitActivationChargeRequest.md) |                                               | [optional] |
 
 ### Return type
 
@@ -239,9 +238,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The code for the customer gotten from the response of the customer creation | |
+| Name     | Type       | Description                                                                 | Notes |
+| -------- | ---------- | --------------------------------------------------------------------------- | ----- |
+| **code** | **string** | The code for the customer gotten from the response of the customer creation |       |
 
 ### Return type
 
@@ -299,9 +298,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The customer ID for the authorizations to fetch | |
+| Name   | Type    | Description                                     | Notes |
+| ------ | ------- | ----------------------------------------------- | ----- |
+| **id** | **int** | The customer ID for the authorizations to fetch |       |
 
 ### Return type
 
@@ -359,9 +358,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customer_authorization_initialize_request** | [**\Alexasomba\\Paystack\Model\CustomerAuthorizationInitializeRequest**](../Model/CustomerAuthorizationInitializeRequest.md)|  | |
+| Name                                          | Type                                                                                                                         | Description | Notes |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------- | ----- |
+| **customer_authorization_initialize_request** | [**\Alexasomba\\Paystack\Model\CustomerAuthorizationInitializeRequest**](../Model/CustomerAuthorizationInitializeRequest.md) |             |       |
 
 ### Return type
 
@@ -420,10 +419,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the customer to initialize the direct debit for | |
-| **customer_initialize_direct_debit_request** | [**\Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest**](../Model/CustomerInitializeDirectDebitRequest.md)|  | [optional] |
+| Name                                         | Type                                                                                                                     | Description                                               | Notes      |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- | ---------- |
+| **id**                                       | **int**                                                                                                                  | The ID of the customer to initialize the direct debit for |            |
+| **customer_initialize_direct_debit_request** | [**\Alexasomba\\Paystack\Model\CustomerInitializeDirectDebitRequest**](../Model/CustomerInitializeDirectDebitRequest.md) |                                                           | [optional] |
 
 ### Return type
 
@@ -487,15 +486,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **use_cursor** | **bool**| A flag to indicate if cursor based pagination should be used | [optional] |
-| **next** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data | [optional] |
-| **previous** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
-| **per_page** | **string**| The number of records to fetch per request | [optional] |
-| **page** | **string**| The offset to retrieve data from | [optional] |
+| Name           | Type          | Description                                                                                                | Notes      |
+| -------------- | ------------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
+| **use_cursor** | **bool**      | A flag to indicate if cursor based pagination should be used                                               | [optional] |
+| **next**       | **string**    | An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data     | [optional] |
+| **previous**   | **string**    | An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
+| **from**       | **\DateTime** | The start date                                                                                             | [optional] |
+| **to**         | **\DateTime** | The end date                                                                                               | [optional] |
+| **per_page**   | **string**    | The number of records to fetch per request                                                                 | [optional] |
+| **page**       | **string**    | The offset to retrieve data from                                                                           | [optional] |
 
 ### Return type
 
@@ -553,9 +552,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **customer_risk_action** | [**\Alexasomba\\Paystack\Model\CustomerRiskAction**](../Model/CustomerRiskAction.md)|  | [optional] |
+| Name                     | Type                                                                                 | Description | Notes      |
+| ------------------------ | ------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **customer_risk_action** | [**\Alexasomba\\Paystack\Model\CustomerRiskAction**](../Model/CustomerRiskAction.md) |             | [optional] |
 
 ### Return type
 
@@ -614,10 +613,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The code for the customer gotten from the response of the customer creation | |
-| **customer_update** | [**\Alexasomba\\Paystack\Model\CustomerUpdate**](../Model/CustomerUpdate.md)|  | [optional] |
+| Name                | Type                                                                         | Description                                                                 | Notes      |
+| ------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------- |
+| **code**            | **string**                                                                   | The code for the customer gotten from the response of the customer creation |            |
+| **customer_update** | [**\Alexasomba\\Paystack\Model\CustomerUpdate**](../Model/CustomerUpdate.md) |                                                                             | [optional] |
 
 ### Return type
 
@@ -676,10 +675,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The code for the customer gotten from the response of the customer creation | |
-| **customer_validate** | [**\Alexasomba\\Paystack\Model\CustomerValidate**](../Model/CustomerValidate.md)|  | [optional] |
+| Name                  | Type                                                                             | Description                                                                 | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------- |
+| **code**              | **string**                                                                       | The code for the customer gotten from the response of the customer creation |            |
+| **customer_validate** | [**\Alexasomba\\Paystack\Model\CustomerValidate**](../Model/CustomerValidate.md) |                                                                             | [optional] |
 
 ### Return type
 
@@ -737,9 +736,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **reference** | **string**| The reference returned in the initialization response | |
+| Name          | Type       | Description                                           | Notes |
+| ------------- | ---------- | ----------------------------------------------------- | ----- |
+| **reference** | **string** | The reference returned in the initialization response |       |
 
 ### Return type
 

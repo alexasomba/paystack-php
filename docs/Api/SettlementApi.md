@@ -2,11 +2,10 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**settlementsFetch()**](SettlementApi.md#settlementsFetch) | **GET** /settlement | List Settlements |
+| Method                                                                  | HTTP request                          | Description                   |
+| ----------------------------------------------------------------------- | ------------------------------------- | ----------------------------- |
+| [**settlementsFetch()**](SettlementApi.md#settlementsFetch)             | **GET** /settlement                   | List Settlements              |
 | [**settlementsTransaction()**](SettlementApi.md#settlementsTransaction) | **GET** /settlement/{id}/transactions | Fetch Settlement Transactions |
-
 
 ## `settlementsFetch()`
 
@@ -48,10 +47,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| The number of records to fetch per request | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
+| Name         | Type    | Description                                | Notes      |
+| ------------ | ------- | ------------------------------------------ | ---------- |
+| **per_page** | **int** | The number of records to fetch per request | [optional] |
+| **page**     | **int** | The offset to retrieve data from           | [optional] |
 
 ### Return type
 
@@ -109,9 +108,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The settlement ID in which you want to fetch its transactions | |
+| Name   | Type    | Description                                                   | Notes |
+| ------ | ------- | ------------------------------------------------------------- | ----- |
+| **id** | **int** | The settlement ID in which you want to fetch its transactions |       |
 
 ### Return type
 

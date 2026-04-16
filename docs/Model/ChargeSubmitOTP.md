@@ -2,9 +2,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**otp** | **string** | Customer&#39;s OTP for ongoing transaction |
-**reference** | **string** | The reference of the ongoing transaction |
+| Name          | Type       | Description                                | Notes |
+| ------------- | ---------- | ------------------------------------------ | ----- |
+| **otp**       | **string** | Customer&#39;s OTP for ongoing transaction |
+| **reference** | **string** | The reference of the ongoing transaction   |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

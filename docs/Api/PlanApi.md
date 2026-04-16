@@ -2,13 +2,12 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**planCreate()**](PlanApi.md#planCreate) | **POST** /plan | Create Plan |
-| [**planFetch()**](PlanApi.md#planFetch) | **GET** /plan/{code} | Fetch Plan |
-| [**planList()**](PlanApi.md#planList) | **GET** /plan | List Plans |
+| Method                                    | HTTP request         | Description |
+| ----------------------------------------- | -------------------- | ----------- |
+| [**planCreate()**](PlanApi.md#planCreate) | **POST** /plan       | Create Plan |
+| [**planFetch()**](PlanApi.md#planFetch)   | **GET** /plan/{code} | Fetch Plan  |
+| [**planList()**](PlanApi.md#planList)     | **GET** /plan        | List Plans  |
 | [**planUpdate()**](PlanApi.md#planUpdate) | **PUT** /plan/{code} | Update Plan |
-
 
 ## `planCreate()`
 
@@ -49,9 +48,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **plan_create** | [**\Alexasomba\\Paystack\Model\PlanCreate**](../Model/PlanCreate.md)|  | [optional] |
+| Name            | Type                                                                 | Description | Notes      |
+| --------------- | -------------------------------------------------------------------- | ----------- | ---------- |
+| **plan_create** | [**\Alexasomba\\Paystack\Model\PlanCreate**](../Model/PlanCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -109,9 +108,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The plan code you want to fetch | |
+| Name     | Type       | Description                     | Notes |
+| -------- | ---------- | ------------------------------- | ----- |
+| **code** | **string** | The plan code you want to fetch |       |
 
 ### Return type
 
@@ -174,14 +173,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **interval** | **string**| Specify interval of the plan | [optional] |
-| **amount** | **int**| The amount on the plans to retrieve | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes      |
+| ------------ | ------------- | ----------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] |
+| **page**     | **int**       | The section to retrieve             | [optional] |
+| **interval** | **string**    | Specify interval of the plan        | [optional] |
+| **amount**   | **int**       | The amount on the plans to retrieve | [optional] |
+| **from**     | **\DateTime** | The start date                      | [optional] |
+| **to**       | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 
@@ -240,10 +239,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The plan code you want to fetch | |
-| **plan_update** | [**\Alexasomba\\Paystack\Model\PlanUpdate**](../Model/PlanUpdate.md)|  | [optional] |
+| Name            | Type                                                                 | Description                     | Notes      |
+| --------------- | -------------------------------------------------------------------- | ------------------------------- | ---------- |
+| **code**        | **string**                                                           | The plan code you want to fetch |            |
+| **plan_update** | [**\Alexasomba\\Paystack\Model\PlanUpdate**](../Model/PlanUpdate.md) |                                 | [optional] |
 
 ### Return type
 

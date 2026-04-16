@@ -2,21 +2,20 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**transactionChargeAuthorization()**](TransactionApi.md#transactionChargeAuthorization) | **POST** /transaction/charge_authorization | Charge Authorization |
-| [**transactionCheckAuthorization()**](TransactionApi.md#transactionCheckAuthorization) | **POST** /transaction/check_authorization | Check Authorization |
-| [**transactionEvent()**](TransactionApi.md#transactionEvent) | **GET** /transaction/{id}/event | Get Transaction Event |
-| [**transactionExport()**](TransactionApi.md#transactionExport) | **GET** /transaction/export | Export Transactions |
-| [**transactionFetch()**](TransactionApi.md#transactionFetch) | **GET** /transaction/{id} | Fetch Transaction |
-| [**transactionInitialize()**](TransactionApi.md#transactionInitialize) | **POST** /transaction/initialize | Initialize Transaction |
-| [**transactionList()**](TransactionApi.md#transactionList) | **GET** /transaction | List Transactions |
-| [**transactionPartialDebit()**](TransactionApi.md#transactionPartialDebit) | **POST** /transaction/partial_debit | Partial Debit |
-| [**transactionSession()**](TransactionApi.md#transactionSession) | **GET** /transaction/{id}/session | Get Transaction Session |
-| [**transactionTimeline()**](TransactionApi.md#transactionTimeline) | **GET** /transaction/timeline/{id} | Fetch Transaction Timeline |
-| [**transactionTotals()**](TransactionApi.md#transactionTotals) | **GET** /transaction/totals | Transaction Totals |
-| [**transactionVerify()**](TransactionApi.md#transactionVerify) | **GET** /transaction/verify/{reference} | Verify Transaction |
-
+| Method                                                                                   | HTTP request                               | Description                |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------- |
+| [**transactionChargeAuthorization()**](TransactionApi.md#transactionChargeAuthorization) | **POST** /transaction/charge_authorization | Charge Authorization       |
+| [**transactionCheckAuthorization()**](TransactionApi.md#transactionCheckAuthorization)   | **POST** /transaction/check_authorization  | Check Authorization        |
+| [**transactionEvent()**](TransactionApi.md#transactionEvent)                             | **GET** /transaction/{id}/event            | Get Transaction Event      |
+| [**transactionExport()**](TransactionApi.md#transactionExport)                           | **GET** /transaction/export                | Export Transactions        |
+| [**transactionFetch()**](TransactionApi.md#transactionFetch)                             | **GET** /transaction/{id}                  | Fetch Transaction          |
+| [**transactionInitialize()**](TransactionApi.md#transactionInitialize)                   | **POST** /transaction/initialize           | Initialize Transaction     |
+| [**transactionList()**](TransactionApi.md#transactionList)                               | **GET** /transaction                       | List Transactions          |
+| [**transactionPartialDebit()**](TransactionApi.md#transactionPartialDebit)               | **POST** /transaction/partial_debit        | Partial Debit              |
+| [**transactionSession()**](TransactionApi.md#transactionSession)                         | **GET** /transaction/{id}/session          | Get Transaction Session    |
+| [**transactionTimeline()**](TransactionApi.md#transactionTimeline)                       | **GET** /transaction/timeline/{id}         | Fetch Transaction Timeline |
+| [**transactionTotals()**](TransactionApi.md#transactionTotals)                           | **GET** /transaction/totals                | Transaction Totals         |
+| [**transactionVerify()**](TransactionApi.md#transactionVerify)                           | **GET** /transaction/verify/{reference}    | Verify Transaction         |
 
 ## `transactionChargeAuthorization()`
 
@@ -57,9 +56,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transaction_charge_authorization** | [**\Alexasomba\\Paystack\Model\TransactionChargeAuthorization**](../Model/TransactionChargeAuthorization.md)|  | [optional] |
+| Name                                 | Type                                                                                                         | Description | Notes      |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **transaction_charge_authorization** | [**\Alexasomba\\Paystack\Model\TransactionChargeAuthorization**](../Model/TransactionChargeAuthorization.md) |             | [optional] |
 
 ### Return type
 
@@ -120,12 +119,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **email** | **string**| Customer&#39;s email address | |
-| **amount** | **int**| Amount should be in kobo if currency is NGN, pesewas if currency is GHS, and cents if currency is ZAR | |
-| **authorization_code** | **string**| Valid authorization code to charge | [optional] |
-| **currency** | **string**| The transaction currency | [optional] |
+| Name                   | Type       | Description                                                                                           | Notes      |
+| ---------------------- | ---------- | ----------------------------------------------------------------------------------------------------- | ---------- |
+| **email**              | **string** | Customer&#39;s email address                                                                          |            |
+| **amount**             | **int**    | Amount should be in kobo if currency is NGN, pesewas if currency is GHS, and cents if currency is ZAR |            |
+| **authorization_code** | **string** | Valid authorization code to charge                                                                    | [optional] |
+| **currency**           | **string** | The transaction currency                                                                              | [optional] |
 
 ### Return type
 
@@ -183,9 +182,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the transaction | |
+| Name   | Type    | Description               | Notes |
+| ------ | ------- | ------------------------- | ----- |
+| **id** | **int** | The ID of the transaction |       |
 
 ### Return type
 
@@ -248,14 +247,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
-| **status** | **string**| Filter by the status of the transaction | [optional] |
-| **customer** | **float**| Filter by customer ID | [optional] |
-| **subaccount_code** | **string**| Filter by subaccount code | [optional] |
-| **settlement** | **int**| Filter by the settlement ID | [optional] |
+| Name                | Type          | Description                             | Notes      |
+| ------------------- | ------------- | --------------------------------------- | ---------- |
+| **from**            | **\DateTime** | The start date                          | [optional] |
+| **to**              | **\DateTime** | The end date                            | [optional] |
+| **status**          | **string**    | Filter by the status of the transaction | [optional] |
+| **customer**        | **float**     | Filter by customer ID                   | [optional] |
+| **subaccount_code** | **string**    | Filter by subaccount code               | [optional] |
+| **settlement**      | **int**       | Filter by the settlement ID             | [optional] |
 
 ### Return type
 
@@ -313,9 +312,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the transaction to fetch | |
+| Name   | Type    | Description                        | Notes |
+| ------ | ------- | ---------------------------------- | ----- |
+| **id** | **int** | The ID of the transaction to fetch |       |
 
 ### Return type
 
@@ -373,9 +372,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transaction_initialize** | [**\Alexasomba\\Paystack\Model\TransactionInitialize**](../Model/TransactionInitialize.md)|  | [optional] |
+| Name                       | Type                                                                                       | Description | Notes      |
+| -------------------------- | ------------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **transaction_initialize** | [**\Alexasomba\\Paystack\Model\TransactionInitialize**](../Model/TransactionInitialize.md) |             | [optional] |
 
 ### Return type
 
@@ -449,25 +448,25 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **use_cursor** | **bool**| A flag to indicate if cursor based pagination should be used | [optional] |
-| **next** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data | [optional] |
-| **previous** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
-| **per_page** | **int**| The number of records to fetch per request | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
-| **status** | **string**| Filter transaction by status | [optional] |
-| **source** | **string**| The origin of the payment | [optional] |
-| **terminal_id** | **string**| Filter transactions by a terminal ID | [optional] |
-| **virtual_account_number** | **string**| Filter transactions by a virtual account number | [optional] |
-| **customer_code** | **string**| Filter transactions by a customer code | [optional] |
-| **amount** | **int**| Filter transactions by a specific amount | [optional] |
-| **settlement** | **int**| The settlement ID to filter for settled transactions | [optional] |
-| **channel** | **string**| The payment method the customer used to complete the transaction | [optional] |
-| **subaccount_code** | **string**| Filter transaction by subaccount code | [optional] |
-| **split_code** | **string**| Filter transaction by split code | [optional] |
+| Name                       | Type          | Description                                                                                                | Notes      |
+| -------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
+| **use_cursor**             | **bool**      | A flag to indicate if cursor based pagination should be used                                               | [optional] |
+| **next**                   | **string**    | An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data     | [optional] |
+| **previous**               | **string**    | An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
+| **per_page**               | **int**       | The number of records to fetch per request                                                                 | [optional] |
+| **page**                   | **int**       | The offset to retrieve data from                                                                           | [optional] |
+| **from**                   | **\DateTime** | The start date                                                                                             | [optional] |
+| **to**                     | **\DateTime** | The end date                                                                                               | [optional] |
+| **status**                 | **string**    | Filter transaction by status                                                                               | [optional] |
+| **source**                 | **string**    | The origin of the payment                                                                                  | [optional] |
+| **terminal_id**            | **string**    | Filter transactions by a terminal ID                                                                       | [optional] |
+| **virtual_account_number** | **string**    | Filter transactions by a virtual account number                                                            | [optional] |
+| **customer_code**          | **string**    | Filter transactions by a customer code                                                                     | [optional] |
+| **amount**                 | **int**       | Filter transactions by a specific amount                                                                   | [optional] |
+| **settlement**             | **int**       | The settlement ID to filter for settled transactions                                                       | [optional] |
+| **channel**                | **string**    | The payment method the customer used to complete the transaction                                           | [optional] |
+| **subaccount_code**        | **string**    | Filter transaction by subaccount code                                                                      | [optional] |
+| **split_code**             | **string**    | Filter transaction by split code                                                                           | [optional] |
 
 ### Return type
 
@@ -525,9 +524,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transaction_partial_debit** | [**\Alexasomba\\Paystack\Model\TransactionPartialDebit**](../Model/TransactionPartialDebit.md)|  | [optional] |
+| Name                          | Type                                                                                           | Description | Notes      |
+| ----------------------------- | ---------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **transaction_partial_debit** | [**\Alexasomba\\Paystack\Model\TransactionPartialDebit**](../Model/TransactionPartialDebit.md) |             | [optional] |
 
 ### Return type
 
@@ -585,9 +584,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the transaction | |
+| Name   | Type    | Description               | Notes |
+| ------ | ------- | ------------------------- | ----- |
+| **id** | **int** | The ID of the transaction |       |
 
 ### Return type
 
@@ -645,9 +644,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the transaction to fetch | |
+| Name   | Type    | Description                        | Notes |
+| ------ | ------- | ---------------------------------- | ----- |
+| **id** | **int** | The ID of the transaction to fetch |       |
 
 ### Return type
 
@@ -706,10 +705,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name     | Type          | Description    | Notes      |
+| -------- | ------------- | -------------- | ---------- |
+| **from** | **\DateTime** | The start date | [optional] |
+| **to**   | **\DateTime** | The end date   | [optional] |
 
 ### Return type
 
@@ -767,9 +766,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **reference** | **string**| The transaction reference to verify | |
+| Name          | Type       | Description                         | Notes |
+| ------------- | ---------- | ----------------------------------- | ----- |
+| **reference** | **string** | The transaction reference to verify |       |
 
 ### Return type
 

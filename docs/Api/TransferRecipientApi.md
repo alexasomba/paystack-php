@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**transferrecipientBulk()**](TransferRecipientApi.md#transferrecipientBulk) | **POST** /transferrecipient/bulk | Bulk Create Transfer Recipient |
-| [**transferrecipientCreate()**](TransferRecipientApi.md#transferrecipientCreate) | **POST** /transferrecipient | Create Transfer Recipient |
-| [**transferrecipientDelete()**](TransferRecipientApi.md#transferrecipientDelete) | **DELETE** /transferrecipient/{code} | Delete Transfer Recipient |
-| [**transferrecipientFetch()**](TransferRecipientApi.md#transferrecipientFetch) | **GET** /transferrecipient/{code} | Fetch Transfer recipient |
-| [**transferrecipientList()**](TransferRecipientApi.md#transferrecipientList) | **GET** /transferrecipient | List Transfer Recipients |
-| [**transferrecipientUpdate()**](TransferRecipientApi.md#transferrecipientUpdate) | **PUT** /transferrecipient/{code} | Update Transfer Recipient |
-
+| Method                                                                           | HTTP request                         | Description                    |
+| -------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------ |
+| [**transferrecipientBulk()**](TransferRecipientApi.md#transferrecipientBulk)     | **POST** /transferrecipient/bulk     | Bulk Create Transfer Recipient |
+| [**transferrecipientCreate()**](TransferRecipientApi.md#transferrecipientCreate) | **POST** /transferrecipient          | Create Transfer Recipient      |
+| [**transferrecipientDelete()**](TransferRecipientApi.md#transferrecipientDelete) | **DELETE** /transferrecipient/{code} | Delete Transfer Recipient      |
+| [**transferrecipientFetch()**](TransferRecipientApi.md#transferrecipientFetch)   | **GET** /transferrecipient/{code}    | Fetch Transfer recipient       |
+| [**transferrecipientList()**](TransferRecipientApi.md#transferrecipientList)     | **GET** /transferrecipient           | List Transfer Recipients       |
+| [**transferrecipientUpdate()**](TransferRecipientApi.md#transferrecipientUpdate) | **PUT** /transferrecipient/{code}    | Update Transfer Recipient      |
 
 ## `transferrecipientBulk()`
 
@@ -51,9 +50,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_recipient_bulk** | [**\Alexasomba\\Paystack\Model\TransferRecipientBulk**](../Model/TransferRecipientBulk.md)|  | [optional] |
+| Name                        | Type                                                                                       | Description | Notes      |
+| --------------------------- | ------------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **transfer_recipient_bulk** | [**\Alexasomba\\Paystack\Model\TransferRecipientBulk**](../Model/TransferRecipientBulk.md) |             | [optional] |
 
 ### Return type
 
@@ -111,9 +110,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **transfer_recipient_create** | [**\Alexasomba\\Paystack\Model\TransferRecipientCreate**](../Model/TransferRecipientCreate.md)|  | [optional] |
+| Name                          | Type                                                                                           | Description | Notes      |
+| ----------------------------- | ---------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **transfer_recipient_create** | [**\Alexasomba\\Paystack\Model\TransferRecipientCreate**](../Model/TransferRecipientCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -171,9 +170,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Transfer recipient code | |
+| Name     | Type       | Description             | Notes |
+| -------- | ---------- | ----------------------- | ----- |
+| **code** | **string** | Transfer recipient code |       |
 
 ### Return type
 
@@ -231,9 +230,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Transfer recipient code | |
+| Name     | Type       | Description             | Notes |
+| -------- | ---------- | ----------------------- | ----- |
+| **code** | **string** | Transfer recipient code |       |
 
 ### Return type
 
@@ -295,13 +294,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **use_cursor** | **bool**| A flag to indicate if cursor based pagination should be used | [optional] |
-| **next** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data | [optional] |
-| **previous** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
-| **per_page** | **int**| The number of records to fetch per request | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
+| Name           | Type       | Description                                                                                                | Notes      |
+| -------------- | ---------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
+| **use_cursor** | **bool**   | A flag to indicate if cursor based pagination should be used                                               | [optional] |
+| **next**       | **string** | An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data     | [optional] |
+| **previous**   | **string** | An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
+| **per_page**   | **int**    | The number of records to fetch per request                                                                 | [optional] |
+| **page**       | **int**    | The offset to retrieve data from                                                                           | [optional] |
 
 ### Return type
 
@@ -360,10 +359,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Transfer recipient code | |
-| **transfer_recipient_update** | [**\Alexasomba\\Paystack\Model\TransferRecipientUpdate**](../Model/TransferRecipientUpdate.md)|  | [optional] |
+| Name                          | Type                                                                                           | Description             | Notes      |
+| ----------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------- | ---------- |
+| **code**                      | **string**                                                                                     | Transfer recipient code |            |
+| **transfer_recipient_update** | [**\Alexasomba\\Paystack\Model\TransferRecipientUpdate**](../Model/TransferRecipientUpdate.md) |                         | [optional] |
 
 ### Return type
 

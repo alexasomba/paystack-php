@@ -2,17 +2,16 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**disputeDownload()**](DisputeApi.md#disputeDownload) | **GET** /dispute/export | Export Disputes |
-| [**disputeEvidence()**](DisputeApi.md#disputeEvidence) | **POST** /dispute/{id}/evidence | Add Evidence |
-| [**disputeFetch()**](DisputeApi.md#disputeFetch) | **GET** /dispute/{id} | Fetch Dispute |
-| [**disputeList()**](DisputeApi.md#disputeList) | **GET** /dispute | List Disputes |
-| [**disputeResolve()**](DisputeApi.md#disputeResolve) | **PUT** /dispute/{id}/resolve | Resolve Dispute |
+| Method                                                       | HTTP request                      | Description               |
+| ------------------------------------------------------------ | --------------------------------- | ------------------------- |
+| [**disputeDownload()**](DisputeApi.md#disputeDownload)       | **GET** /dispute/export           | Export Disputes           |
+| [**disputeEvidence()**](DisputeApi.md#disputeEvidence)       | **POST** /dispute/{id}/evidence   | Add Evidence              |
+| [**disputeFetch()**](DisputeApi.md#disputeFetch)             | **GET** /dispute/{id}             | Fetch Dispute             |
+| [**disputeList()**](DisputeApi.md#disputeList)               | **GET** /dispute                  | List Disputes             |
+| [**disputeResolve()**](DisputeApi.md#disputeResolve)         | **PUT** /dispute/{id}/resolve     | Resolve Dispute           |
 | [**disputeTransaction()**](DisputeApi.md#disputeTransaction) | **GET** /dispute/transaction/{id} | List Transaction Disputes |
-| [**disputeUpdate()**](DisputeApi.md#disputeUpdate) | **PUT** /dispute/{id} | Update Dispute |
-| [**disputeUploadUrl()**](DisputeApi.md#disputeUploadUrl) | **GET** /dispute/{id}/upload_url | Fetch Upload URL |
-
+| [**disputeUpdate()**](DisputeApi.md#disputeUpdate)           | **PUT** /dispute/{id}             | Update Dispute            |
+| [**disputeUploadUrl()**](DisputeApi.md#disputeUploadUrl)     | **GET** /dispute/{id}/upload_url  | Fetch Upload URL          |
 
 ## `disputeDownload()`
 
@@ -57,13 +56,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **status** | **string**|  | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes      |
+| ------------ | ------------- | ----------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] |
+| **page**     | **int**       | The section to retrieve             | [optional] |
+| **status**   | **string**    |                                     | [optional] |
+| **from**     | **\DateTime** | The start date                      | [optional] |
+| **to**       | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 
@@ -122,10 +121,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the dispute | |
-| **dispute_evidence** | [**\Alexasomba\\Paystack\Model\DisputeEvidence**](../Model/DisputeEvidence.md)|  | [optional] |
+| Name                 | Type                                                                           | Description                          | Notes      |
+| -------------------- | ------------------------------------------------------------------------------ | ------------------------------------ | ---------- |
+| **id**               | **int**                                                                        | The unique identifier of the dispute |            |
+| **dispute_evidence** | [**\Alexasomba\\Paystack\Model\DisputeEvidence**](../Model/DisputeEvidence.md) |                                      | [optional] |
 
 ### Return type
 
@@ -183,9 +182,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the dispute | |
+| Name   | Type    | Description                          | Notes |
+| ------ | ------- | ------------------------------------ | ----- |
+| **id** | **int** | The unique identifier of the dispute |       |
 
 ### Return type
 
@@ -248,14 +247,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **status** | **string**| Dispute status | [optional] |
-| **transaction** | **string**| Transaction ID | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name            | Type          | Description                         | Notes      |
+| --------------- | ------------- | ----------------------------------- | ---------- |
+| **per_page**    | **int**       | Number of records to fetch per page | [optional] |
+| **page**        | **int**       | The section to retrieve             | [optional] |
+| **status**      | **string**    | Dispute status                      | [optional] |
+| **transaction** | **string**    | Transaction ID                      | [optional] |
+| **from**        | **\DateTime** | The start date                      | [optional] |
+| **to**          | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 
@@ -314,10 +313,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the dispute | |
-| **dispute_resolve** | [**\Alexasomba\\Paystack\Model\DisputeResolve**](../Model/DisputeResolve.md)|  | [optional] |
+| Name                | Type                                                                         | Description                          | Notes      |
+| ------------------- | ---------------------------------------------------------------------------- | ------------------------------------ | ---------- |
+| **id**              | **int**                                                                      | The unique identifier of the dispute |            |
+| **dispute_resolve** | [**\Alexasomba\\Paystack\Model\DisputeResolve**](../Model/DisputeResolve.md) |                                      | [optional] |
 
 ### Return type
 
@@ -375,9 +374,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the transaction | |
+| Name   | Type    | Description                              | Notes |
+| ------ | ------- | ---------------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the transaction |       |
 
 ### Return type
 
@@ -436,10 +435,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the dispute | |
-| **dispute_update** | [**\Alexasomba\\Paystack\Model\DisputeUpdate**](../Model/DisputeUpdate.md)|  | [optional] |
+| Name               | Type                                                                       | Description                          | Notes      |
+| ------------------ | -------------------------------------------------------------------------- | ------------------------------------ | ---------- |
+| **id**             | **int**                                                                    | The unique identifier of the dispute |            |
+| **dispute_update** | [**\Alexasomba\\Paystack\Model\DisputeUpdate**](../Model/DisputeUpdate.md) |                                      | [optional] |
 
 ### Return type
 
@@ -497,9 +496,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the dispute | |
+| Name   | Type    | Description                          | Notes |
+| ------ | ------- | ------------------------------------ | ----- |
+| **id** | **int** | The unique identifier of the dispute |       |
 
 ### Return type
 

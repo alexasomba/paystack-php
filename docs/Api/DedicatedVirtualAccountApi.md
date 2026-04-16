@@ -2,18 +2,17 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**dedicatedAccountAddSplit()**](DedicatedVirtualAccountApi.md#dedicatedAccountAddSplit) | **POST** /dedicated_account/split | Split Dedicated Account Transaction |
-| [**dedicatedAccountAssign()**](DedicatedVirtualAccountApi.md#dedicatedAccountAssign) | **POST** /dedicated_account/assign | Assign Dedicated Account |
-| [**dedicatedAccountAvailableProviders()**](DedicatedVirtualAccountApi.md#dedicatedAccountAvailableProviders) | **GET** /dedicated_account/available_providers | Fetch Bank Providers |
-| [**dedicatedAccountCreate()**](DedicatedVirtualAccountApi.md#dedicatedAccountCreate) | **POST** /dedicated_account | Create Dedicated Account |
-| [**dedicatedAccountDeactivate()**](DedicatedVirtualAccountApi.md#dedicatedAccountDeactivate) | **DELETE** /dedicated_account/{id} | Deactivate Dedicated Account |
-| [**dedicatedAccountFetch()**](DedicatedVirtualAccountApi.md#dedicatedAccountFetch) | **GET** /dedicated_account/{id} | Fetch Dedicated Account |
-| [**dedicatedAccountList()**](DedicatedVirtualAccountApi.md#dedicatedAccountList) | **GET** /dedicated_account | List Dedicated Accounts |
-| [**dedicatedAccountRemoveSplit()**](DedicatedVirtualAccountApi.md#dedicatedAccountRemoveSplit) | **DELETE** /dedicated_account/split | Remove Split from Dedicated Account |
-| [**dedicatedAccountRequery()**](DedicatedVirtualAccountApi.md#dedicatedAccountRequery) | **GET** /dedicated_account/requery | Requery Dedicated Account |
-
+| Method                                                                                                       | HTTP request                                   | Description                         |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- | ----------------------------------- |
+| [**dedicatedAccountAddSplit()**](DedicatedVirtualAccountApi.md#dedicatedAccountAddSplit)                     | **POST** /dedicated_account/split              | Split Dedicated Account Transaction |
+| [**dedicatedAccountAssign()**](DedicatedVirtualAccountApi.md#dedicatedAccountAssign)                         | **POST** /dedicated_account/assign             | Assign Dedicated Account            |
+| [**dedicatedAccountAvailableProviders()**](DedicatedVirtualAccountApi.md#dedicatedAccountAvailableProviders) | **GET** /dedicated_account/available_providers | Fetch Bank Providers                |
+| [**dedicatedAccountCreate()**](DedicatedVirtualAccountApi.md#dedicatedAccountCreate)                         | **POST** /dedicated_account                    | Create Dedicated Account            |
+| [**dedicatedAccountDeactivate()**](DedicatedVirtualAccountApi.md#dedicatedAccountDeactivate)                 | **DELETE** /dedicated_account/{id}             | Deactivate Dedicated Account        |
+| [**dedicatedAccountFetch()**](DedicatedVirtualAccountApi.md#dedicatedAccountFetch)                           | **GET** /dedicated_account/{id}                | Fetch Dedicated Account             |
+| [**dedicatedAccountList()**](DedicatedVirtualAccountApi.md#dedicatedAccountList)                             | **GET** /dedicated_account                     | List Dedicated Accounts             |
+| [**dedicatedAccountRemoveSplit()**](DedicatedVirtualAccountApi.md#dedicatedAccountRemoveSplit)               | **DELETE** /dedicated_account/split            | Remove Split from Dedicated Account |
+| [**dedicatedAccountRequery()**](DedicatedVirtualAccountApi.md#dedicatedAccountRequery)                       | **GET** /dedicated_account/requery             | Requery Dedicated Account           |
 
 ## `dedicatedAccountAddSplit()`
 
@@ -54,9 +53,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dedicated_virtual_account_split** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountSplit**](../Model/DedicatedVirtualAccountSplit.md)|  | [optional] |
+| Name                                | Type                                                                                                     | Description | Notes      |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **dedicated_virtual_account_split** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountSplit**](../Model/DedicatedVirtualAccountSplit.md) |             | [optional] |
 
 ### Return type
 
@@ -114,9 +113,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dedicated_virtual_account_assign** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountAssign**](../Model/DedicatedVirtualAccountAssign.md)|  | [optional] |
+| Name                                 | Type                                                                                                       | Description | Notes      |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **dedicated_virtual_account_assign** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountAssign**](../Model/DedicatedVirtualAccountAssign.md) |             | [optional] |
 
 ### Return type
 
@@ -231,9 +230,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dedicated_virtual_account_create** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountCreate**](../Model/DedicatedVirtualAccountCreate.md)|  | [optional] |
+| Name                                 | Type                                                                                                       | Description | Notes      |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **dedicated_virtual_account_create** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountCreate**](../Model/DedicatedVirtualAccountCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -291,9 +290,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID of dedicated virtual account | |
+| Name   | Type       | Description                     | Notes |
+| ------ | ---------- | ------------------------------- | ----- |
+| **id** | **string** | ID of dedicated virtual account |       |
 
 ### Return type
 
@@ -351,9 +350,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID of dedicated virtual account | |
+| Name   | Type       | Description                     | Notes |
+| ------ | ---------- | ------------------------------- | ----- |
+| **id** | **string** | ID of dedicated virtual account |       |
 
 ### Return type
 
@@ -417,15 +416,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **active** | **bool**| Status of the dedicated virtual account | [optional] |
-| **customer** | **int**| The customer&#39;s ID | [optional] |
-| **currency** | **string**| The currency of the dedicated virtual account | [optional] |
-| **provider_slug** | **string**| The bank&#39;s slug in lowercase, without spaces | [optional] |
-| **bank_id** | **string**| The bank&#39;s ID | [optional] |
-| **per_page** | **int**| The number of records to fetch per request | [optional] [default to 50] |
-| **page** | **int**| The offset to retrieve data from | [optional] [default to 1] |
+| Name              | Type       | Description                                      | Notes                      |
+| ----------------- | ---------- | ------------------------------------------------ | -------------------------- |
+| **active**        | **bool**   | Status of the dedicated virtual account          | [optional]                 |
+| **customer**      | **int**    | The customer&#39;s ID                            | [optional]                 |
+| **currency**      | **string** | The currency of the dedicated virtual account    | [optional]                 |
+| **provider_slug** | **string** | The bank&#39;s slug in lowercase, without spaces | [optional]                 |
+| **bank_id**       | **string** | The bank&#39;s ID                                | [optional]                 |
+| **per_page**      | **int**    | The number of records to fetch per request       | [optional] [default to 50] |
+| **page**          | **int**    | The offset to retrieve data from                 | [optional] [default to 1]  |
 
 ### Return type
 
@@ -483,9 +482,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **dedicated_virtual_account_remove_split** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountRemoveSplit**](../Model/DedicatedVirtualAccountRemoveSplit.md)|  | [optional] |
+| Name                                       | Type                                                                                                                 | Description | Notes      |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **dedicated_virtual_account_remove_split** | [**\Alexasomba\\Paystack\Model\DedicatedVirtualAccountRemoveSplit**](../Model/DedicatedVirtualAccountRemoveSplit.md) |             | [optional] |
 
 ### Return type
 
@@ -545,11 +544,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **account_number** | **string**| Virtual account number to requery | [optional] |
-| **provider_slug** | **string**| The bank&#39;s slug in lowercase, without spaces. | [optional] |
-| **date** | **\DateTime**| The day the transfer was made | [optional] |
+| Name               | Type          | Description                                       | Notes      |
+| ------------------ | ------------- | ------------------------------------------------- | ---------- |
+| **account_number** | **string**    | Virtual account number to requery                 | [optional] |
+| **provider_slug**  | **string**    | The bank&#39;s slug in lowercase, without spaces. | [optional] |
+| **date**           | **\DateTime** | The day the transfer was made                     | [optional] |
 
 ### Return type
 

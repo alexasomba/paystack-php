@@ -2,13 +2,12 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**subaccountCreate()**](SubaccountApi.md#subaccountCreate) | **POST** /subaccount | Create Subaccount |
-| [**subaccountFetch()**](SubaccountApi.md#subaccountFetch) | **GET** /subaccount/{code} | Fetch Subaccount |
-| [**subaccountList()**](SubaccountApi.md#subaccountList) | **GET** /subaccount | List Subaccounts |
+| Method                                                      | HTTP request               | Description       |
+| ----------------------------------------------------------- | -------------------------- | ----------------- |
+| [**subaccountCreate()**](SubaccountApi.md#subaccountCreate) | **POST** /subaccount       | Create Subaccount |
+| [**subaccountFetch()**](SubaccountApi.md#subaccountFetch)   | **GET** /subaccount/{code} | Fetch Subaccount  |
+| [**subaccountList()**](SubaccountApi.md#subaccountList)     | **GET** /subaccount        | List Subaccounts  |
 | [**subaccountUpdate()**](SubaccountApi.md#subaccountUpdate) | **PUT** /subaccount/{code} | Update Subaccount |
-
 
 ## `subaccountCreate()`
 
@@ -49,9 +48,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subaccount_create** | [**\Alexasomba\\Paystack\Model\SubaccountCreate**](../Model/SubaccountCreate.md)|  | [optional] |
+| Name                  | Type                                                                             | Description | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ----------- | ---------- |
+| **subaccount_create** | [**\Alexasomba\\Paystack\Model\SubaccountCreate**](../Model/SubaccountCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -109,9 +108,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The subaccount code you want to fetch | |
+| Name     | Type       | Description                           | Notes |
+| -------- | ---------- | ------------------------------------- | ----- |
+| **code** | **string** | The subaccount code you want to fetch |       |
 
 ### Return type
 
@@ -171,11 +170,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per request | [optional] [default to 50] |
-| **page** | **int**| The offset to retrieve data from | [optional] [default to 1] |
-| **active** | **bool**| Filter by the state of the subaccounts | [optional] |
+| Name         | Type     | Description                            | Notes                      |
+| ------------ | -------- | -------------------------------------- | -------------------------- |
+| **per_page** | **int**  | Number of records to fetch per request | [optional] [default to 50] |
+| **page**     | **int**  | The offset to retrieve data from       | [optional] [default to 1]  |
+| **active**   | **bool** | Filter by the state of the subaccounts | [optional]                 |
 
 ### Return type
 
@@ -234,10 +233,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The subaccount code you want to fetch | |
-| **subaccount_update** | [**\Alexasomba\\Paystack\Model\SubaccountUpdate**](../Model/SubaccountUpdate.md)|  | [optional] |
+| Name                  | Type                                                                             | Description                           | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ------------------------------------- | ---------- |
+| **code**              | **string**                                                                       | The subaccount code you want to fetch |            |
+| **subaccount_update** | [**\Alexasomba\\Paystack\Model\SubaccountUpdate**](../Model/SubaccountUpdate.md) |                                       | [optional] |
 
 ### Return type
 

@@ -2,16 +2,15 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**chargeCheck()**](ChargeApi.md#chargeCheck) | **GET** /charge/{reference} | Check pending charge |
-| [**chargeCreate()**](ChargeApi.md#chargeCreate) | **POST** /charge | Create Charge |
-| [**chargeSubmitAddress()**](ChargeApi.md#chargeSubmitAddress) | **POST** /charge/submit_address | Submit Address |
-| [**chargeSubmitBirthday()**](ChargeApi.md#chargeSubmitBirthday) | **POST** /charge/submit_birthday | Submit Birthday |
-| [**chargeSubmitOtp()**](ChargeApi.md#chargeSubmitOtp) | **POST** /charge/submit_otp | Submit OTP |
-| [**chargeSubmitPhone()**](ChargeApi.md#chargeSubmitPhone) | **POST** /charge/submit_phone | Submit Phone |
-| [**chargeSubmitPin()**](ChargeApi.md#chargeSubmitPin) | **POST** /charge/submit_pin | Submit PIN |
-
+| Method                                                          | HTTP request                     | Description          |
+| --------------------------------------------------------------- | -------------------------------- | -------------------- |
+| [**chargeCheck()**](ChargeApi.md#chargeCheck)                   | **GET** /charge/{reference}      | Check pending charge |
+| [**chargeCreate()**](ChargeApi.md#chargeCreate)                 | **POST** /charge                 | Create Charge        |
+| [**chargeSubmitAddress()**](ChargeApi.md#chargeSubmitAddress)   | **POST** /charge/submit_address  | Submit Address       |
+| [**chargeSubmitBirthday()**](ChargeApi.md#chargeSubmitBirthday) | **POST** /charge/submit_birthday | Submit Birthday      |
+| [**chargeSubmitOtp()**](ChargeApi.md#chargeSubmitOtp)           | **POST** /charge/submit_otp      | Submit OTP           |
+| [**chargeSubmitPhone()**](ChargeApi.md#chargeSubmitPhone)       | **POST** /charge/submit_phone    | Submit Phone         |
+| [**chargeSubmitPin()**](ChargeApi.md#chargeSubmitPin)           | **POST** /charge/submit_pin      | Submit PIN           |
 
 ## `chargeCheck()`
 
@@ -52,9 +51,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **reference** | **string**| The reference of the ongoing transaction | |
+| Name          | Type       | Description                              | Notes |
+| ------------- | ---------- | ---------------------------------------- | ----- |
+| **reference** | **string** | The reference of the ongoing transaction |       |
 
 ### Return type
 
@@ -112,9 +111,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **charge_create_request** | [**\Alexasomba\\Paystack\Model\ChargeCreateRequest**](../Model/ChargeCreateRequest.md)|  | [optional] |
+| Name                      | Type                                                                                   | Description | Notes      |
+| ------------------------- | -------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **charge_create_request** | [**\Alexasomba\\Paystack\Model\ChargeCreateRequest**](../Model/ChargeCreateRequest.md) |             | [optional] |
 
 ### Return type
 
@@ -172,9 +171,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **charge_submit_address** | [**\Alexasomba\\Paystack\Model\ChargeSubmitAddress**](../Model/ChargeSubmitAddress.md)|  | [optional] |
+| Name                      | Type                                                                                   | Description | Notes      |
+| ------------------------- | -------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **charge_submit_address** | [**\Alexasomba\\Paystack\Model\ChargeSubmitAddress**](../Model/ChargeSubmitAddress.md) |             | [optional] |
 
 ### Return type
 
@@ -232,9 +231,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **charge_submit_birthday** | [**\Alexasomba\\Paystack\Model\ChargeSubmitBirthday**](../Model/ChargeSubmitBirthday.md)|  | [optional] |
+| Name                       | Type                                                                                     | Description | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------------- | ----------- | ---------- |
+| **charge_submit_birthday** | [**\Alexasomba\\Paystack\Model\ChargeSubmitBirthday**](../Model/ChargeSubmitBirthday.md) |             | [optional] |
 
 ### Return type
 
@@ -292,9 +291,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **charge_submit_otp** | [**\Alexasomba\\Paystack\Model\ChargeSubmitOTP**](../Model/ChargeSubmitOTP.md)|  | [optional] |
+| Name                  | Type                                                                           | Description | Notes      |
+| --------------------- | ------------------------------------------------------------------------------ | ----------- | ---------- |
+| **charge_submit_otp** | [**\Alexasomba\\Paystack\Model\ChargeSubmitOTP**](../Model/ChargeSubmitOTP.md) |             | [optional] |
 
 ### Return type
 
@@ -352,9 +351,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **charge_submit_phone** | [**\Alexasomba\\Paystack\Model\ChargeSubmitPhone**](../Model/ChargeSubmitPhone.md)|  | [optional] |
+| Name                    | Type                                                                               | Description | Notes      |
+| ----------------------- | ---------------------------------------------------------------------------------- | ----------- | ---------- |
+| **charge_submit_phone** | [**\Alexasomba\\Paystack\Model\ChargeSubmitPhone**](../Model/ChargeSubmitPhone.md) |             | [optional] |
 
 ### Return type
 
@@ -412,9 +411,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **charge_submit_pin** | [**\Alexasomba\\Paystack\Model\ChargeSubmitPin**](../Model/ChargeSubmitPin.md)|  | [optional] |
+| Name                  | Type                                                                           | Description | Notes      |
+| --------------------- | ------------------------------------------------------------------------------ | ----------- | ---------- |
+| **charge_submit_pin** | [**\Alexasomba\\Paystack\Model\ChargeSubmitPin**](../Model/ChargeSubmitPin.md) |             | [optional] |
 
 ### Return type
 

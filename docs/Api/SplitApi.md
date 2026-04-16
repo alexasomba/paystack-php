@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**splitAddSubaccount()**](SplitApi.md#splitAddSubaccount) | **POST** /split/{id}/subaccount/add | Add Subaccount to Split |
-| [**splitCreate()**](SplitApi.md#splitCreate) | **POST** /split | Create Split |
-| [**splitFetch()**](SplitApi.md#splitFetch) | **GET** /split/{id} | Fetch Split |
-| [**splitList()**](SplitApi.md#splitList) | **GET** /split | List Splits |
+| Method                                                           | HTTP request                           | Description                  |
+| ---------------------------------------------------------------- | -------------------------------------- | ---------------------------- |
+| [**splitAddSubaccount()**](SplitApi.md#splitAddSubaccount)       | **POST** /split/{id}/subaccount/add    | Add Subaccount to Split      |
+| [**splitCreate()**](SplitApi.md#splitCreate)                     | **POST** /split                        | Create Split                 |
+| [**splitFetch()**](SplitApi.md#splitFetch)                       | **GET** /split/{id}                    | Fetch Split                  |
+| [**splitList()**](SplitApi.md#splitList)                         | **GET** /split                         | List Splits                  |
 | [**splitRemoveSubaccount()**](SplitApi.md#splitRemoveSubaccount) | **POST** /split/{id}/subaccount/remove | Remove Subaccount from split |
-| [**splitUpdate()**](SplitApi.md#splitUpdate) | **PUT** /split/{id} | Update Split |
-
+| [**splitUpdate()**](SplitApi.md#splitUpdate)                     | **PUT** /split/{id}                    | Update Split                 |
 
 ## `splitAddSubaccount()`
 
@@ -52,10 +51,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the split configuration to fetch | |
-| **split_subaccounts** | [**\Alexasomba\\Paystack\Model\SplitSubaccounts**](../Model/SplitSubaccounts.md)|  | [optional] |
+| Name                  | Type                                                                             | Description                                | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ------------------------------------------ | ---------- |
+| **id**                | **int**                                                                          | The ID of the split configuration to fetch |            |
+| **split_subaccounts** | [**\Alexasomba\\Paystack\Model\SplitSubaccounts**](../Model/SplitSubaccounts.md) |                                            | [optional] |
 
 ### Return type
 
@@ -113,9 +112,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **split_create** | [**\Alexasomba\\Paystack\Model\SplitCreate**](../Model/SplitCreate.md)|  | [optional] |
+| Name             | Type                                                                   | Description | Notes      |
+| ---------------- | ---------------------------------------------------------------------- | ----------- | ---------- |
+| **split_create** | [**\Alexasomba\\Paystack\Model\SplitCreate**](../Model/SplitCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -173,9 +172,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the split configuration to fetch | |
+| Name   | Type    | Description                                | Notes |
+| ------ | ------- | ------------------------------------------ | ----- |
+| **id** | **int** | The ID of the split configuration to fetch |       |
 
 ### Return type
 
@@ -239,15 +238,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subaccount_code** | **string**| Filter by subaccount code | [optional] |
-| **name** | **string**| The name of the split | [optional] |
-| **active** | **bool**| The status of the split | [optional] |
-| **per_page** | **int**| The number of records to fetch per request | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name                | Type          | Description                                | Notes      |
+| ------------------- | ------------- | ------------------------------------------ | ---------- |
+| **subaccount_code** | **string**    | Filter by subaccount code                  | [optional] |
+| **name**            | **string**    | The name of the split                      | [optional] |
+| **active**          | **bool**      | The status of the split                    | [optional] |
+| **per_page**        | **int**       | The number of records to fetch per request | [optional] |
+| **page**            | **int**       | The offset to retrieve data from           | [optional] |
+| **from**            | **\DateTime** | The start date                             | [optional] |
+| **to**              | **\DateTime** | The end date                               | [optional] |
 
 ### Return type
 
@@ -306,10 +305,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The ID of the split configuration to fetch | |
-| **split_subaccounts** | [**\Alexasomba\\Paystack\Model\SplitSubaccounts**](../Model/SplitSubaccounts.md)|  | [optional] |
+| Name                  | Type                                                                             | Description                                | Notes      |
+| --------------------- | -------------------------------------------------------------------------------- | ------------------------------------------ | ---------- |
+| **id**                | **int**                                                                          | The ID of the split configuration to fetch |            |
+| **split_subaccounts** | [**\Alexasomba\\Paystack\Model\SplitSubaccounts**](../Model/SplitSubaccounts.md) |                                            | [optional] |
 
 ### Return type
 
@@ -368,10 +367,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**|  | |
-| **split_update** | [**\Alexasomba\\Paystack\Model\SplitUpdate**](../Model/SplitUpdate.md)|  | [optional] |
+| Name             | Type                                                                   | Description | Notes      |
+| ---------------- | ---------------------------------------------------------------------- | ----------- | ---------- |
+| **id**           | **string**                                                             |             |            |
+| **split_update** | [**\Alexasomba\\Paystack\Model\SplitUpdate**](../Model/SplitUpdate.md) |             | [optional] |
 
 ### Return type
 

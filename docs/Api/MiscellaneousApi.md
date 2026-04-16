@@ -2,12 +2,11 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**miscellaneousAvs()**](MiscellaneousApi.md#miscellaneousAvs) | **GET** /address_verification/states | List States (AVS) |
-| [**miscellaneousListCountries()**](MiscellaneousApi.md#miscellaneousListCountries) | **GET** /country | List Countries |
-| [**miscellaneousResolveCardBin()**](MiscellaneousApi.md#miscellaneousResolveCardBin) | **GET** /decision/bin/{bin} | Resolve Card BIN |
-
+| Method                                                                               | HTTP request                         | Description       |
+| ------------------------------------------------------------------------------------ | ------------------------------------ | ----------------- |
+| [**miscellaneousAvs()**](MiscellaneousApi.md#miscellaneousAvs)                       | **GET** /address_verification/states | List States (AVS) |
+| [**miscellaneousListCountries()**](MiscellaneousApi.md#miscellaneousListCountries)   | **GET** /country                     | List Countries    |
+| [**miscellaneousResolveCardBin()**](MiscellaneousApi.md#miscellaneousResolveCardBin) | **GET** /decision/bin/{bin}          | Resolve Card BIN  |
 
 ## `miscellaneousAvs()`
 
@@ -48,9 +47,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **country** | **string**| The country code of the states to list. It is gotten after the charge request | [optional] |
+| Name        | Type       | Description                                                                   | Notes      |
+| ----------- | ---------- | ----------------------------------------------------------------------------- | ---------- |
+| **country** | **string** | The country code of the states to list. It is gotten after the charge request | [optional] |
 
 ### Return type
 
@@ -165,9 +164,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bin** | **int**| The card bank identification number | |
+| Name    | Type    | Description                         | Notes |
+| ------- | ------- | ----------------------------------- | ----- |
+| **bin** | **int** | The card bank identification number |       |
 
 ### Return type
 

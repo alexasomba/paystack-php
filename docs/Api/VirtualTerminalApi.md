@@ -2,18 +2,17 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**virtualTerminalAddSplitCode()**](VirtualTerminalApi.md#virtualTerminalAddSplitCode) | **PUT** /virtual_terminal/{code}/split_code | Add Split Code to Virtual Terminal |
-| [**virtualTerminalCreate()**](VirtualTerminalApi.md#virtualTerminalCreate) | **POST** /virtual_terminal | Create Virtual Terminal |
-| [**virtualTerminalDeactivate()**](VirtualTerminalApi.md#virtualTerminalDeactivate) | **PUT** /virtual_terminal/{code}/deactivate | Deactivate Virtual Terminal |
-| [**virtualTerminalDeleteSplitCode()**](VirtualTerminalApi.md#virtualTerminalDeleteSplitCode) | **DELETE** /virtual_terminal/{code}/split_code | Remove Split Code from Virtual Terminal |
-| [**virtualTerminalDestinationAssign()**](VirtualTerminalApi.md#virtualTerminalDestinationAssign) | **POST** /virtual_terminal/{code}/destination/assign | Assign Destination to Virtual Terminal |
+| Method                                                                                               | HTTP request                                           | Description                                |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------ |
+| [**virtualTerminalAddSplitCode()**](VirtualTerminalApi.md#virtualTerminalAddSplitCode)               | **PUT** /virtual_terminal/{code}/split_code            | Add Split Code to Virtual Terminal         |
+| [**virtualTerminalCreate()**](VirtualTerminalApi.md#virtualTerminalCreate)                           | **POST** /virtual_terminal                             | Create Virtual Terminal                    |
+| [**virtualTerminalDeactivate()**](VirtualTerminalApi.md#virtualTerminalDeactivate)                   | **PUT** /virtual_terminal/{code}/deactivate            | Deactivate Virtual Terminal                |
+| [**virtualTerminalDeleteSplitCode()**](VirtualTerminalApi.md#virtualTerminalDeleteSplitCode)         | **DELETE** /virtual_terminal/{code}/split_code         | Remove Split Code from Virtual Terminal    |
+| [**virtualTerminalDestinationAssign()**](VirtualTerminalApi.md#virtualTerminalDestinationAssign)     | **POST** /virtual_terminal/{code}/destination/assign   | Assign Destination to Virtual Terminal     |
 | [**virtualTerminalDestinationUnassign()**](VirtualTerminalApi.md#virtualTerminalDestinationUnassign) | **POST** /virtual_terminal/{code}/destination/unassign | Unassign Destination from Virtual Terminal |
-| [**virtualTerminalFetch()**](VirtualTerminalApi.md#virtualTerminalFetch) | **GET** /virtual_terminal/{code} | Fetch Virtual Terminal |
-| [**virtualTerminalList()**](VirtualTerminalApi.md#virtualTerminalList) | **GET** /virtual_terminal | List Virtual Terminals |
-| [**virtualTerminalUpdate()**](VirtualTerminalApi.md#virtualTerminalUpdate) | **PUT** /virtual_terminal/{code} | Update Virtual Terminal |
-
+| [**virtualTerminalFetch()**](VirtualTerminalApi.md#virtualTerminalFetch)                             | **GET** /virtual_terminal/{code}                       | Fetch Virtual Terminal                     |
+| [**virtualTerminalList()**](VirtualTerminalApi.md#virtualTerminalList)                               | **GET** /virtual_terminal                              | List Virtual Terminals                     |
+| [**virtualTerminalUpdate()**](VirtualTerminalApi.md#virtualTerminalUpdate)                           | **PUT** /virtual_terminal/{code}                       | Update Virtual Terminal                    |
 
 ## `virtualTerminalAddSplitCode()`
 
@@ -55,10 +54,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
-| **virtual_terminal_add_split_code** | [**\Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode**](../Model/VirtualTerminalAddSplitCode.md)|  | [optional] |
+| Name                                | Type                                                                                                   | Description                  | Notes      |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------- | ---------- |
+| **code**                            | **string**                                                                                             | Code of the Virtual Terminal |            |
+| **virtual_terminal_add_split_code** | [**\Alexasomba\\Paystack\Model\VirtualTerminalAddSplitCode**](../Model/VirtualTerminalAddSplitCode.md) |                              | [optional] |
 
 ### Return type
 
@@ -116,9 +115,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **virtual_terminal_create** | [**\Alexasomba\\Paystack\Model\VirtualTerminalCreate**](../Model/VirtualTerminalCreate.md)|  | [optional] |
+| Name                        | Type                                                                                       | Description | Notes      |
+| --------------------------- | ------------------------------------------------------------------------------------------ | ----------- | ---------- |
+| **virtual_terminal_create** | [**\Alexasomba\\Paystack\Model\VirtualTerminalCreate**](../Model/VirtualTerminalCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -176,9 +175,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
+| Name     | Type       | Description                  | Notes |
+| -------- | ---------- | ---------------------------- | ----- |
+| **code** | **string** | Code of the Virtual Terminal |       |
 
 ### Return type
 
@@ -237,10 +236,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
-| **virtual_terminal_delete_split_code** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode**](../Model/VirtualTerminalDeleteSplitCode.md)|  | [optional] |
+| Name                                   | Type                                                                                                         | Description                  | Notes      |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------- | ---------- |
+| **code**                               | **string**                                                                                                   | Code of the Virtual Terminal |            |
+| **virtual_terminal_delete_split_code** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDeleteSplitCode**](../Model/VirtualTerminalDeleteSplitCode.md) |                              | [optional] |
 
 ### Return type
 
@@ -299,10 +298,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
-| **virtual_terminal_destination_assign** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign**](../Model/VirtualTerminalDestinationAssign.md)|  | [optional] |
+| Name                                    | Type                                                                                                             | Description                  | Notes      |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------- | ---------- |
+| **code**                                | **string**                                                                                                       | Code of the Virtual Terminal |            |
+| **virtual_terminal_destination_assign** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDestinationAssign**](../Model/VirtualTerminalDestinationAssign.md) |                              | [optional] |
 
 ### Return type
 
@@ -361,10 +360,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
-| **virtual_terminal_destination_unassign** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign**](../Model/VirtualTerminalDestinationUnassign.md)|  | [optional] |
+| Name                                      | Type                                                                                                                 | Description                  | Notes      |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------- | ---------- |
+| **code**                                  | **string**                                                                                                           | Code of the Virtual Terminal |            |
+| **virtual_terminal_destination_unassign** | [**\Alexasomba\\Paystack\Model\VirtualTerminalDestinationUnassign**](../Model/VirtualTerminalDestinationUnassign.md) |                              | [optional] |
 
 ### Return type
 
@@ -422,9 +421,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
+| Name     | Type       | Description                  | Notes |
+| -------- | ---------- | ---------------------------- | ----- |
+| **code** | **string** | Code of the Virtual Terminal |       |
 
 ### Return type
 
@@ -483,10 +482,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| The number of records to fetch per request | [optional] |
-| **page** | **int**| The offset to retrieve data from | [optional] |
+| Name         | Type    | Description                                | Notes      |
+| ------------ | ------- | ------------------------------------------ | ---------- |
+| **per_page** | **int** | The number of records to fetch per request | [optional] |
+| **page**     | **int** | The offset to retrieve data from           | [optional] |
 
 ### Return type
 
@@ -545,10 +544,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| Code of the Virtual Terminal | |
-| **virtual_terminal_update** | [**\Alexasomba\\Paystack\Model\VirtualTerminalUpdate**](../Model/VirtualTerminalUpdate.md)|  | [optional] |
+| Name                        | Type                                                                                       | Description                  | Notes      |
+| --------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------- | ---------- |
+| **code**                    | **string**                                                                                 | Code of the Virtual Terminal |            |
+| **virtual_terminal_update** | [**\Alexasomba\\Paystack\Model\VirtualTerminalUpdate**](../Model/VirtualTerminalUpdate.md) |                              | [optional] |
 
 ### Return type
 

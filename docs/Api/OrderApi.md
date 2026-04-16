@@ -2,14 +2,13 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**orderCreate()**](OrderApi.md#orderCreate) | **POST** /order | Create Order |
-| [**orderFetch()**](OrderApi.md#orderFetch) | **GET** /order/{id} | Fetch Order |
-| [**orderList()**](OrderApi.md#orderList) | **GET** /order | List Orders |
-| [**orderProduct()**](OrderApi.md#orderProduct) | **GET** /order/product/{id} | Fetch Product Orders |
-| [**orderValidate()**](OrderApi.md#orderValidate) | **GET** /order/{code}/validate | Validate Order |
-
+| Method                                           | HTTP request                   | Description          |
+| ------------------------------------------------ | ------------------------------ | -------------------- |
+| [**orderCreate()**](OrderApi.md#orderCreate)     | **POST** /order                | Create Order         |
+| [**orderFetch()**](OrderApi.md#orderFetch)       | **GET** /order/{id}            | Fetch Order          |
+| [**orderList()**](OrderApi.md#orderList)         | **GET** /order                 | List Orders          |
+| [**orderProduct()**](OrderApi.md#orderProduct)   | **GET** /order/product/{id}    | Fetch Product Orders |
+| [**orderValidate()**](OrderApi.md#orderValidate) | **GET** /order/{code}/validate | Validate Order       |
 
 ## `orderCreate()`
 
@@ -50,9 +49,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **order_create** | [**\Alexasomba\\Paystack\Model\OrderCreate**](../Model/OrderCreate.md)|  | [optional] |
+| Name             | Type                                                                   | Description | Notes      |
+| ---------------- | ---------------------------------------------------------------------- | ----------- | ---------- |
+| **order_create** | [**\Alexasomba\\Paystack\Model\OrderCreate**](../Model/OrderCreate.md) |             | [optional] |
 
 ### Return type
 
@@ -110,9 +109,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the order | |
+| Name   | Type    | Description                        | Notes |
+| ------ | ------- | ---------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the order |       |
 
 ### Return type
 
@@ -173,12 +172,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records to fetch per page | [optional] |
-| **page** | **int**| The section to retrieve | [optional] |
-| **from** | **\DateTime**| The start date | [optional] |
-| **to** | **\DateTime**| The end date | [optional] |
+| Name         | Type          | Description                         | Notes      |
+| ------------ | ------------- | ----------------------------------- | ---------- |
+| **per_page** | **int**       | Number of records to fetch per page | [optional] |
+| **page**     | **int**       | The section to retrieve             | [optional] |
+| **from**     | **\DateTime** | The start date                      | [optional] |
+| **to**       | **\DateTime** | The end date                        | [optional] |
 
 ### Return type
 
@@ -236,9 +235,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **int**| The unique identifier of the order | |
+| Name   | Type    | Description                        | Notes |
+| ------ | ------- | ---------------------------------- | ----- |
+| **id** | **int** | The unique identifier of the order |       |
 
 ### Return type
 
@@ -296,9 +295,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **code** | **string**| The unique code of a previously created order | |
+| Name     | Type       | Description                                   | Notes |
+| -------- | ---------- | --------------------------------------------- | ----- |
+| **code** | **string** | The unique code of a previously created order |       |
 
 ### Return type
 

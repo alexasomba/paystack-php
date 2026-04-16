@@ -2,12 +2,11 @@
 
 All URIs are relative to https://api.paystack.co, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**applePayListDomain()**](ApplePayApi.md#applePayListDomain) | **GET** /apple-pay/domain | List Domains |
-| [**applePayRegisterDomain()**](ApplePayApi.md#applePayRegisterDomain) | **POST** /apple-pay/domain | Register Domain |
+| Method                                                                    | HTTP request                 | Description       |
+| ------------------------------------------------------------------------- | ---------------------------- | ----------------- |
+| [**applePayListDomain()**](ApplePayApi.md#applePayListDomain)             | **GET** /apple-pay/domain    | List Domains      |
+| [**applePayRegisterDomain()**](ApplePayApi.md#applePayRegisterDomain)     | **POST** /apple-pay/domain   | Register Domain   |
 | [**applePayUnregisterDomain()**](ApplePayApi.md#applePayUnregisterDomain) | **DELETE** /apple-pay/domain | Unregister Domain |
-
 
 ## `applePayListDomain()`
 
@@ -50,11 +49,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **use_cursor** | **bool**| A flag to indicate if cursor based pagination should be used | [optional] |
-| **next** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data | [optional] |
-| **previous** | **string**| An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
+| Name           | Type       | Description                                                                                                | Notes      |
+| -------------- | ---------- | ---------------------------------------------------------------------------------------------------------- | ---------- |
+| **use_cursor** | **bool**   | A flag to indicate if cursor based pagination should be used                                               | [optional] |
+| **next**       | **string** | An alphanumeric value returned for every cursor based retrieval, used to retrieve the next set of data     | [optional] |
+| **previous**   | **string** | An alphanumeric value returned for every cursor based retrieval, used to retrieve the previous set of data | [optional] |
 
 ### Return type
 
@@ -81,7 +80,7 @@ applePayRegisterDomain($apple_pay_param): \Alexasomba\\Paystack\Model\ApplePayCr
 
 Register Domain
 
-Register a top-level domain or subdomain for your Apple Pay integration.  > This endpoint can only be called with one domain or subdomain at a time.
+Register a top-level domain or subdomain for your Apple Pay integration. > This endpoint can only be called with one domain or subdomain at a time.
 
 ### Example
 
@@ -112,9 +111,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **apple_pay_param** | [**\Alexasomba\\Paystack\Model\ApplePayParam**](../Model/ApplePayParam.md)|  | [optional] |
+| Name                | Type                                                                       | Description | Notes      |
+| ------------------- | -------------------------------------------------------------------------- | ----------- | ---------- |
+| **apple_pay_param** | [**\Alexasomba\\Paystack\Model\ApplePayParam**](../Model/ApplePayParam.md) |             | [optional] |
 
 ### Return type
 
@@ -172,9 +171,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **apple_pay_param** | [**\Alexasomba\\Paystack\Model\ApplePayParam**](../Model/ApplePayParam.md)|  | [optional] |
+| Name                | Type                                                                       | Description | Notes      |
+| ------------------- | -------------------------------------------------------------------------- | ----------- | ---------- |
+| **apple_pay_param** | [**\Alexasomba\\Paystack\Model\ApplePayParam**](../Model/ApplePayParam.md) |             | [optional] |
 
 ### Return type
 
