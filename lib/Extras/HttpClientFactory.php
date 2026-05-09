@@ -28,7 +28,8 @@ final class HttpClientFactory
      *     header?: string,
      *     key?: string,
      *     auto?: bool,
-     *   }
+     *   },
+     *   handler?: callable
      * } $options
      */
     public static function create(array $options = []): ClientInterface
@@ -46,7 +47,7 @@ final class HttpClientFactory
         $idempotencyStaticKey = $idempotency['key'] ?? null;
         $idempotencyAuto = (bool) ($idempotency['auto'] ?? false);
 
-        $stack = HandlerStack::create();
+        $stack = HandlerStack::create($options['handler'] ?? null);
 
         // Ensure Idempotency-Key is present on POST when enabled.
         $stack->push(function (callable $handler) use ($idempotencyEnabled, $idempotencyHeader, $idempotencyStaticKey, $idempotencyAuto) {

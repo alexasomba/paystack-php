@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,18 +26,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace Alexasomba\\Paystack\Test\Api;
+namespace Alexasomba\Paystack\Test\Api;
 
-use \Alexasomba\\Paystack\Configuration;
-use \Alexasomba\\Paystack\ApiException;
-use \Alexasomba\\Paystack\ObjectSerializer;
+use \Alexasomba\Paystack\Configuration;
+use \Alexasomba\Paystack\ApiException;
+use \Alexasomba\Paystack\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * ProductApiTest Class Doc Comment
  *
  * @category Class
- * @package  Alexasomba\\Paystack
+ * @package  Alexasomba\Paystack
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
