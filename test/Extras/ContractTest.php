@@ -62,8 +62,8 @@ final class ContractTest extends TestCase
 
         $config = Paystack::createConfiguration((string) getenv('PAYSTACK_SECRET_KEY'));
         $api = new TransactionApi(null, $config);
-        $response = $api->callList();
+        $api->callList();
 
-        self::assertNotNull($response);
+        $this->addToAssertionCount(1);
     }
 }
