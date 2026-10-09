@@ -15,5 +15,6 @@ jobs:
           php-version: "8.1"
           coverage: none
       - run: composer install --no-interaction --prefer-dist
+      - run: composer audit --no-dev
       - run: composer validate --no-check-publish
       - run: vendor/bin/phpunit
