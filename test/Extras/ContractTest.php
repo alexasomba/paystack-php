@@ -15,7 +15,11 @@ final class ContractTest extends TestCase
     /** @return array<string, mixed> */
     private function fixtures(): array
     {
-        $json = file_get_contents(__DIR__ . '/../../../contract-fixtures/paystack.json');
+        $fixture = __DIR__ . '/../../contract-fixtures/paystack.json';
+        if (!file_exists($fixture)) {
+            $fixture = __DIR__ . '/../../../contract-fixtures/paystack.json';
+        }
+        $json = file_get_contents($fixture);
         self::assertIsString($json);
         return json_decode($json, true, 512, JSON_THROW_ON_ERROR);
     }
